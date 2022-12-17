@@ -10,6 +10,6 @@ public class FaqController {
 	@RequestMapping(value = "/faq", method = RequestMethod.GET)
     public String FaqPage() {
 
-		return "faq";
+		return "faq/faq";
 	}
 }

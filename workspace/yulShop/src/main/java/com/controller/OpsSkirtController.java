@@ -10,6 +10,6 @@ public class OpsSkirtController {
 	@RequestMapping(value = "/opsSkirt", method = RequestMethod.GET)
     public String OpsSkirtPage() {
 
-		return "opsSkirt";
+		return "opsSkirt/opsSkirt";
     }
 }

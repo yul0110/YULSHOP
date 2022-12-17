@@ -10,6 +10,6 @@ public class OrderController {
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
     public String OrderPage() {
 		
-		return "order";
+		return "order/order";
     }
 }

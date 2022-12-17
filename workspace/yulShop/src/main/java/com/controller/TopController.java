@@ -10,6 +10,6 @@ public class TopController {
 	@RequestMapping(value = "/top", method = RequestMethod.GET)
     public String TopPage() {
 
-		return "top";
+		return "top/top";
     }
 }

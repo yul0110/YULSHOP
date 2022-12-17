@@ -10,6 +10,6 @@ public class CartController {
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String CartPage() {
 
-		return "cart";
+		return "cart/cart";
     }
 }

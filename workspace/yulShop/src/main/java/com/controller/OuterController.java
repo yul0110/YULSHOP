@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class OterController {
+public class OuterController {
 
-	@RequestMapping(value = "/oter", method = RequestMethod.GET)
-    public String OterPage() {
+	@RequestMapping(value = "/outer", method = RequestMethod.GET)
+    public String OuterPage() {
 
-		return "oter";
+		return "outer/outer";
     }
 }

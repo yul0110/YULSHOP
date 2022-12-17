@@ -10,6 +10,6 @@ public class BottomController {
 	@RequestMapping(value = "/bottom", method = RequestMethod.GET)
     public String BottomPage() {
 		
-		return "bottom";
+		return "bottom/bottom";
     }
 }

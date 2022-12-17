@@ -10,6 +10,6 @@ public class AskController {
 	@RequestMapping(value = "/ask", method = RequestMethod.GET)
     public String AskPage() {
 		
-		return "ask";
+		return "ask/ask";
     }
 }

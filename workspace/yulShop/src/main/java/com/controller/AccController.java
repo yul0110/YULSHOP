@@ -10,6 +10,6 @@ public class AccController {
 	@RequestMapping(value = "/acc", method = RequestMethod.GET)
     public String AccPage() {
 		
-		return "acc";
+		return "acc/acc";
     }
 }

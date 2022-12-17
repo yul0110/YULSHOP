@@ -10,6 +10,6 @@ public class JoinController {
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
     public String JoinPage() {
 		
-		return "join";
+		return "join/join";
     }
 }

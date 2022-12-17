@@ -10,6 +10,6 @@ public class MypageController {
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public String MypagePage() {
 
-		return "mypage";
+		return "mypage/mypage";
     }
 }

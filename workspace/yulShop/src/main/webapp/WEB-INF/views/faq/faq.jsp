@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
 	<link rel="stylesheet" href="/resources/fonts/flaticon/font/flaticon.css">
 
-	<link rel="stylesheet" href="/resources/css/bootstrap/tiny-slider.css">
+	<link rel="stylesheet" href="/resources/css /bootstrap/tiny-slider.css">
 	<link rel="stylesheet" href="/resources/css/aos/aos.css">
 	<link rel="stylesheet" href="/resources/css/bootstrap/style.css">
 

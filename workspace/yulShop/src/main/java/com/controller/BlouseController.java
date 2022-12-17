@@ -10,6 +10,6 @@ public class BlouseController {
 	@RequestMapping(value = "/blouse", method = RequestMethod.GET)
     public String BlousePage() {
 
-		return "blouse";
+		return "blouse/blouse";
     }
 }
