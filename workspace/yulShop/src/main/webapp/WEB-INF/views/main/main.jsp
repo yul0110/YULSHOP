@@ -1,13 +1,7 @@
-<!-- /*
-* Template Name: Property
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -18,15 +12,16 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
 	
-
+	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
+	<!--   Favicons   -->
 	<link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
 	<link rel="stylesheet" href="/resources/fonts/flaticon/font/flaticon.css">
-
+	
+	<!-- CSS Files    -->		
 	<link rel="stylesheet" href="/resources/css/bootstrap/tiny-slider.css">
 	<link rel="stylesheet" href="/resources/css/aos/aos.css">
 	<link rel="stylesheet" href="/resources/css/bootstrap/style.css">
@@ -85,9 +80,9 @@
 
 
 		<div class="hero-slide">
-			<div class="img overlay" style="background-image: url('images/hero_bg_3.jpg')"></div>
-			<div class="img overlay" style="background-image: url('images/hero_bg_2.jpg')"></div>
-			<div class="img overlay" style="background-image: url('images/hero_bg_1.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/resources/images/hero_bg_3.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/hero_bg_2.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/hero_bg_1.jpg')"></div>
 		</div>
 
 		<div class="container">
@@ -128,7 +123,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -156,7 +151,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_2.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_2.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -184,7 +179,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_3.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_3.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -212,7 +207,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_4.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_4.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -240,7 +235,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_5.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_5.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -268,7 +263,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_6.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_6.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -296,7 +291,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_7.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_7.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -324,7 +319,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_8.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_8.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -352,7 +347,7 @@
 							<div class="property-item">
 
 								<a href="property-single.html" class="img">
-									<img src="images/img_1.jpg" alt="Image" class="img-fluid">
+									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
 								</a>
 
 								<div class="property-content">
@@ -458,7 +453,7 @@
 				<div class="testimonial-slider">
 					<div class="item">
 						<div class="testimonial">
-							<img src="images/person_1-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+							<img src="/resources/images/person_1-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
 							<div class="rate">
 								<span class="icon-star text-warning"></span>
 								<span class="icon-star text-warning"></span>
@@ -476,7 +471,7 @@
 
 					<div class="item">
 						<div class="testimonial">
-							<img src="images/person_2-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+							<img src="/resources/images/person_2-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
 							<div class="rate">
 								<span class="icon-star text-warning"></span>
 								<span class="icon-star text-warning"></span>
@@ -494,7 +489,7 @@
 
 					<div class="item">
 						<div class="testimonial">
-							<img src="images/person_3-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+							<img src="/resources/images/person_3-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
 							<div class="rate">
 								<span class="icon-star text-warning"></span>
 								<span class="icon-star text-warning"></span>
@@ -512,7 +507,7 @@
 
 					<div class="item">
 						<div class="testimonial">
-							<img src="images/person_4-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+							<img src="/resources/images/person_4-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
 							<div class="rate">
 								<span class="icon-star text-warning"></span>
 								<span class="icon-star text-warning"></span>
@@ -545,7 +540,7 @@
 			<div class="row justify-content-between mb-5">
 				<div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
 					<div class="img-about dots">
-						<img src="images/hero_bg_3.jpg" alt="Image" class="img-fluid">
+						<img src="/resources/images/hero_bg_3.jpg" alt="Image" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -630,7 +625,7 @@
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
 
-						<img src="images/person_1-min.jpg" alt="Image"
+						<img src="/resources/images/person_1-min.jpg" alt="Image"
 						class="img-fluid">
 
 						<div class="person-contents">
@@ -650,7 +645,7 @@
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
 
-						<img src="images/person_2-min.jpg" alt="Image"
+						<img src="/resources/images/person_2-min.jpg" alt="Image"
 						class="img-fluid">
 
 						<div class="person-contents">
@@ -670,7 +665,7 @@
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
 
-						<img src="images/person_3-min.jpg" alt="Image"
+						<img src="/resources/images/person_3-min.jpg" alt="Image"
 						class="img-fluid">
 
 						<div class="person-contents">
@@ -734,7 +729,7 @@
 							<li><a href="#">Our Vision</a></li>
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Contact us</a></li>
-						</ul>s
+						</ul>
 
 						<ul class="list-unstyled social">
 							<li><a href="#"><span class="icon-instagram"></span></a></li>
@@ -774,7 +769,7 @@
     	</div>
     </div>
 
-
+	<!--    JS Files   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
