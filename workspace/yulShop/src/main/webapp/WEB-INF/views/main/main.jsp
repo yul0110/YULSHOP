@@ -50,12 +50,12 @@
 					<a href="index.html" class="logo m-0 float-start">YUL</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="index.html">newIn</a></li>
+						<li class="active"><a href="index.html" style="font-size: 1.5em;">newIn</a></li>
 						<li class="has-children">
-							<a href="properties.html">outer</a>
+							<a href="properties.html" style="font-size: 1.5em;">outer</a>
 							<ul class="dropdown">
-								<li><a href="#">Buy Property</a></li>
-								<li><a href="#">Sell Property</a></li>
+								<li><a href="#" style="font-size: 1.5em;">Buy Property</a></li>
+								<li><a href="#" style="font-size: 1.5em;">Sell Property</a></li>
 								<li class="has-children">
 									<a href="#">Dropdown</a>
 									<ul class="dropdown">
@@ -66,15 +66,14 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="#">Top</a></li>
-						<li><a href="#">Blouse</a></li>
-						<li><a href="#">Ops/Skirt</a></li>
-						<li><a href="#">Bottom</a></li>
-						<li><a href="#">Acc</a></li>
-						<li><a href="#"><span class="icon-user"></span></a></li>
-						<li><a href="#"><span class="icon-cart-plus"></span></a></li>
+						<li><a href="#" style="font-size: 1.5em;">TOP</a></li>
+						<li><a href="#" style="font-size: 1.5em;">OPS/SKIRT</a></li>
+						<li><a href="#" style="font-size: 1.5em;">BOTTOM</a></li>
+						<li><a href="#" style="font-size: 1.5em;">SHOES/BAG</a></li>
+						<li><a href="#" style="font-size: 1.5em;">ACC</a></li>
+						<li><a style="padding: 0px 5px 0px 0px; font-size:25px;" href="#"><span class="icon-user"></span></a></li>
+						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="#"><span style="padding-right:0px" class="icon-cart-plus"></span></a></li>
 					</ul>
-
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>
 					</a>
