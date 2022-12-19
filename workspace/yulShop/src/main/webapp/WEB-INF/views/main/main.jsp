@@ -45,14 +45,13 @@
 
 	<nav class="site-nav">
 		<div class="container">
-			<div class="menu-bg-wrap">
+			<div class="menu-bg-wrap" style="background-color:#E4A99B">
 				<div class="site-navigation">
-					<a href="index.html" class="logo m-0 float-start">YUL</a>
-
+					<a href="index.html" class="logo m-0 float-start" style=font-size:40px;>YUL</a>
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="index.html" style="font-size: 1.5em;">newIn</a></li>
+						<li class="active"><a href="index.html" style="font-size: 1.5em;">NEW IN</a></li>
 						<li class="has-children">
-							<a href="properties.html" style="font-size: 1.5em;">outer</a>
+							<a href="properties.html" style="font-size: 1.5em;">OUTER</a>
 							<ul class="dropdown">
 								<li><a href="#" style="font-size: 1.5em;">Buy Property</a></li>
 								<li><a href="#" style="font-size: 1.5em;">Sell Property</a></li>
@@ -77,26 +76,21 @@
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>
 					</a>
-
 				</div>
 			</div>
 		</div>
 	</nav>
-
 	<div class="hero">
-
-
 		<div class="hero-slide">
-			<div class="img overlay" style="background-image: url('/resources/resources/images/hero_bg_3.jpg')"></div>
-			<div class="img overlay" style="background-image: url('/resources/images/hero_bg_2.jpg')"></div>
-			<div class="img overlay" style="background-image: url('/resources/images/hero_bg_1.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/yulShop1.webp')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/yulShop2.webp')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/yulShop3.webp')"></div>
 		</div>
 
 		<div class="container">
 			<!-- 빈컨테이너 -->
 		</div>
 	</div>
-
 	<section class="features-1"><!-- 회색라인 --></section>
 
 	<div class="section">
@@ -104,7 +98,7 @@
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-lg-6">
-					<h2 class="font-weight-bold text-primary heading">NewIn</h2>
+					<h2 class="font-weight-bold text-primary heading">New In</h2>
 				</div>
 				<div class="col-lg-6 text-lg-end">
 					<p><a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">View all properties</a></p>
