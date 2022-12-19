@@ -9685,6 +9685,10 @@ textarea {
   .hero.page-inner, .hero.page-inner > .container > .row {
     height: 70vh;
     min-height: 300px; }
+    /*<!-- 특수마크업 1 -->*/
+  .hero.page-inner, .hero.page-inner > .container > .row2 { 
+    height: 90vh;
+    min-height: 300px; }
   .hero > .container {
     position: relative;
     z-index: 2; }

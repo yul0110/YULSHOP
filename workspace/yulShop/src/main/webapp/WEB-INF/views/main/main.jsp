@@ -1,98 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+<%@ include file="/WEB-INF/views/common/header.jsp" %>
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-	<!--   Favicons   -->
-	<link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="/resources/fonts/flaticon/font/flaticon.css">
-	
-	<!-- CSS Files    -->		
-	<link rel="stylesheet" href="/resources/css/bootstrap/tiny-slider.css">
-	<link rel="stylesheet" href="/resources/css/aos/aos.css">
-	<link rel="stylesheet" href="/resources/css/bootstrap/style.css">
-
-
-	<link rel="stylesheet" href="/resources/fonts/demo-files/demo.css">
-    <link rel="stylesheet" href="/resources/fonts/style.css"></head>
-	
-	<title>YUL</title>
-</head>
 <body>
-
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
-
-	<nav class="site-nav">
-		<div class="container">
-			<div class="menu-bg-wrap" style="background-color:#E4A99B">
-				<div class="site-navigation">
-					<a href="index.html" class="logo m-0 float-start" style=font-size:40px;>YUL</a>
-					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="index.html" style="font-size: 1.5em;">NEW IN</a></li>
-						<li class="has-children">
-							<a href="properties.html" style="font-size: 1.5em;">OUTER</a>
-							<ul class="dropdown">
-								<li><a href="#" style="font-size: 1.5em;">Buy Property</a></li>
-								<li><a href="#" style="font-size: 1.5em;">Sell Property</a></li>
-								<li class="has-children">
-									<a href="#">Dropdown</a>
-									<ul class="dropdown">
-										<li><a href="#">Sub Menu One</a></li>
-										<li><a href="#">Sub Menu Two</a></li>
-										<li><a href="#">Sub Menu Three</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#" style="font-size: 1.5em;">TOP</a></li>
-						<li><a href="#" style="font-size: 1.5em;">OPS/SKIRT</a></li>
-						<li><a href="#" style="font-size: 1.5em;">BOTTOM</a></li>
-						<li><a href="#" style="font-size: 1.5em;">SHOES/BAG</a></li>
-						<li><a href="#" style="font-size: 1.5em;">ACC</a></li>
-						<li><a style="padding: 0px 5px 0px 0px; font-size:25px;" href="#"><span class="icon-user"></span></a></li>
-						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="#"><span style="padding-right:0px" class="icon-cart-plus"></span></a></li>
-					</ul>
-					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-						<span></span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+<%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
+	
 	<div class="hero">
 		<div class="hero-slide">
 			<div class="img overlay" style="background-image: url('/resources/images/yulShop1.webp')"></div>
 			<div class="img overlay" style="background-image: url('/resources/images/yulShop2.webp')"></div>
 			<div class="img overlay" style="background-image: url('/resources/images/yulShop3.webp')"></div>
 		</div>
-
+	
 		<div class="container">
 			<!-- 빈컨테이너 -->
 		</div>
 	</div>
 	<section class="features-1"><!-- 회색라인 --></section>
-
+	
 	<div class="section">
 		<!-- 뉴인 섹션 -->
 		<div class="container">
@@ -131,7 +57,7 @@
 									</div>
 								</div>
 							</div> <!-- .item -->
-
+	
 							<div class="property-item">
 								<a href="property-single.html" class="img">
 									<img src="/resources/images/img_2.jpg" alt="Image" class="img-fluid">
@@ -141,7 +67,7 @@
 									<div>
 										<span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
 										<span class="city d-block mb-3">California, USA</span>
-
+	
 										<div class="specs d-flex mb-4">
 											<span class="d-block d-flex align-items-center me-3">
 												<span class="icon-bed me-2"></span>
@@ -234,7 +160,7 @@
 									<div>
 										<span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
 										<span class="city d-block mb-3">California, USA</span>
-
+	
 										<div class="specs d-flex mb-4">
 											<span class="d-block d-flex align-items-center me-3">
 												<span class="icon-bed me-2"></span>
@@ -258,7 +184,7 @@
 									<div>
 										<span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
 										<span class="city d-block mb-3">California, USA</span>
-
+	
 										<div class="specs d-flex mb-4">
 											<span class="d-block d-flex align-items-center me-3">
 												<span class="icon-bed me-2"></span>
@@ -269,7 +195,7 @@
 												<span class="caption">2 baths</span>
 											</span>
 										</div>
-
+	
 										<a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a>
 									</div>
 								</div>
@@ -283,7 +209,7 @@
 									<div>
 										<span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
 										<span class="city d-block mb-3">California, USA</span>
-
+	
 										<div class="specs d-flex mb-4">
 											<span class="d-block d-flex align-items-center me-3">
 												<span class="icon-bed me-2"></span>
@@ -298,7 +224,7 @@
 									</div>
 								</div>
 							</div> <!-- .item -->
-
+	
 							<div class="property-item">
 								<a href="property-single.html" class="img">
 									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
@@ -308,7 +234,7 @@
 									<div>
 										<span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
 										<span class="city d-block mb-3">California, USA</span>
-
+	
 										<div class="specs d-flex mb-4">
 											<span class="d-block d-flex align-items-center me-3">
 												<span class="icon-bed me-2"></span>
@@ -333,9 +259,9 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<section class="features-1"><!-- 회색라인 --></section>
-
+	
 	<div class="section sec-testimonials">
 		<div class="container">
 			<div class="row mb-5 align-items-center">
@@ -350,7 +276,7 @@
 					</div>
 				</div>
 			</div>
-
+	
 			<div class="row">
 				<div class="col-lg-4">
 					
@@ -375,7 +301,7 @@
 							<p class="text-black-50">Designer, Co-founder</p>
 						</div>
 					</div>
-
+	
 					<div class="item">
 						<div class="testimonial">
 							<img src="/resources/images/person_1-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
@@ -411,7 +337,7 @@
 							<p class="text-black-50">Designer, Co-founder</p>
 						</div>
 					</div>
-
+	
 					<div class="item">
 						<div class="testimonial">
 							<img src="/resources/images/person_2-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
@@ -429,7 +355,7 @@
 							<p class="text-black-50">Designer, Co-founder</p>
 						</div>
 					</div>
-
+	
 					<div class="item">
 						<div class="testimonial">
 							<img src="/resources/images/person_3-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
@@ -447,7 +373,7 @@
 							<p class="text-black-50">Designer, Co-founder</p>
 						</div>
 					</div>
-
+	
 					<div class="item">
 						<div class="testimonial">
 							<img src="/resources/images/person_4-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
@@ -465,13 +391,13 @@
 							<p class="text-black-50">Designer, Co-founder</p>
 						</div>
 					</div>
-
+	
 				</div>
 			</div>
 		</div>
 	</div>
-
-
+	
+	
 	<div class="section section-4 bg-light">
 		<div class="container">
 			<div class="row justify-content-center  text-center mb-5">
@@ -496,7 +422,7 @@
 							<p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum iste.</p>   
 						</div>
 					</div>
-
+	
 					<div class="d-flex feature-h">
 						<span class="wrap-icon me-3">
 							<span class="icon-person"></span>
@@ -506,7 +432,7 @@
 							<p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum iste.</p>   
 						</div>
 					</div>
-
+	
 					<div class="d-flex feature-h">
 						<span class="wrap-icon me-3">
 							<span class="icon-security"></span>
@@ -546,7 +472,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="section">
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
@@ -555,7 +481,7 @@
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>
-
+	
 	<div class="section section-5 bg-light">
 		<div class="container">
 			<div class="row justify-content-center  text-center mb-5">
@@ -567,15 +493,15 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
-
+	
 						<img src="/resources/images/person_1-min.jpg" alt="Image"
 						class="img-fluid">
-
+	
 						<div class="person-contents">
 							<h2 class="mb-0"><a href="#">James Doe</a></h2>
 							<span class="meta d-block mb-3">Real Estate Agent</span>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
+	
 							<ul class="social list-unstyled list-inline dark-hover">
 								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
 								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -587,15 +513,15 @@
 				</div>
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
-
+	
 						<img src="/resources/images/person_2-min.jpg" alt="Image"
 						class="img-fluid">
-
+	
 						<div class="person-contents">
 							<h2 class="mb-0"><a href="#">Jean Smith</a></h2>
 							<span class="meta d-block mb-3">Real Estate Agent</span>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
+	
 							<ul class="social list-unstyled list-inline dark-hover">
 								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
 								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -607,15 +533,15 @@
 				</div>
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
 					<div class="h-100 person">
-
+	
 						<img src="/resources/images/person_3-min.jpg" alt="Image"
 						class="img-fluid">
-
+	
 						<div class="person-contents">
 							<h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
 							<span class="meta d-block mb-3">Real Estate Agent</span>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
+	
 							<ul class="social list-unstyled list-inline dark-hover">
 								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
 								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -628,7 +554,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="site-footer">
 		<div class="container">
 			
@@ -673,7 +599,7 @@
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Contact us</a></li>
 						</ul>
-
+	
 						<ul class="list-unstyled social">
 							<li><a href="#"><span class="icon-instagram"></span></a></li>
 							<li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -685,39 +611,39 @@
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
 			</div> <!-- /.row -->
-
+	
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<!-- 
-              **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
-              **==========
-            -->
-
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-            </p>
-
-          </div>
-        </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
-
-    <!-- Preloader -->
-    <div id="overlayer"></div>
-    <div class="loader">
-    	<div class="spinner-border" role="status">
-    		<span class="visually-hidden">Loading...</span>
-    	</div>
-    </div>
-
+	             **==========
+	             NOTE: 
+	             Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+	             **==========
+	           -->
+	
+	           <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+	           </p>
+	
+	         </div>
+	       </div>
+	     </div> <!-- /.container -->
+	   </div> <!-- /.site-footer -->
+	
+	
+	   <!-- Preloader -->
+	   <div id="overlayer"></div>
+	   <div class="loader">
+	   	<div class="spinner-border" role="status">
+	   		<span class="visually-hidden">Loading...</span>
+	   	</div>
+	   </div>
+	
 	<!--    JS Files   -->
-    <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
-    <script src="/resources/js/basic/tiny-slider.js"></script>
-    <script src="/resources/js/basic/aos.js"></script>
-    <script src="/resources/js/basic/navbar.js"></script>
-    <script src="/resources/js/basic/counter.js"></script>
-    <script src="/resources/js/basic/custom.js"></script>
-  </body>
-  </html>
+	   <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
+	   <script src="/resources/js/basic/tiny-slider.js"></script>
+	   <script src="/resources/js/basic/aos.js"></script>
+	   <script src="/resources/js/basic/navbar.js"></script>
+	   <script src="/resources/js/basic/counter.js"></script>
+	   <script src="/resources/js/basic/custom.js"></script>
+	 </body>
+	 </html>
