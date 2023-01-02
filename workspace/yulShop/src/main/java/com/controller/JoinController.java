@@ -12,4 +12,13 @@ public class JoinController {
 		
 		return "join/join";
     }
+	
+
+	
+	
+	
+	
+	
+	
 }
+

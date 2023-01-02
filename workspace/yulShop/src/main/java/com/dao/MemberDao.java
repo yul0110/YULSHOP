@@ -1,11 +1,11 @@
-package com.vo;
+package com.dao;
 
 import java.sql.Date;
 
 import lombok.Data;
 
 @Data
-public class member {
+public class MemberDao {
 	
 		//멤버id
 		private Integer id;

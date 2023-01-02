@@ -3,6 +3,7 @@
 
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
+<script src="resources/js/join/join.js"></script> <!-- 해당페이지 js연결 -->
 <body>
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 

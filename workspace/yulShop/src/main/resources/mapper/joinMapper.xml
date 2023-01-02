@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.JoinMapper">
+
+	<!-- insert -->
+	<!-- 회원가입 회원정보 등록 -->
+	<insert id="insertJoinMember" parameterType="com.dao.memberDao">
+		INSERT INTO member 
+        (id, nm, userId, pw, addr1, addr2, pno, regDt, regId, updateDt, updateId, useYn) 
+        VALUES 
+        (#{id}, #{nm}, #{userId}, #{pw}, #{addr1}, #{addr2}, #{pno}, now(), 99999, now(), 99999, "Y") 
+	</insert>
+	
+
+
+</mapper>
+
+

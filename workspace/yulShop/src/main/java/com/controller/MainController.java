@@ -18,13 +18,7 @@ public class MainController {
 	MainService mainService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-    public String ModelAndViewMainPage() {
-		ModelAndView mv = new ModelAndView();
-		
-		int id= 1;
-		List<member> memberList = mainService.selectMyData(id);
-		
-		
+    public String MainPage(){
 		return "main/main";
     }
 }
