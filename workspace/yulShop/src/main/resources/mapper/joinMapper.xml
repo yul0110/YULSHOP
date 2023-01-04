@@ -4,7 +4,7 @@
 
 	<!-- insert -->
 	<!-- 회원가입 회원정보 등록 -->
-	<insert id="insertJoinMember" parameterType="com.dao.memberDao">
+	<insert id="insertJoinMember" parameterType="com.dao.MemberDao">
 		INSERT INTO member 
         (id, nm, userId, pw, addr1, addr2, pno, regDt, regId, updateDt, updateId, useYn) 
         VALUES 

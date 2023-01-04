@@ -12,6 +12,12 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
 	
+	<!-- js Files  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="resources/js/base/base.js"></script>
+	<script src="resources/js/base/common.js"></script>
+	 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,4 +35,5 @@
 	<!-- fonts Files  -->
 	<link rel="stylesheet" href="/resources/fonts/demo-files/demo.css">
     <link rel="stylesheet" href="/resources/fonts/style.css">
+    
 </head>

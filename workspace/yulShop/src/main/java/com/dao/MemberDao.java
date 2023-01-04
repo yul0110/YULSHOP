@@ -12,6 +12,12 @@ public class MemberDao {
 		
 		//유저아이디
 		private String userId;
+		
+		//유저 비밀번호
+		private String pw;
+		
+		//유저 비밀번호 체크
+		private String pwc;
 
 		//이름
 		private String nm;
