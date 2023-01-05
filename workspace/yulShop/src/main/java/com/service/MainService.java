@@ -2,11 +2,11 @@ package com.service;
 
 import java.util.List;
 
-import com.vo.member;
+import com.vo.MemberVo;
 
 public interface MainService {
 	
-	List<member> selectMyData(int id);
+	List<MemberVo> selectMyData(int id);
 	
 	int selectMember();
 }

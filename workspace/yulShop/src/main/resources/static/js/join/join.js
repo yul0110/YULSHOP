@@ -23,6 +23,68 @@
 	 */
 	 yul.page.prototype.clickEvent = function() {
 		
+		//아이디 중복확인
+	 	$('#idCheck').on('click', function(e) {
+	 		e.preventDefault();
+	 		
+			var userId = $('#userId').val();
+				
+				//1. 데이터가 있는지?
+				//2. 데이터를 DB로가져가서 조회
+				//3. 중복이되는 데이터가 있는지?
+				
+			if(userId!='' && userId != undefined){
+				//데이터가 있는 경우
+				
+				//에이작스통신
+				
+				//1. 전송객체 생성
+			    const xhr = new XMLHttpRequest();
+			    
+			    //2. init setting
+			    xhr.open("post", "/idCheckAjax");
+			    
+			    //3. 데이터 전송 타입 그리고 문자 setting
+			    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
+			    
+			    //3-1.응답타입 setting
+			    xhr.responseType = "json";
+			    
+			    //ajax 작동중 이벤트
+			    xhr.onprogress = function () {
+				    //데이터 리턴 직전에 발동
+				};
+				//ajax 작동완료
+			    xhr.onload = function(e) {
+					
+					if(e.currentTarget.status == 200){
+						//성공콜백 함수
+						console.log("리턴값 체크");
+						console.log(e.currentTarget.response);
+
+						if(e.currentTarget.response.result != 0){
+							alert("이미 사용중인 아이디 입니다.");
+						}else{
+							alert("사용가능한 아이디 입니다.");
+						}												
+				       	//return callback(e.currentTarget.response);
+					}else{
+						console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
+					}
+						        
+			    };
+			    //전송할 데이터 json 타입으로 변동후 전달
+			    xhr.send(userId);
+				
+				
+			}else{
+				//데이터가 없는 경우
+				alert("아이디를 입력해주세요.");
+			}
+
+
+		});
+		
 		//회원가입 시도 클릭 이벤트
 	 	$('#joinusAjax').on('click', function(e) {
 	 		e.preventDefault();
@@ -33,11 +95,12 @@
 	 		let formPwTarget = $("#pw");
 	 		let formPwcTarget = $("#pwc");
 	 		let formNmTarget = $("#nm");
+	 		let formBirthTarget = $("#birth");
 	 		let formpnoTarget = $("#pno");
 	 		let formAddr1Target = $("#addr1");
 	 		let formAddr2Target = $("#addr2");
-	 			
-	 			
+
+	 				
 	 		/*	 		
 	 		//validation 검증
 			yul.common.valid("kor", formUserTarget, "아이디는 한글이 불가합니다.");
@@ -66,6 +129,7 @@
 							userId : formUserTarget.val(),
 							pw : formPwTarget.val(),
 							nm : formNmTarget.val(),
+							birth : formBirthTarget.val(),
 							addr1: formAddr1Target.val(),
 							addr2: formAddr2Target.val(),
 							pno : formpnoTarget.val()} 

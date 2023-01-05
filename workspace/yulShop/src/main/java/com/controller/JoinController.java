@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.MemberDao;
 import com.service.JoinService;
+import com.vo.MemberVo;
 
 @Controller
 public class JoinController {
@@ -21,7 +23,7 @@ public class JoinController {
 		
 		return "join/join";
     }
-	
+
 	
 	//회원가입 Ajax
 	@RequestMapping(value = "/joinusAjax", method = RequestMethod.POST)
@@ -39,6 +41,16 @@ public class JoinController {
 	}
 
 	
+	//아이디 중복 체크 Ajax
+	@RequestMapping(value = "/idCheckAjax", method = RequestMethod.POST)
+	public ModelAndView idCheckAjax(@RequestBody String checkId) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		int result = joinService.selectIdCheck(checkId);
+		mv.addObject("result", result);
+		
+		return mv;
+	}
 	
 	
 	

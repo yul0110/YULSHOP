@@ -2,12 +2,12 @@ package com.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import com.vo.member;
+import com.vo.MemberVo;
 
 @Mapper
 public interface MainMapper {
 	
-	List<member> selectMyData(int id);
+	List<MemberVo> selectMyData(int id);
 	
 	int selectMember();
 }

@@ -3,15 +3,10 @@
 	
  	yul.common = function() {
 		//공통메소드 생성
-		
-		
 	};
-	
-	
-	yul.common.callbackData = function(d) {
-				
+
+	yul.common.callbackData = function(d) {			
 	}
-	
 	
 	//공통 검증
 	yul.common.valid = function(type, checkTaget, msg, rule) {
@@ -27,18 +22,16 @@
 		//한글 정규식
 		const regExp = /[ㄱ-ㅎㅏ-ㅣ가-힣]/g;
 		
-		
+				
 		//데이터가 빈값이거나 필수값인 경우
 		if(checkTaget.val() == undefined || checkTaget.val().trim() == ''){
 			
 			let errorMsgSelect = checkTaget.attr('id'); 
 			let errorMsgClass  = '#'+errorMsgSelect+'Error';
-			$(errorMsgClass).children('strong').text("필수값 입니다.");
-			
+			$(errorMsgClass).children('strong').text("필수값 입니다.");	
 			checkTaget.focus();
 			throw "값이 비었습니다."
 		}
-		
 		
 		if(type == "lenMax"){
 			//글자수가 최대값보다 큰경우 메소드를 중지
@@ -74,14 +67,11 @@
 		    }
 		}else if(type == "password"){
 			//매칭
-			if(!checkTaget){
-				
-			}
-			
+			if(!checkTaget){			
+			}		
 		}else{
 			return;
-		}
-		
+		}	
 	}
 	
 	//ajax 퓨터/바닐라 자바스크립트 구현
@@ -114,13 +104,10 @@
 		       	return callback(e.currentTarget.response);
 			}else{
 				alert('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
-			}
-				        
+			}		        
 	    };
 	    //전송할 데이터 json 타입으로 변동후 전달
 	    xhr.send(JSON.stringify(sendData));
 	}
-	
-
 	
 })();

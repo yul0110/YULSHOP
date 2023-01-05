@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.service.MainService;
-import com.vo.member;
+import com.vo.MemberVo;
 
 @Controller
 public class MainController {
