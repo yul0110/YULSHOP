@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
+
 <body>
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
@@ -11,11 +12,11 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">¹®ÀÇÇÏ±â</h1>
+					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½</h1>
 
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item active text-white-50" aria-current="page">¹«¾ùÀÌ ±Ã±ÝÇÏ½Å°¡¿ä?</li>
+							<li class="breadcrumb-item active text-white-50" aria-current="page">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã±ï¿½ï¿½Ï½Å°ï¿½ï¿½ï¿½?</li>
 						</ol>
 					</nav>
 				</div>
@@ -32,13 +33,13 @@
 
 						<div class="address mt-2">
 							<i class="icon-room"></i>
-							<h4 class="mb-2">YUL SHOP À§Ä¡</h4>
-							<p>½Å»çµ¿<br>ÈüÇÑ ºôµù 2Ãþ</p>
+							<h4 class="mb-2">YUL SHOP ï¿½ï¿½Ä¡</h4>
+							<p>ï¿½Å»çµ¿<br>ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½</p>
 						</div>
 
 						<div class="open-hours mt-4">
 							<i class="icon-clock-o"></i>
-							<h4 class="mb-2">»ó´ã °¡´É ½Ã°£</h4>
+							<h4 class="mb-2">ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½</h4>
 							<p>
 								Sunday-Friday:<br>
 								10:00 - 17:00
@@ -63,20 +64,20 @@
 					<form action="#">
 						<div class="row">
 							<div class="col-6 mb-3">
-								<input type="text" class="form-control" placeholder="¾ÆÀÌµð">
+								<input type="text" class="form-control" placeholder="ï¿½ï¿½ï¿½Ìµï¿½">
 							</div>
 							<div class="col-6 mb-3">
-								<input type="email" class="form-control" placeholder="¸ÞÀÏ">
+								<input type="email" class="form-control" placeholder="ï¿½ï¿½ï¿½ï¿½">
 							</div>
 							<div class="col-12 mb-3">
-								<input type="text" class="form-control" placeholder="Á¦¸ñ">
+								<input type="text" class="form-control" placeholder="ï¿½ï¿½ï¿½ï¿½">
 							</div>
 							<div class="col-12 mb-3">
-								<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."></textarea>
+								<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½."></textarea>
 							</div>
 
 							<div class="col-12">
-								<button type="button" class="btn btn-primary" style="width:10em" >¹®ÀÇÇÏ±â</button>
+								<button type="button" class="btn btn-primary" style="width:10em" >ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½</button>
 							</div>
 						</div>
 					</form>

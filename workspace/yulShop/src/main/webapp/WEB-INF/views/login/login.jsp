@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
@@ -9,28 +9,28 @@
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height:700px;">
 		<div class="container">
-			<div class="row2 row justify-content-center align-items-center"> <!-- Æ¯¼ö¸¶Å©¾÷ 1 -->
+			<div class="row2 row justify-content-center align-items-center"> <!-- Æ¯ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ 1 -->
 				<div class="col-lg-9 text-center mt-5" >
-					<h1 class="heading" data-aos="fade-up">·Î±×ÀÎ</h1>
+					<h1 class="heading" data-aos="fade-up">ï¿½Î±ï¿½ï¿½ï¿½</h1>
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" data-aos="fade-up" data-aos-delay="200">
-						<input type="text" class="form-control px-4" width="5px" maxlength="10" placeholder="¾ÆÀÌµð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.">
+						<input type="text" class="form-control px-4" width="5px" maxlength="10" placeholder="ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.">
 					</form>
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-						<input type="text" class="form-control px-4"   placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.">		
+						<input type="text" class="form-control px-4"   placeholder="ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.">		
 					</form>
 					<br>
-					<button type="button" class="btn btn-primary" style="width:10em">·Î±×ÀÎ</button>
+					<button type="button" class="btn btn-primary" style="width:10em">ï¿½Î±ï¿½ï¿½ï¿½</button>
 					<br>
 					<br>
 					<br>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item "><a href="index.html">È¸¿ø°¡ÀÔ</a></li>
-							<li class="breadcrumb-item "><a href="index.html">ºñ¹Ð¹øÈ£ Ã£±â</a></li>
+							<li class="breadcrumb-item "><a href="index.html">È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+							<li class="breadcrumb-item "><a href="index.html">ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½</a></li>
 						</ol>
 					</nav>	
 					<div class="col-lg-9 text-center">
-						<!-- ¹ö·ÁÁø¾Ö -->
+						<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 					</div>
 				</div>
 			</div>

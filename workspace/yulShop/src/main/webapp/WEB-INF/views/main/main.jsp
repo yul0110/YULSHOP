@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
@@ -14,13 +14,13 @@
 		</div>
 	
 		<div class="container">
-			<!-- ºóÄÁÅ×ÀÌ³Ê -->
+			<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ -->
 		</div>
 	</div>
-	<section class="features-1"><!-- È¸»ö¶óÀÎ --></section>
+	<section class="features-1"><!-- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ --></section>
 	
 	<div class="section">
-		<!-- ´ºÀÎ ¼½¼Ç -->
+		<!-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-lg-6">
@@ -260,7 +260,7 @@
 		</div>
 	</div>
 	
-	<section class="features-1"><!-- È¸»ö¶óÀÎ --></section>
+	<section class="features-1"><!-- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ --></section>
 	
 	<div class="section sec-testimonials">
 		<div class="container">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 
@@ -16,7 +16,7 @@
 
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item active text-white-50" aria-current="page">ÀÚÁÖÇÏ´Â Áú¹®À» È®ÀÎÇØº¸¼¼¿ä.</li>
+							<li class="breadcrumb-item active text-white-50" aria-current="page">ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸.</li>
 						</ol>
 					</nav>
 				</div>
@@ -30,28 +30,28 @@
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">»óÇ° ¹®ÀÇ</h3>
+						<h3 class="text-black mb-3 font-weight-bold">íšŒì›ê°€ìž…/ë¡œê·¸ì¸</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="400">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house-2 mb-4 d-block-3"></span>
-						<h3 class="text-black mb-3 font-weight-bold">¹è¼Û ¹®ÀÇ</h3>
+						<h3 class="text-black mb-3 font-weight-bold">ì£¼ë¬¸/ê²°ì œ</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="500">
 					<div class="box-feature mb-4">
 						<span class="flaticon-building mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">¹è¼ÛÀü º¯°æ / Ãë¼Ò </h3>
+						<h3 class="text-black mb-3 font-weight-bold">ë°°ì†¡ì „ ë³€ê²½/ì·¨ì†Œ</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="600">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house-3 mb-4 d-block-1"></span>
-						<h3 class="text-black mb-3 font-weight-bold">¹è¼ÛÈÄ ±³È¯ / ¹ÝÇ°</h3>
+						<h3 class="text-black mb-3 font-weight-bold">ë°°ì†¡í›„ êµí™˜/ë°˜í’ˆ</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>	
@@ -59,14 +59,14 @@
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house-4 mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">È¸¿ø ¹®ÀÇ</h3>
+						<h3 class="text-black mb-3 font-weight-bold">ë°°ì†¡</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="400">
 					<div class="box-feature mb-4">
 						<span class="flaticon-building mb-4 d-block-3"></span>
-						<h3 class="text-black mb-3 font-weight-bold">±âÅ¸ ¹®ÀÇ</h3>
+						<h3 class="text-black mb-3 font-weight-bold">ê¸°íƒ€</h3>
 						<p><a href="#" class="learn-more">Read more</a></p>
 					</div>
 				</div>
@@ -78,13 +78,13 @@
 		<div class="container">
 			<div class="row text-left mb-5">
 				<div class="col-12">
-					<h2 class="font-weight-bold heading text-primary mb-4">»óÇ° ¹®ÀÇ</h2>
+					<h2 class="font-weight-bold heading text-primary mb-4">íšŒì›ê°€ìž…/ë¡œê·¸ì¸</h2>
 				</div>
 				<div class="col-lg-6">
-					<p class="text-black-50">¹Ù³ª³ª ¹Ù³ª³ª³ª ¹Ù³ª³ª ¹Ù³ª³ª³ª</p>
+					<p class="text-black-50">ë°”ë‚˜ë‚˜ ë°”ë‚˜ë‚˜ ë°”ë‚˜ë‚˜ ë°”ë‚œë‚˜ë‚˜</p>
 				</div>
 				<div class="col-lg-6">
-					<p class="text-black-70">¹Ù³ª³ª¾Æ¾Æ Æ÷Å×Åä¾Æ¾Æ¾Æ¾Æ</p>
+					<p class="text-black-70">í¬í…Œí† ì˜¤ì˜¤ì˜¤ì˜¤ì˜¤</p>
 				</div>
 			</div>
 		</div>
