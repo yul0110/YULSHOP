@@ -28,15 +28,20 @@
 	 		e.preventDefault();
 	 		
 			var userId = $('#userId').val();
-				
-				//1. 데이터가 있는지?
-				//2. 데이터를 DB로가져가서 조회
-				//3. 중복이되는 데이터가 있는지?
-				
+			
+				//1. 빈칸, 
+				//2. 8자미만 
+				//3. 30자 초과
+				//4. kor
+										
+			
+			
+					
+				//1.데이터가 있는지? 
+				//2.데이터를 DB로가져가서 조회 
+				//3.중복이되는 데이터가 있는지?			
 			if(userId!='' && userId != undefined){
-				//데이터가 있는 경우
-				
-				//에이작스통신
+				//데이터가 있는 경우 Ajax통신
 				
 				//1. 전송객체 생성
 			    const xhr = new XMLHttpRequest();
@@ -59,91 +64,66 @@
 					
 					if(e.currentTarget.status == 200){
 						//성공콜백 함수
-						console.log("리턴값 체크");
-						console.log(e.currentTarget.response);
-
 						if(e.currentTarget.response.result != 0){
 							alert("이미 사용중인 아이디 입니다.");
 						}else{
 							alert("사용가능한 아이디 입니다.");
+							$("#idCheckFlag").val("Y")
 						}												
 				       	//return callback(e.currentTarget.response);
 					}else{
 						console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
-					}
-						        
+					}				        
 			    };
 			    //전송할 데이터 json 타입으로 변동후 전달
-			    xhr.send(userId);
-				
-				
+			    xhr.send(userId);		
 			}else{
 				//데이터가 없는 경우
 				alert("아이디를 입력해주세요.");
 			}
-
-
 		});
 		
 		//회원가입 시도 클릭 이벤트
 	 	$('#joinusAjax').on('click', function(e) {
 	 		e.preventDefault();
 	 		
-	 		var result;
+	 		var userId		= $('#userId').val();
+	 		var idCheckFlag = $("#idCheckFlag").val(); //아이디 중복체크flag
+	 		var pw 			= $('#pw').val();
+	 		var pwc 		= $('#pwc').val();
+	 		var nm 			= $('#nm').val();
+	 		var birth 		= $('#birth').val();
+	 		var pno 		= $('#pno').val();
+	 		var addr1 		= $('#addr1').val();
+	 		var addr2 		= $('#addr2').val();
 	 		
-	 		let formUserTarget = $("#userId");
-	 		let formPwTarget = $("#pw");
-	 		let formPwcTarget = $("#pwc");
-	 		let formNmTarget = $("#nm");
-	 		let formBirthTarget = $("#birth");
-	 		let formpnoTarget = $("#pno");
-	 		let formAddr1Target = $("#addr1");
-	 		let formAddr2Target = $("#addr2");
-
-	 				
-	 		/*	 		
-	 		//validation 검증
-			yul.common.valid("kor", formUserTarget, "아이디는 한글이 불가합니다.");
-			yul.common.valid("lenMin", formUserTarget, "8이상 입력해주세요.", 8);
-			yul.common.valid("lenMax", formUserTarget, "아이디는 최대 30자 이내로 입력해주세요.", 31);
-			yul.common.valid("lenMin", formPwTarget, "최소 8이상 입력해주세요.", 8);
-			yul.common.valid("lenMax", formPwTarget, "최대 30자 이내로 입력해주세요.", 31);
-			yul.common.valid("lenMin", formPwcTarget, "최소 8이상 입력해주세요.", 8);
-			yul.common.valid("lenMax", formPwcTarget, "최대 30자 이내로 입력해주세요.", 31);
-			if(formPwTarget.val() != formPwcTarget.val()){
-				let errorMsgSelect = formPwTarget.attr('id'); 
-				let errorMsgClass  = '#'+errorMsgSelect+'Error';
-				$(errorMsgClass).children('strong').text("비밀번호가 틀립니다.");
-				throw "비밀번호가 틀립니다."
+	 		//정규식
+	 		const idR = /^[a-z0-9_-]{8,15}$/;
+	 		
+	 		//아이디 정규식체크와 빈값 체크
+	 		if(userId == ""){
+				throw alert("아이디를 작성해주세요."); 		
+			}else{
+				if(!idR.exec(userId)){
+					//내가 원하는지 않은 경우
+					throw alert("아이디는 소문자와숫자의 혼합 그리고 -,_만 사용이 가능하고 최소 8자 최대15자만 가능합니다.");
+				}
 			}
-			yul.common.valid("lenMin", formNmTarget, "최소 2자 이상 입력해주세요.", 2);
-			yul.common.valid("lenMax", formNmTarget, "최대 20자 이내로 입력해주세요.", 21);
-			yul.common.valid("lenMax", formpnoTarget, "정확히 입력해주세요.", 12);
-			yul.common.valid("lenMin", formpnoTarget, "휴대폰 번호를 확인해주세요.", 11);
-			yul.common.valid("lenMax", formAddr1Target, "최대 50자 이내로 입력해주세요.", 51);			
-			yul.common.valid("lenMax", formAddr2Target, "최대 100자 이내로 입력해주세요.", 101);
-	 		
-	 		*/
-	 		
-	 		var parameterData = {
-							userId : formUserTarget.val(),
-							pw : formPwTarget.val(),
-							nm : formNmTarget.val(),
-							birth : formBirthTarget.val(),
-							addr1: formAddr1Target.val(),
-							addr2: formAddr2Target.val(),
-							pno : formpnoTarget.val()} 
-	 		
-	 		
-	 		yul.common.baseAjax("/joinusAjax", parameterData, 'post', function(d){
-																		if(d.result == 1){
-																			alert('회원가입에 성공 했습니다.');
-																		}else{
-																			alert('회원가입에 실패 했습니다.');
-																		}
-																		
-																		$('.col-lg-6').find('h2').html(d.msg);
-																	});
+			
+			//중복체크 버튼을 눌렀는지 확인
+			if(idCheckFlag != "Y"){
+				throw alert("중복체크를 눌러주세요.");	
+			}
+			//중복체크 버튼을 누른후에 아이디를 수정할경우 대처방안
+			//비밀번호 빈값체크 정규식 규칙확인
+			//비밀번호와 비밀번호 확인이 매치되는지 확인
+			//이름 빈값 체크 정규식 규칙 확인
+			//생년월일 빈값 체크 정규식 확인
+			//전화번호 빈값 체크 정규식 확인
+			//주소1 빈값체크 정규식 확인
+			//주소2 빈값체크 정규식 확인
+			//데이터를 ajax를 이용하여 서버로 전송처리
+			
 		 });
 		
 		//주소 zonecode 팝업이벤트

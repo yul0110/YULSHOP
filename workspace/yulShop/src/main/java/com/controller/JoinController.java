@@ -25,6 +25,18 @@ public class JoinController {
     }
 
 	
+	//아이디 중복 체크 Ajax
+	@RequestMapping(value = "/idCheckAjax", method = RequestMethod.POST)
+	public ModelAndView idCheckAjax(@RequestBody String checkId) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		int result = joinService.selectIdCheck(checkId);
+		mv.addObject("result", result);
+		
+		return mv;
+	}
+
+	
 	//회원가입 Ajax
 	@RequestMapping(value = "/joinusAjax", method = RequestMethod.POST)
 	public ModelAndView joinusAjax(@RequestBody MemberDao memberDao) {
@@ -41,16 +53,6 @@ public class JoinController {
 	}
 
 	
-	//아이디 중복 체크 Ajax
-	@RequestMapping(value = "/idCheckAjax", method = RequestMethod.POST)
-	public ModelAndView idCheckAjax(@RequestBody String checkId) {
-		
-		ModelAndView mv = new ModelAndView("jsonView");
-		int result = joinService.selectIdCheck(checkId);
-		mv.addObject("result", result);
-		
-		return mv;
-	}
 	
 	
 	
