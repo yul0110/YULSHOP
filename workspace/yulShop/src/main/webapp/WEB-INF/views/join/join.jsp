@@ -30,7 +30,7 @@
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="userId" id="userId"class="form-control px-4" style="width: 26em; text-transform: lowercase"
-								 maxlength="30" placeholder="아이디 8~30자 영문,숫자" required>
+								 maxlength="15" placeholder="아이디 8~15자 영문,숫자" required>
 							<button type="button" id="idCheck" class="btn btn-primary" style="width: 10em">중복 확인</button>
 							<input type="hidden" id="idCheckFlag"/>
 						</div>

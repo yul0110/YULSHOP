@@ -5,8 +5,7 @@
 (function() {
 	
 	 yul.page = function() {
-		 this.form = document.forms.joinForm;
-		 
+		 this.form = document.forms.joinForm;	 
 		 // js 파일이 로드되면 메소드를 실행시킴
 		 this.init();
 	 };
@@ -27,23 +26,25 @@
 	 	$('#idCheck').on('click', function(e) {
 	 		e.preventDefault();
 	 		
+	 		const idR = /^[a-z0-9_-]{8,15}$/;
 			var userId = $('#userId').val();
 			
 				//1. 빈칸, 
 				//2. 8자미만 
 				//3. 30자 초과
 				//4. kor
-										
-			
-			
-					
+				
 				//1.데이터가 있는지? 
 				//2.데이터를 DB로가져가서 조회 
 				//3.중복이되는 데이터가 있는지?			
 			if(userId!='' && userId != undefined){
 				//데이터가 있는 경우 Ajax통신
+				if(userId.math(idR)){
+					throw alert("아이디는 8~15 영문 소문자와 숫자로 입력해주세요."); 		
+				}		
 				
 				//1. 전송객체 생성
+				
 			    const xhr = new XMLHttpRequest();
 			    
 			    //2. init setting
@@ -67,8 +68,11 @@
 						if(e.currentTarget.response.result != 0){
 							alert("이미 사용중인 아이디 입니다.");
 						}else{
-							alert("사용가능한 아이디 입니다.");
+							alert("사용가능한 아이디 입니다.");//중복체크를 한 경우
 							$("#idCheckFlag").val("Y")
+							$('#userId').prop("disabled",true);//수정하지못하도록 막음				
+							//중복플레그를 Y인지 확인 -- 아닌경우 그럼 초기화 다시 플래그는 N으로 넣어주면	
+							//수정이 안되는 상황에서 idCheck버튼을 누르면 초기화, $("#idCheckFlag").val("N")------------------------------------------------------
 						}												
 				       	//return callback(e.currentTarget.response);
 					}else{
@@ -99,21 +103,34 @@
 	 		
 	 		//정규식
 	 		const idR = /^[a-z0-9_-]{8,15}$/;
+	 		const pwR = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&+=]).*$/;
+	 		const nmR = /^[ㄱ-ㅎ|가-힣]+$/;
 	 		
-	 		//아이디 정규식체크와 빈값 체크
+	 		
+	 		//아이디 정규식 체크와 빈값 체크
 	 		if(userId == ""){
 				throw alert("아이디를 작성해주세요."); 		
-			}else{
-				if(!idR.exec(userId)){
-					//내가 원하는지 않은 경우
-					throw alert("아이디는 소문자와숫자의 혼합 그리고 -,_만 사용이 가능하고 최소 8자 최대15자만 가능합니다.");
-				}
 			}
-			
+	
 			//중복체크 버튼을 눌렀는지 확인
 			if(idCheckFlag != "Y"){
 				throw alert("중복체크를 눌러주세요.");	
 			}
+	 		//비밀번호 정규식 체크와 빈값 체크
+	 		if(pw == ""){
+				throw alert("비밀번호를 작성해주세요."); 		
+			}
+	 		//비밀번호 확인 빈값 체크 ,비밀번호와 비밀번호 확인이 매치되는지 확인
+	 		if(pw != pwc || pwc == ""){
+				throw alert("비밀번호를 알맞게 입력했는지 확인해주세요"); 		
+			}
+	 		//이름 빈값 체크 정규식 규칙 확인
+	 		if(nm == ""){		
+				throw alert("이름을 작성해주세요."); 		
+			}
+			
+	
+			
 			//중복체크 버튼을 누른후에 아이디를 수정할경우 대처방안
 			//비밀번호 빈값체크 정규식 규칙확인
 			//비밀번호와 비밀번호 확인이 매치되는지 확인
