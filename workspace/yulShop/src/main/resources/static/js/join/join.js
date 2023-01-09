@@ -4,47 +4,42 @@
  */	  
 (function() {
 	
-	 yul.page = function() {
+	var idMatchData = "";
+	
+	//정규식
+	const idR = /^[a-z0-9]{8,15}$/g;	//
+	const pwR = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,30}$/; //	 		
+	
+
+	
+	yul.page = function() {
 		 this.form = document.forms.joinForm;	 
 		 // js 파일이 로드되면 메소드를 실행시킴
 		 this.init();
-	 };
-	 /**
-	 * init
-	 */
-	 // prototype 프로토 타입
-	 yul.page.prototype.init = function() {
-	 	this.clickEvent() // bind form submit event
-	 }
+	};
+	//init
+	//prototype 프로토 타입
+	yul.page.prototype.init = function() {
+		this.clickEvent() // bind form submit event
+	}
 	 
-	 /**
-	 *작동할 이벤트를 프로토 타입으로 세팅
-	 */
-	 yul.page.prototype.clickEvent = function() {
+	//작동할 이벤트를 프로토 타입으로 세팅
+	yul.page.prototype.clickEvent = function() {
 		
-		//아이디 중복확인
-	 	$('#idCheck').on('click', function(e) {
+	//아이디 중복확인
+		$('#idCheck').on('click', function(e) {
 	 		e.preventDefault();
 	 		
-	 		const idR = /^[a-z0-9_-]{8,15}$/;
 			var userId = $('#userId').val();
-			
-				//1. 빈칸, 
-				//2. 8자미만 
-				//3. 30자 초과
-				//4. kor
-				
-				//1.데이터가 있는지? 
-				//2.데이터를 DB로가져가서 조회 
-				//3.중복이되는 데이터가 있는지?			
+				//1.데이터가 있는지? 2.데이터를 DB로가져가서 조회 3.중복이되는 데이터가 있는지?			
 			if(userId!='' && userId != undefined){
 				//데이터가 있는 경우 Ajax통신
-				if(userId.math(idR)){
-					throw alert("아이디는 8~15 영문 소문자와 숫자로 입력해주세요."); 		
+				if(userId.search(idR) != 0){
+					alert("아이디는 8~15 영문 소문자와 숫자를 혼합하여 입력해주세요.");
+					return false;		
 				}		
-				
+							
 				//1. 전송객체 생성
-				
 			    const xhr = new XMLHttpRequest();
 			    
 			    //2. init setting
@@ -70,9 +65,7 @@
 						}else{
 							alert("사용가능한 아이디 입니다.");//중복체크를 한 경우
 							$("#idCheckFlag").val("Y")
-							$('#userId').prop("disabled",true);//수정하지못하도록 막음				
-							//중복플레그를 Y인지 확인 -- 아닌경우 그럼 초기화 다시 플래그는 N으로 넣어주면	
-							//수정이 안되는 상황에서 idCheck버튼을 누르면 초기화, $("#idCheckFlag").val("N")------------------------------------------------------
+							idMatchData = userId;
 						}												
 				       	//return callback(e.currentTarget.response);
 					}else{
@@ -84,8 +77,10 @@
 			}else{
 				//데이터가 없는 경우
 				alert("아이디를 입력해주세요.");
+				return false;
 			}
 		});
+
 		
 		//회원가입 시도 클릭 이벤트
 	 	$('#joinusAjax').on('click', function(e) {
@@ -101,33 +96,56 @@
 	 		var addr1 		= $('#addr1').val();
 	 		var addr2 		= $('#addr2').val();
 	 		
-	 		//정규식
-	 		const idR = /^[a-z0-9_-]{8,15}$/;
-	 		const pwR = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&+=]).*$/;
-	 		const nmR = /^[ㄱ-ㅎ|가-힣]+$/;
-	 		
-	 		
 	 		//아이디 정규식 체크와 빈값 체크
 	 		if(userId == ""){
-				throw alert("아이디를 작성해주세요."); 		
+				alert("아이디를 작성해주세요."); 		
+				return false;
 			}
-	
+			if(!userId.search(idR)){
+				alert("아이디는 8~15 영문 소문자와 숫자로 입력해주세요.");
+				return false; 		
+			}	
+
 			//중복체크 버튼을 눌렀는지 확인
 			if(idCheckFlag != "Y"){
-				throw alert("중복체크를 눌러주세요.");	
+				alert("중복체크를 눌러주세요.");	
+				return false;
+			}else{
+				if(userId != idMatchData){
+					$("#idCheckFlag").val("N");
+					alert("중복체크를 눌러주세요.");
+					return false;
+				}
 			}
+				
 	 		//비밀번호 정규식 체크와 빈값 체크
 	 		if(pw == ""){
-				throw alert("비밀번호를 작성해주세요."); 		
+				alert("비밀번호를 작성해주세요.");
+				return false;		
 			}
+			if(!pw.search(pwR)){
+				alert("비밀번호는 8~30 영문 소문자와 숫자,기호를 혼합하여 입력해주세요.");
+				return false; 		
+			}	
 	 		//비밀번호 확인 빈값 체크 ,비밀번호와 비밀번호 확인이 매치되는지 확인
-	 		if(pw != pwc || pwc == ""){
-				throw alert("비밀번호를 알맞게 입력했는지 확인해주세요"); 		
-			}
+	 	//	if(pw != pwc){ 
+		//		 alert("비밀번호를 알맞게 입력했는지 확인해주세요"); 		
+		//	}
+	 	//	if(pwc == ""){ 
+		//		 alert("비밀번호를 알맞게 입력했는지 확인해주세요"); 		
+			//}
+		//	
+			
+			
+			
+			
+			
+			
+			
 	 		//이름 빈값 체크 정규식 규칙 확인
-	 		if(nm == ""){		
-				throw alert("이름을 작성해주세요."); 		
-			}
+	 		//if(nm == ""){		
+			//	 alert("이름을 작성해주세요."); 		
+			//}
 			
 	
 			
