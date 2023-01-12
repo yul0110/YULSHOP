@@ -36,7 +36,7 @@
 						</div>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
-							<input type="password" name="pw" id="pw" class="form-control px-4" maxlength="30" placeholder="비밀번호 8~30자 영문,숫자,특수문자" required>
+							<input type="password" name="pw" id="pw" class="form-control px-4" maxlength="30" placeholder="비밀번호 8~30자 영문,숫자,특수문자!@#$%^*,./" required>
 						</div>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">

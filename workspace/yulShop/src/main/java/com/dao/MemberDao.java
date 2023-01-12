@@ -31,7 +31,7 @@ public class MemberDao {
 		//주소값
 		private String addr1;
 		
-		//주소 나머지
+		//상세 주소
 		private String addr2;
 		
 		//바디 사이즈 
