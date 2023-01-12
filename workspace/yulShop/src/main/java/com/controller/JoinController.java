@@ -27,10 +27,10 @@ public class JoinController {
 	
 	//아이디 중복 체크 Ajax
 	@RequestMapping(value = "/idCheckAjax", method = RequestMethod.POST)
-	public ModelAndView idCheckAjax(@RequestBody String checkId) {
+	public ModelAndView idCheckAjax(@RequestBody MemberDao memberDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
-		int result = joinService.selectIdCheck(checkId);
+		int result = joinService.selectIdCheck(memberDao.getUserId());
 		mv.addObject("result", result);
 		
 		return mv;
@@ -52,11 +52,5 @@ public class JoinController {
 	   return mv;
 	}
 
-	
-	
-	
-	
-	
-	
 }
 

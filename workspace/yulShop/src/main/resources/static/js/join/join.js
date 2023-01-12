@@ -27,7 +27,7 @@
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
 		
-	//아이디 중복확인
+		//아이디 중복확인
 		$('#idCheck').on('click', function(e) {
 	 		e.preventDefault();
 	 		
@@ -78,7 +78,7 @@
 					}				        
 			    };
 			    //전송할 데이터 json 타입으로 변동후 전달
-			    xhr.send(userDataJson);		
+			    xhr.send(JSON.stringify(userDataJson));		
 			}else{
 				//데이터가 없는 경우
 				alert("아이디를 입력해주세요.");
@@ -181,58 +181,65 @@
 				alert("상세주소를 작성해주세요."); 		
 				return false;
 			}
-			if(addr2.search(konR) != 0){ 
-				alert("상세주소를 알맞게 작성해주세요.");
-				return false; 		
-			}	
-				
-				var userDataJson 	= {};
+			
+			
+			/*
+			휴대전화 인증 작업해야함 2023.01.12-----------------------------------------------------------------------------------------------------------------
+			yulLee_job
+			 */
+			
+			
+			var userDataJson 	= {};
 	
-					userDataJson.userId = userId;
-					userDataJson.pw = pw;
-					userDataJson.pwc = pwc;
-					userDataJson.nm = nm;
-					userDataJson.birth  = birth;
-					userDataJson.pno = pno;
-					userDataJson.addr1 = addr1;
-					userDataJson.addr2 = addr2;
+			userDataJson.userId 	= userId;
+			userDataJson.pw 		= pw;
+			userDataJson.pwc 		= pwc;
+			userDataJson.nm 		= nm;
+			userDataJson.birth  	= birth;
+			userDataJson.pno 		= pno;
+			userDataJson.addr1 		= addr1;
+			userDataJson.addr2 		= addr2;
 							
-				//에이작스 통신을 위한 객체 생성
-			    const xhr = new XMLHttpRequest();
-			    //전송방식과 통신 할 경로 설정
-			    xhr.open("post", "/joinusAjax");
-			    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
-			    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
-			    //받는 데이터 타입 설정
-			    xhr.responseType = "json";
-			    
-			    //ajax 작동중 이벤트
-			    xhr.onprogress = function () {
-				    //데이터 리턴 직전에 발동
-				    //프로그래스바 실행
-				};
+			//에이작스 통신을 위한 객체 생성
+		    const xhr = new XMLHttpRequest();
+		    
+		    //전송방식과 통신 할 경로 설정
+		    xhr.open("post", "/joinusAjax");
+		    
+		    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
+		    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
+		    
+		    //받는 데이터 타입 설정
+		    xhr.responseType = "json";
+		    
+		    //ajax 작동중 이벤트
+		    xhr.onprogress = function () {
+			    //데이터 리턴 직전에 발동
+			    //프로그래스바 실행
+			};
+			
+			//ajax 작동완료
+		    xhr.onload = function(e) {
 				
-				//ajax 작동완료
-			    xhr.onload = function(e) {
-					
-					if(e.currentTarget.status == 200){
-						//성공콜백 함수
-						if(e.currentTarget.response.result != 0){ //회원가입에 실패한 경우
-							alert("회원가입에 실패하였습니다 다시 시도해주세요.");
-						}else{
-							alert("회원가입 되었습니다.");//회원가입에 성공한 경우
-						}												
- 				       	//return callback(e.currentTarget.response);
+				if(e.currentTarget.status == 200){
+					//성공콜백 함수
+					if(e.currentTarget.response.result != 0){ 
+						alert("회원가입 되었습니다.");
+						//페이지 이동
+						location.href = '/';
 					}else{
-						console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
-					}				        
-			    };
-			    //전송할 데이터 json 타입으로 변동후 전달
-			    xhr.send(JSON.stringify(userDataJson));	
+						alert("회원가입에 실패하였습니다 다시 시도해주세요.");//회원가입에 성공한 경우
+					}												
+			       	//return callback(e.currentTarget.response);
+				}else{
+					console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
+				}				        
+		    };
+		    //전송할 데이터 json 타입으로 변동후 전달
+		    xhr.send(JSON.stringify(userDataJson));	
 		});
 		
 		
-
 		//주소 zonecode 팝업이벤트
 		$('#addr1').on('click', function(e) {
 	 		e.preventDefault();
@@ -250,7 +257,6 @@
 		        }
 		    }).open();
 		});
-		
 	 };
 	 
 	 $(function() {

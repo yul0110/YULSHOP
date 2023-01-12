@@ -12,4 +12,12 @@ public class CartController {
 
 		return "cart/cart";
     }
+
+	@RequestMapping(value = "/wishList", method = RequestMethod.GET)
+	public String wishListPage() {
+		
+		return "cart/wishList";
+	}
+	
+	
 }

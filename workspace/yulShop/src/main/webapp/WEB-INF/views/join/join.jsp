@@ -48,11 +48,11 @@
 						</div>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
-							<input type="text" name="birth" id="birth" class="form-control px-4" maxlength="6" placeholder="생년월일 6자리 예) 920110" required>
+							<input type="text" name="birth" id="birth" class="form-control px-4" maxlength="6" placeholder="생년월일 6자리 예) 920110" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
 						</div>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
-							<input type="text" name="pno" id="pno" class="form-control px-4" style="width: 26em" maxlength="11" placeholder="휴대폰 번호" required>
+							<input type="text" name="pno" id="pno" pattern="[0-9]+" class="form-control px-4" style="width: 26em" maxlength="11" placeholder="휴대폰 번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
 							<button type="button" class="btn btn-primary" style="width: 10em">인증</button>
 						</div>
 						<div

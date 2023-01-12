@@ -11,6 +11,13 @@
         (#{id}, #{nm}, #{userId}, #{pw}, #{addr1}, #{addr2}, #{pno}, #{birth}, now(), 99999, now(), 99999, "Y") 
 	</insert>
 	
+	<!-- Read -->
+	<!-- 테이블에 다음 시퀀스 추출 -->
+	<select id="selectTableNumbering" resultType="int">
+		SELECT id FROM member ORDER BY id DESC LIMIT 1
+	</select>
+	
+	<!-- 회원가입 아이디 중복 체크 -->
 	<select id="selectIdCheck" parameterType="String" resultType="int">
 		SELECT COUNT(userId) FROM member WHERE userId = #{value}
 	</select>
