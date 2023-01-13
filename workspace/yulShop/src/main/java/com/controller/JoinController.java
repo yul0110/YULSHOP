@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.MemberDao;
 import com.service.JoinService;
-import com.vo.MemberVo;
+import com.vo.Member;
 
 @Controller
 public class JoinController {

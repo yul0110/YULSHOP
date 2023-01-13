@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.mapper.MainMapper;
-import com.vo.MemberVo;
+import com.vo.Member;
 
 @Service
 public class MainServiceImpl implements MainService{
@@ -19,7 +19,7 @@ public class MainServiceImpl implements MainService{
 	}
 
 	@Override
-	public List<MemberVo> selectMyData(int id) {	
+	public List<Member> selectMyData(int id) {	
 		return mainMapper.selectMyData(id);
 	}
 	

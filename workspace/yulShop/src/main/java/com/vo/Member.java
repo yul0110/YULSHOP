@@ -5,7 +5,7 @@ import java.sql.Date;
 import lombok.Data;
 
 @Data
-public class MemberVo {
+public class Member {
 	
 		//멤버id
 		private Integer id;
