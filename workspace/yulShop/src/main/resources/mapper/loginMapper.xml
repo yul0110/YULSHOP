@@ -18,8 +18,10 @@
 		SELECT userId FROM member WHERE nm = #{nm} AND pno = #{pno}
 	</select>
 
-
-
+	<!-- 비밀번호 찾기 아이디와 이름, 휴대폰 번호 조회 -->
+	<select id="selectfindPw" parameterType="com.dao.MemberDao" resultType="int">
+		SELECT COUNT(pno) FROM `member` WHERE userId = #{userId} AND nm = #{nm} AND pno = #{pno}
+	</select>
 
 </mapper>
 

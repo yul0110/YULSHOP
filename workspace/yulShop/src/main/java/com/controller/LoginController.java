@@ -28,6 +28,12 @@ public class LoginController {
 		return "login/findId";
 	}
 	
+	@RequestMapping(value = "/findPw", method = RequestMethod.GET)
+	public String findPwPage() {
+		
+		return "login/findPw";
+	}
+	
 	
 	//로그인 아이디 체크 Ajax
 	@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
@@ -65,8 +71,6 @@ public class LoginController {
     //아무것도 조회되지 않음 msg = "아이디나 비밀번호를 확인해주세요."; 
 
 	
-	
-	
 	// 아이디 찾기 Ajax
 	@RequestMapping(value = "/findIdAjax", method = RequestMethod.POST)
 	public ModelAndView findIdAjax(@RequestBody MemberDao memberDao) {
@@ -90,6 +94,25 @@ public class LoginController {
 		mv.addObject("result", result);
 		return mv;
 	}
+
+	
+	// 비밀번호 찾기 Ajax
+	@RequestMapping(value = "/findPwAjax", method = RequestMethod.POST)
+	public ModelAndView findPwAjax(@RequestBody MemberDao memberDao) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		int result = loginService.selectfindPw(memberDao);
+		
+		if(result != 0) {
+			//문자메세지 전송 코드			
+		}
+		mv.addObject("result", result);
+		return mv;
+	}
+	                  
+	
+	
 	
 	
 	

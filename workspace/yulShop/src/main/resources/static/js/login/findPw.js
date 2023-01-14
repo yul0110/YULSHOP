@@ -5,6 +5,7 @@
 (function() {
 	
 	//정규식
+	const idR = /^[a-z0-9]{8,15}$/g;	// 영문 소문자,숫자 8~15자 입력가능
 	const koR = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; //한글만 입력가능 
 	const numR = /^[0-9]+$/; //숫자만 입력가능
 	
@@ -24,12 +25,23 @@
 	yul.page.prototype.clickEvent = function() {
 		
 		//로그인 Ajax
-		$('#findIdAjax').on('click', function(e) {
+		$('#findPwAjax').on('click', function(e) {
 	 		e.preventDefault();
 		 		
+	 		var userId	= $('#userIdData').val();
 	 		var nm		= $('#userNmData').val();
 	 		var pno 	= $('#userPnoData').val();
 	 		
+	 		//아이디 정규식 체크와 빈값 체크
+	 		if(userId == ""){
+				alert("아이디를 작성해주세요."); 		
+				return false;
+			}
+			if(userId.search(idR) != 0){ 
+				alert("8~15 영문 소문자와 숫자를 혼합하여 입력해주세요.");
+				return false; 		
+			}	
+			
 	 		//이름 정규식 체크와 빈값 체크
 	 		if(nm == ""){
 				alert("이름을 작성해주세요."); 		
@@ -52,6 +64,7 @@
 				
 			var userDataJson 	= {};
 	
+			userDataJson.userId	= userId;
 			userDataJson.nm 	= nm;
 			userDataJson.pno 	= pno;
 							
@@ -59,7 +72,7 @@
 		    const xhr = new XMLHttpRequest();
 		    
 		    //전송방식과 통신 할 경로 설정
-		    xhr.open("post", "/findIdAjax");
+		    xhr.open("post", "/findPwAjax");
 		    
 		    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 		    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -79,36 +92,9 @@
 				if(e.currentTarget.status == 200){
 					//성공콜백 함수
 					if(e.currentTarget.response.result != 0){
-						
-						var userId   = e.currentTarget.response.findId;
-						var frontId  = userId.substr(0,4);  //앞부분4글자
-						//var allLen 	 = userId.length;  //길이
-						//var starCount= 0;
-						//var star	 = "*";
-						var alertMeg = "";         
-						
-						
-						//len - 4 = 나머지의 길이 만큼****
-						//1차 방법  frontId + "*****"
-						alertMeg = frontId + "****";
-						//2차 방법
-						//starCount = allLen - frontId.length;
-						//for(i=1;starCount > i;i++){
-						//	star = star + "*";
-						//} 
-						//alertMeg = frontId + star;
-						//alertMeg = frontId + "****";
-						
-						//아이디 숨김처리
-						//문자열의 앞 0~3번 배열까지 문자만 뺴고 자른다
-						//남은뒷 문자열 갯수를 계산하여 수를 담는다
-						//남은 문자열만큼 *이 추가된 문자열을 생성해 둔다
-						//자른문자열과 생성한 *을 합쳐서 표현해준다.
-						
-						 
-						alert("당신의 아이디는 " + alertMeg + "입니다.");
+						alert("문자 메세지로 전송되었습니다.");
 					}else{
-						alert("이름과 핸드폰 번호를 확인해주세요.");
+						alert("회원정보가 일치하지 않습니다.");
 					}												
 			       	//return callback(e.currentTarget.response);
 				}else{
