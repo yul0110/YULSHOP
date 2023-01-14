@@ -22,6 +22,12 @@ public class LoginController {
 		return "login/login";
 	}
 	
+	@RequestMapping(value = "/findId", method = RequestMethod.GET)
+	public String findIdPage() {
+		
+		return "login/findId";
+	}
+	
 	
 	//로그인 아이디 체크 Ajax
 	@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
@@ -58,4 +64,43 @@ public class LoginController {
     //msg = "로그인에 성공하셨습니다.";
     //아무것도 조회되지 않음 msg = "아이디나 비밀번호를 확인해주세요."; 
 
+	
+	
+	
+	// 아이디 찾기 Ajax
+	@RequestMapping(value = "/findIdAjax", method = RequestMethod.POST)
+	public ModelAndView findIdAjax(@RequestBody MemberDao memberDao) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		// result 값이 0이면 아무것도 변경하지 못한것 1이면 무언가 변경한것 그 변경한 레코드의 값을 가져온것
+		Integer result	= 0; //null이 들어올수 있기 때문에 Integer를 선언 
+		String userId 	= "";  
+		   
+		// 0이면 없기떄문에 로그인 실패 1이상이면 로그인 성공
+		userId = loginService.selectfindId(memberDao);
+		
+		if(userId != null && !userId.equals("")) {
+			result = 1;
+			mv.addObject("findId", userId);
+		}else {
+			result = 0;
+		}	
+		
+		mv.addObject("result", result);
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

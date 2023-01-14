@@ -13,6 +13,13 @@
 		SELECT id FROM member WHERE userId = #{userId} AND pw = #{pw}
 	</select>
 
+	<!-- 아이디 찾기 아이디와 휴대폰 번호 조회 -->
+	<select id="selectfindId" parameterType="com.dao.MemberDao" resultType="String">
+		SELECT userId FROM member WHERE nm = #{nm} AND pno = #{pno}
+	</select>
+
+
+
 
 </mapper>
 

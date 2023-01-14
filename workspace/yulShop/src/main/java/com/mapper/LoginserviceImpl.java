@@ -29,10 +29,15 @@ public class LoginserviceImpl implements LoginService {
 		return id;
 	}
 
+	@Override
+	public String selectfindId(MemberDao memberDao) {
+		return loginMapper.selectfindId(memberDao);
+	}
+
+	
+	
+	
+	// 디비에 직접적으로 영향을 주는 데이터는 serviceImpl에서 작업을 한다.
 	// 서비스에서 데이터베이스 오류가 생길시 자바는 데이터베이스익셉션이 발생하기 때문에 트렌젝션 셋팅이 서비스에서 데이터베이스익셉션이
 	// 작동하도록 셋팅하기 때문이다.(대부분 아닌 경우도 있음)
-	
-	
-	
-	
 }

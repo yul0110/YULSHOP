@@ -51,6 +51,9 @@ public class JoinController {
 	   mv.addObject("msg", memberDao.getNm()+"님");
 	   return mv;
 	}
+	
 
+	
+	
 }
 
