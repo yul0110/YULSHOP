@@ -1,12 +1,12 @@
-package com.mapper;
+package com.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.dao.MemberDao;
-import com.service.LoginService;
+import com.mapper.LoginMapper;
 
 @Service
-public class LoginserviceImpl implements LoginService {
+public class LoginServiceImpl implements LoginService {
 
 	@Autowired
 	LoginMapper loginMapper; 

@@ -4,15 +4,10 @@
  */	  
 (function() {
 	
-	//정규식
-	const idR = /^[a-z0-9]{8,15}$/g;	// 영문 소문자,숫자 8~15자 입력가능
-	
 	yul.page = function() {
-		 this.form = document.forms.joinForm;	 
-		 // js 파일이 로드되면 메소드를 실행시킴
+
 		 this.init();
 	};
-	
 	//init
 	//prototype 프로토 타입
 	yul.page.prototype.init = function() {
@@ -21,40 +16,36 @@
 	 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
-		
-		//로그인 Ajax
-		$('#loginCheckAjax').on('click', function(e) {
+
+		//문의하기 시도 클릭 이벤트
+	 	$('#askAjax').on('click', function(e) {
 	 		e.preventDefault();
-		 		
-	 		var userId		= $('#userIdData').val();
-	 		var pw 			= $('#userpwData').val();
 	 		
-	 		//아이디 정규식 체크와 빈값 체크
-	 		if(userId == ""){
-				alert("아이디를 작성해주세요."); 		
+	 		var title		= $('#titleData').val();
+	 		var context 	= $("#contextData").val(); 
+
+	 		//제목 빈값 체크
+	 		if(title == ""){
+				alert("문의 제목을 작성해주세요."); 		
 				return false;
 			}
-			if(userId.search(idR) != 0){ 
-				alert("아이디는 8~15 영문 소문자와 숫자를 혼합하여 입력해주세요.");
-				return false; 		
-			}	
-						
-	 		//비밀번호 정규식 체크와 빈값 체크
-	 		if(pw == ""){
-				alert("비밀번호를 작성해주세요.");
-				return false;		
+
+	 		//문의내용 빈값 체크
+	 		if(context == ""){
+				alert("문의 내용을 작성해주세요."); 		
+				return false;
 			}
-				
+	
 			var userDataJson 	= {};
 	
-			userDataJson.userId 	= userId;
-			userDataJson.pw 		= pw;
-							
+			userDataJson.title 		= title;
+			userDataJson.context 	= context;
+
 			//에이작스 통신을 위한 객체 생성
 		    const xhr = new XMLHttpRequest();
 		    
 		    //전송방식과 통신 할 경로 설정
-		    xhr.open("post", "/loginAjax");
+		    xhr.open("post", "/askAjax");
 		    
 		    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 		    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -74,11 +65,11 @@
 				if(e.currentTarget.status == 200){
 					//성공콜백 함수
 					if(e.currentTarget.response.result != 0){ 
-						alert("로그인 성공");
+						alert("문의가 등록 되었습니다.");
 						//페이지 이동
 						location.href = '/';
 					}else{
-						alert("아이디와 비밀번호를 확인해주세요.");
+						alert("문의등록에 실패하였습니다 다시 시도해주세요.");
 					}												
 			       	//return callback(e.currentTarget.response);
 				}else{

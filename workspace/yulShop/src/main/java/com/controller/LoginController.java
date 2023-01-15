@@ -112,18 +112,4 @@ public class LoginController {
 	}
 	                  
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

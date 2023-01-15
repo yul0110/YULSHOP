@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.CsMapper">
+
+	<!-- select -->
+	<!-- 테이블에 다음 시퀀스 추출 -->
+	<select id="selectInquiryNumbering" resultType="int">
+		SELECT id FROM inquiry ORDER BY id DESC LIMIT 1
+	</select>
+
+	<!-- insert -->
+	<!-- 문의 내용 등록 -->
+	<insert id="insertInquiry" parameterType="com.dao.InquiryDao">
+		INSERT INTO inquiry 
+		(id, mid, title, context, regDt, regId, updateDt, updateId, useYn)
+		VALUES
+		(#{id}, #{mid}, #{title}, #{context}, now(), #{regId}, now(), #{updateId}, "Y")
+	</insert>
+
+	<!-- 조회 -->
+
+</mapper>
+
+
+
+
