@@ -13,8 +13,7 @@
 	const numR = /^[0-9]+$/; //숫자만 입력가능
 	const konR = /^[ㄱ-ㅎ|가-힣|0-9|]+$/; //한글,숫자 입력가능
 	
-	yul.page = function() {
-		 this.form = document.forms.joinForm;	 
+	yul.page = function() { 
 		 // js 파일이 로드되면 메소드를 실행시킴
 		 this.init();
 	};
