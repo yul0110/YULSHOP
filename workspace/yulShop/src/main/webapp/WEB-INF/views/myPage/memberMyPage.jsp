@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
+
 
 <body>
 
+<!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
-
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
@@ -65,15 +67,15 @@
 
 	<div class="site-footer">
 		<div class="row">
-				<div class="widget">
-					<ul class="list-unstyled links">
-						<li><a href="#">탈퇴하기</a></li>
-					</ul>
-				</div> <!-- /.widget -->
+			<div class="widget">
+				<ul class="list-unstyled links">
+					<li><a href="myPage/memberResign">탈퇴하기</a></li>
+				</ul>
+			</div> <!-- /.widget -->
 		</div> <!-- /.row -->
-	   		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed by Yul  
-	   			<a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-	   		</p>
+   		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed by Yul  
+   			<a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+   		</p>
 	</div> <!-- /.site-footer -->
 	
 	<!-- Preloader -->
@@ -83,12 +85,14 @@
 			<span class="visually-hidden">Loading...</span>
 		</div>
 	</div>
-
+	
+	<!--   js   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
-  </body>
+    
+ </body>
  </html>

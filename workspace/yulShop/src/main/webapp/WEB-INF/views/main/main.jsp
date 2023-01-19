@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
 <body>
+
+<!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 	
 	<div class="hero">
@@ -559,11 +562,12 @@
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 	<!--    JS Files   -->
-	   <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
-	   <script src="/resources/js/basic/tiny-slider.js"></script>
-	   <script src="/resources/js/basic/aos.js"></script>
-	   <script src="/resources/js/basic/navbar.js"></script>
-	   <script src="/resources/js/basic/counter.js"></script>
-	   <script src="/resources/js/basic/custom.js"></script>
-	 </body>
-	 </html>
+	<script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
+	<script src="/resources/js/basic/tiny-slider.js"></script>
+	<script src="/resources/js/basic/aos.js"></script>
+	<script src="/resources/js/basic/navbar.js"></script>
+	<script src="/resources/js/basic/counter.js"></script>
+	<script src="/resources/js/basic/custom.js"></script>
+	   
+</body>
+</html>

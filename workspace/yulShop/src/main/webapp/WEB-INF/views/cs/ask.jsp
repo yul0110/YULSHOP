@@ -13,7 +13,6 @@
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;;">
-
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
@@ -29,13 +28,12 @@
 		</div>
 	</div>
 
-
 	<div class="section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
 					<div class="contact-info">
-
+					
 						<div class="address mt-2">
 							<i class="icon-room"></i>
 							<h4 class="mb-2">YUL SHOP 위치</h4>
@@ -100,5 +98,6 @@
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
-  </body>
-  </html>
+    
+</body>
+</html>

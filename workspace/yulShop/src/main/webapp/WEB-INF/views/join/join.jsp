@@ -11,8 +11,9 @@
 <script src="/resources/js/join/join.js"></script>
 
 <body>
-	<!--  topMenu  -->
-	<%@ include file="/WEB-INF/views/common/topMenu.jsp"%>
+
+<!--  topMenu  -->
+<%@ include file="/WEB-INF/views/common/topMenu.jsp"%>
 
 	<div class="hero page-inner overlay"
 		style="background-image: url('/resources/images/yulShop4.jpg'); height: 1000px;">
@@ -25,8 +26,7 @@
 					<br>
 					<form action="/joinusAjax" id='joinform' name='joinform'
 						method="post" class="php-email-form">
-						<div
-							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
+						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="userId" id="userId"class="form-control px-4" style="width: 26em; text-transform: lowercase"
 								 maxlength="15" placeholder="아이디 8~15자 영문,숫자" required>
 							<button type="button" id="idCheck" class="btn btn-primary" style="width: 10em">중복 확인</button>
@@ -65,11 +65,7 @@
 						<button type="button" class="btn btn-primary" id="joinusAjax"
 							style="width: 10em">회원가입</button>
 						<br> <br> <br>
-					</form>
-					<!-- End Contact Form -->
-					<div class="col-lg-9 text-center">
-						<!-- 버려진애 -->
-					</div>
+					</form>  <!-- End Contact Form -->
 				</div>
 			</div>
 		</div>
@@ -85,5 +81,6 @@
 	<script src="/resources/js/basic/navbar.js"></script>
 	<script src="/resources/js/basic/counter.js"></script>
 	<script src="/resources/js/basic/custom.js"></script>
+	
 </body>
 </html>

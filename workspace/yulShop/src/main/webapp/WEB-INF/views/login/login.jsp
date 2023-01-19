@@ -8,6 +8,7 @@
 <script src="/resources/js/login/login.js"></script>
 
 <body>
+
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
@@ -33,9 +34,6 @@
 							<li class="breadcrumb-item "><a href="index.html">비밀번호를 잊으셨나요?</a></li>
 						</ol>
 					</nav>	
-					<div class="col-lg-9 text-center">
-						<!-- �������� -->
-					</div>
 				</div>
 			</div>
 		</div>
@@ -44,11 +42,13 @@
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
+	<!--   js   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
+    
 </body>
 </html>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
 <!-- 해당페이지 js연결 -->
@@ -8,6 +9,7 @@
 
 <body>
 
+<!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height:700px;">
@@ -32,9 +34,6 @@
 							<li class="breadcrumb-item "><a href="/findPw">비밀번호를 잊으셨나요?</a></li>
 						</ol>
 					</nav>	
-					<div class="col-lg-9 text-center">
-						<!-- �������� -->
-					</div>
 				</div>
 			</div>
 		</div>
@@ -43,11 +42,13 @@
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
+	<!--   js   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
-  </body>
-  </html>
+    
+</body>
+</html>

@@ -30,11 +30,13 @@
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
+	<!--   js   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
+    
 </body>
 </html>

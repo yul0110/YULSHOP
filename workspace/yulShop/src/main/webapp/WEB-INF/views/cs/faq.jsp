@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html lang="en">
 
+<!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
 <body>
@@ -9,12 +9,10 @@
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
-
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">FaQ</h1>
-
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
 							<li class="breadcrumb-item active text-white-50" aria-current="page">자주 묻는 질문.</li>
@@ -94,11 +92,13 @@
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
+	<!--   js   -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>
     <script src="/resources/js/basic/navbar.js"></script>
     <script src="/resources/js/basic/counter.js"></script>
     <script src="/resources/js/basic/custom.js"></script>
-  </body>
-  </html>
+    
+</body>
+</html>

@@ -24,7 +24,7 @@ public class MyPageController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("myPage/myPage"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
+		//mv.setViewName("myPage/memberMyPage"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		return mv;
     }
 	
@@ -114,15 +114,6 @@ public class MyPageController {
 		mv.addObject("result", 1);
 		return mv;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	  
 }

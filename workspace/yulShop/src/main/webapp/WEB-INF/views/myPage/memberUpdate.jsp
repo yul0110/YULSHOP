@@ -11,11 +11,11 @@
 <script src="/resources/js/myPage/memberUpdate.js"></script>
 
 <body>
-	<!--  topMenu  -->
-	<%@ include file="/WEB-INF/views/common/topMenu.jsp"%>
 
-	<div class="hero page-inner overlay"
-		style="background-image: url('/resources/images/yulShop4.jpg'); height: 1000px;">
+<!--  topMenu  -->
+<%@ include file="/WEB-INF/views/common/topMenu.jsp"%>
+
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height: 1000px;">
 		<div class="container">
 			<br> <br> <br> <br> <br> <br> <br>
 			<div class="row2 row justify-content-center align-items-center">
