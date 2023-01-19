@@ -66,39 +66,38 @@
 					//성공콜백 함수
 					if(e.currentTarget.response.result != 0){ 
 						//다시한번 물어본다 confirm() 사용
-						if(!confirm('정말로 탈퇴를 진행하시겠습니까?')){
+						if(!confirm('탈퇴를 진행하시겠습니까?')){
 							return false;
 						}
 						
 						//진짜 삭제 해주는 ajax 작동
-						
-						//에이작스 통신을 위한 객체 생성
-					    const xhr = new XMLHttpRequest();
+			
+						//에이작스 통신을 위한 객체 생성--------------------------------------------------------------------
+					    const xhr2 = new XMLHttpRequest();
 					    
 					    //전송방식과 통신 할 경로 설정
-					    xhr.open("post", "/memberResignOkAjax");
+					    xhr2.open("post", "/memberResignOkAjax");
 					    
 					    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
-					    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
+					    xhr2.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
 					    
 					    //받는 데이터 타입 설정
-					    xhr.responseType = "json";
+					    xhr2.responseType = "json";
 					    
 					    //ajax 작동중 이벤트
-					    xhr.onprogress = function () {
+					    xhr2.onprogress = function () {
 						    //데이터 리턴 직전에 발동
 						    //프로그래스바 실행
 						};
 						
 						//ajax 작동완료
-					    xhr.onload = function(e) {
+					    xhr2.onload = function(e) {
 							
 							if(e.currentTarget.status == 200){
 								//성공콜백 함수
 								if(e.currentTarget.response.result != 0){ 
 									alert("회원정보가 삭제되었습니다. 그동안 이용해주셔서 감사합니다.");
 									location.href = "/";
-									
 								}else{
 									alert("회원탈퇴에 실패하였습니다. 관리자에게 문의해주세요.");
 								}												
@@ -108,10 +107,8 @@
 							}				        
 					    };
 					    //전송할 데이터 json 타입으로 변동후 전달
-					    xhr.send(JSON.stringify(userDataJson));	
-						
-						
-						
+					    xhr2.send(JSON.stringify(userDataJson));	//---------------------------------------------------------------
+					    		
 					}else{
 						alert("탈퇴에 실패하였습니다 비밀번호를 확인해주세요.");
 					}												

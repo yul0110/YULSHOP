@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.dao.MemberDao;
 import com.service.LoginService;
 
@@ -16,18 +15,19 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 	
+	// 로그인 페이지
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String LoginPage() {
 
 		return "login/login";
 	}
-	
+	// 아이디 찾기 페이지
 	@RequestMapping(value = "/findId", method = RequestMethod.GET)
 	public String findIdPage() {
 		
 		return "login/findId";
 	}
-	
+	// 비밀번호 찾기 페이지
 	@RequestMapping(value = "/findPw", method = RequestMethod.GET)
 	public String findPwPage() {
 		
@@ -110,6 +110,4 @@ public class LoginController {
 		mv.addObject("result", result);
 		return mv;
 	}
-	                  
-	
 }

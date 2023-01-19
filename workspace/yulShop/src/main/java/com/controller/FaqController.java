@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class FaqController {
 
+	// faq 페이지 
 	@RequestMapping(value = "/faq", method = RequestMethod.GET)
     public String FaqPage() {
 

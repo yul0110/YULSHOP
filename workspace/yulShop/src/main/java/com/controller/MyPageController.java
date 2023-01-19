@@ -89,43 +89,29 @@ public class MyPageController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	//회원탈퇴 Ajax
 	@RequestMapping(value = "/memberResignAjax", method = RequestMethod.POST)
 	public ModelAndView memberResignAjax(@RequestBody MemberDao memberDao) {
 		
-		ModelAndView mv = new ModelAndView();	
+		ModelAndView mv = new ModelAndView("jsonView");	//ModelAndView mv = new ModelAndView("jsonView") 페이지에서 데이터만 담아가겠다는 뜻
 		
 		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
 		memberDao.setId(1);
 		int result = MyPageService.selectResignCheck(memberDao);
-		
-		
 		mv.addObject("result", result);
 		return mv;
 	}
 	
 
-	//회원탈퇴 Ajax
+	//회원탈퇴 확인 Ajax
 	@RequestMapping(value = "/memberResignOkAjax", method = RequestMethod.POST)
 	public ModelAndView memberResignOkAjax(@RequestBody MemberDao memberDao) {
 		
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("jsonView");
 		
 		//로그인된 회원 객체에서 인덱스 아이디를 꺼내서 넣어줌
-		memberDao.setId(1);
-		//int result = MyPageService.selectResignCheck(memberDao);
-		
-		//mv.addObject("result", result);
+		//인덱스 아이디를 이용해서 삭제 쿼리를 사용했다는 가정하고 처리값을 받아서 result에 넣어줌
+		mv.addObject("result", 1);
 		return mv;
 	}
 	
