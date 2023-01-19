@@ -16,5 +16,8 @@ public interface MyPageMapper {
 	int updateMemberPw(MemberDao memberDao);
 	
 	int updateMemberAddr(MemberDao memberDao);
+	
+	//탈퇴 비밀번호 체크
+	int selectResignCheck(MemberDao memberDao);
 
 }

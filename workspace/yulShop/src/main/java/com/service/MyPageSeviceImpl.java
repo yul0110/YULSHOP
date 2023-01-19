@@ -18,17 +18,25 @@ public class MyPageSeviceImpl implements MyPageService {
 
 	@Override
 	public List<Member> selectMemberData(int id) {
+		//회원수정 화면에 보여줄 회원 데이터
 		return myPageMapper.selectMemberData(id);
 	}
 
-	@Override
+	@Override		//업데이트 
 	public int updateMemberPw(MemberDao memberDao) {
+		return myPageMapper.updateMemberPw(memberDao);
+	}
+	 
+	@Override		//업데이트
+	public int updateMemberAddr(MemberDao memberDao) {
 		return myPageMapper.updateMemberPw(memberDao);
 	}
 
 	@Override
-	public int updateMemberAddr(MemberDao memberDao) {
-		return myPageMapper.updateMemberPw(memberDao);
+	public int selectResignCheck(MemberDao memberDao) {
+		//탈퇴시 비밀번호 체크 
+		return myPageMapper.selectResignCheck(memberDao);
 	}
+	
 	
 }

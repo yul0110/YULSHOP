@@ -3,6 +3,7 @@
 <html lang="en">
 
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
+
 <body>
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 

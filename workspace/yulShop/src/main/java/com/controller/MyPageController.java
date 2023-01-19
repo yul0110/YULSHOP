@@ -12,7 +12,6 @@ import com.service.MyPageService;
 import com.vo.Member;
 
 @Controller
-@org.springframework.web.bind.annotation.RestController
 public class MyPageController {
 	
 	@Autowired
@@ -20,20 +19,33 @@ public class MyPageController {
 	
 	
 	//마이 페이지
-	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public String MyPage() {
-
-		return "mypage/mypage";
+	@RequestMapping(value = "/myPage", method = RequestMethod.GET)
+	public ModelAndView MyPage() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("myPage/myPage"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
+		return mv;
     }
 	
-	
+	//탈퇴 페이지
+	@RequestMapping(value = "/memberResign", method = RequestMethod.GET)
+	public ModelAndView memberResignPage() {
+		
+		ModelAndView mv = new ModelAndView();	
+		mv.setViewName("myPage/memberResign"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
+		
+		return mv;
+    }
+
+		
 	//회원정보 수정 페이지
 	@RequestMapping(value = "/memberUpdate", method = RequestMethod.GET)
 	public ModelAndView memberUpdatePage() {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		//로그인 구현이 안되어 있으므로 더미데이터 입력 ------------------------------
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
 		int id = 1;
 		
 		List<Member> memberList = MyPageService.selectMemberData(id);
@@ -52,6 +64,7 @@ public class MyPageController {
 		
 	   ModelAndView mv = new ModelAndView("jsonView");
 	   
+	 //더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
 	   memberDao.setId(1);
 	   
 	   int  result = MyPageService.updateMemberPw(memberDao);		 
@@ -66,6 +79,7 @@ public class MyPageController {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 		
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
 		memberDao.setId(1);
 		
 		int result = MyPageService.updateMemberAddr(memberDao);
@@ -73,6 +87,55 @@ public class MyPageController {
 		
 		return mv;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//회원탈퇴 Ajax
+	@RequestMapping(value = "/memberResignAjax", method = RequestMethod.POST)
+	public ModelAndView memberResignAjax(@RequestBody MemberDao memberDao) {
+		
+		ModelAndView mv = new ModelAndView();	
+		
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
+		memberDao.setId(1);
+		int result = MyPageService.selectResignCheck(memberDao);
+		
+		
+		mv.addObject("result", result);
+		return mv;
+	}
+	
+
+	//회원탈퇴 Ajax
+	@RequestMapping(value = "/memberResignOkAjax", method = RequestMethod.POST)
+	public ModelAndView memberResignOkAjax(@RequestBody MemberDao memberDao) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		//로그인된 회원 객체에서 인덱스 아이디를 꺼내서 넣어줌
+		memberDao.setId(1);
+		//int result = MyPageService.selectResignCheck(memberDao);
+		
+		//mv.addObject("result", result);
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	  
