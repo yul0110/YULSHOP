@@ -29,7 +29,7 @@ public class ImgController {
 		return "imgUpload/imgUpload";
     }
 	
-	//이미지 단수 전용 파일 처리 ajax - 업로드마다 yyyymmddhhmmss 기준으로 폴더를 생성
+	//이미지 단일 전용 파일 처리 ajax - 업로드마다 yyyymmddhhmmss 기준으로 폴더를 생성
 	@PostMapping("/uploadImgAjax")
     public ModelAndView uploadFile(@RequestParam MultipartFile uploadFile) throws IOException{ //파일업로드인경우 파일관련 IO익셉션을 사용해야한다.	
 		
@@ -63,7 +63,7 @@ public class ImgController {
 	}
 	
 	
-	//이미지 단수 전용 파일 처리 ajax - 업로드마다 yyyymmddhhmmss 기준으로 폴더를 생성
+	//이미지 파일 처리 ajax - 업로드마다 yyyymmddhhmmss 기준으로 폴더를 생성
 	@PostMapping("/uploadImgAjax2")
 	public ModelAndView uploadFile2(@RequestParam MultipartFile uploadFile) throws IOException{ //파일업로드인경우 파일관련 IO익셉션을 사용해야한다.	
 		

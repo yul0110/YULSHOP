@@ -17,10 +17,12 @@
 				<div class="col-lg-9 text-center mt-5" >
 					<h1 class="heading" data-aos="fade-up">파일 업로드</h1>
 					<br><br><br>	
-					<input type="file" name="uploadFile" class="form-control px-4">
+					<input type="file" name="uploadFile" class="form-control px-4" onchange="yul.page.loadFile();">
 					<br><br>
 					<img id="preview" src="" />
+					<!-- 
 					<button type="button" id="uploadAjax" class="btn btn-primary" style="width:10em" >업로드하기</button>
+					 -->
 				</div>
 			</div>
 		</div>
