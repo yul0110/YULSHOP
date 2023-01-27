@@ -33,7 +33,5 @@
 	<link rel="stylesheet" href="/resources/css/bootstrap/style.css">
 
 	<!-- fonts Files  -->
-	<link rel="stylesheet" href="/resources/fonts/demo-files/demo.css">
-    <link rel="stylesheet" href="/resources/fonts/style.css">
     
 </head>

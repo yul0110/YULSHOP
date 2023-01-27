@@ -18,11 +18,11 @@
 	
 	yul.page.prototype.loadFile = function() {
 		
-		var formData  = new FormData(); //FormData 객체 생성
+			var formData  = new FormData(); //FormData 객체 생성
 			var inputFile = $("input[name='uploadFile']");  //input 태그의 type이 file인것을 찾아서 inputFile이라는 변수로 지정
 			var files 	  = inputFile[0].files;
 			//files : 선택한 모든 파일을 나열하는 FileList 객체입니다.
-            //multiple 특성을 지정하지 않닸다면 두 개 이상의 파일을 포함하지 않습니다.
+            //multiple 특성을 지정하지 않았다면 두 개 이상의 파일을 포함하지 않습니다.
 			console.log(files);			
 			
 			//add file data to formdata
