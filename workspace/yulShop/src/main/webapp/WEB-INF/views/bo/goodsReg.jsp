@@ -52,14 +52,25 @@
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="inventory" id="inventory" class="form-control px-4" maxlength="100" placeholder="재고수량" required>
 						</div>
+						<br>
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
-							<input type="file" name="uploadFile" id="uploadFile" class="form-control px-4" onchange="yul.page.loadFile();">
+							<input type="file" name="listImg" id="listImg" class="form-control px-4 fileButton">
 						</div>
-						<div id='previewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
-							<!-- 등록된 이미지 프리뷰 -->	
-							<!-- <img id="preview" src="" style= "width: 100px; height: 100px;"/> -->
-							<!-- 등록된 이미지 프리뷰 -->
+						<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
+							<!-- 사진데이터가 들어올 공간 -->
+							<!-- 사진데이터가 들어올 공간 -->
+							<!-- 사진데이터가 들어올 공간 -->
+						</div>  
+						<br>
+						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
+							<input type="file" name="uploadFile" id="uploadFile" class="form-control px-4 fileButton">
 						</div>
+						<div id='detailPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
+							<!-- 사진데이터가 들어올 공간 -->
+							<!-- 사진데이터가 들어올 공간 -->
+							<!-- 사진데이터가 들어올 공간 -->
+						</div>
+						<br>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
 							<select id="fabric" name="fabric" style= "width: 100%; height: 40px;">

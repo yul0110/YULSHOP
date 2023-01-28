@@ -7,7 +7,7 @@
 	//정규식
 	const numR = /^[0-9]+$/; //숫자만 입력가능
 	var imgNum = 1;
-	var imgMax = 5;
+	var pathData = '';
 	
 	yul.page = function() { 
 		 this.init();
@@ -16,50 +16,107 @@
 	//prototype 프로토 타입
 	yul.page.prototype.init = function() {
 		this.clickEvent() 	// 클릭 이벤트 bind
-		this.loadFile() 	// 이미지업로드 이벤트 bind
+		this.onChangeEvent() 	// 클릭 이벤트 bind
 	}	 
 
-
-	yul.page.prototype.loadFile = function() {
-			
-			//무조건 사진 하나를 넣어야함
-			if(imgNum > 5){
-				alert('사진은 최대 5장 입니다.');
-				return false;	
-			}
+	yul.page.prototype.listImgUploadEvent = function(node) {
 		
-			var formData  = new FormData(); //FormData 객체 생성
-			var inputFile = $("input[name='uploadFile']");  //input 태그의 type이 file인것을 찾아서 inputFile이라는 변수로 지정
-			var files 	  = inputFile[0].files;
-			//files : 선택한 모든 파일을 나열하는 FileList 객체입니다.
-            //multiple 특성을 지정하지 않닸다면 두 개 이상의 파일을 포함하지 않습니다.
-			
-			//add file data to formdata
-			for(var i=0; i<files.length; i++){
-				formData.append("uploadFile",files[i]); //키,값으로 append 
-			}
-			$.ajax({
-				url			:'/uploadImgAjax',
-				processData : false,  //ajax 통신을 통해 데이터를 전송할 때, 기본적으로 key와 value값을 Query String으로 변환해서 보냅니다.
-				contentType : false,  // multipart/form-data타입을 사용하기위해 false 로 지정
-				type		: 'post',
-				data		: formData,
-				dataType	: 'json',
-				success: function(data){
-					//전송에 성공하면 실행될 코드;
-					imgNum = imgNum + 1;
-					$('#previewZone').append('<img id="preview' + imgNum + '" src="'+ data.path +'" style= "width: 100px; height: 100px;"/>');
-					$('#previewZone').append('<input type="hidden" id="imgPath' + imgNum + '" value="'+ data.path +'" />');
-					
-					//카운트 추가
-				},
-				fail: function(error) {
-					alert('업로드 실패');
-				  return false;
-				}
-			}); //ajax End
+		var formData  = new FormData(); //FormData 객체 생성
+		var files 	  = node.files;
+		//files : 선택한 모든 파일을 나열하는 FileList 객체입니다.
+        //multiple 특성을 지정하지 않았다면 두 개 이상의 파일을 포함하지 않습니다.
+		console.log(files);			
+		
+		//add file data to formdata
+		for(var i=0; i<files.length; i++){
+			formData.append("uploadFile",files[i]); //키,값으로 append 
 		}
-
+		$.ajax({
+			url			:'/uploadImgAjax',
+			processData : false,  //ajax 통신을 통해 데이터를 전송할 때, 기본적으로 key와 value값을 Query String으로 변환해서 보냅니다.
+			contentType : false,  // multipart/form-data타입을 사용하기위해 false 로 지정
+			type		: 'post',
+			data		: formData,
+			dataType	: 'json',
+			success: function(data){
+				//전송에 성공하면 실행될 코드;
+				$('#listPreviewZone').append('<img id="listPreview" src="'+ data.path +'" class="listPreview" style= "width: 100px; height: 100px;"/>');
+            	$('#listPreviewZone').append('<input type="hidden" id="listPath" value="'+ data.path +'" />');
+			},
+			fail: function(error) {
+				alert('업로드 실패');
+			  return false;
+			}
+		}); //ajax End
+	}
+				
+	yul.page.prototype.detailImgUploadEvent = function(node) {
+		
+		var formData  = new FormData(); //FormData 객체 생성
+		var files 	  = node.files;
+		//files : 선택한 모든 파일을 나열하는 FileList 객체입니다.
+        //multiple 특성을 지정하지 않았다면 두 개 이상의 파일을 포함하지 않습니다.
+		console.log(files);			
+		
+		//add file data to formdata
+		for(var i=0; i<files.length; i++){
+			formData.append("uploadFile",files[i]); //키,값으로 append 
+		}
+		$.ajax({
+			url			:'/uploadImgAjax',
+			processData : false,  //ajax 통신을 통해 데이터를 전송할 때, 기본적으로 key와 value값을 Query String으로 변환해서 보냅니다.
+			contentType : false,  // multipart/form-data타입을 사용하기위해 false 로 지정
+			type		: 'post',
+			data		: formData,
+			dataType	: 'json',
+			success: function(data){
+				//전송에 성공하면 실행될 코드;
+				$('#detailPreviewZone').append('<img id="detailPreview' + imgNum + '" src="'+ data.path +'" class="detailPreview" style= "width: 100px; height: 100px;"/>');
+            	$('#detailPreviewZone').append('<input type="hidden" id="detailPath' + imgNum + '" value="'+ data.path +'" />');
+			},
+			fail: function(error) {
+				alert('업로드 실패');
+			  return false;
+			}
+		}); //ajax End
+	}
+				
+	yul.page.prototype.onChangeEvent = function() {
+		
+		//리스트이미지
+		$("#listImg").change(function(){
+			
+			var listImgCount = $('.listPreview').length; 
+			
+			//이미지 갯수 벨리데이션
+			if(listImgCount >= 1){
+				alert('리스트 이미지는 1개만 등록할수있습니다.');
+			  return false;
+			}
+			yul.page.listImgUploadEvent(this);
+        });
+        
+        //상세이미지
+        $("#uploadFile").change(function(){
+	
+			var detailImgCount = $('.detailPreview').length;
+	
+			//이미지 갯수 벨리데이션
+			if(detailImgCount >= 5){
+				alert('리스트 이미지는 5개만 등록할수있습니다.');
+			  return false;
+			}
+			
+			yul.page.detailImgUploadEvent(this);
+            
+			//카운트 ++
+			imgNum = imgNum +1;
+			
+			//초기화
+			this.value= '';	//같은 이미지가 연속 선택되어도 가져올수있다.
+        });
+        
+	};
 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
@@ -68,7 +125,7 @@
 	 	$('#uploadAjax').on('click', function(e) {
 	 		e.preventDefault();
 	 		
-	 		var no		= $('#no').val(); //상품번호
+	 		var no	  		= $('#no').val(); //상품번호
 	 		var nm 			= $("#nm").val();	   //상품이름
 	 		var price 		= $('#price').val();   //상품가격
 	 		var dprice 		= $('#dprice').val();  //할인가격
@@ -77,6 +134,9 @@
 	 		var fabric 		= $('#fabric').val();  //소재
 	 		var info 		= $('#info').val();    //상품정보
 	 		var descliption = $('#descliption').val(); //상세정보
+	 		
+	 		var listImg	    = $('#previewlistImg').length;
+	 		var imgCount	= $('#previewZone').length;
 	 		
 	 		//상품번호 빈값 체크
 	 		if(no == ""){
@@ -123,6 +183,18 @@
 			}
 			if(inventory.search(numR) != 0){ 
 				alert("재고수량을 알맞게 작성해주세요.");
+				return false; 		
+			}
+			
+			//이미지를 등록하지 않은 경우 무조건 1개 이상	
+			if(listImg <= 0){ 
+				alert("리스트 이미지는 1개이상 등록하셔야 합니다.");
+				return false; 		
+			}	
+
+			//이미지를 등록하지 않은 경우 무조건 1개 이상	
+			if(imgCount <= 0){ 
+				alert("상품 상세 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
 	
