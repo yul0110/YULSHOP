@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.ImgMapper">
+
+	<insert id="insertImg" parameterType="com.dao.ImgGroupDao">
+		INSERT INTO img
+		(id, imgGroupId, nm, path, regDt, regId, updateDt, updateId)
+		VALUES(#{id}, #{imgGroupId}, #{nm}, #{path}, now(), 99999, now(), 99999);
+	</insert>
+	
+	<select id="selectTableNumbering" resultType="Integer">
+		SELECT id FROM img ORDER BY id DESC LIMIT 1
+	</select>
+</mapper>
+
+

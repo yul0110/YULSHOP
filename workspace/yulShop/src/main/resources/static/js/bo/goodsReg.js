@@ -41,7 +41,7 @@
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
 				$('#listPreviewZone').append('<img id="listPreview" src="'+ data.path +'" class="listPreview" style= "width: 100px; height: 100px;"/>');
-            	$('#listPreviewZone').append('<input type="hidden" id="listPath" value="'+ data.path +'" />');
+            	$('#listPreviewZone').append('<input type="hidden" class="listPath" id="listPath" value="'+ data.path +'" />');
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -72,7 +72,7 @@
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
 				$('#detailPreviewZone').append('<img id="detailPreview' + imgNum + '" src="'+ data.path +'" class="detailPreview" style= "width: 100px; height: 100px;"/>');
-            	$('#detailPreviewZone').append('<input type="hidden" id="detailPath' + imgNum + '" value="'+ data.path +'" />');
+            	$('#detailPreviewZone').append('<input type="hidden" class="detailPath" id="detailPath' + imgNum + '" value="'+ data.path +'" />');
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -135,8 +135,9 @@
 	 		var info 		= $('#info').val();    //상품정보
 	 		var descliption = $('#descliption').val(); //상세정보
 	 		
-	 		var listImg	    = $('#previewlistImg').length;
-	 		var imgCount	= $('#previewZone').length;
+	 		var listImgPath = $('.listPath'); //리스트 이미지경로
+	 		var datailImgPathArr = $('.detailPath'); //상세정보
+	 	
 	 		
 	 		//상품번호 빈값 체크
 	 		if(no == ""){
@@ -187,13 +188,13 @@
 			}
 			
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(listImg <= 0){ 
+			if(listImgPath.length <= 0){ 
 				alert("리스트 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
 
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(imgCount <= 0){ 
+			if(datailImgPathArr.length <= 0){ 
 				alert("상품 상세 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
@@ -216,23 +217,37 @@
 				return false;
 			}
 			
-			var userDataJson 	= {};
+			//리스트이미지 배열만들기
+			var pathListArr = new Array();
+			for(i=0;i<listImgPath.length;i++){
+				pathListArr.push(listImgPath[i].value);
+			}
+			
+			//상세이미지 배열만들기
+			var pathDetailArr = new Array();
+			for(i=0;i<datailImgPathArr.length;i++){
+				pathDetailArr.push(datailImgPathArr[i].value);
+			}
+		
+			var goodsDataJson 	= {};
 	
-			userDataJson.no 		= no;
-			userDataJson.nm 		= nm;
-			userDataJson.price 		= price;
-			userDataJson.dprice 	= dprice;
-			userDataJson.wareHousing= wareHousing;
-			userDataJson.inventory  = inventory;
-			userDataJson.fabric 	= fabric;
-			userDataJson.info 		= info;
-			userDataJson.descliption= descliption;
-							
+			goodsDataJson.no 				= no;
+			goodsDataJson.nm 				= nm;
+			goodsDataJson.price 			= price;
+			goodsDataJson.dprice 			= dprice;
+			goodsDataJson.wareHousing		= wareHousing;
+			goodsDataJson.inventory  		= inventory;
+			goodsDataJson.fabric 			= fabric;
+			goodsDataJson.info 				= info;
+			goodsDataJson.descliption 		= descliption;
+			goodsDataJson.listImgPathArr	= pathListArr;
+			goodsDataJson.datailImgPathArr	= pathDetailArr;
+			
 			//에이작스 통신을 위한 객체 생성
 		    const xhr = new XMLHttpRequest();
 		    
 		    //전송방식과 통신 할 경로 설정
-		    xhr.open("post", "/uploadAjax");
+		    xhr.open("post", "/goodsRegAjax");
 		    
 		    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 		    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -252,9 +267,9 @@
 				if(e.currentTarget.status == 200){
 					//성공콜백 함수
 					if(e.currentTarget.response.result != 0){ 
-						alert("상품이 등록 되었습니다.");
+						//alert("상품이 등록 되었습니다.");
 						//페이지 이동
-						location.href = '/';
+						//location.href = '/';
 					}else{
 						alert("상품등록에 실패하였습니다 다시 시도해주세요.");
 					}												
@@ -264,7 +279,7 @@
 				}				        
 		    };
 		    //전송할 데이터 json 타입으로 변동후 전달
-		    xhr.send(JSON.stringify(userDataJson));	
+		    xhr.send(JSON.stringify(goodsDataJson));	
 		});
 	 };
 	 

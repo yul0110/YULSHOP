@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.GoodsMapper">
+
+	<insert id="insertGoods" parameterType="com.dao.GoodsDao">
+		INSERT INTO goods
+		(id, optionId, cateId, `no`, nm, price, dprice, wareHousing, info, descliption, fabric, listImg, detailImg, inventory, regDt, regId, updateDt, updateId, useYn)
+		VALUES(#{id}, #{optionsId}, #{cateId}, #{no}, #{nm}, #{price}, #{dprice}, #{wareHousing}, #{info}, #{descliption}, #{fabric}, #{listImg}, #{detailImg}, #{inventory}, now(), 00000, now(), 00000, "Y");
+	</insert>
+	
+	<select id="selectTableNumbering" resultType="Integer">
+		SELECT id FROM goods ORDER BY id DESC LIMIT 1
+	</select>
+</mapper>
+
+
