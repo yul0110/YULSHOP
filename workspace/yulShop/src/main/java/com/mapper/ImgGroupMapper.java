@@ -2,10 +2,6 @@ package com.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.dao.GoodsDao;
-import com.dao.ImgGroupDao;
-import com.dao.MemberDao;
-
 @Mapper
 public interface ImgGroupMapper {
 	

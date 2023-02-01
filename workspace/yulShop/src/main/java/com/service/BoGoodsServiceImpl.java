@@ -3,10 +3,8 @@ package com.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
 import com.dao.GoodsDao;
 import com.dao.ImgDao;
-import com.dao.MemberDao;
 import com.mapper.GoodsMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
@@ -33,6 +31,20 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		
 		//상품등록 완료 플레그
 		int flag = 0;
+		
+		/*
+		 * 1.상품 등록을 해야한다.
+		 * 2. 데이터를 받아왔어
+		 * 3. 상품테이블에 상품데이터를 insert 하려고 했는데 listImg와 detailImg의 데이터가 없어서 넣을수가 없다.
+		 * 4. 이미지를 어떻게 넣나 확인 해보니 그룹을 이용하여 넣는다. 이미지 그룹과 이미지 테이블이 따로 존재
+		 * 5. 3번을 하기 위해서 이미지그룹을 만들어줌 그리고 만들어준 이미지그룹에 이미지들을 넣어줌
+		 * 6. 이미지그룹에 이미지들이 일렬로 들어왔어 그러면 하나의 그룹을 생겨서 id가 생김
+		 * 7. 상품테이블에 없던 데이터중 listImg에 이미지그룹 id를 넣어서 상품테이블도 인설트할수있게됬음
+		 * */
+		
+		
+		
+		
 		
 		//리스트 이미지 그룹 넘버링
 		listImgGroupId = imgGroupMapper.selectTableNumbering();
@@ -96,6 +108,9 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		
 		//더미데이터
 		goodsDao.setCateId(1);
+		
+		
+		//옵션테이블을 생성하고 값을 넣어주고 옵션테이블 Id를 받아서 넣어주는 작업을 해야함
 		goodsDao.setOptionsId(1);
 		
 		flag = goodsMapper.insertGoods(goodsDao);

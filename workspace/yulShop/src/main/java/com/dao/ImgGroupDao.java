@@ -11,6 +11,7 @@ public class ImgGroupDao {
 		//멤버id
 		private Integer id;
 		
+		//작성날짜
 		private Date regDt;
 		
 		//작성자
