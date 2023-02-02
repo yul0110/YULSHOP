@@ -5,9 +5,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import com.dao.GoodsDao;
 import com.dao.ImgDao;
+import com.dao.OptionDao;
 import com.mapper.GoodsMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
+import com.mapper.OptionMapper;
 
 @Service
 @Repository
@@ -21,6 +23,10 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 	
 	@Autowired
 	GoodsMapper goodsMapper;
+	
+	@Autowired
+	OptionMapper optionMapper;
+	
 	
 	@Override
 	public int insertGoods(GoodsDao goodsDao) {
@@ -41,11 +47,7 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		 * 6. 이미지그룹에 이미지들이 일렬로 들어왔어 그러면 하나의 그룹을 생겨서 id가 생김
 		 * 7. 상품테이블에 없던 데이터중 listImg에 이미지그룹 id를 넣어서 상품테이블도 인설트할수있게됬음
 		 * */
-		
-		
-		
-		
-		
+
 		//리스트 이미지 그룹 넘버링
 		listImgGroupId = imgGroupMapper.selectTableNumbering();
 		if(listImgGroupId == null) {
@@ -80,7 +82,7 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		detailImgGroupId = detailImgGroupId + 1;
 		//이미지 그룹 생성
 		imgGroupMapper.insertImgGroup(detailImgGroupId);
-		for(String detailImg : goodsDao.getDatailImgPathArr() ) {
+		for(String detailImg : goodsDao.getDatailImgPathArr() ) { //향상된for문
 			ImgDao imgDao = new ImgDao();
 			Integer imgNumbering = imgMapper.selectTableNumbering();
 			imgNumbering = imgNumbering + 1;
@@ -104,20 +106,35 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 			goodsNumbering = goodsNumbering + 1;
 		}
 		
-		goodsDao.setId(goodsNumbering);
-		
+		goodsDao.setId(goodsNumbering);	
 		//더미데이터
-		goodsDao.setCateId(1);
+		goodsDao.setCateId(1231233);
+		
 		
 		
 		//옵션테이블을 생성하고 값을 넣어주고 옵션테이블 Id를 받아서 넣어주는 작업을 해야함
-		goodsDao.setOptionsId(1);
 		
 		flag = goodsMapper.insertGoods(goodsDao);
 		
+		Integer goodsLastId = goodsMapper.selectTableNumbering(); //넘버링이 끝난 상품ID를 옵션의 goodsId에 넣어준다
+		
+		for(OptionDao optionData : goodsDao.getOptionArr() ) { //향상된for문
+			Integer optionNumbering = optionMapper.selectTableNumbering();
+			//넘버링을 여기서 하는 이유 >>> 옵션 3개가 들어가기 때문에 그 수만큼 for문을 돌려서 id값을 만들어준다
+			if(optionNumbering == null) {
+				//테이블 첫 생성후 빈테이블인 경우 강제로 데이터를 넣어줌
+				optionNumbering = 1;
+			}else {
+				optionNumbering = optionNumbering + 1;
+			}
+			optionData.setId(optionNumbering);//넘버링 완료
+			optionData.setGoodsId(goodsLastId);
+
+			optionMapper.insertOption(optionData);//insert완료
+			
+		}
+			
 		return flag;
 	}
-
-	
 
 }

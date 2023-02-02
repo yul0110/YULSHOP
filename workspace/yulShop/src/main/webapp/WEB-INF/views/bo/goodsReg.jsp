@@ -32,32 +32,34 @@
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="no" id="no" class="form-control px-4" maxlength="30" placeholder="상품번호" required>
 						</div>			
-						<div
-							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
+						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="nm" id="nm" class="form-control px-4" maxlength="30" placeholder="상품이름" required>
 						</div>
 						<div
 							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="price" id="price" pattern="[0-9]+" class="form-control px-4" maxlength="15" placeholder="가격" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
 						</div>
-						<div
-							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
+						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="dprice" id="dprice" pattern="[0-9]+" class="form-control px-4" maxlength="15" placeholder="할인가격" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
 						</div>
-						<div
-							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
+						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="wareHousing" id="wareHousing" class="form-control px-4" maxlength="50" placeholder="입고일자" required>
 						</div>
-						<div
-							class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
-							<input type="text" name="inventory" id="inventory" class="form-control px-4" maxlength="100" placeholder="재고수량" required>
+						<div id='optionAppendTo' class="">
+							<b style="font-size:20px; color:white;">옵션</b>
+							<b id='optionAdd' style="font-size:30px; color:white;">+</b>
+						</div>
+						<br>
+						<div id="optionZone" class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center">
+							<!-- templ zone -->
+							<!-- templ zone -->
+							<!-- templ zone -->
 						</div>
 						<br>
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
 							<input type="file" name="listImg" id="listImg" class="form-control px-4 fileButton">
 						</div>
 						<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
-							<!-- templ zone -->
 							<!-- templ zone -->
 							<!-- templ zone -->
 							<!-- templ zone -->
@@ -105,14 +107,22 @@
 	
 	<!--   listImg   -->
 	<img id="listImgTempl" src="" class="" style= "display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="listImgPathTempl" class="listPath" value="" />
+	<input type="hidden" id="listImgPathTempl" class="" value="" />
 	<!--   listImg END   -->
 	
 	<!--   detailImg   -->
 	<img id="detailImgTempl" src="" class="" style= "display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="detailImgPathTempl" class="listPath" value="" />
+	<input type="hidden" id="detailImgPathTempl" class="" value="" />
 	<!--   detailImg END   -->
 	
+	<!--   option   -->
+	<div id="optionTempl" class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center"  style= "display:none;">
+		<input type="text" id="colorTempl" style= "display:none;" class="form-control px-4 colorNode"  maxlength="15" placeholder="컬러" required>
+		<input type="text" id="sizeTempl" style= "display:none;" class="form-control px-4 sizeNode" maxlength="15" placeholder="사이즈" required>
+		<input type="text" id="invenTempl" style= "display:none;" class="form-control px-4 invenNode" maxlength="15" placeholder="수량" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+	</div>
+	
+	<!--   option END   -->
 	
 	<!--  zone END    -->
 

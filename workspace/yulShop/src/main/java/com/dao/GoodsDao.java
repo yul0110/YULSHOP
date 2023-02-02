@@ -62,7 +62,7 @@ public class GoodsDao {
 		//사용여부
 		private String useYn;
 		
-		//라스트이미지 경로
+		//옵션 경로
 		private List<OptionDao> optionArr;
 		
 		//라스트이미지 경로

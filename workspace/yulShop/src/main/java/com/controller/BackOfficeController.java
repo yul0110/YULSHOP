@@ -33,7 +33,7 @@ public class BackOfficeController {
 	
 	//상품등록 Ajax
 	@RequestMapping(value = "/goodsRegAjax", method = RequestMethod.POST)
-	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson) {
+	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson ) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 

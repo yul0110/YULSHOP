@@ -6,7 +6,9 @@
 	
 	//정규식
 	const numR = /^[0-9]+$/; //숫자만 입력가능
+	
 	var imgNum = 1;
+	var optionNum = 1;
 	var pathData = '';
 	
 	yul.page = function() { 
@@ -53,6 +55,7 @@
 				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
 				
 				nodeInputCopy.attr('id', "listPath");
+				nodeInputCopy.attr('class', "listPath");
 				nodeInputCopy.attr('value', data.path);
 				
 				$('#listPreviewZone').append(nodeImgCopy);
@@ -91,8 +94,8 @@
 				var nodeDetailCopy; 
 				var nodeInputCopy; 
 				
-				nodeDetailCopy	= $('#detailImgTempl');
-				nodeInputCopy	= $('#detailImgPathTempl');
+				nodeDetailCopy	= $('#detailImgTempl').clone();
+				nodeInputCopy	= $('#detailImgPathTempl').clone();
 				
 				
 				nodeDetailCopy.attr('id', "DetailImgData");
@@ -101,6 +104,7 @@
 				nodeDetailCopy.attr('style', "width: 100px; height: 100px;");
 				
 				nodeInputCopy.attr('id', "DetailPath");
+				nodeInputCopy.attr('class', "detailPath");
 				nodeInputCopy.attr('value', data.path);
 				
 				$('#detailPreviewZone').append(nodeDetailCopy);
@@ -155,21 +159,52 @@
 	yul.page.prototype.clickEvent = function() {
 		
 		//상품 업로드 시도 클릭 이벤트
+	 	$('#optionAdd').on('click', function(e) {
+	 		e.preventDefault();
+	 		
+	 		if($('.optionCount').length > 10){
+				alert('옵션은 최대 10개 입니다.');
+				return false;
+			} 		
+	 		
+			var nodeOptionCopy = $('#optionTempl').clone();
+			 
+	 		nodeOptionCopy.attr('style', '');
+	 		nodeOptionCopy.attr('id', '');
+	 		nodeOptionCopy.addClass('optionArr');
+	 		
+	 		nodeOptionCopy.find('#colorTempl').attr('style', '');
+	 		nodeOptionCopy.find('#colorTempl').attr('id', 'optionColor' + optionNum);
+	 		
+	 		nodeOptionCopy.find('#sizeTempl').attr('style', '');
+	 		nodeOptionCopy.find('#sizeTempl').attr('id', 'optionSize' + optionNum);
+	 		
+	 		nodeOptionCopy.find('#invenTempl').attr('style', '');
+	 		nodeOptionCopy.find('#invenTempl').attr('id', 'optionInven' + optionNum);
+	 		
+	 		nodeOptionCopy.appendTo('#optionAppendTo');
+	 		
+	 		optionNum = optionNum + 1;
+		});
+		
+		//상품 업로드 시도 클릭 이벤트
 	 	$('#uploadAjax').on('click', function(e) {
 	 		e.preventDefault();
 	 		
+	 		//노드의 value값
 	 		var no	  		= $('#no').val(); //상품번호
 	 		var nm 			= $("#nm").val();	   //상품이름
 	 		var price 		= $('#price').val();   //상품가격
 	 		var dprice 		= $('#dprice').val();  //할인가격
 	 		var wareHousing = $('#wareHousing').val();//입고일자
-	 		var inventory 	= $('#inventory').val();  //재고수량
 	 		var fabric 		= $('#fabric').val();  //소재
 	 		var info 		= $('#info').val();    //상품정보
 	 		var descliption = $('#descliption').val(); //상세정보
 	 		
-	 		var listImgPath = $('.listPath'); //리스트 이미지경로
-	 		var datailImgPathArr = $('.detailPath'); //상세정보
+	 		//노드 배열
+	 		var optionArr 			= $('.optionArr'); //옵션 
+	 		var listImgPathArr 		= $('.listPath'); //리스트 이미지경로
+	 		var datailImgPathArr	= $('.detailPath'); //상세정보
 	 	
 	 		
 	 		//상품번호 빈값 체크
@@ -203,6 +238,12 @@
 				alert("생년월일을 알맞게 작성해주세요.");
 				return false; 		
 			}	
+			
+			//옵션의 색상, 사이즈, 수량 빈값체크 정규식 규칙 확인
+	 		if(optionArr.length <= 0){
+				alert("옵션을 작성해주세요."); 		
+				return false;
+			}		
 
 			//입고일자 빈값 체크 
 	 		if(wareHousing == ""){
@@ -210,18 +251,38 @@
 				return false;
 			}
 			
-			//재고수량 빈값체크 정규식 확인
-	 		if(inventory == ""){
-				alert("재고수량을 작성해주세요."); 		
-				return false;
+			//옵션 배열만들기
+			var optionListArr = new Array();
+			for(i=0;i<optionArr.length;i++){
+				
+				var colorData 		= optionArr[i].querySelector('.colorNode').value;
+				var szData 			= optionArr[i].querySelector('.sizeNode').value; 
+				var inventoryData 	= optionArr[i].querySelector('.invenNode').value; 
+				
+				//옵션 배열 검증
+				if(colorData == '' || colorData == undefined){
+					optionArr[i].querySelector('.colorNode').focus();
+					return false;					
+				}
+				if(szData == '' || szData == undefined){
+					optionArr[i].querySelector('.sizeNode').focus();
+					return false;					
+				}
+				if(inventoryData == '' || inventoryData == undefined){
+					optionArr[i].querySelector('.invenNode').focus();
+					return false;					
+				}
+						
+				var optionData = {
+					color		: colorData,
+					sz			: szData,  
+					inventory 	: inventoryData
+				}		
+				optionListArr.push(optionData);
 			}
-			if(inventory.search(numR) != 0){ 
-				alert("재고수량을 알맞게 작성해주세요.");
-				return false; 		
-			}
-			
+		
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(listImgPath.length <= 0){ 
+			if(listImgPathArr.length <= 0){ 
 				alert("리스트 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
@@ -231,7 +292,19 @@
 				alert("상품 상세 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
-	
+			
+ 			//리스트이미지 배열만들기
+			var pathListArr = new Array();
+			for(i=0;i<listImgPathArr.length;i++){
+				pathListArr.push(listImgPathArr[i].value);
+			}
+			
+			//상세이미지 배열만들기
+			var pathDetailArr = new Array();
+			for(i=0;i<datailImgPathArr.length;i++){
+				pathDetailArr.push(datailImgPathArr[i].value);
+			}
+		
 			//소재 빈값체크
 	 		if(fabric == ""){
 				alert("소재를 작성해주세요."); 		
@@ -249,18 +322,6 @@
 				alert("상세설명을 작성해주세요."); 		
 				return false;
 			}
-			
-			//리스트이미지 배열만들기
-			var pathListArr = new Array();
-			for(i=0;i<listImgPath.length;i++){
-				pathListArr.push(listImgPath[i].value);
-			}
-			
-			//상세이미지 배열만들기
-			var pathDetailArr = new Array();
-			for(i=0;i<datailImgPathArr.length;i++){
-				pathDetailArr.push(datailImgPathArr[i].value);
-			}
 		
 			var goodsDataJson 	= {};
 	
@@ -269,10 +330,10 @@
 			goodsDataJson.price 			= price;
 			goodsDataJson.dprice 			= dprice;
 			goodsDataJson.wareHousing		= wareHousing;
-			goodsDataJson.inventory  		= inventory;
 			goodsDataJson.fabric 			= fabric;
 			goodsDataJson.info 				= info;
 			goodsDataJson.descliption 		= descliption;
+			goodsDataJson.optionArr			= optionListArr;
 			goodsDataJson.listImgPathArr	= pathListArr;
 			goodsDataJson.datailImgPathArr	= pathDetailArr;
 			
