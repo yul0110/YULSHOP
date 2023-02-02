@@ -40,8 +40,24 @@
 			dataType	: 'json',
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
-				$('#listPreviewZone').append('<img id="listPreview" src="'+ data.path +'" class="listPreview" style= "width: 100px; height: 100px;"/>');
-            	$('#listPreviewZone').append('<input type="hidden" class="listPath" id="listPath" value="'+ data.path +'" />');
+				
+				var nodeImgCopy; 
+				var nodeInputCopy; 
+				
+				nodeImgCopy		= $('#listImgTempl').clone();
+				nodeInputCopy	= $('#listImgPathTempl').clone();
+				
+				nodeImgCopy.attr('id', "listImgData");
+				nodeImgCopy.attr('src', data.path);
+				nodeImgCopy.attr('class', "listPreview");
+				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
+				
+				nodeInputCopy.attr('id', "listPath");
+				nodeInputCopy.attr('value', data.path);
+				
+				$('#listPreviewZone').append(nodeImgCopy);
+            	$('#listPreviewZone').append(nodeInputCopy);
+				
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -71,8 +87,25 @@
 			dataType	: 'json',
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
-				$('#detailPreviewZone').append('<img id="detailPreview' + imgNum + '" src="'+ data.path +'" class="detailPreview" style= "width: 100px; height: 100px;"/>');
-            	$('#detailPreviewZone').append('<input type="hidden" class="detailPath" id="detailPath' + imgNum + '" value="'+ data.path +'" />');
+				
+				var nodeDetailCopy; 
+				var nodeInputCopy; 
+				
+				nodeDetailCopy	= $('#detailImgTempl');
+				nodeInputCopy	= $('#detailImgPathTempl');
+				
+				
+				nodeDetailCopy.attr('id', "DetailImgData");
+				nodeDetailCopy.attr('src', data.path);
+				nodeDetailCopy.attr('class', "DetailPreview");
+				nodeDetailCopy.attr('style', "width: 100px; height: 100px;");
+				
+				nodeInputCopy.attr('id', "DetailPath");
+				nodeInputCopy.attr('value', data.path);
+				
+				$('#detailPreviewZone').append(nodeDetailCopy);
+            	$('#detailPreviewZone').append(nodeInputCopy);
+				
 			},
 			fail: function(error) {
 				alert('업로드 실패');

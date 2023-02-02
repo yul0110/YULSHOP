@@ -26,7 +26,7 @@ public class BackOfficeController {
     }
 	
 	//BO 메인 페이지
-	@RequestMapping(value = "/admingGoodsReg", method = RequestMethod.GET)
+	@RequestMapping(value = "/adminGoodsReg", method = RequestMethod.GET)
 	public String BoPage(){
 		return "bo/goodsReg";
 	}

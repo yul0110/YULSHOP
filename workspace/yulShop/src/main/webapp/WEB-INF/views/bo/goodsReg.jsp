@@ -57,9 +57,10 @@
 							<input type="file" name="listImg" id="listImg" class="form-control px-4 fileButton">
 						</div>
 						<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
-							<!-- 사진데이터가 들어올 공간 -->
-							<!-- 사진데이터가 들어올 공간 -->
-							<!-- 사진데이터가 들어올 공간 -->
+							<!-- templ zone -->
+							<!-- templ zone -->
+							<!-- templ zone -->
+							<!-- templ zone -->
 						</div>  
 						<br>
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
@@ -99,6 +100,22 @@
 			</div> 
 		</div>
 	</div>
+
+	<!--   data templ zone   -->
+	
+	<!--   listImg   -->
+	<img id="listImgTempl" src="" class="" style= "display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="listImgPathTempl" class="listPath" value="" />
+	<!--   listImg END   -->
+	
+	<!--   detailImg   -->
+	<img id="detailImgTempl" src="" class="" style= "display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="detailImgPathTempl" class="listPath" value="" />
+	<!--   detailImg END   -->
+	
+	
+	<!--  zone END    -->
+
 
 	<!--   js   -->
 	<script src="/resources/js/basic/bootstrap.bundle.min.js"></script>

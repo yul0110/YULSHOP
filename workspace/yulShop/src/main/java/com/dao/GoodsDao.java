@@ -47,9 +47,6 @@ public class GoodsDao {
 		//detailImgId 
 		private Integer detailImg;
 		
-		//재고수량 
-		private Integer inventory;
-		
 		//작성날짜
 		private Date regDt;
 		
@@ -64,6 +61,9 @@ public class GoodsDao {
 		
 		//사용여부
 		private String useYn;
+		
+		//라스트이미지 경로
+		private List<OptionDao> optionArr;
 		
 		//라스트이미지 경로
 		private List<String> listImgPathArr;
