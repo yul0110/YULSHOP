@@ -30,7 +30,10 @@ public class GoodsDao {
 		private Integer dprice;
 		
 		//입고일자
-		private Integer wareHousing;
+		private Date wareHousing;
+
+		//상품상태
+		private String goodsState;
 		
 		//상품설명
 		private String info;

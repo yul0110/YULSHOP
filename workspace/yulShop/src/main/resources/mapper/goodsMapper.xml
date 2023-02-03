@@ -4,8 +4,8 @@
 
 	<insert id="insertGoods" parameterType="com.dao.GoodsDao">
 		INSERT INTO goods
-		(id, cateId, `no`, nm, price, dprice, wareHousing, info, descliption, fabric, listImg, detailImg, regDt, regId, updateDt, updateId, useYn)
-		VALUES(#{id}, #{cateId}, #{no}, #{nm}, #{price}, #{dprice}, #{wareHousing}, #{info}, #{descliption}, #{fabric}, #{listImg}, #{detailImg}, now(), 00000, now(), 00000, "Y");
+		(id, cateId, `no`, nm, price, dprice, wareHousing, goodsState, info, descliption, fabric, listImg, detailImg, regDt, regId, updateDt, updateId, useYn)
+		VALUES(#{id}, #{cateId}, #{no}, #{nm}, #{price}, #{dprice}, now(), #{goodsState}, #{info}, #{descliption}, #{fabric}, #{listImg}, #{detailImg}, now(), 00000, now(), 00000, "Y");
 	</insert>
 	
 	<select id="selectTableNumbering" resultType="Integer">
