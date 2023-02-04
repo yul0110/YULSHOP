@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.CategoryMapper">
+	
+	<select id="selectAllCategoryList" resultType="com.vo.Category">
+		SELECT
+			c1.cateNm,
+			c1.cateCode,
+			c1.cateCodeRef,
+			c2.cateFullNm
+		FROM
+			category c1
+		LEFT JOIN category c2 on
+			c1.cateCode = c2.cateCode
+		ORDER by
+			c1.cateCode
+	</select>
+</mapper>
+
+

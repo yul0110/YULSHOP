@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.dao.GoodsDao;
 import com.service.BoGoodsService;
+import com.service.CategoryService;
 import com.service.ImgService;
+import com.vo.Category;
 
 @Controller
 public class BackOfficeController {
@@ -19,6 +23,9 @@ public class BackOfficeController {
 	@Autowired
 	BoGoodsService boGoodsService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	//BO 메인 페이지
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String BoMainPage(){
@@ -27,8 +34,15 @@ public class BackOfficeController {
 	
 	//BO 메인 페이지
 	@RequestMapping(value = "/adminGoodsReg", method = RequestMethod.GET)
-	public String BoPage(){
-		return "bo/goodsReg";
+	public ModelAndView BoPage(){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);//모델로 데이터 넘겨줌
+		mv.setViewName("bo/goodsReg");
+		return mv;
 	}
 	
 	//상품등록 Ajax

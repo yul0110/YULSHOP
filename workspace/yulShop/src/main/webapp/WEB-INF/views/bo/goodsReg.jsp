@@ -45,6 +45,28 @@
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
 							<input type="text" name="wareHousing" id="wareHousing" class="form-control px-4" maxlength="50" placeholder="입고일자" required>
 						</div>
+						<div class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
+							<select id="categoryCode" name="" style= "width: 100%; height: 40px;">
+								<option value="" selected>카테고리</option>
+								<c:forEach var="category" items="${categoryList}">
+									<c:if test="${category.cateCodeRef eq null}">
+										<option value="${category.cateCode}">${category.cateNm}</option>
+									</c:if>
+								</c:forEach>
+							</select>
+							
+							<select id="categoryChildren" name="" style= "width: 100%; height: 40px;">
+								<option value="" selected>소재선택</option>
+								<option value="">면</option>
+								<option value="">울</option>
+								<option value="">실크</option>
+								<option value="">린넨</option>
+								<option value="">폴리에스터</option>
+								<option value="">나일론</option>
+								<option value="">폴리아크릴</option>
+								<option value="">레이온</option>
+							</select>
+						</div>	
 						<div id='optionAppendTo' class="">
 							<b style="font-size:20px; color:white;">옵션</b>
 							<b id='optionAdd' style="font-size:30px; color:white;">+</b>
@@ -125,6 +147,15 @@
 	<!--   option END   -->
 	
 	<!--  zone END    -->
+
+	<div id='categoryChildData' style='display:none;'>
+		<c:forEach var="category" items="${categoryList}">
+			<c:if test="${category.cateCodeRef ne null}">
+				<input type='hidden' value="${category.cateNm}" data-ref = "${category.cateCodeRef}" data-code = "${category.cateCode}"/>
+			</c:if>
+		</c:forEach>
+	</div>
+
 
 
 	<!--   js   -->

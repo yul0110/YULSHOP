@@ -120,6 +120,23 @@
 				
 	yul.page.prototype.onChangeEvent = function() {
 		
+		//카테고리 코드
+		$("#categoryCode").change(function(){
+			
+			var categoryChildrenArr = $('#categoryChildData').find('input');
+			var choiceCateCode		= $('#categoryCode').val(); 
+			
+			//셀렉트값 초기화
+			$('#categoryChildren').find('option').remove();
+			//제이쿼리 향상 for문으로 배열의 길이만큼 돌려서 카테고리와 코드가 같은 Children만 추출
+			categoryChildrenArr.each(function (i, item) {
+				if(item.dataset.ref == choiceCateCode){
+					$('#categoryChildren').append('<option value="' + item.dataset.code + '">' + item.value + '</option>');
+				}
+			});	
+			
+        });
+		
 		//리스트이미지
 		$("#listImg").change(function(){
 			
@@ -197,6 +214,7 @@
 	 		var price 		= $('#price').val();   //상품가격
 	 		var dprice 		= $('#dprice').val();  //할인가격
 	 		var wareHousing = $('#wareHousing').val();//입고일자
+	 		var cateId		= $('#categoryChildren').val();//카테고리
 	 		var fabric 		= $('#fabric').val();  //소재
 	 		var info 		= $('#info').val();    //상품정보
 	 		var descliption = $('#descliption').val(); //상세정보
@@ -310,6 +328,12 @@
 				alert("소재를 작성해주세요."); 		
 				return false;
 			}	
+
+			//카테고리 빈값체크
+	 		if(cateId == ""){
+				alert("카테고리를 작성해주세요."); 		
+				return false;
+			}	
 			
 			//상품설명 빈값체크
 	 		if(info == ""){
@@ -330,6 +354,7 @@
 			goodsDataJson.price 			= price;
 			goodsDataJson.dprice 			= dprice;
 			goodsDataJson.wareHousing		= wareHousing;
+			goodsDataJson.cateId			= cateId;
 			goodsDataJson.fabric 			= fabric;
 			goodsDataJson.info 				= info;
 			goodsDataJson.descliption 		= descliption;

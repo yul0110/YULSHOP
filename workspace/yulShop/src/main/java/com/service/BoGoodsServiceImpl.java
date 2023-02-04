@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.dao.GoodsDao;
 import com.dao.ImgDao;
 import com.dao.OptionDao;
+import com.mapper.CategoryMapper;
 import com.mapper.GoodsMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
@@ -26,6 +27,9 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 	
 	@Autowired
 	OptionMapper optionMapper;
+	
+	@Autowired
+	CategoryMapper categoryMapper;
 	
 	
 	@Override
@@ -108,16 +112,13 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		
 		goodsDao.setId(goodsNumbering);	
 		//더미데이터
-		goodsDao.setCateId(1231233);
-		
-		
-		
-		//옵션테이블을 생성하고 값을 넣어주고 옵션테이블 Id를 받아서 넣어주는 작업을 해야함
+		goodsDao.setGoodsState("H");
 		
 		flag = goodsMapper.insertGoods(goodsDao);
 		
 		Integer goodsLastId = goodsMapper.selectTableNumbering(); //넘버링이 끝난 상품ID를 옵션의 goodsId에 넣어준다
 		
+		//옵션테이블을 생성하고 값을 넣어주고 옵션테이블 Id를 받아서 넣어주는 작업
 		for(OptionDao optionData : goodsDao.getOptionArr() ) { //향상된for문
 			Integer optionNumbering = optionMapper.selectTableNumbering();
 			//넘버링을 여기서 하는 이유 >>> 옵션 3개가 들어가기 때문에 그 수만큼 for문을 돌려서 id값을 만들어준다
