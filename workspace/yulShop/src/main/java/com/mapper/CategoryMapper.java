@@ -11,4 +11,7 @@ public interface CategoryMapper {
 	//상품 정보 등록
 	List<Category> selectAllCategoryList();
 	
+	//상품 정보 등록
+	List<Category> selectCategoryList(String category);
+	
 }

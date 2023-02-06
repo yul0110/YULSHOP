@@ -6,4 +6,6 @@ import com.vo.Category;
 public interface CategoryService {
 	
 	List<Category> selectAllCategoryList();
+	
+	List<Category> selectCategoryList(String category);
 }

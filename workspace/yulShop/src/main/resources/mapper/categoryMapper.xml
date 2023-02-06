@@ -15,6 +15,18 @@
 		ORDER by
 			c1.cateCode
 	</select>
+	
+	<select id="selectCategoryList" parameterType="String" resultType="com.vo.Category">
+		SELECT
+			cateFullNm,
+			cateNm,
+			cateCode,
+			cateCodeRef
+		FROM
+			category
+		WHERE
+			cateCodeRef = #{value}
+	</select>
 </mapper>
 
 

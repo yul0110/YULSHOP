@@ -14,7 +14,7 @@ public class GoodsDao {
 		//옵션 외래키
 		private Integer optionsId;
 		
-		//카테고리 외래키
+		//카테고리 
 		private String cateId;
 		
 		//상품번호

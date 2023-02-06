@@ -11,6 +11,26 @@
 	<select id="selectTableNumbering" resultType="Integer">
 		SELECT id FROM goods ORDER BY id DESC LIMIT 1
 	</select>
+	
+	<select id="selectCategoryGoodsList" parameterType="String" resultType="com.vo.Goods">
+		SELECT
+			gs.id as id,
+			gs.nm as nm,
+			gs.price as price,
+			gs.dprice as dprice,
+			gs.fabric as fabric,
+			ig.path as ImgPath
+		FROM
+			goods gs
+		JOIN category ct ON
+			gs.cateId = ct.cateCode
+		JOIN imgGroup igg  ON
+			gs.listImg = igg.id
+		JOIN img ig  ON
+			igg.id = ig.imgGroupId
+		WHERE
+			ct.cateCodeRef = #{value} or ct.cateCode = #{value} 
+	</select>
 </mapper>
 
 
