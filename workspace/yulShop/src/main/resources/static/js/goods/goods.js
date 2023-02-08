@@ -56,6 +56,7 @@
 					goodsCopy.find('.goodsPrice').html(item.price.toLocaleString('ko-KR'));
 					goodsCopy.find('.goodsNm').html(item.nm);
 					goodsCopy.find('.goodsFb').html(item.fabric);
+					goodsCopy.data('gid', item.id);
 					
 					$('#goodsList').append(goodsCopy);
 					
@@ -77,7 +78,7 @@
 	yul.page.prototype.clickEvent = function() {
 		
 		$(document).on('click', '.goodsDetail', function(){
-			console.log(123123);
+			location.href = "/goodsDetail?goodsId=" + $(this).data('gid'); 
 		})
 		
 	};

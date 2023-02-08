@@ -16,6 +16,9 @@ public interface GoodsMapper {
 	//상품 정보 등록
 	int insertGoods(GoodsDao goodsDao);
 	
-	//상품 정보 등록
+	//카테고리 코드 
 	List<Goods> selectCategoryGoodsList(String categoryCode);
+	
+	//상품 디테일
+	Goods selectGoods(int id);
 }

@@ -31,6 +31,24 @@
 		WHERE
 			ct.cateCodeRef = #{value} or ct.cateCode = #{value} 
 	</select>
+
+	<select id="selectGoods" parameterType="int" resultType="com.vo.Goods">
+		SELECT
+			id,
+			no,
+			nm,
+			price,
+			dprice,
+			wareHousing,
+			info,
+			descliption,
+			fabric
+		FROM
+			goods
+		WHERE
+			id = #{value}
+	</select>
+
 </mapper>
 
 

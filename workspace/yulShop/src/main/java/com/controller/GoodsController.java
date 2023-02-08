@@ -36,7 +36,21 @@ public class GoodsController {
 		mv.addObject("categoryList", categoryList);
 		mv.addObject("categoryRefList", categoryRefList);
 		mv.addObject("currentCate", cate);
-		mv.setViewName("goods/goods"); 
+		mv.setViewName("goods/goods");                                         
+		return mv;
+    }
+	
+	//상품 디테일 페이지
+	@RequestMapping(value = "/goodsDetail", method = RequestMethod.GET)
+    public ModelAndView goodsDetailPage(int goodsId){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		Goods goodsDetail = goodsService.selectGoods(goodsId);
+		
+		mv.addObject("goods", goodsDetail);
+		mv.setViewName("goods/goodsDetail");
+		
 		return mv;
     }
 	

@@ -21,6 +21,7 @@
 						</c:if>
 					</c:forEach>
 					</h1>
+					
 
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">

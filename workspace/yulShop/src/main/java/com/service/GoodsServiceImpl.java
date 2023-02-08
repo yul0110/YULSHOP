@@ -26,6 +26,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<Goods> selectGoodsList(GoodsDao goodsDao) {
 		return goodsMapper.selectCategoryGoodsList(goodsDao.getCateId());
 	}
+
+	@Override
+	public Goods selectGoods(int id) {
+		return goodsMapper.selectGoods(id);
+	}
 	
 
 
