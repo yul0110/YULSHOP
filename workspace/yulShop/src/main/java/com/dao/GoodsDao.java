@@ -68,7 +68,7 @@ public class GoodsDao {
 		//옵션 경로
 		private List<OptionDao> optionArr;
 		
-		//라스트이미지 경로
+		//리스트이미지 경로
 		private List<String> listImgPathArr;
 		
 		//상세이미지 경로

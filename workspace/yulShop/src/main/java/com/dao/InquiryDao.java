@@ -1,11 +1,14 @@
 package com.dao;
 
+import java.sql.Date;
+import java.util.List;
+
 import lombok.Data;
 
 @Data
 public class InquiryDao {
 
-	//1:1문의 id
+	//id
 	private Integer id;
 	
 	//제목
@@ -13,15 +16,23 @@ public class InquiryDao {
 
 	//내용
 	private String context;
-	
-	//멤버 아이디
-	private Integer mid;
 
-	private String useYn;
+	//사진첨부
+	private Integer imgGroupId;
 	
-	private String regId;
+	//작성날짜
+	private Date regDt;
 	
-	private String updateId;
+	//작성자
+	private Integer regId;
 	
+	//수정날짜
+	private Date updateDt;
+	
+	//수정자
+	private Integer updateId;
+	
+	//리스트이미지 경로
+	private List<String> listImgPathArr;
 }
 

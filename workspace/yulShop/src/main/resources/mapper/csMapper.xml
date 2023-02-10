@@ -12,9 +12,9 @@
 	<!-- 문의 내용 등록 -->
 	<insert id="insertInquiry" parameterType="com.dao.InquiryDao">
 		INSERT INTO inquiry 
-		(id, mid, title, context, regDt, regId, updateDt, updateId, useYn)
+		(id, title, context, imgGroupId, regDt, regId, updateDt, updateId)		
 		VALUES
-		(#{id}, #{mid}, #{title}, #{context}, now(), #{regId}, now(), #{updateId}, "Y")
+		(#{id}, #{title}, #{context}, #{imgGroupId}, now(), 99999, now(), 99999)
 	</insert>
 
 	<!-- 조회 -->

@@ -58,8 +58,7 @@ public class GoodsController {
 	public ModelAndView goodsBestListAjax() {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
-		
-		
+
 		return mv;
 	}
 	

@@ -20,13 +20,13 @@
 		
 		var dataJson 	= {};
 	
-		dataJson.cateId 	= $('#currentCode').val();
+		dataJson.inquiryId 	= $('#currentCode').val();
 						
 		//에이작스 통신을 위한 객체 생성
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/goodsListAjax");
+	    xhr.open("post", "/inquiryListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -45,20 +45,16 @@
 			
 			if(e.currentTarget.status == 200){
 				
-				var goodsList = e.currentTarget.response.goodsList;
+				var inquiryList = e.currentTarget.response.inquiryList;
 				
-				goodsList.forEach(function (item){
+				inquiryList.forEach(function (item){
 					
-					var goodsCopy = $('#goodsNode').clone();
-					goodsCopy.attr('id', '');
-					goodsCopy.attr('style', '');
-					goodsCopy.find('.goodsImg').attr('src', item.imgPath);
-					goodsCopy.find('.goodsPrice').html(item.price.toLocaleString('ko-KR'));
-					goodsCopy.find('.goodsNm').html(item.nm);
-					goodsCopy.find('.goodsFb').html(item.fabric);
-					goodsCopy.data('gid', item.id);
+					var inquiryCopy = $('#inquiryNode').clone();
+					inquiryCopy.attr('id', '');
+					inquiryCopy.attr('style', '');
+					inquiryCopy.find('.inquiryTitle').html(item.title);
 					
-					$('#goodsList').append(goodsCopy);		
+					$('#inquiryList').append(inquiryCopy);		
 				})		
 				
 			}else{
@@ -68,15 +64,6 @@
 	    //전송할 데이터 json 타입으로 변동후 전달
 	    xhr.send(JSON.stringify(dataJson));	
 	}	
-	 
-	//작동할 이벤트를 프로토 타입으로 세팅
-	yul.page.prototype.clickEvent = function() {
-		
-		$(document).on('click', '.goodsDetail', function(){
-			location.href = "/goodsDetail?goodsId=" + $(this).data('gid'); 
-		})
-		
-	};
 	 
 	$(function() {
 		yul.page = new yul.page();

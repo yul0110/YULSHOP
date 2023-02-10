@@ -9,7 +9,7 @@ public interface CsMapper {
 	// 시퀀스 넘버링
 	int selectInquiryNumbering();
 	
-	//문의
+	//문의 생성
 	int insertInquiry(InquiryDao inquiryDao);
 
 }

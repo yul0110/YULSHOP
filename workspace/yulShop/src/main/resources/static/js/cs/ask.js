@@ -4,6 +4,8 @@
  */	  
 (function() {
 	
+	var imgNum = 1;
+	
 	yul.page = function() {
 
 		 this.init();
@@ -12,7 +14,82 @@
 	//prototype 프로토 타입
 	yul.page.prototype.init = function() {
 		this.clickEvent() // bind form submit event
+		this.onChangeEvent()
 	}
+	 
+	//첨부파일  
+	
+	yul.page.prototype.listImgUploadEvent = function(node) {
+		
+		
+		var formData  = new FormData(); //FormData 객체 생성
+		var files 	  = node.files;
+		//files : 선택한 모든 파일을 나열하는 FileList 객체입니다.
+        //multiple 특성을 지정하지 않았다면 두 개 이상의 파일을 포함하지 않습니다.
+		console.log(files);			
+		
+		//add file data to formdata
+		for(var i=0; i<files.length; i++){
+			formData.append("uploadFile",files[i]); //키,값으로 append 
+		}
+		$.ajax({
+			url			:'/uploadImgAjax',
+			processData : false,  //ajax 통신을 통해 데이터를 전송할 때, 기본적으로 key와 value값을 Query String으로 변환해서 보냅니다.
+			contentType : false,  // multipart/form-data타입을 사용하기위해 false 로 지정
+			type		: 'post',
+			data		: formData,
+			dataType	: 'json',
+			success: function(data){
+				//전송에 성공하면 실행될 코드;
+				
+				var nodeImgCopy; 
+				var nodeInputCopy; 
+				
+				nodeImgCopy		= $('#listImgTempl').clone();
+				nodeInputCopy	= $('#filePathTempl').clone();
+				
+				nodeImgCopy.attr('id', "listImgData");
+				nodeImgCopy.attr('src', data.path);
+				nodeImgCopy.attr('class', "listPreview");
+				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
+				
+				nodeInputCopy.attr('id', "listPath");
+				nodeInputCopy.attr('class', "listPath");
+				nodeInputCopy.attr('value', data.path);
+				
+				$('#listPreviewZone').append(nodeImgCopy);
+            	$('#listPreviewZone').append(nodeInputCopy);
+				
+			},
+			fail: function(error) {
+				alert('업로드 실패');
+			  return false;
+			}
+		}); //ajax End
+	}
+	
+	yul.page.prototype.onChangeEvent = function() {
+        
+        //이미지
+        $("#uploadFile").change(function(){
+	
+			var listImgCount = $('.listPreview').length;
+	
+			//이미지 갯수 벨리데이션
+			if(listImgCount >= 5){
+				alert('리스트 이미지는 5개만 등록할수있습니다.');
+			  return false;
+			}
+			
+			yul.page.listImgUploadEvent(this);
+            
+			//카운트 ++
+			imgNum = imgNum +1;
+			
+			//초기화
+			this.value= '';	//같은 이미지가 연속 선택되어도 가져올수있다.
+        });
+	}; 
 	 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
@@ -23,6 +100,9 @@
 	 		
 	 		var title		= $('#titleData').val();
 	 		var context 	= $("#contextData").val(); 
+	 		
+			//노드 배열
+	 		var listImgPathArr 		= $('.listPath'); //리스트 이미지경로
 
 	 		//제목 빈값 체크
 	 		if(title == ""){
@@ -35,11 +115,17 @@
 				alert("문의 내용을 작성해주세요."); 		
 				return false;
 			}
+			//리스트이미지 배열만들기
+			var pathListArr = new Array();
+			for(i=0;i<listImgPathArr.length;i++){
+				pathListArr.push(listImgPathArr[i].value);
+			}
 	
 			var userDataJson 	= {};
 	
-			userDataJson.title 		= title;
-			userDataJson.context 	= context;
+			userDataJson.title 				= title;
+			userDataJson.context 			= context;
+			userDataJson.listImgPathArr	= pathListArr;
 
 			//에이작스 통신을 위한 객체 생성
 		    const xhr = new XMLHttpRequest();

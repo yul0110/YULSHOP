@@ -13,6 +13,7 @@ import com.service.BoGoodsService;
 import com.service.CategoryService;
 import com.service.ImgService;
 import com.vo.Category;
+import com.vo.Goods;
 
 @Controller
 public class BackOfficeController {
@@ -32,7 +33,10 @@ public class BackOfficeController {
 		return "bo/main";
     }
 	
-	//BO 메인 페이지
+	
+	/*------------------상품----------------------*/
+	
+	//BO 상품등록페이지
 	@RequestMapping(value = "/adminGoodsReg", method = RequestMethod.GET)
 	public ModelAndView BoPage(){
 		
@@ -55,6 +59,25 @@ public class BackOfficeController {
 		int result = boGoodsService.insertGoods(goodsDataJson);
 		
 		mv.addObject("result", result);
+		return mv;
+	}
+	
+	/*------------------상품End----------------------*/
+	
+	//BO 상품등록페이지
+	@RequestMapping(value = "/boInquiry", method = RequestMethod.GET)
+	public ModelAndView boInquiry(){
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bo/boInquiry");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/inquiryListAjax", method = RequestMethod.POST)
+	public ModelAndView inquiryListAjax(@RequestBody GoodsDao dataJson) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
 		return mv;
 	}
 	

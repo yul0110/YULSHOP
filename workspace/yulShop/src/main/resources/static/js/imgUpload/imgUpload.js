@@ -50,7 +50,7 @@
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
 		
-		//아이디 중복확인
+		// 등록하기 클릭이벤트
 		$('#uploadAjax').on('click', function(e) {
 	 		e.preventDefault();
 	 		

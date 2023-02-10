@@ -9,56 +9,95 @@
 
 <body>
 
-<!--  topMenu  -->
-<%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;;">
+	<nav class="site-nav">
+		<div class="container">
+			<div class="menu-bg-wrap">
+				<div class="site-navigation">
+					<a href="index.html" class="logo m-0 float-start">Property</a>
+
+					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+						<li><a href="index.html">Home</a></li>
+						<li class="has-children">
+							<a href="properties.html">Properties</a>
+							<ul class="dropdown">
+								<li><a href="#">Buy Property</a></li>
+								<li><a href="#">Sell Property</a></li>
+								<li class="has-children">
+									<a href="#">Dropdown</a>
+									<ul class="dropdown">
+										<li><a href="#">Sub Menu One</a></li>
+										<li><a href="#">Sub Menu Two</a></li>
+										<li><a href="#">Sub Menu Three</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="about.html">About</a></li>
+						<li class="active"><a href="contact.html">Contact Us</a></li>
+					</ul>
+
+					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+						<span></span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="hero page-inner overlay" style="background-image: url('images/hero_bg_1.jpg');">
+
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">문의하기</h1>
-
-					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item active text-white-50" aria-current="page">문의 내용을 보내주시면 빠르게 처리해드리겠습니다</li>
-						</ol>
-					</nav>
+					<h1 class="heading" data-aos="fade-up">문의하기</h1>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<div class="section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
 					<div class="contact-info">
-					
+
 						<div class="address mt-2">
 							<i class="icon-room"></i>
-							<h4 class="mb-2">YUL SHOP 위치</h4>
-							<p>속초시<br>대포항로 라마다길</p>
+							<h4 class="mb-2">Location:</h4>
+							<p>43 Raymouth Rd. Baltemoer,<br> London 3910</p>
 						</div>
 
 						<div class="open-hours mt-4">
 							<i class="icon-clock-o"></i>
-							<h4 class="mb-2">고객센터</h4>
+							<h4 class="mb-2">Open Hours:</h4>
 							<p>
 								Sunday-Friday:<br>
-								10:00 - 17:00
+								11:00 AM - 2300 PM
 							</p>
 						</div>
 
 						<div class="email mt-4">
 							<i class="icon-envelope"></i>
 							<h4 class="mb-2">Email:</h4>
-							<p>gpal0110@naver.com</p>
+							<p>info@Untree.co</p>
 						</div>
 
 						<div class="phone mt-4">
 							<i class="icon-phone"></i>
 							<h4 class="mb-2">Call:</h4>
-							<p>010 2447 9276</p>
+							<p>+1 1234 55488 55</p>
 						</div>
 
 					</div>
@@ -66,20 +105,23 @@
 				<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 					<form action="#">
 						<div class="row">
-							<div class="col-6 mb-3">
-								<input type="text" class="form-control" placeholder="Your Name">
-							</div>
-							<div class="col-6 mb-3">
-								<input type="email" class="form-control" placeholder="Your Email">
+							<div class="col-12 mb-3">
+								<input type="text" id="titleData" class="form-control" maxlength="50" placeholder="문의제목" required>
 							</div>
 							<div class="col-12 mb-3">
-								<input type="text" id="titleData" class="form-control" maxlength="20" placeholder="제목" required>
+								<textarea id="contextData" cols="30" rows="7" class="form-control" maxlength="500" placeholder="문의내용" required></textarea>
 							</div>
-							<div class="col-12 mb-3">
-								<textarea cols="30" rows="7" maxlength="400" id="contextData" class="form-control"  placeholder="문의할 내용을 입력해주세요" required></textarea>
+							<div class="col-6 mb-3">
+							<input type="file" name="uploadFile" id="uploadFile" class="form-control px-4 fileButton" >
 							</div>
+							<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+							</div>
+							<br>	
 							<div class="col-12">
-								<button type="button" id="askAjax" class="btn btn-primary" style="width:10em" >문의하기</button>
+								<input type="button" id="askAjax" value="문의" class="btn btn-primary">
 							</div>
 						</div>
 					</form>
@@ -87,7 +129,15 @@
 			</div>
 		</div>
 	</div> <!-- /.untree_co-section -->
+
+	<!--   data templ zone   -->
 	
+	<!--   listImg   -->
+	<img id="listImgTempl" src="" class="" style= "display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="filePathTempl" class="" value="" />
+	<!--   listImg END   -->
+
+
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 

@@ -317,7 +317,7 @@
 				pathListArr.push(listImgPathArr[i].value);
 			}
 			
-			//상세이미지 배열만들기
+		 	//상세이미지 배열만들기
 			var pathDetailArr = new Array();
 			for(i=0;i<datailImgPathArr.length;i++){
 				pathDetailArr.push(datailImgPathArr[i].value);
