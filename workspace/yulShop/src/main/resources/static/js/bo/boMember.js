@@ -20,7 +20,7 @@
 		
 		var dataJson 	= {};
 	
-		dataJson.inquiryId 	= $('#currentCode').val();
+		dataJson.inquiryId 	= $('#currentIqCode').val();
 						
 		//에이작스 통신을 위한 객체 생성
 	    const xhr = new XMLHttpRequest();
@@ -53,8 +53,11 @@
 					inquiryCopy.attr('id', '');
 					inquiryCopy.attr('style', '');
 					inquiryCopy.find('.inquiryTitle').html(item.title);
+					inquiryCopy.data('inqId',item.id);
 					
-					$('#inquiryList').append(inquiryCopy);		
+					$('#inquiryList').append(inquiryCopy);	
+					
+					var arr = inquiryCopy.length;
 				})		
 				
 			}else{
@@ -64,7 +67,15 @@
 	    //전송할 데이터 json 타입으로 변동후 전달
 	    xhr.send(JSON.stringify(dataJson));	
 	}	
-	 
+	
+	//작동할 이벤트를 프로토 타입으로 세팅
+	yul.page.prototype.clickEvent = function() {
+		
+		$(document).on('click', '.goodsDetail', function(){
+			location.href = "/goodsDetail?goodsId=" + $(this).data('inqId'); 
+		})
+	};
+ 
 	$(function() {
 		yul.page = new yul.page();
 	});

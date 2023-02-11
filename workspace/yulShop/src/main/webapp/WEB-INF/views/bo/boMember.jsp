@@ -8,26 +8,26 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-<script src="/resources/js/bo/boInquiry.js"></script>
+<script src="/resources/js/bo/boMember.js"></script>
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">BO 회원문의</h1>
+					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">BO 회원관리</h1>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item active text-white-50" aria-current="page">회원 질문</li>
+							<li class="breadcrumb-item active text-white-50" aria-current="page">회원 리스트</li>
 						</ol>
 					</nav>
-					<h1 class="heading" data-aos="fade-up">
-					<input id='currentIqCode' type="hidden" value="${currentInquiry}" />
-					<c:forEach var="inquiry" items="${inquiryList}">
-						<c:if test="${inquiry.id eq currentInquiry}">
-							${inquiry.title}
-						</c:if>
-					</c:forEach>
-					</h1>	
+					<div id='inquiryNode' class="row text-left mb-5 inquiryDetail" Style='display:none;'>
+						<div class="col-lg-6" style="border-style: solid; width: 3%">
+							<p class="text-black-50" class="inquiryCount">1</p>
+						</div>
+						<div class="col-lg-6" style="border-style: solid; width: 97%">
+							<p class="text-black-50 inquiryTitle">회원이름</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,14 +61,7 @@
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 <!-- templ  -->
-		<div id='inquiryNode' class="row text-left mb-5 inquiryDetail" Style='display:none;'>
-			<div class="col-lg-6" style="border-style: solid; width: 3%">
-				<p class="text-black-50 inquiryCount" class="inquiryCount">1</p>
-			</div>
-			<div class="col-lg-6" style="border-style: solid; width: 97%">
-				<p class="text-black-50 inquiryTitle">문의 제목</p>
-			</div>
-		</div>
+
 
 <!-- templ  -->
 
