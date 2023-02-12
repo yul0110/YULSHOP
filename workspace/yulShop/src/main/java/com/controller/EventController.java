@@ -1,17 +1,19 @@
 package com.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.service.CategoryService;
 import com.service.GoodsService;
 import com.vo.Category;
 
 @Controller
-public class CartController {
+public class EventController {
 
 	@Autowired
 	CategoryService categoryService;
@@ -19,8 +21,8 @@ public class CartController {
 	@Autowired
 	GoodsService goodsService;
 	
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
-    public ModelAndView CartPage(String cate) {
+	@RequestMapping(value = "/event", method = RequestMethod.GET)
+    public ModelAndView EventPage(String cate) {
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -29,13 +31,12 @@ public class CartController {
 		
 		mv.addObject("categoryList", categoryList);
 		mv.addObject("categoryRefList", categoryRefList);
-		mv.setViewName("cart/cart");                                         
+		mv.setViewName("event/event");                                         
 		return mv;
     }
-	
 
-	@RequestMapping(value = "/wishList", method = RequestMethod.GET)
-	public ModelAndView wishListPage(String cate) {
+	@RequestMapping(value = "/eventDetail", method = RequestMethod.GET)
+	public ModelAndView EventDetailPage(String cate) {
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -44,8 +45,9 @@ public class CartController {
 		
 		mv.addObject("categoryList", categoryList);
 		mv.addObject("categoryRefList", categoryRefList);
-		mv.setViewName("cart/wishList");                                         
+		mv.setViewName("event/eventDetail");                                         
 		return mv;
 	}
 	
+
 }

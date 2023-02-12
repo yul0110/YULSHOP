@@ -35,11 +35,11 @@ public class BackOfficeController {
 	//BO 메인 페이지
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String BoMainPage(){
-		return "bo/main";
+		return "bo/boMain";
     }
 	
 	
-	/*------------------상품----------------------*/
+	/*---------------------------상품----------------------------------*/
 	
 	//BO 상품등록페이지
 	@RequestMapping(value = "/adminGoodsReg", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ public class BackOfficeController {
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		
 		mv.addObject("categoryList", categoryList);//모델로 데이터 넘겨줌
-		mv.setViewName("bo/goodsReg");
+		mv.setViewName("bo/boGoodsReg");
 		return mv;
 	}
 	
@@ -67,9 +67,9 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	/*------------------상품End----------------------*/
+	/*---------------------------상품 END-------------------------------*/
 	
-	//BO 상품등록페이지
+	//BO 문의 페이지
 	@RequestMapping(value = "/boInquiry", method = RequestMethod.GET)
 	public ModelAndView boInquiry(){
 		
@@ -89,8 +89,9 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	/*---------------------------문의 END-------------------------------*/
 	
-	//BO 회원관리페이지
+	//BO 회원관리 페이지
 	@RequestMapping(value = "/boMember", method = RequestMethod.GET)
 	public ModelAndView boMember(){
 		
@@ -99,7 +100,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	//BO 문의 Ajax
+	//BO 회원 리스트Ajax
 	@RequestMapping(value = "/boMemberListAjax", method = RequestMethod.POST)
 	public ModelAndView boMemberAjax(@RequestBody Member dataJson) {
 		
@@ -108,4 +109,25 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	/*---------------------------회원 END-------------------------------*/
+	
+	//BO 이벤트 등록 페이지
+	@RequestMapping(value = "/boEventReg", method = RequestMethod.GET)
+	public ModelAndView boEventReg(){
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bo/boEventReg");
+		return mv;
+	}
+	
+	//BO 이벤트 리스트 페이지
+	@RequestMapping(value = "/boEventDetail", method = RequestMethod.GET)
+	public ModelAndView boEventDetail(){
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bo/boEventDetail");
+		return mv;
+	}
+	
+	/*---------------------------이벤트 END-------------------------------*/	
 }

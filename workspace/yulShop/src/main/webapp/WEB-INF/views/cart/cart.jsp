@@ -7,6 +7,8 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
+<script src="/resources/js/cart/cart.js"></script>
+
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
 
 		<div class="container">
@@ -18,81 +20,68 @@
 		</div>
 	</div>
 
-
 	<div class="section bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Quality Properties</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
 					</div>
 				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="400">
-					<div class="box-feature mb-4">
-						<span class="flaticon-house-2 mb-4 d-block-3"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Top Rated Agent</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="500">
-					<div class="box-feature mb-4">
-						<span class="flaticon-building mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Property for Sale</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="600">
-					<div class="box-feature mb-4">
-						<span class="flaticon-house-3 mb-4 d-block-1"></span>
-						<h3 class="text-black mb-3 font-weight-bold">House for Sale</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
-					</div>
-				</div>	
-
 				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
-						<span class="flaticon-house-4 mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Quality Properties</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
 					</div>
 				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="400">
-					<div class="box-feature mb-4">
-						<span class="flaticon-building mb-4 d-block-3"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Top Rated Agent</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
-					</div>
-				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="500">
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
 						<span class="flaticon-house mb-4 d-block"></span>
-						<h3 class="text-black mb-3 font-weight-bold">Property for Sale</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
 					</div>
 				</div>
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="600">
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
 					<div class="box-feature mb-4">
-						<span class="flaticon-house-1 mb-4 d-block-1"></span>
-						<h3 class="text-black mb-3 font-weight-bold">House for Sale</h3>
-						<p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#" class="learn-more">Read more</a></p>
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
 					</div>
-				</div>	
-
+				</div>
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+					<div class="box-feature mb-4">
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+					<div class="box-feature mb-4">
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+					<div class="box-feature mb-4">
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+					<div class="box-feature mb-4">
+						<span class="flaticon-house mb-4 d-block"></span>
+						<h3 class="text-black mb-3 font-weight-bold">상품이름</h3>
+						<p><a href="#" class="learn-more">상품가격</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
 
 	<div class="section sec-testimonials">
 		<div class="container">

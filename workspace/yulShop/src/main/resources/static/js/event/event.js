@@ -20,13 +20,12 @@
 		
 		var dataJson 	= {};
 	
-		dataJson.inquiryId 	= $('#currentIqCode').val();
 						
 		//에이작스 통신을 위한 객체 생성
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/inquiryListAjax");
+	    xhr.open("post", "/goodsListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -42,45 +41,18 @@
 		
 		//ajax 작동완료
 	    xhr.onload = function(e) {
-			
-			if(e.currentTarget.status == 200){
-				
-				var inquiryList = e.currentTarget.response.inquiryList;
-				
-				inquiryList.forEach(function (item, index){
-					
-					var inquiryCopy = $('#inquiryNode').clone();
-					
-					
-					inquiryCopy.attr('id', '');
-					inquiryCopy.attr('style', '');
-					inquiryCopy.find('.inquiryTitle').html(item.title);
-					inquiryCopy.find('.inquiryCount').html(index+1);
-					inquiryCopy.data('inqId',item.id);
-					
-					
-					
-					$('#inquiryList').append(inquiryCopy);	
-					
-				
-				})		
-				
-			}else{
-				console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
-			}				        
+				        
 	    };
 	    //전송할 데이터 json 타입으로 변동후 전달
 	    xhr.send(JSON.stringify(dataJson));	
 	}	
-	
+	 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
+
 		
-		$(document).on('click', '.goodsDetail', function(){
-			location.href = "/goodsDetail?goodsId=" + $(this).data('inqId'); 
-		})
 	};
- 
+	 
 	$(function() {
 		yul.page = new yul.page();
 	});

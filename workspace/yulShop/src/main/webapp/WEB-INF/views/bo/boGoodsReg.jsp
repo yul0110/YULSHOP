@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/views/bo/header.jsp"%>
 
 <!-- 해당페이지 js연결 -->
-<script src="/resources/js/bo/goodsReg.js"></script>
+<script src="/resources/js/bo/boGoodsReg.js"></script>
 
 <body>
  
