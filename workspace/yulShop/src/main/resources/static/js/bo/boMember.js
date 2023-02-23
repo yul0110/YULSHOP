@@ -19,14 +19,14 @@
 	yul.page.prototype.getList = function() {
 		
 		var dataJson 	= {};
-	
-		dataJson.inquiryId 	= $('#currentIqCode').val();
+
+		dataJson.pageNum 		= $('#pageNum').val();
 						
 		//에이작스 통신을 위한 객체 생성
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/inquiryListAjax");
+	    xhr.open("post", "/boMemberListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -45,20 +45,78 @@
 			
 			if(e.currentTarget.status == 200){
 				
-				var inquiryList = e.currentTarget.response.inquiryList;
+				var d 			= e.currentTarget.response;
+				var itemList	= d.memberList;
 				
-				inquiryList.forEach(function (item){
+				var pagingNodeCopy = $('#pageNode').clone();
+				pagingNodeCopy.attr('id', '');
+				
+				//init 초기화
+				$('#memberList').html('');
+				$('#pagingList').html('');
+				
+				
+				//리스트를 뿌려주는 each
+				$.each(itemList, function( i, item ) {
+					var memberNodeCopy = $('#memberNode').clone();
+					memberNodeCopy.attr('id', '');
+					memberNodeCopy.attr('style', '');
+					memberNodeCopy.find('.memberCount').html(item.id);
+					memberNodeCopy.find('.memberTitle').html(item.nm);
+					$('#memberList').append(memberNodeCopy);
+				});
+				//페이지를 뿌려주는 append
+				
+				
+				if(d.firstPageData > 0){ //페이지를 그릴지 안그릴지 선택
 					
-					var inquiryCopy = $('#inquiryNode').clone();
-					inquiryCopy.attr('id', '');
-					inquiryCopy.attr('style', '');
-					inquiryCopy.find('.inquiryTitle').html(item.title);
-					inquiryCopy.data('inqId',item.id);
+					if(d.firstPageData <= 1){//첫페이지로 보내기를 그릴지 말지
+						pagingNodeCopy.find('.firstPage').data('number', d.firstPageData);
+						pagingNodeCopy.find('.prevPage').data('number', d.prevPageData);
+					}else{
+						pagingNodeCopy.find('.firstPage').remove();
+						pagingNodeCopy.find('.prevPage').remove();
+					}
 					
-					$('#inquiryList').append(inquiryCopy);	
 					
-					var arr = inquiryCopy.length;
-				})		
+					if(d.pageNumPageData > 1){
+						pagingNodeCopy.find('.pagingPrevNum').data('number', d.pageNumPageData - 1);
+						pagingNodeCopy.find('.pagingPrevNum').html(d.pageNumPageData - 1);
+					}else{
+						pagingNodeCopy.find('.pagingPrevNum').remove();
+					}
+					
+					pagingNodeCopy.find('.pagingNum').data('number', d.pageNumPageData);
+					pagingNodeCopy.find('.pagingNum').html(d.pageNumPageData);
+					
+					
+					
+					
+					
+					if(d.pageNumPageData != d.endPageData){
+						pagingNodeCopy.find('.pagingNextNum').data('number', d.pageNumPageData + 1);
+						pagingNodeCopy.find('.pagingNextNum').html(d.pageNumPageData + 1);
+					}else{
+						pagingNodeCopy.find('.pagingNextNum').remove();
+					}
+					
+					if(d.nextPageData > 0){
+						pagingNodeCopy.find('.nextPage').data('number', d.nextPageData);
+					}else{
+						pagingNodeCopy.find('.nextPage').remove();
+					}
+					if(d.endPageData != d.pageNumPageData){
+						pagingNodeCopy.find('.endPage').data('number', d.endPageData);
+					}else{
+						pagingNodeCopy.find('.endPage').remove();
+					}
+					
+					pagingNodeCopy.attr('style', '');
+					
+					$('#pagingList').append(pagingNodeCopy);
+				}
+				
+				location.href = '#memberList';	
 				
 			}else{
 				console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
@@ -70,9 +128,11 @@
 	
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
-		
-		$(document).on('click', '.goodsDetail', function(){
-			location.href = "/goodsDetail?goodsId=" + $(this).data('inqId'); 
+
+		$(document).on('click', '.pagingCilck', function(){
+			
+			$('#pageNum').val($(this).data('number'));
+			yul.page.getList();
 		})
 	};
  

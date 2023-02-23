@@ -2,6 +2,8 @@ package com.vo;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Repository;
+
 import lombok.Data;
 
 @Data

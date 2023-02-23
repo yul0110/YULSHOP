@@ -3,11 +3,21 @@ package com.dao;
 import java.sql.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.mapper.BackOfficeMapper;
+import com.vo.Inquiry;
+import com.vo.paging;
+
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@Repository
+@RequiredArgsConstructor
 @Data
-public class InquiryDao {
-
+public class InquiryDao extends paging{
+	
 	//id
 	private Integer id;
 	
@@ -34,5 +44,6 @@ public class InquiryDao {
 	
 	//리스트이미지 경로
 	private List<String> listImgPathArr;
+	
 }
 

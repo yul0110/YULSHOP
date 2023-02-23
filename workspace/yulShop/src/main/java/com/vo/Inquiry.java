@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Inquiry {
+public class Inquiry{
 	
 	//id
 	private Integer id;

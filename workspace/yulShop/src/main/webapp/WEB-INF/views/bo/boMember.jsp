@@ -20,21 +20,16 @@
 							<li class="breadcrumb-item active text-white-50" aria-current="page">회원 리스트</li>
 						</ol>
 					</nav>
-					<div id='inquiryNode' class="row text-left mb-5 inquiryDetail" Style='display:none;'>
-						<div class="col-lg-6" style="border-style: solid; width: 3%">
-							<p class="text-black-50" class="inquiryCount">1</p>
-						</div>
-						<div class="col-lg-6" style="border-style: solid; width: 97%">
-							<p class="text-black-50 inquiryTitle">회원이름</p>
-						</div>
-					</div>
+					<h1 class="heading" data-aos="fade-up">
+						<input id='pageNum' type="hidden" value=1 />
+					</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="section">
-		<div id='inquiryList' class="container">
+		<div id='memberList' class="container">
 			<!-- tmple zone -->
 			<!-- tmple zone -->
 			<!-- tmple zone -->
@@ -46,14 +41,12 @@
 	<div class="row align-items-center py-5">
 		<div class="col-lg-3">
 		</div>
-		<div class="col-lg-6 text-center">
-			<div class="custom-pagination">
-				<a href="#">1</a>
-				<a href="#" class="active">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-				<a href="#">5</a>
-			</div>
+		<div id='pagingList' class="col-lg-6 text-center">
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
 		</div>
 	</div>
 	
@@ -61,6 +54,26 @@
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 <!-- templ  -->
+	
+	<div id='memberNode' class="row text-left mb-5 memberDetail" Style='display:none;'>
+		<div class="col-lg-6" style="border-style: solid; width: 3%">
+			<p class="text-black-50 memberCount">1</p>
+		</div>
+		<div class="col-lg-6" style="border-style: solid; width: 97%">
+			<p class="text-black-50 memberTitle">회원이름</p>
+		</div>
+	</div>
+
+	<div id='pageNode' class="custom-pagination" style='display:none;'>
+		<a href="javascript:void(0);" class="firstPage pagingCilck">&lt;&lt;</a>
+		<a href="javascript:void(0);" class="prevPage pagingCilck">&lt;</a>
+		<a href="javascript:void(0);" class="pagingPrevNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="pagingNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="pagingNextNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="nextPage pagingCilck">&gt;</a>
+		<a href="javascript:void(0);" class="endPage pagingCilck">&gt;&gt;</a>
+	</div>
+
 
 
 <!-- templ  -->

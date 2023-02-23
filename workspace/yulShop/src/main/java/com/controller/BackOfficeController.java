@@ -1,13 +1,18 @@
 package com.controller;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.dao.GoodsDao;
+import com.dao.InquiryDao;
+import com.dao.MemberDao;
 import com.service.BackOfficeService;
 import com.service.BoGoodsService;
 import com.service.CategoryService;
@@ -69,23 +74,44 @@ public class BackOfficeController {
 	
 	/*---------------------------상품 END-------------------------------*/
 	
+	
+	
+	
+	
+	
 	//BO 문의 페이지
 	@RequestMapping(value = "/boInquiry", method = RequestMethod.GET)
 	public ModelAndView boInquiry(){
 		
 		ModelAndView mv = new ModelAndView();
+
 		mv.setViewName("bo/boInquiry");
 		return mv;
 	}
 	
 	//BO 문의 Ajax
 	@RequestMapping(value = "/inquiryListAjax", method = RequestMethod.POST)
-	public ModelAndView inquiryListAjax(@RequestBody Inquiry dataJson) {
+	public ModelAndView inquiryListAjax(@RequestBody InquiryDao inquiryDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
+	
+		//게시물의 총 갯수
+		int allCount = backOfficeService.selectBoInquiryAllCount();
+		//int inquiryTotal = 
 		
-		List<Inquiry> inquiryList = backOfficeService.selectBoInquiryList(dataJson);
+		inquiryDao.setTotal(allCount);
+		
+		//inquiryDao.setAmount(20);
+		
+		inquiryDao.pagingSetting();
+		List<Inquiry> inquiryList = backOfficeService.selectBoInquiryList(inquiryDao);
+		
 		mv.addObject("inquiryList", inquiryList);
+		mv.addObject("prevPageData", inquiryDao.getPrevPage());
+		mv.addObject("nextPageData", inquiryDao.getNextPage());
+		mv.addObject("pageNumPageData", inquiryDao.getPageNum());
+		mv.addObject("firstPageData", inquiryDao.getFirstPage());
+		mv.addObject("endPageData", inquiryDao.getEndPage());
 		return mv;
 	}
 	
@@ -102,9 +128,24 @@ public class BackOfficeController {
 	
 	//BO 회원 리스트Ajax
 	@RequestMapping(value = "/boMemberListAjax", method = RequestMethod.POST)
-	public ModelAndView boMemberAjax(@RequestBody Member dataJson) {
+	public ModelAndView boMemberAjax(@RequestBody MemberDao memberDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
+		
+		//회원리스트의 총 갯수
+		int allCount = backOfficeService.selectBoMemberAllCount();		
+		
+		memberDao.setTotal(allCount);
+		
+		memberDao.pagingSetting();
+		List<Member> memberList = backOfficeService.selectBoMemberList(memberDao);
+
+		mv.addObject("memberList", memberList);
+		mv.addObject("prevPageData", memberDao.getPrevPage());
+		mv.addObject("nextPageData", memberDao.getNextPage());
+		mv.addObject("pageNumPageData", memberDao.getPageNum());
+		mv.addObject("firstPageData", memberDao.getFirstPage());
+		mv.addObject("endPageData", memberDao.getEndPage());
 		
 		return mv;
 	}

@@ -2,8 +2,22 @@
 
 <mapper namespace="com.mapper.BackOfficeMapper">
 
-	<select id="selectBoInquiryList"  resultType="com.vo.Inquiry" >
+	<select id="selectBoInquiryAllCount"  resultType="int" >
 		SELECT 
+			COUNT(id) 
+		FROM 
+			inquiry 
+	</select>
+	
+	<select id="selectBoMemberAllCount"  resultType="int" >
+		SELECT 
+			COUNT(id) 
+		FROM 
+			member 
+	</select>
+	
+	<select id="selectBoInquiryList" parameterType="com.dao.InquiryDao" resultType="com.vo.Inquiry" >
+		SELECT
 			id, 
 			title, 
 			context, 
@@ -11,12 +25,15 @@
 			regId, 
 			updateDt, 
 			updateId, 
-			imgGroupId 
-		FROM 
-			inquiry 
+			imgGroupId
+		FROM
+			inquiry
+		ORDER BY 
+			id DESC
+		LIMIT #{amount} OFFSET #{offset}
 	</select>
 	
-	<select id="selectBoMemberList"  resultType="com.vo.Member">
+	<select id="selectBoMemberList" parameterType="com.dao.MemberDao"  resultType="com.vo.Member">
 		SELECT 
 			id,
 			nm, 
@@ -31,8 +48,11 @@
 			updateId 
 		FROM 
 			member
+		ORDER BY 
+			id DESC
+		LIMIT #{amount} OFFSET #{offset}	
 	</select>
-
+	
 </mapper>
 
 

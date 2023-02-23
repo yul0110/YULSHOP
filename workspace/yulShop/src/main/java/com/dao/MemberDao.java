@@ -1,11 +1,15 @@
 package com.dao;
 
 import java.sql.Date;
-
+import org.springframework.stereotype.Repository;
+import com.vo.paging;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@Repository
+@RequiredArgsConstructor
 @Data
-public class MemberDao {
+public class MemberDao extends paging{
 	
 		//멤버id
 		private Integer id;

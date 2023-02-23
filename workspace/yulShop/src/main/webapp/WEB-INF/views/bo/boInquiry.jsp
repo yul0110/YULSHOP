@@ -14,19 +14,14 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">BO 회원문의</h1>
+					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">BO 문의하기</h1>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item active text-white-50" aria-current="page">회원 질문</li>
+							<li class="breadcrumb-item active text-white-50" aria-current="page">문의</li>
 						</ol>
 					</nav>
 					<h1 class="heading" data-aos="fade-up">
-					<input id='currentIqCode' type="hidden" value="${currentInquiry}" />
-					<c:forEach var="inquiry" items="${inquiryList}">
-						<c:if test="${inquiry.id eq currentInquiry}">
-							${inquiry.title}
-						</c:if>
-					</c:forEach>
+						<input id='pageNum' type="hidden" value=1 />
 					</h1>	
 				</div>
 			</div>
@@ -46,14 +41,12 @@
 	<div class="row align-items-center py-5">
 		<div class="col-lg-3">
 		</div>
-		<div class="col-lg-6 text-center">
-			<div class="custom-pagination">
-				<a href="#">1</a>
-				<a href="#" class="active">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-				<a href="#">5</a>
-			</div>
+		<div id='pagingList' class="col-lg-6 text-center">
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
+			<!-- tmple zone -->
 		</div>
 	</div>
 	
@@ -61,15 +54,26 @@
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 <!-- templ  -->
-		<div id='inquiryNode' class="row text-left mb-5 inquiryDetail" Style='display:none;'>
-			<div class="col-lg-6" style="border-style: solid; width: 3%">
-				<p class="text-black-50 inquiryCount" class="inquiryCount">1</p>
-			</div>
-			<div class="col-lg-6" style="border-style: solid; width: 97%">
-				<p class="text-black-50 inquiryTitle">문의 제목</p>
-			</div>
-		</div>
 
+	<div id='inquiryNode' class="row text-left mb-5 inquiryDetail" Style='display:none;'>
+		<div class="col-lg-6" style="border-style: solid; width: 3%">
+			<p class="text-black-50 inquiryCount">1</p>
+		</div>
+		<div class="col-lg-6" style="border-style: solid; width: 97%">
+			<p class="text-black-50 inquiryTitle">문의 제목</p>
+		</div>
+	</div>
+
+	<div id='pageNode' class="custom-pagination" style='display:none;'>
+		<a href="javascript:void(0);" class="firstPage pagingCilck">&lt;&lt;</a>
+		<a href="javascript:void(0);" class="prevPage pagingCilck">&lt;</a>
+		<a href="javascript:void(0);" class="pagingPrevNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="pagingNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="pagingNextNum pagingCilck">1</a>
+		<a href="javascript:void(0);" class="nextPage pagingCilck">&gt;</a>
+		<a href="javascript:void(0);" class="endPage pagingCilck">&gt;&gt;</a>
+	</div>
+	
 <!-- templ  -->
 
 
