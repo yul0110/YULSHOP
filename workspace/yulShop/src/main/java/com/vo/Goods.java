@@ -1,10 +1,11 @@
 package com.vo;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
 public class Goods {
-	
 
 	Integer id;
 
@@ -23,6 +24,8 @@ public class Goods {
 	String descliption;
 	
 	String imgPath;
+	
+	List<Img> img;
 }
 	
 

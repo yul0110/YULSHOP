@@ -2,6 +2,23 @@
 
 <mapper namespace="com.mapper.GoodsMapper">
 
+	<resultMap id="goodsDetailMap" type="com.vo.Goods">
+	  <id property="id" column="id" />
+	  <result property="no" column="no" />
+	  <result property="nm" column="nm" />
+	  <result property="price" column="price" />
+	  <result property="dprice" column="dprice" />
+	  <result property="fabric" column="fabric" />
+	  <result property="info" column="info" />
+	  <result property="descliption" column="descliption" />
+	  <collection property="img" ofType="com.vo.Img">
+	    <result property="imgNm" column="imgNm" />
+	    <result property="path" column="path" />
+	  </collection>
+	</resultMap>
+		
+
+
 	<insert id="insertGoods" parameterType="com.dao.GoodsDao">
 		INSERT INTO goods
 		(id, cateId, `no`, nm, price, dprice, wareHousing, goodsState, info, descliption, fabric, listImg, detailImg, regDt, regId, updateDt, updateId, useYn)
@@ -32,21 +49,27 @@
 			ct.cateCodeRef = #{value} or ct.cateCode = #{value} 
 	</select>
 
-	<select id="selectGoods" parameterType="int" resultType="com.vo.Goods">
+	<select id="selectGoods" parameterType="int" resultMap="goodsDetailMap">
 		SELECT
-			id,
-			no,
-			nm,
-			price,
-			dprice,
-			wareHousing,
-			info,
-			descliption,
-			fabric
+			p.id,
+			p.no,
+			p.nm,
+			p.price,
+			p.dprice,
+			p.fabric,
+			p.info,
+			p.descliption,
+			i.nm as imgNm,
+			i.`path`
 		FROM
-			goods
-		WHERE
-			id = #{value}
+			goods p
+		INNER JOIN imgGroup ig ON
+			p.detailImg = ig.id
+			OR 
+			p.listImg = ig.id
+		INNER JOIN img i ON
+			ig.id = i.imgGroupId
+		WHERE p.id = #{value}
 	</select>
 
 </mapper>

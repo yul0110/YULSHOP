@@ -23,9 +23,11 @@
 				<div class="col-lg-7">
 					<div class="img-property-slide-wrap">
 						<div class="img-property-slide">
-							<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-							<img src="/resources/images/img_2.jpg" alt="Image" class="img-fluid">
-							<img src="/resources/images/img_3.jpg" alt="Image" class="img-fluid">
+							<c:forEach items="${goods.img}" var="img">
+								<c:if test="${img.imgNm eq 'list'}">
+									<img src="${img.path}" alt="Image" class="img-fluid">
+								</c:if>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -38,6 +40,11 @@
 					<p class="text-black-50">Perferendis eligendi reprehenderit, assumenda molestias nisi eius iste reiciendis porro tenetur in, repudiandae amet libero. Doloremque, reprehenderit cupiditate error laudantium qui, esse quam debitis, eum cumque perferendis, illum harum expedita.</p>
 				</div>
 			</div>
+			<c:forEach items="${goods.img}" var="img">
+				<c:if test="${img.imgNm eq 'detail'}">
+					<img src="${img.path}" alt="Image" class="img-fluid">
+				</c:if>
+			</c:forEach>		
 		</div>
 	</div>
 
