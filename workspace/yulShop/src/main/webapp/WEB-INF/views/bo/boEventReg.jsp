@@ -8,9 +8,9 @@
 <script src="/resources/js/bo/boEventReg.js"></script>
 
 <body>
- 
+
 <!--  topMenu  -->
-<%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
+<%@ include file="/WEB-INF/views/bo/topMenu.jsp" %> 
 
 	<div>
 		<div class="container">

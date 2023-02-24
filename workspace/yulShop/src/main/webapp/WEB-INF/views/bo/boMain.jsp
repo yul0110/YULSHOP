@@ -10,9 +10,8 @@
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp" %> 
 	
 
-	<section class="features-1"><!-- ȸ������ --></section>
-	
-	<section class="features-1"><!-- ȸ������ --></section>
+	<section class="features-1"></section>
+	<section class="features-1"></section>
 	
 	<div class="section section-4 bg-light">
 		<div class="container">

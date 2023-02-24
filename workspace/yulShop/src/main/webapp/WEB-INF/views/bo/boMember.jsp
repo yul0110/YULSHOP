@@ -2,17 +2,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!--  header  -->
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="/WEB-INF/views/bo/header.jsp"%>
 
 <body>
 
-<%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
+<!--  topMenu  -->
+<%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
 <script src="/resources/js/bo/boMember.js"></script>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" >
 		<div class="container">
-			<div class="row justify-content-center align-items-center">
+			<div class="row2 row justify-content-center align-items-center">
+			<!-- 특수마크업 1 -->
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up" style="font-size:50px;">BO 회원관리</h1>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">

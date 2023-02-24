@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<!--  header  -->
+<%@ include file="/WEB-INF/views/bo/header.jsp"%>
 
 <body>
 
-<%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
+<!--  topMenu  -->
+<%@ include file="/WEB-INF/views/bo/topMenu.jsp" %> 
 
 <script src="/resources/js/event/event.js"></script>
 

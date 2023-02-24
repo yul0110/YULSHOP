@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.dao.MemberDao;
+import com.service.CategoryService;
 import com.service.JoinService;
+import com.vo.Category;
 
 
 @Controller
@@ -16,11 +20,20 @@ public class JoinController {
 	@Autowired
 	JoinService joinService; 
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	// 회원가입 페이지
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-    public String JoinPage() {
+    public ModelAndView JoinPage() {
 		
-		return "join/join";
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("join/join"); 
+		return mv;
     }
 
 	

@@ -13,7 +13,7 @@
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
 	<div class="hero page-inner overlay"
-		style="background-image: url('/resources/images/yulShop4.jpg'); height: 1500px;">
+		style="background-image: url('/resources/images/white.jpg'); height: 1500px;">
 		<div class="container">
 			<br>
 			<br>
@@ -23,7 +23,7 @@
 			<br>
 			<br>
 			<div class="row2 row justify-content-center align-items-center">
-				<!-- 특수마크업 1 -->
+			<!-- 특수마크업 1 -->
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up" style="font-size: 40px;">상품등록</h1>
 					<br><br><br>

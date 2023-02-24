@@ -31,8 +31,8 @@
 								</li>
 							</c:if>
 						</c:forEach>
-						<li><a style="padding: 0px 5px 0px 0px; font-size:25px;" href="#"><span class="icon-user"></span></a></li>
-						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="#"><span style="padding-right:0px" class="icon-cart-plus"></span></a></li>
+						<li><a style="padding: 0px 5px 0px 0px; font-size:25px;" href="/login"><span class="icon-user"></span></a></li>
+						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="/cart"><span style="padding-right:0px" class="icon-cart-plus"></span></a></li>
 					</ul>
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>

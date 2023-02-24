@@ -30,6 +30,12 @@ public class Member {
 	//상세 주소
 	private String addr2;
 	
+	//회원 포인트
+	private Integer point;
+	
+	//회원 등급
+	private String lv;
+	
 	//작성날짜
 	private Date regDt;
 	
