@@ -6,9 +6,9 @@
 	<!-- 회원가입 회원정보 등록 -->
 	<insert id="insertJoinMember" parameterType="com.dao.MemberDao">
 		INSERT INTO member 
-        (id, nm, userId, pw, addr1, addr2, pno, birth, regDt, regId, updateDt, updateId, useYn) 
+        (id, nm, userId, pw, addr1, addr2, pno, birth, lv, auth,regDt, regId, updateDt, updateId, useYn) 
         VALUES 
-        (#{id}, #{nm}, #{userId}, #{pw}, #{addr1}, #{addr2}, #{pno}, #{birth}, now(), 99999, now(), 99999, "Y") 
+        (#{id}, #{nm}, #{userId}, #{pw}, #{addr1}, #{addr2}, #{pno}, #{birth}, 'S', 'USER', now(), 99999, now(), 99999, "Y") 
 	</insert>
 	
 	<!-- Read -->
