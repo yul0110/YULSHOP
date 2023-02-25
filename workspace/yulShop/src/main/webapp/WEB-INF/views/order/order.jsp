@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
+
+<!-- 해당페이지 js연결 -->
+<script src="/resources/js/order/order.js"></script>
+
 <body>
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/hero_bg_1.jpg');">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');">
 
 		<div class="container">
 			<div class="row justify-content-center align-items-center">

@@ -14,9 +14,16 @@
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height:700px;">
 		<div class="container">
-			<div class="row2 row justify-content-center align-items-center"> <!-- Ư����ũ�� 1 -->
+			<div class="row2 row justify-content-center align-items-center"> 
 				<div class="col-lg-9 text-center mt-5" >
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
 					<h1 class="heading" data-aos="fade-up">로그인</h1>
+					<br>
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" data-aos="fade-up" data-aos-delay="200">
 						<input type="text" id="userIdData" class="form-control px-4" width="5px" maxlength="15" placeholder="아이디를 입력해주세요.">
 					</form>
@@ -30,10 +37,14 @@
 					<br>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item "><a href="index.html">아이디</a></li>
-							<li class="breadcrumb-item "><a href="index.html">비밀번호를 잊으셨나요?</a></li>
+							<li class="breadcrumb-item "><a href="/findId">아이디</a></li>
+							<li class="breadcrumb-item "><a href="/findPw">비밀번호를 잊으셨나요?</a></li>
 						</ol>
-					</nav>	
+						<br>
+						<ol class="breadcrumb text-center justify-content-center">
+							<li class="breadcrumb-item "><a href="/join">♡회원가입♡</a></li>
+						</ol>
+					</nav>
 				</div>
 			</div>
 		</div>

@@ -17,13 +17,11 @@
 		</div>
 	
 		<div class="container">
-			<!-- �������̳� -->
 		</div>
 	</div>
-	<section class="features-1"><!-- ȸ������ --></section>
+	<section class="features-1"></section>
 	
 	<div class="section">
-		<!-- ���� ���� -->
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-lg-6">

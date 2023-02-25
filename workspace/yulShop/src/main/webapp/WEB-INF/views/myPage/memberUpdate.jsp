@@ -17,7 +17,13 @@
 
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height: 1000px;">
 		<div class="container">
-			<br> <br> <br> <br> <br> <br> <br>
+			<br>
+			<br> 
+			<br> 
+			<br> 
+			<br> 
+			<br> 
+			<br>
 			<div class="row2 row justify-content-center align-items-center">
 				<!-- 특수마크업 1 -->
 				<div class="col-lg-9 text-center mt-5">

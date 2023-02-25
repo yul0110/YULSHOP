@@ -52,9 +52,6 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		List<Category> categoryList = categoryService.selectAllCategoryList();
-		
-		mv.addObject("categoryList", categoryList);//모델로 데이터 넘겨줌
 		mv.setViewName("bo/boGoodsReg");
 		return mv;
 	}
@@ -65,9 +62,8 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 
-		
 		int result = boGoodsService.insertGoods(goodsDataJson);
-		
+
 		mv.addObject("result", result);
 		return mv;
 	}
@@ -76,15 +72,14 @@ public class BackOfficeController {
 	
 	
 	
-	
-	
-	
 	//BO 문의 페이지
 	@RequestMapping(value = "/boInquiry", method = RequestMethod.GET)
 	public ModelAndView boInquiry(){
 		
 		ModelAndView mv = new ModelAndView();
-
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
 		mv.setViewName("bo/boInquiry");
 		return mv;
 	}

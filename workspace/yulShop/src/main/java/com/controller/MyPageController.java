@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.dao.MemberDao;
+import com.service.CategoryService;
 import com.service.MyPageService;
+import com.vo.Category;
 import com.vo.Member;
 
 @Controller
@@ -17,13 +19,19 @@ public class MyPageController {
 	@Autowired
 	MyPageService MyPageService;
 	
+	@Autowired
+	CategoryService categoryService;
 	
 	//마이 페이지
-	@RequestMapping(value = "/myPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberMyPage", method = RequestMethod.GET)
 	public ModelAndView MyPage() {
 		
 		ModelAndView mv = new ModelAndView();
 		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("myPage/memberMyPage"); 
 		//mv.setViewName("myPage/memberMyPage"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		return mv;
     }
@@ -33,6 +41,10 @@ public class MyPageController {
 	public ModelAndView memberResignPage() {
 		
 		ModelAndView mv = new ModelAndView();	
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		mv.addObject("categoryList", categoryList);
+		
 		mv.setViewName("myPage/memberResign"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		
 		return mv;
@@ -50,6 +62,9 @@ public class MyPageController {
 		
 		List<Member> memberList = MyPageService.selectMemberData(id);
 		Member memberData = memberList.get(0);
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		mv.addObject("categoryList", categoryList);
 		
 		mv.setViewName("myPage/memberUpdate"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		mv.addObject("memberData", memberData);

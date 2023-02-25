@@ -22,7 +22,6 @@
 		SELECT COUNT(userId) FROM member WHERE userId = #{value}
 	</select>
 
-
 </mapper>
 
 

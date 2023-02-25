@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.dao.MemberDao;
+import com.service.CategoryService;
 import com.service.LoginService;
+import com.vo.Category;
 
 @Controller
 public class LoginController {
@@ -15,23 +19,44 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	// 로그인 페이지
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String LoginPage() {
+	public ModelAndView LoginPage() {
 
-		return "login/login";
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("login/login"); 
+		return mv;
 	}
 	// 아이디 찾기 페이지
 	@RequestMapping(value = "/findId", method = RequestMethod.GET)
-	public String findIdPage() {
+	public ModelAndView findIdPage() {
 		
-		return "login/findId";
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("login/findId"); 
+		return mv;
 	}
 	// 비밀번호 찾기 페이지
 	@RequestMapping(value = "/findPw", method = RequestMethod.GET)
-	public String findPwPage() {
+	public ModelAndView findPwPage() {
 		
-		return "login/findPw";
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("login/findPw"); 
+		return mv;
 	}
 	
 	
