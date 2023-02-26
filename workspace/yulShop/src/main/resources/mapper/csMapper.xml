@@ -7,6 +7,24 @@
 	<select id="selectInquiryNumbering" resultType="int">
 		SELECT id FROM inquiry ORDER BY id DESC LIMIT 1
 	</select>
+	
+	
+	<!-- FaQ -->
+	<select id="selectFaqList" parameterType="String" resultType="com.vo.Faq">
+		SELECT
+			id,
+			title,
+			contents,
+			sort
+		FROM
+			faq
+		WHERE
+			faqType = #{value}
+		ORDER BY
+			sort DESC
+	</select>
+	
+	
 
 	<!-- insert -->
 	<!-- 문의 내용 등록 -->

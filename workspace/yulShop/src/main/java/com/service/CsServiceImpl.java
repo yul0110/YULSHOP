@@ -1,13 +1,15 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.dao.ImgDao;
 import com.dao.InquiryDao;
 import com.mapper.CsMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
+import com.vo.Faq;
 
 @Service
 public class CsServiceImpl implements CsService {
@@ -21,7 +23,13 @@ public class CsServiceImpl implements CsService {
 	
 	@Autowired
 	ImgMapper imgMapper;
+
 	
+	@Override
+	public List<Faq> selectFaqList(String type) {
+		return csMapper.selectFaqList(type);
+	}
+
 	@Override
 	public int insertInquiry(InquiryDao inquiryDao) {
 		
@@ -40,9 +48,6 @@ public class CsServiceImpl implements CsService {
 		 * 6. 
 		 * 
 		 * */
-		
-		
-		
 		//리스트 이미지 그룹 넘버링
 		listImgGroupId = imgGroupMapper.selectTableNumbering();
 		if(listImgGroupId == null) {
@@ -82,6 +87,8 @@ public class CsServiceImpl implements CsService {
 		return flag;
 	
 	}
+
+
 	
 
 }

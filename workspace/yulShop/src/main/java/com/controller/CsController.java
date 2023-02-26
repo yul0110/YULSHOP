@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.service.CategoryService;
 import com.service.CsService;
 import com.vo.Category;
+import com.vo.Faq;
 
 @Controller
 public class CsController {
@@ -59,8 +62,22 @@ public class CsController {
 		mv.addObject("resurt", resurt);
 		return mv;
 	}
-	
 
-	
+	// faq Ajax
+	@RequestMapping(value = "/faqAjax", method = RequestMethod.POST)
+	public ModelAndView faqAjax(@RequestBody Faq faqData) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<Faq> faqList = csService.selectFaqList(faqData.getFaqType());
+		
+		mv.addObject("faqList", faqList);
+		mv.addObject("faqTypeData", faqData.getFaqType());
+		mv.addObject("faqTitleData", faqData.getTitle());
+		mv.addObject("faqContentsData", faqData.getContents());
+		mv.addObject("faqIdData", faqData.getId());
+		
+		return mv;
+	}
 	
 }
