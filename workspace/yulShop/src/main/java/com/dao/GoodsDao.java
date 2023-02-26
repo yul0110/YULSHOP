@@ -72,5 +72,5 @@ public class GoodsDao {
 		private List<String> listImgPathArr;
 		
 		//상세이미지 경로
-		private List<String> datailImgPathArr;
+		private List<String> detailImgPathArr;
 }

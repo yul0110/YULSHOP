@@ -6,22 +6,22 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class FaqDao {
+public class EventDao {
 	
 	//id
 	private Integer id;
 	
-	//타입
-	private String faqType;
-
+	//listImgId 
+	private Integer listImg;
+	
+	//detailImgId 
+	private Integer detailImg;
+	
 	//제목
 	private String title;
 
 	//내용
 	private String contents;
-
-	//사진첨부
-	private Integer sort;
 	
 	//작성날짜
 	private Date regDt;
@@ -35,8 +35,13 @@ public class FaqDao {
 	//수정자
 	private Integer updateId;
 	
-		
-		//사용여부
-		private String useYn;
+	//사용여부
+	private String useYn;
+	
+	//메인이미지 경로
+	private List<String> mainImgPathArr;
+	
+	//상세이미지 경로
+	private List<String> detailImgPathArr;
 
 }

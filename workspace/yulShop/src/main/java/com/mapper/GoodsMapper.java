@@ -10,7 +10,7 @@ import com.vo.Goods;
 @Mapper
 public interface GoodsMapper {
 	
-	//member 테이블 넘버링
+	// 테이블 넘버링
 	Integer selectTableNumbering();
 	
 	//상품 정보 등록

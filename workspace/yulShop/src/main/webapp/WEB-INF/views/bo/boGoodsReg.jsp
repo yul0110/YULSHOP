@@ -26,7 +26,9 @@
 			<!-- 특수마크업 1 -->
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up" style="font-size: 40px;">상품등록</h1>
-					<br><br><br>
+					<br>
+					<br>
+					<br>
 					<form action="/joinusAjax" id='joinform' name='joinform'
 						method="post" class="php-email-form">
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center">
@@ -77,16 +79,17 @@
 							<!-- templ zone -->
 							<!-- templ zone -->
 						</div>
-						<br>
+						<h1 class="heading" data-aos="fade-up" style="font-size: 30px;">메인 이미지</h1>
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
 							<input type="file" name="listImg" id="listImg" class="form-control px-4 fileButton">
 						</div>
+						<br>
 						<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
 							<!-- templ zone -->
 							<!-- templ zone -->
 							<!-- templ zone -->
 						</div>  
-						<br>
+						<h1 class="heading" data-aos="fade-up" style="font-size: 30px;">디테일 이미지</h1>
 						<div class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >	
 							<input type="file" name="uploadFile" id="uploadFile" class="form-control px-4 fileButton">
 						</div>
@@ -118,7 +121,9 @@
 						</div>	
 						<br>
 						<button type="button" class="btn btn-primary" id="uploadAjax" style="width: 10em">등록하기</button>
-						<br> <br> <br>
+						<br> 
+						<br> 
+						<br>
 					</form>  <!-- End Contact Form -->
 				</div>
 			</div> 

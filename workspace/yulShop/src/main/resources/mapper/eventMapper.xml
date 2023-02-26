@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mapper.CartMapper">
+<mapper namespace="com.mapper.EventMapper">
 
+	<insert id="insertEvent" parameterType="com.dao.EventDao">
+	INSERT INTO event
+	(id, listImg, detailImg, title, contents, regDt, regId, updateDt, updateId, useYn)		
+	VALUES(#{id}, #{listImg}, #{detailImg}, #{title}, #{contents}, now(), 99999, now(), 99999, "Y")
+	</insert>
+
+	<select id="selectTableNumbering" resultType="Integer">
+		SELECT id FROM goods ORDER BY id DESC LIMIT 1
+	</select>
+	
+	
 </mapper>
 
 

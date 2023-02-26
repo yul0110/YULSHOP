@@ -86,7 +86,7 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 		detailImgGroupId = detailImgGroupId + 1;
 		//이미지 그룹 생성
 		imgGroupMapper.insertImgGroup(detailImgGroupId);
-		for(String detailImg : goodsDao.getDatailImgPathArr() ) { //향상된for문
+		for(String detailImg : goodsDao.getDetailImgPathArr() ) { //향상된for문
 			ImgDao imgDao = new ImgDao();
 			Integer imgNumbering = imgMapper.selectTableNumbering();
 			imgNumbering = imgNumbering + 1;

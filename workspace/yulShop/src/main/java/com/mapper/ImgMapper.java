@@ -10,6 +10,6 @@ public interface ImgMapper {
 	//테이블 넘버링
 	Integer selectTableNumbering();
 	
-	//이미지 그룹 생성
+	//이미지 생성
 	int insertImg(ImgDao imgDao);
 }
