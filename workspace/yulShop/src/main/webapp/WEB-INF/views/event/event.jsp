@@ -7,8 +7,6 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-<script src="/resources/js/event/event.js"></script>
-
 	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
 
 		<div class="container">
@@ -30,91 +28,34 @@
 		</div>
 	</div>
 
-	<div class="section pt-0">
-		<div class="container">
-			<div class="row justify-content-between mb-5">
-				<div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
-					<div class="img-about dots">
-						<img src="/resources/images/dukkeob.jpg" alt="Image" class="img-fluid">
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-home2"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
+	<c:forEach var="event" items="${eventList}" varStatus="st">
+		<div class="section pt-0">
+			<div class="container">
+				<a href="/eventDetail?id=${event.id}">
+					<div class="row justify-content-between mb-5">
+						<div class="col-lg-7 mb-5 mb-lg-0 ${st.count % 2 eq 0 ? '' : 'order-lg-2'}">
+							<div class="img-about dots">
+								<img src="${event.imgPath}" alt="Image" class="img-fluid">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="d-flex feature-h">
+				
+				0				<span class="wrap-icon me-3">
+									<span class="icon-home2"></span>
+								</span>
+								<div class="feature-text">
+									<h3 class="heading">${event.title} </h3>
+									<p class="text-black-50">${event.regDt}</p>   
+								</div>
+							</div>
 						</div>
 					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-person"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
-						</div>
-					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-security"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
-						</div>
-					</div>
-				</div>
+				</a>
 			</div>
 		</div>
-	</div>
+	</c:forEach>
 
-	<div class="section pt-0">
-		<div class="container">
-			<div class="row justify-content-between mb-5">
-				<div class="col-lg-7 mb-5 mb-lg-0">
-					<div class="img-about dots">
-						<img src="/resources/images/dukkeob.jpg" alt="Image" class="img-fluid">		
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-home2"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
-						</div>
-					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-person"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
-						</div>
-					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3">
-							<span class="icon-security"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">이벤트 제목</h3>
-							<p class="text-black-50">이벤트 내용</p>   
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>

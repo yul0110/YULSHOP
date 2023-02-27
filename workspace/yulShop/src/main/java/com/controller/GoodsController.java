@@ -29,9 +29,10 @@ public class GoodsController {
 		
 		ModelAndView mv = new ModelAndView();
 		
+		//---------카테고리-----------
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		
 		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리-----------
 		
 		mv.addObject("categoryList", categoryList);
 		mv.addObject("categoryRefList", categoryRefList);

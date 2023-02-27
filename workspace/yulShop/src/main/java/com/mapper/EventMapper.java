@@ -1,7 +1,10 @@
 package com.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import com.dao.EventDao;
+import com.vo.Event;
 
 @Mapper
 public interface EventMapper {
@@ -11,4 +14,11 @@ public interface EventMapper {
 	
 	//이벤트 등록
 	int insertEvent(EventDao eventDao);
+	
+	//이벤트 리스트
+	List<Event> selectEventList();
+	
+	//이벤트 디테일 리스트
+	List<Event> selectEventDetailList(int id);
+	
 }

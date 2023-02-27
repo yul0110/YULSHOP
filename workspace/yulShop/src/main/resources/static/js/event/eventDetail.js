@@ -12,41 +12,8 @@
 	//prototype 프로토 타입
 	yul.page.prototype.init = function() {
 		this.clickEvent() // bind form submit event
-		this.getList() // bind form submit event
 	}
 	
-	//작동할 이벤트를 프로토 타입으로 세팅
-	yul.page.prototype.getList = function() {
-		
-		var dataJson 	= {};
-	
-						
-		//에이작스 통신을 위한 객체 생성
-	    const xhr = new XMLHttpRequest();
-	    
-	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/goodsListAjax");
-	    
-	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
-	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
-	    
-	    //받는 데이터 타입 설정
-	    xhr.responseType = "json";
-	    
-	    //ajax 작동중 이벤트
-	    xhr.onprogress = function () {
-		    //데이터 리턴 직전에 발동
-		    //프로그래스바 실행
-		};
-		
-		//ajax 작동완료
-	    xhr.onload = function(e) {
-				        
-	    };
-	    //전송할 데이터 json 타입으로 변동후 전달
-	    xhr.send(JSON.stringify(dataJson));	
-	}	
-	 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
 

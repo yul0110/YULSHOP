@@ -14,8 +14,7 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up">이벤트를 소개합니다^^</h1>
-
+					<h1 class="heading" data-aos="fade-up">이벤트를 소개합니다</h1>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
 							<li class="breadcrumb-item "><a href="/event">이벤트홈으로 돌아가기</a></li>
@@ -25,20 +24,38 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="section">
-		<div class="container">
-			<div class="row text-left mb-5">
-				<div class="col-12">
-					<h2 class="font-weight-bold heading text-primary mb-4">출석체크</h2>
-				</div>
-				<div class="col-lg-6">
-					<p class="text-black-50">2023 2월 출석체크 이벤트!!</p>
+	
+	<c:forEach var="detailEvent" items="${eventDetailList}">
+		<div class="section">
+			<div class="container">
+				<div class="row text-left mb-5 text-center display-flex justify-content-center">
+					<div class="col-12">
+						<h2 class="font-weight-bold heading text-primary mb-4">${detailEvent.title}</h2>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="col-lg-6">
+						<p class="text-black-50 text-center">${detailEvent.contents}</p>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="col-lg-7 mb-5 mb-lg-0">
+						<div class="img-about dots ">
+							<img src="${detailEvent.imgPath}" alt="Image" class="img-fluid">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+	</c:forEach>
+	
+	
+	
+	
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 

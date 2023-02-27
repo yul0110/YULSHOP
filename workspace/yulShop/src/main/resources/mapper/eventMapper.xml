@@ -8,8 +8,35 @@
 	VALUES(#{id}, #{listImg}, #{detailImg}, #{title}, #{contents}, now(), 99999, now(), 99999, "Y")
 	</insert>
 
+
 	<select id="selectTableNumbering" resultType="Integer">
-		SELECT id FROM goods ORDER BY id DESC LIMIT 1
+		SELECT id FROM event ORDER BY id DESC LIMIT 1
+	</select>
+
+	<select id="selectEventList" resultType="com.vo.Event">
+		SELECT
+			e.id AS id,
+			e.title AS title,
+			e.regDt AS regDt,
+			i.`path` AS imgPath
+		FROM
+			event e
+			JOIN img i ON
+			e.listImg = i.imgGroupId
+		ORDER BY regDt DESC 
+	</select>
+
+	<select id="selectEventDetailList" parameterType="int" resultType="com.vo.Event">
+		SELECT
+			e.id AS id,
+			e.title AS title,
+			e.contents AS contents,
+			i.`path` AS imgPath
+		FROM
+			event e
+			JOIN img i ON
+			e.detailImg = i.imgGroupId
+		WHERE e.id = #{value}
 	</select>
 	
 	

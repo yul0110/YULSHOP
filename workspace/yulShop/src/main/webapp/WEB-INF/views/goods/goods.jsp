@@ -17,12 +17,10 @@
 					<input id='currentCode' type="hidden" value="${currentCate}" />
 					<c:forEach var="cate" items="${categoryList}">
 						<c:if test="${cate.cateCode eq currentCate}">
-							${cate.cateNm }
+							${cate.cateNm}
 						</c:if>
 					</c:forEach>
 					</h1>
-					
-
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
 							<c:forEach var="cateRef" items="${categoryRefList}">
@@ -186,6 +184,7 @@
 <!-- templ  -->
 
 
+<!-- js  -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>
     <script src="/resources/js/basic/tiny-slider.js"></script>
     <script src="/resources/js/basic/aos.js"></script>

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.service.CategoryService;
+import com.service.EventService;
 import com.service.GoodsService;
 import com.vo.Category;
+import com.vo.Event;
 
 @Controller
 public class EventController {
@@ -21,30 +23,44 @@ public class EventController {
 	@Autowired
 	GoodsService goodsService;
 	
+	@Autowired
+	EventService eventService;
+	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
-    public ModelAndView EventPage(String cate) {
+    public ModelAndView EventPage() {
 		
 		ModelAndView mv = new ModelAndView();
 		
+		//---------카테고리---------
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리---------
+		
+		
+		List<Event> eventList = eventService.selectEventList();
 		
 		mv.addObject("categoryList", categoryList);
-		mv.addObject("categoryRefList", categoryRefList);
+		mv.addObject("eventList", eventList);
 		mv.setViewName("event/event");                                         
 		return mv;
     }
 
+	
+	
+	
 	@RequestMapping(value = "/eventDetail", method = RequestMethod.GET)
-	public ModelAndView EventDetailPage(String cate) {
+	public ModelAndView EventDetailPage(int id) {
 		
 		ModelAndView mv = new ModelAndView();
 		
+		//---------카테고리---------
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리---------
+		
+		
+		List<Event> eventDetailList = eventService.selectEventDetailList(id);
 		
 		mv.addObject("categoryList", categoryList);
-		mv.addObject("categoryRefList", categoryRefList);
+		mv.addObject("eventDetailList", eventDetailList);
 		mv.setViewName("event/eventDetail");                                         
 		return mv;
 	}

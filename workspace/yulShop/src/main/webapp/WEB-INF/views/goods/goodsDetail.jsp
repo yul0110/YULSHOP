@@ -15,8 +15,6 @@
 
 	<div class="hero page-inner overlay" >
 	</div>
-
-
 	<div class="section">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -32,8 +30,6 @@
 					</div>
 				</div>
 				<div class="col-lg-4">
-					
-				
 					<h2 class="heading text-primary">${goods.nm}</h2>
 					<p class="meta"><fmt:formatNumber type="number" maxFractionDigits="3" value="${goods.price}" /></p>
 					<p class="text-black-50">${goods.nm}</p>
@@ -47,7 +43,6 @@
 			</c:forEach>		
 		</div>
 	</div>
-
 
 
 	<div class="site-footer">
