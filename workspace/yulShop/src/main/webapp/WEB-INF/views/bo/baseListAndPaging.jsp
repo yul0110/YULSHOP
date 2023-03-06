@@ -45,15 +45,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@4.7.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 
-
-	<!-- css --><!-- css --><!-- css -->
-	
     <link rel="stylesheet" href="/resources/css/bo/base/morioh.css">
-	<!-- css --><!-- css -->
-
-	<!-- js --><!-- js --><!-- js -->
-	
-	<!-- js --><!-- js -->
 
     <style>
         .grid-container {
@@ -67,10 +59,6 @@
 
 
 </head>
-
-<!-- page js -->
-
-<!-- page js -->
 
 <body class="menubar-enabled navbar-top-fixed">
 

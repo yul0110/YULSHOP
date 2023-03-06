@@ -1,22 +1,24 @@
 package com.controller;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
 import com.service.BackOfficeService;
 import com.service.BoGoodsService;
 import com.service.CategoryService;
-import com.service.BoEventService;
 import com.service.ImgService;
 import com.vo.Category;
+import com.vo.Goods;
 import com.vo.Inquiry;
 import com.vo.Member;
 
@@ -27,9 +29,6 @@ public class BackOfficeController {
 	ImgService imgService;
 	
 	@Autowired
-	BoEventService boeventService;
-
-	@Autowired
 	BoGoodsService boGoodsService;
 	
 	@Autowired
@@ -37,10 +36,12 @@ public class BackOfficeController {
 
 	@Autowired
 	BackOfficeService backOfficeService;
+	
 
 	
-	//BO 메인 페이지
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	/*---------------------------메인----------------------------------*/
+	
+	@RequestMapping(value = "/bmain", method = RequestMethod.GET)
     public String BoMainPage(){
 		return "bo/boMain";
     }
@@ -49,7 +50,7 @@ public class BackOfficeController {
 	/*---------------------------상품----------------------------------*/
 	
 	//BO 상품등록페이지
-	@RequestMapping(value = "/adminGoodsReg", method = RequestMethod.GET)
+	@RequestMapping(value = "/bgoodsReg", method = RequestMethod.GET)
 	public ModelAndView BoPage(){
 		
 		ModelAndView mv = new ModelAndView();
@@ -75,13 +76,11 @@ public class BackOfficeController {
 	
 	
 	//BO 문의 페이지
-	@RequestMapping(value = "/boInquiry", method = RequestMethod.GET)
+	@RequestMapping(value = "/binquiry", method = RequestMethod.GET)
 	public ModelAndView boInquiry(){
 		
 		ModelAndView mv = new ModelAndView();
-		List<Category> categoryList = categoryService.selectAllCategoryList();
-		
-		mv.addObject("categoryList", categoryList);
+
 		mv.setViewName("bo/boInquiry");
 		return mv;
 	}
@@ -164,18 +163,6 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bo/boEventDetail");
-		return mv;
-	}
-	
-	//BO 이벤트 등록 Ajax
-	@RequestMapping(value = "/eventRegAjax", method = RequestMethod.POST)
-	public ModelAndView eventRegAjax(@RequestBody EventDao eventDataJson ) {
-		
-		ModelAndView mv = new ModelAndView("jsonView");
-
-		int result = boeventService.insertEvent(eventDataJson);
-
-		mv.addObject("result", result);
 		return mv;
 	}
 	
