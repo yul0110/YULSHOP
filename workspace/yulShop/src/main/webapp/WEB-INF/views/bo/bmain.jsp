@@ -12,15 +12,158 @@
     <div class="wrapper">
 
         <div class="container-fluid mt-15">
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+
+                <div class="col">
+                    <div class="card mb-15">
+                        <div class="card-body">
+                            <span class="badge bg-success float-right">month</span>
+                            <h6 class="card-title text-muted">주문수</h6>
+                            <h3 class="mb-10">120,160,001</h3>
+                            <p class="text-muted mb-0">Total: 1,5B
+                                <span class="float-right"> <i class="fas fa-angle-up text-success"></i> 5.5%</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card mb-15">
+                        <div class="card-body">
+                            <span class="badge bg-success float-right">month</span>
+                            <h6 class="card-title text-muted">회원수</h6>
+                            <h3 class="mb-10">100,007</h3>
+                            <p class="text-muted mb-0">Total: 150M
+                                <span class="float-right"> <i class="fas fa-angle-up text-success"></i> 5.5%</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card mb-15">
+                        <div class="card-body">
+                            <span class="badge bg-success float-right">month</span>
+                            <h6 class="card-title text-muted">율바보</h6>
+                            <h3 class="mb-10">1,234</h3>
+                            <p class="text-muted mb-0">Total: 329,890
+                                <span class="float-right"> <i class="fas fa-angle-up text-success"></i> 5.5%</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card mb-15">
+                        <div class="card-body">
+                            <span class="badge bg-success float-right">month</span>
+                            <h6 class="card-title text-muted">오늘매출</h6>
+                            <h3 class="mb-10">$89,909</h3>
+                            <p class="text-muted mb-0">Total: $890,789
+                                <span class="float-right"> <i class="fas fa-angle-up text-success"></i> 5.5%</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
             <div class="row">
                 <div class="col-lg-8 col-12">
+
+                    <div class="card mb-15">
+                        <div class="card-header bg-transparent py-15">Overviews</div>
+                        <div class="card-body">
+                            <div style="height: 540px; max-width: 100%;" id="hl-line-main"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12">
+
+                    <div class="card mb-15">
+                        <div class="card-header bg-transparent py-15">Top 5 Referrers</div>
+
+                        <div class="card-body">
+
+                            <div class="mb-15">
+                                <div style="height: 280px; max-width: 100%;" id="hl-pie-ref"></div>
+                            </div>
+
+                            <div class="mb-15">
+                                <a href="https://www.google.com" class="text-body">Google.com</a>
+                                <div class="float-right text-muted">
+                                    30.5%
+                                </div>
+                                <div class="progress progress-xs mt-5">
+                                    <div class="progress-bar" style="width: 30.5%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-15">
+                                <a href="https://www.twitter.com" class="text-body">Twitter.com</a>
+                                <div class="float-right text-muted">
+                                    25.5%
+                                </div>
+                                <div class="progress progress-xs mt-5">
+                                    <div class="progress-bar" style="width: 25.5%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-15">
+                                <a href="https://morioh.com" class="text-body">Morioh.com</a>
+                                <div class="float-right text-muted">
+                                    16%
+                                </div>
+
+                                <div class="progress progress-xs mt-5">
+                                    <div class="progress-bar" style="width: 16%;"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-15">
+                                <a href="https://facebook.com" class="text-body">Facebook.com</a>
+                                <div class="float-right text-muted">
+                                    8%
+                                </div>
+                                <div class="progress progress-xs mt-5">
+                                    <div class="progress-bar" style="width: 8%;"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-15">
+                                <a href="https://pinterest.com" class="text-body">Pinterest.com</a>
+                                <div class="float-right text-muted">
+                                    4%
+                                </div>
+                                <div class="progress progress-xs mt-5">
+                                    <div class="progress-bar" style="width: 8%;"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
+
             <div class="row">
+
                 <div class="col-lg-8 col-md-12">
+
                     <div class="card mb-15">
                         <div class="card-header bg-transparent py-15">Latest orders</div>
+
                         <div class="table-responsive">
                             <table class="table">
+
                                 <thead>
                                     <tr>
                                         <th>Email</th>
@@ -69,6 +212,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
 
                                     <tr>
                                         <td>
@@ -221,6 +365,7 @@
                                         </td>
                                     </tr>
 
+
                                     <tr>
                                         <td>
                                             neha******@gmail.com
@@ -258,21 +403,119 @@
                                         </td>
                                     </tr>
 
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
                 </div>
+
+
+                <div class="col-lg-4 col-md-12">
+
+                    <div class="card mb-15">
+                        <div class="card-header bg-transparent py-15">Latest members</div>
+
+                        <div class="card-body">
+                            <div class="mb-15">
+                                <div class="d-flex">
+                                    <a href="javascript://" class="avatar avatar-lg mr-20">
+                                        <img src="https://i.imgur.com/Y7cK0Jg.png">
+                                    </a>
+                                    <div class="flex-fill">
+                                        <div class="float-right mt-10">
+                                            <button class="btn btn-outline-primary btn-sm">Chat</button>
+                                        </div>
+                                        <h6 class="my-3">Vlastimil Kočvara</h6>
+                                        <small class="text-muted">vla*****@gmail.com</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-15">
+                                <div class="d-flex">
+                                    <a href="javascript://" class="avatar avatar-lg mr-20">
+                                        <img src="https://i.imgur.com/urMsIe0.png">
+                                    </a>
+                                    <div class="flex-fill">
+                                        <div class="float-right mt-10">
+                                            <button class="btn btn-outline-primary btn-sm">Chat</button>
+                                        </div>
+                                        <h6 class="my-3">Kurt L. Oliver</h6>
+                                        <small class="text-muted">kurt*****@gmail.com</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-15">
+                                <div class="d-flex">
+                                    <a href="javascript://" class="avatar avatar-lg mr-20">
+                                        <img src="https://i.imgur.com/Y7cK0Jg.png">
+                                    </a>
+                                    <div class="flex-fill">
+                                        <div class="float-right mt-10">
+                                            <button class="btn btn-outline-primary btn-sm">Chat</button>
+                                        </div>
+                                        <h6 class="my-3">Kevin D. Shirley</h6>
+                                        <small class="text-muted">kev*****@gmail.com</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-15">
+                                <div class="d-flex">
+                                    <a href="javascript://" class="avatar avatar-lg mr-20">
+                                        <img src="https://i.imgur.com/mtHKlth.png">
+                                    </a>
+                                    <div class="flex-fill">
+                                        <div class="float-right mt-10">
+                                            <button class="btn btn-outline-primary btn-sm">Chat</button>
+                                        </div>
+                                        <h6 class="my-3">Ella D. Wentworth</h6>
+                                        <small class="text-muted">ell*****@gmail.com</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-15">
+                                <div class="d-flex">
+                                    <a href="javascript://" class="avatar avatar-lg mr-20">
+                                        <img src="https://i.imgur.com/sqRDrAe.png">
+                                    </a>
+                                    <div class="flex-fill">
+                                        <div class="float-right mt-10">
+                                            <button class="btn btn-outline-primary btn-sm">Chat</button>
+                                        </div>
+                                        <h6 class="my-3">Nora C. Cantin</h6>
+                                        <small class="text-muted">nora*****@gmail.com</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
 
-	<!-- <div id="modal-download" tabindex="-1" role="dialog" aria-labelledby="BottomRightLabel" class="modal fade"
+			<!-- 
+
+            <div id="modal-download" tabindex="-1" role="dialog" aria-labelledby="BottomRightLabel" class="modal fade"
                 aria-hidden="true">
                 <div class="modal-dialog modal-bottom-left" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
+
                             <div class="card border-0 mb-0">
                                 <img class="card-img" src="https://i.imgur.com/gWYKl5Fm.png">
+
                                 <div class="card-body">
                                     Need to download the source files?
                                 </div>
@@ -284,18 +527,23 @@
                                     Download
                                 </a>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
-            </div> -->
-        </div>
-    </div>
-</div>
+            </div>
+			 -->
 
-    <!-- Page Js File -->
+        </div>
+
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.4.0/dist/perfect-scrollbar.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highcharts@8.0.0/highcharts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-knob@1.2.11/dist/jquery.knob.min.js"></script>
@@ -311,16 +559,28 @@
 
         gtag('config', 'UA-50750921-19');
     </script>
+
+
+
     <script src="../../js/morioh.js"></script>
 
     <script>
+
         $(function () {
+
             $('#modal-download').modal('show');
+
+
+
+
             $(".bar").peity("bar");
 
+
             // knob
+
             $(".knob").knob();
-            
+
+
             // sparkline bar
             $('.sparkline-bar').sparkline('html', {
                 type: 'bar',
@@ -339,6 +599,7 @@
 
             /************** AREA CHARTS ********************/
 
+
             $('.sparkline-area').sparkline('html', {
                 width: 120,
                 height: 65,
@@ -346,12 +607,15 @@
                 fillColor: 'rgba(59, 115, 218,0.2)'
             });
 
+
             $('.sparkline').sparkline('html', {
                 width: '100%',
                 height: 80,
                 lineColor: '#3b73da',
                 fillColor: 'rgba(59, 115, 218,0.2)'
             });
+
+
 
             Highcharts.chart('hl-pie-ref', {
                 chart: {
@@ -403,11 +667,14 @@
                 }]
             });
 
+
+
             Highcharts.chart('hl-line-main', {
 
                 title: {
                     text: ''//'Stats of last 30 days'
                 },
+
                 // subtitle: {
                 //     text: 'Source: thesolarfoundation.com'
                 // },
@@ -431,6 +698,7 @@
                         pointStart: 1
                     }
                 },
+
                 series: [
                     {
                         name: 'Views',
@@ -461,9 +729,12 @@
                         }
                     }]
                 }
+
             });
         })
+
     </script>
+
 
 </body>
 

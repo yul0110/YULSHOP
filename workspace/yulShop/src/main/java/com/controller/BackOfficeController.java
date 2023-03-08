@@ -43,7 +43,7 @@ public class BackOfficeController {
 	
 	@RequestMapping(value = "/bmain", method = RequestMethod.GET)
     public String BoMainPage(){
-		return "bo/boMain";
+		return "bo/bmain";
     }
 	
 	
@@ -55,7 +55,7 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("bo/boGoodsReg");
+		mv.setViewName("bo/bgoodsReg");
 		return mv;
 	}
 	
@@ -74,14 +74,13 @@ public class BackOfficeController {
 	/*---------------------------상품 END-------------------------------*/
 	
 	
-	
 	//BO 문의 페이지
 	@RequestMapping(value = "/binquiry", method = RequestMethod.GET)
 	public ModelAndView boInquiry(){
 		
 		ModelAndView mv = new ModelAndView();
 
-		mv.setViewName("bo/boInquiry");
+		mv.setViewName("bo/binquiry");
 		return mv;
 	}
 	
@@ -111,14 +110,14 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	/*---------------------------문의 END-------------------------------*/
+	/*--------------------------- 문의 END-------------------------------*/
 	
 	//BO 회원관리 페이지
-	@RequestMapping(value = "/boMember", method = RequestMethod.GET)
+	@RequestMapping(value = "/bmember", method = RequestMethod.GET)
 	public ModelAndView boMember(){
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bo/boMember");
+		mv.setViewName("bo/bmember");
 		return mv;
 	}
 	
@@ -142,27 +141,27 @@ public class BackOfficeController {
 		mv.addObject("pageNumPageData", memberDao.getPageNum());
 		mv.addObject("firstPageData", memberDao.getFirstPage());
 		mv.addObject("endPageData", memberDao.getEndPage());
-		
+		 
 		return mv;
 	}
 	
-	/*---------------------------회원 END-------------------------------*/
+	/*---------------------------회원 END-------------------------------*/	
 	
 	//BO 이벤트 등록 페이지
-	@RequestMapping(value = "/boEventReg", method = RequestMethod.GET)
+	@RequestMapping(value = "/beventReg", method = RequestMethod.GET)
 	public ModelAndView boEventReg(){
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bo/boEventReg");
+		mv.setViewName("bo/beventReg");
 		return mv;
 	}
 	
 	//BO 이벤트 리스트 페이지
-	@RequestMapping(value = "/boEventDetail", method = RequestMethod.GET)
+	@RequestMapping(value = "/beventList", method = RequestMethod.GET)
 	public ModelAndView boEventDetail(){
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bo/boEventDetail");
+		mv.setViewName("bo/beventList");
 		return mv;
 	}
 	
