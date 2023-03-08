@@ -61,8 +61,11 @@
 					var memberNodeCopy = $('#memberNode').clone();
 					memberNodeCopy.attr('id', '');
 					memberNodeCopy.attr('style', '');
-					memberNodeCopy.find('.memberCount').html(item.id);
-					memberNodeCopy.find('.memberTitle').html(item.nm);
+					memberNodeCopy.find('.memberNm').html(item.nm);
+					memberNodeCopy.find('.memberId').html(item.userId);
+					memberNodeCopy.find('.memberPno').html(item.pno);
+					memberNodeCopy.find('.memberAddr1').html(item.addr1);
+					memberNodeCopy.find('.memberAddr2').html(item.addr2);
 					$('#memberList').append(memberNodeCopy);
 				});
 				//페이지를 뿌려주는 append
