@@ -7,16 +7,13 @@
         <i class="fas fa-bars"></i>
     </button>
 
-
     <img src="https://i.imgur.com/QTZ8pU1.png" title="Morioh" class="navbar-logo d-md-none"
         style="height: 36px;">
-
 
     <button class="btn d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
     </button>
-
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto hidden-sm-down">
@@ -25,7 +22,6 @@
                 <a href="javascript://" class="nav-icon font-2xl" id="navbar-toggler">
                     <!-- <i class="fas fa-bars"></i> -->
                     <!-- <i class="mdi mdi-view-sequential font-2xl"></i> -->
-
                     <i class="mdi mdi-menu"></i>
                 </a>
             </li>
@@ -34,34 +30,23 @@
                 <form class="form-inline">
                     <div class="input-group">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        
                             <button class="btn btn-outline-primary" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
-                      
                     </div>
                 </form>
             </li>
-
         </ul>
 
 
         <ul class="navbar-nav my-2 my-lg-0">
 
-
-            <li class="nav-item mr-10">
-                <a href="#" class="nav-icon font-2xl">
-                    <!-- <i class="fas fa-chart-pie"></i> -->
-                    <i class="mdi mdi-view-dashboard-outline"></i>
-                </a>
-            </li>
-
+			<!----------------  알림  ------------------>
             <li class="nav-item mr-10 dropdown">
                 <span class="badge bg-danger">5</span>
                 <a class="nav-icon font-2xl" href="#" id="QBDX05" role="button" data-toggle="dropdown"
                     aria-expanded="false" data-flip="false">
                     <i class="mdi mdi-bell-ring-outline"></i>
-                    
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right p-0 border-0 w-400" 
@@ -74,7 +59,6 @@
                             </a>
                             Notifications
                         </div>
-
 
                         <div class="perfect-scrollbar position-relative" style="max-height: 400px;">
 
@@ -184,7 +168,6 @@
                                         </div>
                                     </div>
                                 </li>
-
                             </ul>
                         </div>
 
@@ -193,21 +176,11 @@
                                 View all
                             </a>
                         </div>
-
-
                     </div>
-
                 </div>
-
             </li>
 
-            <li class="nav-item mr-10">
-                <a href="#" class="nav-icon font-2xl rounded-circle">
-                    <!-- <i class="fas fa-cog"></i> -->
-                    <i class="mdi mdi-settings-outline"></i>
-                </a>
-            </li>
-
+			<!----------------  프로필  ------------------>
             <li class="nav-item mr-10 dropdown">
                 <a href="#" class="nav-icon avatar rounded-circle" id="PJXN7R" role="button"
                     data-toggle="dropdown" aria-expanded="false">
@@ -221,21 +194,6 @@
                     <a class="dropdown-item" href="#"><i class="mdi mdi-settings-outline"></i>Settings</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"><i class="mdi mdi-exit-to-app"></i> Logout</a>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-icon font-2xl rounded-circle" href="#" id="WJIK6R" role="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    <!-- <i class="fas fa-ellipsis-h"></i> -->
-
-                    <i class="mdi mdi-dots-horizontal"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="WJIK6R">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
         </ul>
