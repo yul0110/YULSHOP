@@ -9,6 +9,10 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
+<!--  page js  -->
+<script src="/resources/js/bo/boInquiry.js"></script>
+<!--  page js  -->
+
     <div class="wrapper">
 
         <div class="container-fluid mt-15">
@@ -16,256 +20,50 @@
                 <div class="col-lg-8 col-12">
             </div>
             <div class="row">
-                <div class="col-lg-8 col-md-12">
+                <div class="col-lg-8 col-md-12" style= "width:100%">
                     <div class="card mb-15">
-                        <div class="card-header bg-transparent py-15">Latest orders</div>
+                        <div class="card-header bg-transparent py-15">문의 리스트</div>
+                            <h1 class="heading" data-aos="fade-up">
+								<input id='pageNum' type="hidden" value=1 />
+							</h1>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Email</th>
-                                        <th>Qty</th>
-                                        <th>Amount</th>
-                                        <th class="text-right">Time</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-right">Action</th>
+                                        <th>No.</th>
+                                        <th>제목</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1285.23
-                                        </td>
-
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-
-                                        <td class="text-center">
-                                            <span class="badge bg-primary">Paid</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1685.23
-                                        </td>
-
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-
-                                        <td class="text-center">
-                                            <span class="badge bg-success">Shipped</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1685.23
-                                        </td>
-
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge bg-info">Shipping</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1685.23
-                                        </td>
-
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-
-                                        <td class="text-center">
-                                            <span class="badge bg-danger">Cancel</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1685.23
-                                        </td>
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-
-                                        <td class="text-center">
-                                            <span class="badge bg-warning">Delay</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            neha******@gmail.com
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            $1685.23
-                                        </td>
-                                        <td class="text-right">
-                                            2019-12-30 10:10:10 AM
-                                        </td>
-
-                                        <td class="text-center">
-                                            <span class="badge bg-success">Shipped</span>
-                                        </td>
-
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-sm btn-icon btn-transparent font-xl"
-                                                    type="button" id="d350ad" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-horizontal"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right"
-                                                        aria-labelledby="d350ad">
-                                                        <a class="dropdown-item" href="#">View</a>
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Detele</a>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
+                   				</thead>
+                   				
+                                <tbody id='inquiryList'>
+					          	<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
                                 </tbody>
+                                
                             </table>
                         </div>
+                         
+                         
+<!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 -->
+							<div class="form-group">
+							    <div id='pagingList' class="btn-group mb-2">
+					          	<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
+								<!-- tmple zone -->
+							   </div>
+							</div>
+<!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 --><!-- 페이징 -->
+							
+							<br>
+			            </div>
                     </div>
                 </div>
-            </div>
-
-
+                
 	<!-- <div id="modal-download" tabindex="-1" role="dialog" aria-labelledby="BottomRightLabel" class="modal fade"
                 aria-hidden="true">
                 <div class="modal-dialog modal-bottom-left" role="document">
@@ -291,6 +89,44 @@
         </div>
     </div>
 </div>
+
+<!-- ======= Footer ======= -->
+
+	<!-- templ  -->
+
+	<table class="table"  Style='display:none;'>
+		<thead>
+	        <tr>
+	            <th>No.</th>
+	            <th>제목</th>
+	        </tr>
+		</thead>
+		<tbody>
+			<tr id='inquiryNode'>
+			    <td class="inquiryCount">
+			        No.
+			    </td>
+			
+			    <td class="inquiryTitle">
+			        제목
+			    </td>
+			</tr>
+	    </tbody>
+	</table>
+
+	<div id='pageNode' class="custom-pagination" style='display:none;'>
+	    <button type="button" class="btn btn-light firstPage pagingCilck">&lt;&lt;</button>
+        <button type="button" class="btn btn-light prevPage pagingCilck">&lt;</button>
+        <button type="button" class="btn btn-light pagingPrevNum pagingCilck">1</button>
+        <button type="button" class="btn btn-primary pagingNum pagingCilck">2</button>
+        <button type="button" class="btn btn-light pagingNextNum pagingCilck">3</button>
+        <button type="button" class="btn btn-light nextPage pagingCilck">&gt;</button>
+        <button type="button" class="btn btn-light endPage pagingCilck">&gt;&gt;</button>
+	</div>
+
+
+<!-- templ  -->
+
 
     <!-- Page Js File -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
