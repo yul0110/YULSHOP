@@ -20,7 +20,6 @@
     <meta name="msapplication-config" content="https://i.morioh.com/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-	<!-- js Files  -->
     <meta name="twitter:title" content="Morioh Responsive Template with Bootstrap 4, HTML5 and Vue.js">
     <meta name="twitter:description" content="Morioh Theme is Bootstrap responsive template free download">
     <meta name="twitter:image" content="https://i.imgur.com/gWYKl5F.png">
@@ -44,4 +43,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
     <link rel="stylesheet" href="/resources/css/bo/base/morioh.css">
 
+	<!-- js Files  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="resources/js/base/base.js"></script>
+	<script src="resources/js/base/common.js"></script>
+	
 </head>
