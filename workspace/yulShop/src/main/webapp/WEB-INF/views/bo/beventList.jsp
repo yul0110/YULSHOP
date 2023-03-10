@@ -9,7 +9,9 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
+<!--  page js  -->
 <script src="/resources/js/bo/beventList.js"></script>
+<!--  page js  -->
 
     <div class="wrapper">
 
@@ -21,20 +23,21 @@
                 <div class="col-lg-8 col-md-12" style= "width:100%">
                     <div class="card mb-15">
                         <div class="card-header bg-transparent py-15">이벤트 리스트</div>
-                       		<h1 class="heading" data-aos="fade-up">
+                            <h1 class="heading" data-aos="fade-up">
 								<input id='pageNum' type="hidden" value=1 />
 							</h1>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>No.</th>
                                         <th>제목</th>
                                         <th>작성날짜</th>
-                                        <th>상태/th>
+                                        <th>사용여부</th>
                                     </tr>
                    				</thead>
                    				
-                                <tbody id='memberList'>
+                                <tbody id='eventList'>
 					          	<!-- tmple zone -->
 								<!-- tmple zone -->
 								<!-- tmple zone -->
@@ -96,39 +99,30 @@
 	<table class="table"  Style='display:none;'>
 		<thead>
 			<tr>
-			    <th>이름</th>
-			    <th>아이디</th>
-			    <th>휴대폰 번호</th>
-			    <th>주소</th>
-			    <th>상세주소</th>
-			    <th>등급</th>
+				<th>No.</th>
+				<th>제목</th>
+				<th>작성날짜</th>
+				<th>사용여부</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr id='memberNode' class="memberDetail">
-			    <td class="memberNm">
-			        이름
+			<tr id='eventNode'>
+				<td class="eventCount">
+			        No.
 			    </td>
 			
-			    <td class="memberId">
-			        아이디
+			    <td class="eventTitle">
+			        제목
 			    </td>
 			
-			    <td class="memberPno">
-			        휴대폰 번호
+			    <td class="eventRegDt">
+			        작성날짜
 			    </td>
-			
-			    <td class="memberAddr1">
-			        주소
+
+			    <td class="eventUseYn">
+			        사용여부
 			    </td>
-			
-			    <td class="memberAddr2">
-			        상세주소
-			    </td>
-			    <td>
-			        <span class="badge bg-warning">G</span>
-			        <span class="badge bg-secondary">S</span>
-			    </td>
+			    
 			</tr>
 	    </tbody>
 	</table>

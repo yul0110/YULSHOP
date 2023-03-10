@@ -15,6 +15,13 @@
 		FROM 
 			member 
 	</select>
+
+	<select id="selectBoEventAllCount"  resultType="int" >
+		SELECT 
+			COUNT(id) 
+		FROM 
+			event 
+	</select>
 	
 	<select id="selectBoInquiryList" parameterType="com.dao.InquiryDao" resultType="com.vo.Inquiry" >
 		SELECT
@@ -48,6 +55,25 @@
 			updateId 
 		FROM 
 			member
+		ORDER BY 
+			id DESC
+		LIMIT #{amount} OFFSET #{offset}	
+	</select>
+	
+	<select id="selectBoEventList" parameterType="com.dao.EventDao"  resultType="com.vo.Event">
+		SELECT 
+			id,
+			listImg, 
+			detailImg, 
+			title, 
+			contents, 
+			regDt, 
+			regId, 
+			updateDt, 
+			updateId, 
+			useYn
+		FROM 
+			event 
 		ORDER BY 
 			id DESC
 		LIMIT #{amount} OFFSET #{offset}	

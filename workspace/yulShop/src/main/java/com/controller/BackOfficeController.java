@@ -19,6 +19,7 @@ import com.service.BoGoodsService;
 import com.service.CategoryService;
 import com.service.ImgService;
 import com.vo.Category;
+import com.vo.Event;
 import com.vo.Goods;
 import com.vo.Inquiry;
 import com.vo.Member;
@@ -169,7 +170,7 @@ public class BackOfficeController {
 	
 	//BO 이벤트 리스트 페이지
 	@RequestMapping(value = "/beventList", method = RequestMethod.GET)
-	public ModelAndView boEventDetail(){
+	public ModelAndView beventList(){
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bo/beventList");
@@ -185,6 +186,29 @@ public class BackOfficeController {
 		int result = boEventService.insertEvent(eventDataJson);
 
 		mv.addObject("result", result);
+		return mv;
+	}
+
+	//BO 이벤트 리스트 Ajax
+	@RequestMapping(value = "/eventListAjax", method = RequestMethod.POST)
+	public ModelAndView eventListAjax(@RequestBody EventDao eventDao ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		//이벤트리스트의 총 갯수
+		int allCount = backOfficeService.selectBoEventAllCount();		
+		
+		eventDao.setTotal(allCount);
+		
+		eventDao.pagingSetting();
+		List<Event> eventList = backOfficeService.selectBoEventList(eventDao);
+
+		mv.addObject("eventList", eventList);
+		mv.addObject("prevPageData", eventDao.getPrevPage());
+		mv.addObject("nextPageData", eventDao.getNextPage());
+		mv.addObject("pageNumPageData", eventDao.getPageNum());
+		mv.addObject("firstPageData", eventDao.getFirstPage());
+		mv.addObject("endPageData", eventDao.getEndPage());
 		return mv;
 	}
 

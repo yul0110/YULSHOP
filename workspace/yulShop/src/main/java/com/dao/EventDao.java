@@ -3,10 +3,17 @@ package com.dao;
 import java.sql.Date;
 import java.util.List;
 
-import lombok.Data;
+import org.springframework.stereotype.Repository;
 
+import com.vo.paging;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Repository
+@RequiredArgsConstructor
 @Data
-public class EventDao {
+public class EventDao extends paging{
 	
 	//id
 	private Integer id;

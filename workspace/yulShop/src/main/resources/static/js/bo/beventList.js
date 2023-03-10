@@ -26,7 +26,7 @@
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/inquiryListAjax");
+	    xhr.open("post", "/eventListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -46,24 +46,40 @@
 			if(e.currentTarget.status == 200){
 				
 				var d 			= e.currentTarget.response;
-				var itemList	= d.inquiryList;
+				var itemList	= d.eventList;
 				
 				var pagingNodeCopy = $('#pageNode').clone();
 				pagingNodeCopy.attr('id', '');
 				
 				//init 초기화
-				$('#inquiryList').html('');
+				$('#eventList').html('');
 				$('#pagingList').html('');
 				
 				
 				//리스트를 뿌려주는 each
 				$.each(itemList, function( i, item ) {
-					var inquiryNodeCopy = $('#inquiryNode').clone();
-					inquiryNodeCopy.attr('id', '');
-					inquiryNodeCopy.attr('style', '');
-					inquiryNodeCopy.find('.inquiryCount').html(item.id);
-					inquiryNodeCopy.find('.inquiryTitle').html(item.title);
-					$('#inquiryList').append(inquiryNodeCopy);
+					var eventNodeCopy = $('#eventNode').clone();
+					eventNodeCopy.attr('id', '');
+					eventNodeCopy.attr('style', '');
+					eventNodeCopy.find('.eventCount').html(item.id);
+					eventNodeCopy.find('.eventTitle').html(item.title);
+					
+					//시간작업
+					let f = new Date(item.regDt);
+					let y = f.getFullYear(); 
+					let m = f.getMonth()+1;
+					let d = f.getDate();
+					
+					if(m<10){
+						m = "0" + m;
+					}
+					if(d<10){
+						d = "0" + d;
+					}
+					let full = y + " - " + m + " - " + d ; 
+					eventNodeCopy.find('.eventRegDt').html(full);
+					eventNodeCopy.find('.eventUseYn').html(item.useYn);
+					$('#eventList').append(eventNodeCopy);
 				});
 				//페이지를 뿌려주는 append
 				
@@ -112,7 +128,7 @@
 					$('#pagingList').append(pagingNodeCopy);
 				}
 				
-				location.href = '#inquiryList';
+				location.href = '#eventList';
 				
 			}else{
 				console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)
