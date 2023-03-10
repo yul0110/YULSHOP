@@ -9,6 +9,8 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
+<script src="/resources/js/bo/boEventReg.js"></script>
+
     <div class="wrapper">
         <div class="container-fluid mt-15">
             <div class="card mb-15">
@@ -17,94 +19,84 @@
             
             <div class="card mb-15">
                 <div class="card-body">
-                    <h4>상품등록</h4>
-                    <p>
-                        Set heights using classes like <code>.input-lg</code>, and set widths using grid column
-                        classes like <code>.col-lg-*</code>.
-                    </p>
-
-                    <form role="form" class="form-horizontal">
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label" for="example-input-small">Small</label>
-                            <div class="col-sm-10">
-                                <input type="text" id="example-input-small" name="example-input-small"
-                                    class="form-control form-control-sm" placeholder=".input-sm">
-                            </div>
-                        </div>
-
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label" for="example-input-normal">Normal</label>
-                            <div class="col-sm-10">
-                                <input type="text" id="example-input-normal" name="example-input-normal"
-                                    class="form-control" placeholder="Normal">
-                            </div>
-                        </div>
+                    <h4>이벤트등록</h4>
+                    <br>
+                    <br>
+                    <!-- Contact Form -->
+                    <form action="/joinusAjax" id='joinform' name='joinform'
+							method="post" role="form" class="form-horizontal">
+	
+						<div class="mb-15 row">
+							<label class="col-sm-2 col-form-label">제목</label>
+							<div class="col-sm-10">
+							    <input type="text" id="title" name="title" class="form-control" placeholder="이벤트 제목을 입력해주세요." required>
+							</div>
+						</div>
 
                         <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label" for="example-input-large">Large</label>
+                            <label class="col-sm-2 col-form-label ">내용</label>
                             <div class="col-sm-10">
-                                <input type="text" id="example-input-large" name="example-input-large"
-                                    class="form-control form-control-lg" placeholder=".input-lg">
+								<textarea id="contents" class="form-control contents" placeholder="이벤트 내용을 입력해주세요." required></textarea>
                             </div>
                         </div>
+                        
+						<div class="form-file">
+							<input type="file" id="listImg" class="form-file-input">
+							<label class="form-file-label" for="customFile">메인 이미지
+						   		<span class="form-file-text"></span>
+						    	<span class="form-file-button">이미지 찾기</span>
+							</label>
+							<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+							</div> 
+						</div>
+						<br>
 
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label">Grid Sizes</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" placeholder=".col-sm-4">
-                            </div>
-                        </div>
-
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label">Static</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1">@</span>
-                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                                        aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label">Dropdowns</label>
-                            <div class="col-sm-10">
-                                <div class="input-group mb-3">
-                                   
-                                        <button class="btn btn-primary  dropdown-toggle" type="button"
-                                            data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">Dropdown</button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div role="separator" class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    <input type="text" class="form-control" placeholder="" aria-label=""
-                                        aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-15 row mb-0">
-                            <label class="col-sm-2 col-form-label">Buttons</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Recipient's username"
-                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <button class="btn btn-dark" type="button">Button</button>
-                                </div>
-                            </div>
-                        </div>
-						<button type="button" class="btn btn-block btn-primary">등록하기</button>
-                    </form>
+						<div class="form-file">
+							<input type="file" id="detailFile" class="form-file-input" >
+							<label class="form-file-label" for="customFile">상세 이미지
+						   		<span class="form-file-text"></span>
+						    	<span class="form-file-button">이미지 찾기</span>
+							</label>
+							<div id='detailPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
+							</div>
+						</div>
+						<br>
+						<br>
+						<button type="button" id="eventUploadAjax" class="btn btn-block btn-primary">등록하기</button>
+                    </form>   
+                    <!-- End Contact Form -->
                 </div>
             </div>
 <!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- -->
         </div>
     </div>
 </div>
+
+	<!--   data templ zone   -->
+	
+	<!--   listImg   -->
+	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="listImgPathTempl" class="" value="" />
+	<!--   listImg END   -->
+	
+	<!--   detailImg   -->
+	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="detailImgPathTempl" class="" value="" />
+	<!--   detailImg END   -->	
+	
+	<!--  zone END    -->
+	
+
+
+
+
+
 
 	<!-- Page Js Files  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

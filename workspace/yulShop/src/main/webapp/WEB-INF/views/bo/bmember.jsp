@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/boMember.js"></script>
+<script src="/resources/js/bo/bmember.js"></script>
 
     <div class="wrapper">
 

@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
 import com.service.BackOfficeService;
+import com.service.BoEventService;
 import com.service.BoGoodsService;
 import com.service.CategoryService;
 import com.service.ImgService;
@@ -30,6 +31,9 @@ public class BackOfficeController {
 	
 	@Autowired
 	BoGoodsService boGoodsService;
+	
+	@Autowired
+	BoEventService boEventService;
 	
 	@Autowired
 	CategoryService categoryService;
@@ -51,10 +55,17 @@ public class BackOfficeController {
 	
 	//BO 상품등록페이지
 	@RequestMapping(value = "/bgoodsReg", method = RequestMethod.GET)
-	public ModelAndView BoPage(){
+	public ModelAndView BoPage(String cate){
 		
 		ModelAndView mv = new ModelAndView();
+		//---------카테고리-----------
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리-----------
 		
+		mv.addObject("categoryList", categoryList);
+		mv.addObject("categoryRefList", categoryRefList);
+		mv.addObject("currentCate", cate);
 		mv.setViewName("bo/bgoodsReg");
 		return mv;
 	}
@@ -164,6 +175,19 @@ public class BackOfficeController {
 		mv.setViewName("bo/beventList");
 		return mv;
 	}
+	
+	//BO 이벤트 등록 Ajax
+	@RequestMapping(value = "/eventRegAjax", method = RequestMethod.POST)
+	public ModelAndView eventRegAjax(@RequestBody EventDao eventDataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		int result = boEventService.insertEvent(eventDataJson);
+
+		mv.addObject("result", result);
+		return mv;
+	}
+
 	
 	/*---------------------------이벤트 END-------------------------------*/	
 }
