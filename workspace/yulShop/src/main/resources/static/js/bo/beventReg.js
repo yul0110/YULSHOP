@@ -40,23 +40,17 @@
 				//전송에 성공하면 실행될 코드;
 				
 				var nodeImgCopy; 
-				var nodeInputCopy; 
 				
 				nodeImgCopy		= $('#listImgTempl').clone();
-				nodeInputCopy	= $('#listImgPathTempl').clone();
 				
 				nodeImgCopy.attr('id', "listImgData");
 				nodeImgCopy.attr('src', data.path);
 				nodeImgCopy.attr('class', "listPreview");
+				nodeImgCopy.addClass("deletImg");
 				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
-				
-				nodeInputCopy.attr('id', "listPath");
-				nodeInputCopy.attr('class', "listPath");
-				nodeInputCopy.attr('value', data.path);
+				nodeImgCopy.data('pdata', data.path);
 				
 				$('#listPreviewZone').append(nodeImgCopy);
-            	$('#listPreviewZone').append(nodeInputCopy);
-				
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -88,23 +82,17 @@
 				//전송에 성공하면 실행될 코드;
 				
 				var nodeDetailCopy; 
-				var nodeInputCopy; 
 				
 				nodeDetailCopy	= $('#detailImgTempl').clone();
-				nodeInputCopy	= $('#detailImgPathTempl').clone();
-				
 				
 				nodeDetailCopy.attr('id', "detailImgData");
 				nodeDetailCopy.attr('src', data.path);
 				nodeDetailCopy.attr('class', "detailPreview");
+				nodeDetailCopy.addClass("deletImg");
 				nodeDetailCopy.attr('style', "width: 100px; height: 100px;");
-				
-				nodeInputCopy.attr('id', "");
-				nodeInputCopy.attr('class', "detailPath");
-				nodeInputCopy.attr('value', data.path);
+				nodeDetailCopy.data('pdata', data.path);
 				
 				$('#detailPreviewZone').append(nodeDetailCopy);
-            	$('#detailPreviewZone').append(nodeInputCopy);
 				
 			},
 			fail: function(error) {
@@ -154,6 +142,14 @@
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
 
+		$(document).on('click', '.deletImg', function(){
+			
+			if(confirm("이미지를 삭제하시겠습니까?")){
+				$(this).remove();
+			}
+			
+		})
+
 		//이벤트 업로드 시도 클릭 이벤트
 	 	$('#eventUploadAjax').on('click', function(e) {
 	 		e.preventDefault();
@@ -194,13 +190,13 @@
  			//메인이미지 배열만들기
 			var pathListArr = new Array();
 			for(i=0;i<mainImgPathArr.length;i++){
-				pathListArr.push(mainImgPathArr[i].value);
+				pathListArr.push(mainImgPathArr[i].dataset.pdata);
 			}
 			
 		 	//상세이미지 배열만들기
 			var pathDetailArr = new Array();
 			for(i=0;i<detailImgPathArr.length;i++){
-				pathDetailArr.push(detailImgPathArr[i].value);
+				pathDetailArr.push(detailImgPathArr[i].dataset.pdata);
 			}
 		
 			var eventDataJson 	= {};

@@ -176,6 +176,15 @@ public class BackOfficeController {
 		mv.setViewName("bo/beventList");
 		return mv;
 	}
+
+	//BO 이벤트 수정 페이지
+	@RequestMapping(value = "/beventDetail", method = RequestMethod.GET)
+	public ModelAndView beventDetail(){
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bo/beventDetail");
+		return mv;
+	}
 	
 	//BO 이벤트 등록 Ajax
 	@RequestMapping(value = "/eventRegAjax", method = RequestMethod.POST)

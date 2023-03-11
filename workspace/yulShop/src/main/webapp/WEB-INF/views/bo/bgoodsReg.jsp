@@ -161,12 +161,10 @@
 	
 	<!--   listImg   -->
 	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="listImgPathTempl" class="" value="" />
 	<!--   listImg END   -->
 	
 	<!--   detailImg   -->
 	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="detailImgPathTempl" class="" value="" />
 	<!--   detailImg END   -->	
 	
 	<!--   option   -->

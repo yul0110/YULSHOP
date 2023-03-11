@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/beventReg.js"></script>
+<script src="/resources/js/bo/beventDetail.js"></script>
 
     <div class="wrapper">
         <div class="container-fluid mt-15">
@@ -19,7 +19,7 @@
             
             <div class="card mb-15">
                 <div class="card-body">
-                    <h4>이벤트등록</h4>
+                    <h4>이벤트 수정</h4>
                     <br>
                     <br>
                     <!-- Contact Form -->
@@ -78,25 +78,19 @@
     </div>
 </div>
 
-<!---------------------   data templ zone   -------------------------->
-	
+	<!--   data templ zone   -->
 	
 	<!--   listImg   -->
 	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="listImgPathTempl" class="" value="" />
 	<!--   listImg END   -->
-	
 	
 	<!--   detailImg   -->
 	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<input type="hidden" id="detailImgPathTempl" class="" value="" />
 	<!--   detailImg END   -->	
 	
-<!--------------------------  zone END  -------------------------------->
-	
-
-
-
-
-
+	<!--  zone END    -->
 
 	<!-- Page Js Files  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

@@ -58,7 +58,9 @@
 				
 				//리스트를 뿌려주는 each
 				$.each(itemList, function( i, item ) {
+					
 					var eventNodeCopy = $('#eventNode').clone();
+					
 					eventNodeCopy.attr('id', '');
 					eventNodeCopy.attr('style', '');
 					eventNodeCopy.find('.eventCount').html(item.id);
@@ -79,6 +81,8 @@
 					let full = y + " - " + m + " - " + d ; 
 					eventNodeCopy.find('.eventRegDt').html(full);
 					eventNodeCopy.find('.eventUseYn').html(item.useYn);
+					eventNodeCopy.find('.titleCilck').data('eid',item.id);
+					
 					$('#eventList').append(eventNodeCopy);
 				});
 				//페이지를 뿌려주는 append
@@ -139,6 +143,7 @@
 	}	
 	
 	//작동할 이벤트를 프로토 타입으로 세팅
+
 	yul.page.prototype.clickEvent = function() {
 		
 		$(document).on('click', '.pagingCilck', function(){
@@ -146,7 +151,14 @@
 			$('#pageNum').val($(this).data('number'));
 			yul.page.getList();
 		})
+			
+		$(document).on('click', '.titleCilck', function(){
+			
+			location.href = "/beventDetail?beventId=" + $(this).data('eid'); 
+		})
+		
 	};
+	
  
 	$(function() {
 		yul.page = new yul.page();
