@@ -29,14 +29,14 @@
 						<div class="mb-15 row">
 							<label class="col-sm-2 col-form-label">제목</label>
 							<div class="col-sm-10">
-							    <input type="text" id="title" name="title" class="form-control" placeholder="이벤트 제목을 입력해주세요." required>
+							    <input type="text" id="title" name="title" value="${event.title }" class="form-control" placeholder="이벤트 제목을 입력해주세요." required>
 							</div>
 						</div>
 
                         <div class="mb-15 row">
                             <label class="col-sm-2 col-form-label ">내용</label>
                             <div class="col-sm-10">
-								<textarea id="contents" class="form-control contents" placeholder="이벤트 내용을 입력해주세요." required></textarea>
+								<textarea id="contents" class="form-control contents" placeholder="이벤트 내용을 입력해주세요." required>${event.contents }</textarea>
                             </div>
                         </div>
                         
@@ -50,6 +50,11 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
+								<c:forEach items="${event.img }" var="i">
+									<c:if test="${i.imgNm eq 'eventList'}">
+										<img id="listImgTempl" src="${i.path }" class="listPreview deletImg" style=" width: 100px; height: 100px;"/>
+									</c:if>								
+								</c:forEach>
 							</div> 
 						</div>
 						<br>
@@ -64,6 +69,11 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
+								<c:forEach items="${event.img }" var="i">
+									<c:if test="${i.imgNm eq 'eventDetail'}">
+										<img id="detailImgTempl" src="${i.path }" class="detailPreview deletImg" style=" width: 100px; height: 100px;"/>
+									</c:if>								
+								</c:forEach>
 							</div>
 						</div>
 						<br>
@@ -82,12 +92,10 @@
 	
 	<!--   listImg   -->
 	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="listImgPathTempl" class="" value="" />
 	<!--   listImg END   -->
 	
 	<!--   detailImg   -->
 	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<input type="hidden" id="detailImgPathTempl" class="" value="" />
 	<!--   detailImg END   -->	
 	
 	<!--  zone END    -->

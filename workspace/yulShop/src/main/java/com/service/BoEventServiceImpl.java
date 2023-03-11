@@ -10,6 +10,7 @@ import com.dao.OptionDao;
 import com.mapper.EventMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
+import com.vo.Event;
 
 @Service
 @Repository
@@ -98,6 +99,11 @@ public class BoEventServiceImpl implements BoEventService {
 			
 		return flag;
 		
+	}
+
+	@Override
+	public Event selectEvent(int id) {
+		return eventMapper.selectEvent(id);
 	}
 	
 

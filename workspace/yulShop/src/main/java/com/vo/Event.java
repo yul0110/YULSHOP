@@ -40,11 +40,6 @@ public class Event {
 	
 	//
 	private String imgPath;
-	
-	//메인이미지 경로
-	private List<String> mainImgPathArr;
-	
-	//상세이미지 경로
-	private List<String> detailImgPathArr;
 
+	private List<Img> img;
 }

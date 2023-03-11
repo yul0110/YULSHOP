@@ -78,19 +78,17 @@
     </div>
 </div>
 
-<!---------------------   data templ zone   -------------------------->
-	
+	<!--   data templ zone   -->
 	
 	<!--   listImg   -->
 	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
 	<!--   listImg END   -->
 	
-	
 	<!--   detailImg   -->
 	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
 	<!--   detailImg END   -->	
 	
-<!--------------------------  zone END  -------------------------------->
+	<!--  zone END    -->
 	
 
 

@@ -154,7 +154,7 @@
 			
 		$(document).on('click', '.titleCilck', function(){
 			
-			location.href = "/beventDetail?beventId=" + $(this).data('eid'); 
+			location.href = "/beventDetail?id=" + $(this).data('eid'); 
 		})
 		
 	};

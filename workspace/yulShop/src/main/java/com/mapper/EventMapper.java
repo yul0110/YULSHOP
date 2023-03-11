@@ -21,4 +21,6 @@ public interface EventMapper {
 	//이벤트 디테일 리스트
 	List<Event> selectEventDetailList(int id);
 	
+	//이벤트 디테일
+	Event selectEvent(int id);
 }

@@ -17,6 +17,7 @@ import com.service.BackOfficeService;
 import com.service.BoEventService;
 import com.service.BoGoodsService;
 import com.service.CategoryService;
+import com.service.EventService;
 import com.service.ImgService;
 import com.vo.Category;
 import com.vo.Event;
@@ -179,9 +180,14 @@ public class BackOfficeController {
 
 	//BO 이벤트 수정 페이지
 	@RequestMapping(value = "/beventDetail", method = RequestMethod.GET)
-	public ModelAndView beventDetail(){
+	public ModelAndView beventDetail(int id){
 		
 		ModelAndView mv = new ModelAndView();
+		
+		
+		Event event = boEventService.selectEvent(id);
+		
+		mv.addObject("event", event);
 		mv.setViewName("bo/beventDetail");
 		return mv;
 	}

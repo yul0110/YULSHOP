@@ -2,6 +2,17 @@
 
 <mapper namespace="com.mapper.EventMapper">
 
+	<resultMap id="eventDetailMap" type="com.vo.Event">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="contents" column="contents" />
+		<result property="useYn" column="useYn" />
+		<collection property="img" ofType="com.vo.Img">
+	    	<result property="imgNm" column="imgNm" />
+	    	<result property="path" column="path" />
+		</collection>
+	</resultMap>
+
 	<insert id="insertEvent" parameterType="com.dao.EventDao">
 	INSERT INTO event
 	(id, listImg, detailImg, title, contents, regDt, regId, updateDt, updateId, useYn)		
@@ -38,8 +49,25 @@
 			e.detailImg = i.imgGroupId
 		WHERE e.id = #{value}
 	</select>
-	
-	
+
+	<select id="selectEvent" parameterType="int" resultMap="eventDetailMap">
+		SELECT
+			e.id,
+			e.title,
+			e.contents,
+			e.useYn,
+			i.nm as imgNm,
+			i.`path`
+		FROM
+			event e
+		INNER JOIN imgGroup ig ON
+			e.detailImg = ig.id
+				OR 
+			e.listImg = ig.id
+		INNER JOIN img i ON
+			ig.id = i.imgGroupId
+		WHERE e.id = #{value}
+	</select>
 </mapper>
 
 
