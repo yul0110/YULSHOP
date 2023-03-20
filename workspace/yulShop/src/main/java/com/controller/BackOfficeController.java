@@ -146,7 +146,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	//BO 문의 Ajax
+	//BO 문의 리스트 Ajax
 	@RequestMapping(value = "/inquiryListAjax", method = RequestMethod.POST)
 	public ModelAndView inquiryListAjax(@RequestBody InquiryDao inquiryDao) {
 		
@@ -172,6 +172,19 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	//BO 이벤트 수정 페이지
+	@RequestMapping(value = "/bInquiryDetail", method = RequestMethod.GET)
+	public ModelAndView bInquiryDetail(int id){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		//Event event = boEventService.selectEvent(id);
+		
+		//mv.addObject("event", event);
+		mv.setViewName("bo/bInquiryDetail");
+		return mv;
+	}
+
 /*----------------------------------- 문의 END -----------------------------------*/
 	
 	//BO 회원관리 페이지

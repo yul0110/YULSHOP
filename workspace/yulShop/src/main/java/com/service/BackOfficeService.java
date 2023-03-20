@@ -29,6 +29,7 @@ public interface BackOfficeService {
 	
 	//상품 총 리스트 갯수
 	int selectBogoodSAllCount();
+	
 	//상품 리스트
 	List<Goods>selectBoGoodsList(GoodsDao goodsDao);
 	
