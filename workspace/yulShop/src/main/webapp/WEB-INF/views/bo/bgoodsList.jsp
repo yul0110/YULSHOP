@@ -22,7 +22,8 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12" style= "width:100%">
                     <div class="card mb-15">
-                        <div class="card-header bg-transparent py-15">상품 리스트
+                        <div class="card-header bg-transparent py-15">
+                        	상품 리스트
                         	<button type="button" class="btn btn-primary float-right eventReg" onclick ="location.href='/bgoodsReg'">등록하기</button>
                         </div>	
                             <h1 class="heading" data-aos="fade-up">

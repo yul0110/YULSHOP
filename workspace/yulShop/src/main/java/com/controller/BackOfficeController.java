@@ -98,7 +98,7 @@ public class BackOfficeController {
 		//mv.addObject("categoryList", categoryList);
 		//mv.addObject("categoryRefList", categoryRefList);
 		//mv.addObject("currentCate", cate);
-		//mv.setViewName("bo/bgoodsReg");
+		mv.setViewName("bo/bcouponReg");
 		return mv;
 	}
 	

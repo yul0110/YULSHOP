@@ -20,7 +20,10 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12" style= "width:100%">
                     <div class="card mb-15">
-                        <div class="card-header bg-transparent py-15">쿠폰 리스트</div>
+                        <div class="card-header bg-transparent py-15">
+                        	쿠폰 리스트
+                        	<button type="button" class="btn btn-primary float-right eventReg" onclick ="location.href='/bcouponReg'">등록하기</button>
+                        </div>
                        		<h1 class="heading" data-aos="fade-up">
 								<input id='pageNum' type="hidden" value=1 />
 							</h1>
