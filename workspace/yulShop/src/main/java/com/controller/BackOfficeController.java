@@ -90,7 +90,7 @@ public class BackOfficeController {
 		
 		Goods goods =  backOfficeService.selectGoods(id);
 		
-		mv.addObject("bgoodsDetail",goods);
+		mv.addObject("goods",goods);
 		mv.setViewName("bo/bgoodsDetail");
 		return mv;
 	}
