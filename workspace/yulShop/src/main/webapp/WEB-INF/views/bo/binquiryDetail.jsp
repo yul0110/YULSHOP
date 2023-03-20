@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/bInquiryDetail.js"></script>
+<script src="/resources/js/bo/binquiryDetail.js"></script>
 
     <div class="wrapper">
         <div class="container-fluid mt-15">

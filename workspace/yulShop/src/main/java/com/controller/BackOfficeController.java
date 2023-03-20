@@ -54,6 +54,15 @@ public class BackOfficeController {
 		return "bo/bmain";
     }
 	
+
+/*------------------------------------- 메인 --------------------------------------*/
+	
+	@RequestMapping(value = "/bcoupon", method = RequestMethod.GET)
+    public String BoMainPage(){
+		return "bo/bmain";
+    }
+	
+	
 	
 /*------------------------------------- 상품 --------------------------------------*/
 	
@@ -175,8 +184,8 @@ public class BackOfficeController {
 	}
 	
 	//BO 이벤트 수정 페이지
-	@RequestMapping(value = "/bInquiryDetail", method = RequestMethod.GET)
-	public ModelAndView bInquiryDetail(int id){
+	@RequestMapping(value = "/binquiryDetail", method = RequestMethod.GET)
+	public ModelAndView binquiryDetail(int id){
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -189,7 +198,7 @@ public class BackOfficeController {
 		
 		mv.addObject("inquiry", inquiry);
 		mv.addObject("qid", id);
-		mv.setViewName("bo/bInquiryDetail");
+		mv.setViewName("bo/binquiryDetail");
 		return mv;
 	}
 
