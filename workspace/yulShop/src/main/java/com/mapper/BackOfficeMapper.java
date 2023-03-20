@@ -18,6 +18,7 @@ public interface BackOfficeMapper {
 	//문의 
 	int selectBoInquiryAllCount();
 	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao);
+	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
 	
 	//회원리스트
 	int selectBoMemberAllCount();

@@ -66,5 +66,9 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	public Goods selectGoods(int id) {
 		return backOfficeMapper.selectGoods(id);
 	}
+	@Override
+	public Inquiry selectBoInquiryDetail(InquiryDao inquiryDao) {
+		return backOfficeMapper.selectBoInquiryDetail(inquiryDao);
+	}
 
 }

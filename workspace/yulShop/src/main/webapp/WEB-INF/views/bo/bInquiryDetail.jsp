@@ -27,16 +27,22 @@
 							method="post" role="form" class="form-horizontal">
 	
 						<div class="mb-15 row">
+							<label class="col-sm-2 col-form-label">아이디</label>
+							<div class="col-sm-10">
+								${inquiry.title }
+							</div>
+						</div>
+						<div class="mb-15 row">
 							<label class="col-sm-2 col-form-label">제목</label>
 							<div class="col-sm-10">
-							    <input type="text" id="title" name="title" value="${event.title }" class="form-control" placeholder="이벤트 제목을 입력해주세요." required>
+								${inquiry.title }
 							</div>
 						</div>
 
                         <div class="mb-15 row">
                             <label class="col-sm-2 col-form-label ">내용</label>
                             <div class="col-sm-10">
-								<textarea id="contents" class="form-control contents" placeholder="이벤트 내용을 입력해주세요." required>${event.contents }</textarea>
+								${inquiry.context }
                             </div>
                         </div>
                         
@@ -50,11 +56,7 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
-								<c:forEach items="${event.img }" var="i">
-									<c:if test="${i.imgNm eq 'eventList'}">
-										<img id="listImgTempl" src="${i.path }" class="listPreview deletImg" style=" width: 100px; height: 100px;"/>
-									</c:if>								
-								</c:forEach>
+								
 							</div> 
 						</div>
 						<br>
@@ -69,11 +71,7 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
-								<c:forEach items="${event.img }" var="i">
-									<c:if test="${i.imgNm eq 'eventDetail'}">
-										<img id="detailImgTempl" src="${i.path }" class="detailPreview deletImg" style=" width: 100px; height: 100px;"/>
-									</c:if>								
-								</c:forEach>
+								
 							</div>
 						</div>
 						<br>

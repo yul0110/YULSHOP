@@ -16,6 +16,8 @@ public interface BackOfficeService {
 	int selectBoInquiryAllCount();
 	//문의 리스트
 	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao);
+	//문의 디테일
+	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
 
 	//회원 총 리스트 갯수
 	int selectBoMemberAllCount();

@@ -31,6 +31,9 @@ public class Inquiry{
 	//수정자
 	private Integer updateId;
 	
+	//이미지
+	private String imgPath;
+	
 	//리스트이미지 경로
 	private List<String> listImgPathArr;
 }

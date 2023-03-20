@@ -178,9 +178,12 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		//Event event = boEventService.selectEvent(id);
+		InquiryDao inquiryDao = new InquiryDao();
+		inquiryDao.setId(id);
 		
-		//mv.addObject("event", event);
+		Inquiry inquiry = backOfficeService.selectBoInquiryDetail(inquiryDao);
+		
+		mv.addObject("inquiry", inquiry);
 		mv.setViewName("bo/bInquiryDetail");
 		return mv;
 	}

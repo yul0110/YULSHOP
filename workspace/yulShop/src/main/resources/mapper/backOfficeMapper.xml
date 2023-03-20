@@ -66,9 +66,27 @@
 			imgGroupId
 		FROM
 			inquiry
+		WHERE 1=1
+		<if test='id =! null'>
+		 	AND id = #{id}
+		</if>	
 		ORDER BY 
 			id DESC
 		LIMIT #{amount} OFFSET #{offset}
+	</select>
+	
+	<!-- 각 테이블의 데이터 리스트를 조회하는 쿼리 -->
+	<select id="selectBoInquiryDetail" parameterType="com.dao.InquiryDao" resultType="com.vo.Inquiry" >
+		SELECT
+			iq.id AS id,
+			iq.title AS title,
+			iq.context AS context,
+			i.`path` AS imgPath
+		FROM
+			inquiry iq
+			JOIN img i ON
+			iq.imgGroupId = i.imgGroupId
+		WHERE iq.id = #{id}
 	</select>
 	
 	<select id="selectBoMemberList" parameterType="com.dao.MemberDao"  resultType="com.vo.Member">
