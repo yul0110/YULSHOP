@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.dao.AnswerDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -183,11 +185,26 @@ public class BackOfficeController {
 		
 		Inquiry inquiry = backOfficeService.selectBoInquiryDetail(inquiryDao);
 		
+		//회원데이터 작업 해야함 ------kingyul
+		
 		mv.addObject("inquiry", inquiry);
+		mv.addObject("qid", id);
 		mv.setViewName("bo/bInquiryDetail");
 		return mv;
 	}
 
+	//BO 답변등록 Ajax
+	@RequestMapping(value = "/answerRegAjax", method = RequestMethod.POST)
+	public ModelAndView answerRegAjax(@RequestBody AnswerDao dataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		int result = backOfficeService.insertAnswer(dataJson);
+
+		mv.addObject("result", result);
+		return mv;
+	}
+	
 /*----------------------------------- 문의 END -----------------------------------*/
 	
 	//BO 회원관리 페이지

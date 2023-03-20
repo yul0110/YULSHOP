@@ -65,11 +65,7 @@
 			updateId, 
 			imgGroupId
 		FROM
-			inquiry
-		WHERE 1=1
-		<if test='id =! null'>
-		 	AND id = #{id}
-		</if>	
+			inquiry	
 		ORDER BY 
 			id DESC
 		LIMIT #{amount} OFFSET #{offset}
@@ -81,11 +77,14 @@
 			iq.id AS id,
 			iq.title AS title,
 			iq.context AS context,
-			i.`path` AS imgPath
+			i.`path` AS imgPath,
+			asw.content AS acontext
 		FROM
 			inquiry iq
 			JOIN img i ON
 			iq.imgGroupId = i.imgGroupId
+			LEFT JOIN answer asw ON
+			iq.id = asw.qid
 		WHERE iq.id = #{id}
 	</select>
 	
@@ -222,6 +221,18 @@
 		ig.id = i.imgGroupId
 	WHERE g.id = #{value}	
 	</select>
+	
+	
+	
+	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
+	
+	<insert id="insertAnswer" parameterType="com.dao.AnswerDao">
+		INSERT INTO answer
+			(qid, content, regDt, regId, updateDt, updateId, useYn)
+		VALUES(#{qid}, #{context}, now(), 99999, now(), 99999, 'Y');
+	</insert>
+	
+	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	
 </mapper>
 

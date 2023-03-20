@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import com.dao.AnswerDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -69,6 +70,10 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	@Override
 	public Inquiry selectBoInquiryDetail(InquiryDao inquiryDao) {
 		return backOfficeMapper.selectBoInquiryDetail(inquiryDao);
+	}
+	@Override
+	public int insertAnswer(AnswerDao answerDao) {
+		return backOfficeMapper.insertAnswer(answerDao);
 	}
 
 }

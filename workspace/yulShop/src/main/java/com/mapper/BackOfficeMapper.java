@@ -3,6 +3,7 @@ package com.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
+import com.dao.AnswerDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -19,6 +20,7 @@ public interface BackOfficeMapper {
 	int selectBoInquiryAllCount();
 	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao);
 	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
+	int insertAnswer(AnswerDao answerDao);
 	
 	//회원리스트
 	int selectBoMemberAllCount();

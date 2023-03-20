@@ -36,6 +36,9 @@ public class Inquiry{
 	
 	//리스트이미지 경로
 	private List<String> listImgPathArr;
+	
+	//답변 내용
+	private String acontext;
 }
 	
 

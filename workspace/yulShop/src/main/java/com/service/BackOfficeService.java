@@ -1,6 +1,8 @@
 package com.service;
 
 import java.util.List;
+
+import com.dao.AnswerDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -18,7 +20,9 @@ public interface BackOfficeService {
 	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao);
 	//문의 디테일
 	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
-
+	//문의 답변 등록
+	int insertAnswer(AnswerDao answerDao);
+	
 	//회원 총 리스트 갯수
 	int selectBoMemberAllCount();
 	//회원 리스트

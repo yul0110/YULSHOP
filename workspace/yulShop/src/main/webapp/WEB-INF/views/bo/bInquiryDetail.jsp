@@ -13,9 +13,9 @@
 
     <div class="wrapper">
         <div class="container-fluid mt-15">
-            <div class="card mb-15">
-            
 <!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- -->
+            
+            <input id='qid' type="hidden" value="${qid}">
             
             <div class="card mb-15">
                 <div class="card-body">
@@ -23,66 +23,65 @@
                     <br>
                     <br>
                     <!-- Contact Form -->
-                    <form action="/joinusAjax" id='joinform' name='joinform'
-							method="post" role="form" class="form-horizontal">
-	
-						<div class="mb-15 row">
-							<label class="col-sm-2 col-form-label">아이디</label>
-							<div class="col-sm-10">
-								${inquiry.title }
-							</div>
+					<div class="mb-15 row">
+						<label class="col-sm-2 col-form-label">아이디</label>
+						<div class="col-sm-10">
+							${inquiry.title }
 						</div>
-						<div class="mb-15 row">
-							<label class="col-sm-2 col-form-label">제목</label>
-							<div class="col-sm-10">
-								${inquiry.title }
-							</div>
+					</div>
+					<div class="mb-15 row">
+						<label class="col-sm-2 col-form-label">제목</label>
+						<div class="col-sm-10">
+							${inquiry.title }
 						</div>
+					</div>
 
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label ">내용</label>
-                            <div class="col-sm-10">
-								${inquiry.context }
-                            </div>
-                        </div>
-                        
-						<div class="form-file">
-							<input type="file" id="listImg" class="form-file-input">
-							<label class="form-file-label" for="customFile">메인 이미지
-						   		<span class="form-file-text"></span>
-						    	<span class="form-file-button">이미지 찾기</span>
-							</label>
-							<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								
-							</div> 
-						</div>
-						<br>
+                       <div class="mb-15 row">
+                           <label class="col-sm-2 col-form-label ">내용</label>
+                           <div class="col-sm-10">
+							${inquiry.context }
+                           </div>
+                       </div>
+                       
+					<div class="form-file">
+						<img id="" src="${inquiry.imgPath }" class="" style="width: 300px; height: 300px;"/>
+					</div>
+					<br>
 
-						<div class="form-file">
-							<input type="file" id="detailFile" class="form-file-input" >
-							<label class="form-file-label" for="customFile">상세 이미지
-						   		<span class="form-file-text"></span>
-						    	<span class="form-file-button">이미지 찾기</span>
-							</label>
-							<div id='detailPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								
-							</div>
+					<br>
+					<br>
+                    <!-- End Contact Form -->
+                </div>
+            </div>
+            
+            <div class="card mb-15">
+                <div class="card-body">
+                    <h4>답변</h4>
+                    <br>
+                    <br>
+                    
+                    <c:if test="${inquiry.acontext eq null }">
+						<div class="mb-15 row">
+						    <div class="col-sm-12">
+								<input type="text" id="acontext" name="answer" value="" class="form-control" placeholder="답변을 작성해주세요." required>
+						    </div>
 						</div>
 						<br>
 						<br>
-						<button type="button" id="eventUploadAjax" class="btn btn-block btn-primary">등록하기</button>
-                    </form>   
+						<button type="button" id="answerAjax" class="btn btn-block btn-primary">답변하기</button>
+                    </c:if>
+                    
+                    <c:if test="${inquiry.acontext ne null }">
+						<div class="mb-15 row">
+						    <div class="col-sm-12">
+								${inquiry.acontext}
+						    </div>
+						</div>
+                    </c:if>
                     <!-- End Contact Form -->
                 </div>
             </div>
 <!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- --><!-- -------------------------------------- -->
-        </div>
     </div>
 </div>
 
