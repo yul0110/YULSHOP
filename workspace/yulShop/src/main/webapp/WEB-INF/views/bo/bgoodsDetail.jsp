@@ -29,23 +29,23 @@
 	
 					    <div class="row">
 					        <div class="mb-15 col-md-6">
-					            <label for="inputEmail4" class="col-form-label">상품번호</label>
+					            <label class="col-form-label">상품번호</label>
 					            <input type="text" id="no" value="${goods.no }" class="form-control" maxlength="30" required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">상품이름</label>
+					            <label class="col-form-label">상품이름</label>
 					            <input type="text" id="nm" value="${goods.nm }" class="form-control" maxlength="30" required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputEmail4" class="col-form-label">가격</label>
+					            <label  class="col-form-label">가격</label>
 					            <input type="text" id="price" value="${goods.price }" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">할인가격</label>
+					            <label  class="col-form-label">할인가격</label>
 					            <input type="text" id="dprice" value="${goods.dprice }" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">입고일자</label>
+					            <label  class="col-form-label">입고일자</label>
 					            <input type="text" id="wareHousing" value="${goods.wareHousing }" class="form-control" maxlength="50"  required>
 					        </div>
 						</div>	
@@ -55,16 +55,11 @@
 					        <label class="col-form-label">카테고리</label>
 							<select id="categoryCode" name="" class="form-select" style= "width: 100%; height: 40px;">
 								<option value="" selected>타입</option>
-								<c:forEach var="category" items="${categoryList}">
-									<c:if test="${category.cateCodeRef eq null}">
-										<option value="${category.cateCode}">${category.cateNm}</option>
-									</c:if>
-								</c:forEach>
 							</select>
 							
 						</div>
 						<div class="mb-15 col-md-6">
-					        <label for="inputPassword4" class="col-form-label">세부카테고리</label>
+					        <label class="col-form-label">세부카테고리</label>
 							<select id="categoryChildren" name="" class="form-select">
 							    <option selected>타입</option>
 							    <option value="">One</option>
@@ -99,11 +94,6 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
-								<c:forEach items="${goods.img }" var="i">
-									<c:if test="${i.imgNm eq 'goodsList'}">
-										<img id="listImgTempl" src="${i.path }" class="listPreview deletImg" style=" width: 100px; height: 100px;"/>
-									</c:if>								
-								</c:forEach>
 							</div> 
 						</div>
 						<br>
@@ -118,12 +108,7 @@
 							<div id='detailPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								<c:forEach items="${goods.img }" var="i">
-									<c:if test="${i.imgNm eq 'goodsDetail'}">
-										<img id="detailImgTempl" src="${i.path }" class="detailPreview deletImg" style=" width: 100px; height: 100px;"/>
-									</c:if>								
-								</c:forEach>	
+								<!-- 사진데이터가 들어올 공간 --> 
 							</div>
 						</div>
 						<br>

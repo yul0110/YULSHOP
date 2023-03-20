@@ -38,8 +38,9 @@ public class Event {
 	//사용여부
 	private String useYn;
 	
-	//
+	//imgPath
 	private String imgPath;
 
+	//img 배열
 	private List<Img> img;
 }
