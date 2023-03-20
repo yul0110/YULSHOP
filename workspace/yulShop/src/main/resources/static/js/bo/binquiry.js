@@ -62,12 +62,14 @@
 					inquiryNodeCopy.attr('id', '');
 					inquiryNodeCopy.attr('style', '');
 					inquiryNodeCopy.find('.inquiryCount').html(item.id);
-					inquiryNodeCopy.find('.inquiryTitle').html(item.title);
+					inquiryNodeCopy.find('.inquiryTitle').text(item.title);
+					inquiryNodeCopy.find('.inquiryTitle').attr('href', '/bInquiryDetail?id=' + item.id);
 					$('#inquiryList').append(inquiryNodeCopy);
 				});
 				//페이지를 뿌려주는 append
 				
 				
+				//페이징 처리 ------------------------------------------------------------------------
 				if(d.firstPageData > 0){ //페이지를 그릴지 안그릴지 선택
 					
 					if(d.firstPageData <= 1){//첫페이지로 보내기를 그릴지 말지

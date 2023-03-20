@@ -107,8 +107,8 @@
 			        No.
 			    </td>
 			
-			    <td class="inquiryTitle">
-			        제목
+			    <td class="">
+			        <a class="inquiryTitle" href=""></a>
 			    </td>
 			</tr>
 	    </tbody>
