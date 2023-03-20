@@ -45,7 +45,7 @@
                     <div class="card mb-15">
                         <div class="card-body">
                             <span class="badge bg-success float-right">month</span>
-                            <h6 class="card-title text-muted">율바보</h6>
+                            <h6 class="card-title text-muted">매출</h6>
                             <h3 class="mb-10">1,234</h3>
                             <p class="text-muted mb-0">Total: 329,890
                                 <span class="float-right"> <i class="fas fa-angle-up text-success"></i> 5.5%</span>

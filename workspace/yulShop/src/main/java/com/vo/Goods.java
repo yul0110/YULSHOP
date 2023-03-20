@@ -26,6 +26,8 @@ public class Goods {
 	String imgPath;
 	
 	List<Img> img;
+	
+	List<Option> option;
 }
 	
 

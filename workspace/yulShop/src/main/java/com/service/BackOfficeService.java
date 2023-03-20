@@ -2,9 +2,11 @@ package com.service;
 
 import java.util.List;
 import com.dao.EventDao;
+import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
 import com.vo.Event;
+import com.vo.Goods;
 import com.vo.Inquiry;
 import com.vo.Member;
 
@@ -24,5 +26,13 @@ public interface BackOfficeService {
 	int selectBoEventAllCount();
 	//이벤트 리스트
 	List<Event> selectBoEventList(EventDao eventDao);
+	
+	//상품 총 리스트 갯수
+	int selectBogoodSAllCount();
+	//상품 리스트
+	List<Goods>selectBoGoodsList(GoodsDao goodsDao);
+	
+	//상품 디테일
+	Goods selectGoods(int id);
 
 }

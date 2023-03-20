@@ -45,7 +45,7 @@ public class BackOfficeController {
 	
 
 	
-	/*---------------------------메인----------------------------------*/
+/*------------------------------------- 메인 --------------------------------------*/
 	
 	@RequestMapping(value = "/bmain", method = RequestMethod.GET)
     public String BoMainPage(){
@@ -53,7 +53,7 @@ public class BackOfficeController {
     }
 	
 	
-	/*---------------------------상품----------------------------------*/
+/*------------------------------------- 상품 --------------------------------------*/
 	
 	//BO 상품등록페이지
 	@RequestMapping(value = "/bgoodsReg", method = RequestMethod.GET)
@@ -72,6 +72,29 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	//BO 이벤트 리스트 페이지
+	@RequestMapping(value = "/bgoodsList", method = RequestMethod.GET)
+	public ModelAndView bgoodsList(){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("bo/bgoodsList");
+		return mv;
+	}
+	
+	//BO 상품 수정
+	@RequestMapping(value = "/bgoodsDetail", method = RequestMethod.GET)
+	public ModelAndView bgoodsDetail(int id) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		Goods goods =  backOfficeService.selectGoods(id);
+		
+		mv.addObject("bgoodsDetail",goods);
+		mv.setViewName("bo/bgoodsDetail");
+		return mv;
+	}
+	
 	//상품등록 Ajax
 	@RequestMapping(value = "/goodsRegAjax", method = RequestMethod.POST)
 	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson ) {
@@ -84,7 +107,33 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	/*---------------------------상품 END-------------------------------*/
+	
+	//BO 상품 리스트 Ajax
+	@RequestMapping(value = "/bgoodsListAjax", method = RequestMethod.POST)
+	public ModelAndView goodsListAjax(@RequestBody GoodsDao goodsDao) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+	
+		//게시물의 총 갯수
+		int allCount = backOfficeService.selectBoInquiryAllCount();
+		
+		goodsDao.setTotal(allCount);
+		goodsDao.pagingSetting();
+		List<Goods> goodsList = backOfficeService.selectBoGoodsList(goodsDao);
+		
+		mv.addObject("goodsList", goodsList);
+		mv.addObject("goodsDetail", goodsList.get(0));
+		mv.addObject("prevPageData", goodsDao.getPrevPage());
+		mv.addObject("nextPageData", goodsDao.getNextPage());
+		mv.addObject("pageNumPageData", goodsDao.getPageNum());
+		mv.addObject("firstPageData", goodsDao.getFirstPage());
+		mv.addObject("endPageData", goodsDao.getEndPage());
+		return mv;
+	}
+	
+	
+/*---------------------------------- 상품 END ----------------------------------*/
+	
 	
 	
 	//BO 문의 페이지
@@ -123,7 +172,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	/*--------------------------- 문의 END-------------------------------*/
+/*----------------------------------- 문의 END -----------------------------------*/
 	
 	//BO 회원관리 페이지
 	@RequestMapping(value = "/bmember", method = RequestMethod.GET)
@@ -158,7 +207,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	/*---------------------------회원 END-------------------------------*/	
+/*---------------------------------- 회원 END ------------------------------------*/	
 	
 	//BO 이벤트 등록 페이지
 	@RequestMapping(value = "/beventReg", method = RequestMethod.GET)
@@ -183,7 +232,6 @@ public class BackOfficeController {
 	public ModelAndView beventDetail(int id){
 		
 		ModelAndView mv = new ModelAndView();
-		
 		
 		Event event = boEventService.selectEvent(id);
 		
@@ -228,5 +276,5 @@ public class BackOfficeController {
 	}
 
 	
-	/*---------------------------이벤트 END-------------------------------*/	
+/*-------------------------------- 이벤트 END -----------------------------------*/	
 }

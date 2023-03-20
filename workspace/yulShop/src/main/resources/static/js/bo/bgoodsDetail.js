@@ -55,7 +55,6 @@
 				nodeImgCopy.data('pdata', data.path);
 				
 				$('#listPreviewZone').append(nodeImgCopy);
-				
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -126,27 +125,28 @@
 			
         });
 		
-		//리스트이미지
+		
+		//메인이미지
 		$("#listImg").change(function(){
 			
 			var listImgCount = $('.listPreview').length; 
 			
 			//이미지 갯수 벨리데이션
 			if(listImgCount >= 1){
-				alert('리스트 이미지는 1개만 등록할수있습니다.');
+				alert('메인 이미지는 1개만 등록할수있습니다.');
 			  return false;
 			}
 			yul.page.listImgUploadEvent(this);
         });
         
         //상세이미지
-        $("#detailImg").change(function(){
+        $("#detailFile").change(function(){
 	
 			var detailImgCount = $('.detailPreview').length;
 	
 			//이미지 갯수 벨리데이션
 			if(detailImgCount >= 5){
-				alert('리스트 이미지는 5개만 등록할수있습니다.');
+				alert('상세 이미지는 5개만 등록할수있습니다.');
 			  return false;
 			}
 			
@@ -163,7 +163,7 @@
 
 	//작동할 이벤트를 프로토 타입으로 세팅
 	yul.page.prototype.clickEvent = function() {
-		
+
 		$(document).on('click', '.deletImg', function(){
 			
 			if(confirm("이미지를 삭제하시겠습니까?")){
@@ -171,7 +171,7 @@
 			}
 			
 		})
-		
+
 		//옵션 추가 시도 클릭 이벤트
 	 	$('#optionAdd').on('click', function(e) {
 	 		e.preventDefault();
@@ -201,25 +201,25 @@
 	 		optionNum = optionNum + 1;
 		});
 		
-		//상품 업로드 시도 클릭 이벤트
-	 	$('#uploadAjax').on('click', function(e) {
+		//상품 수정 업로드 시도 클릭 이벤트
+	 	$('#goodsUploadAjax').on('click', function(e) {
 	 		e.preventDefault();
 	 		
 	 		//노드의 value값
 	 		var no	  		= $('#no').val(); //상품번호
-	 		var nm 			= $("#nm").val();	   //상품이름
-	 		var price 		= $('#price').val();   //상품가격
-	 		var dprice 		= $('#dprice').val();  //할인가격
-	 		var wareHousing = $('#wareHousing').val();//입고일자
-	 		var cateId		= $('#categoryChildren').val();//카테고리
+	 		var nm 			= $("#nm").val(); //상품이름
+	 		var price 		= $("#price").val(); //상품가격
+	 		var dprice 		= $("#dprice").val(); //상품 할인가격
+ 			var wareHousing = $("#wareHousing").val(); //상품 입고일자
+ 			var cateId		= $('#categoryChildren').val();//카테고리
 	 		var fabric 		= $('#fabric').val();  //소재
-	 		var info 		= $('#info').val();    //상품정보
-	 		var descliption = $('#descliption').val(); //상세정보
-	 		
+	 		var info 		= $("#info").val(); //상품 정보
+	 		var descliption = $("#descliption").val(); //상품 상세
+
 	 		//노드 배열
-	 		var optionArr 			= $('.optionArr'); //옵션 
-	 		var listImgPathArr 		= $('.listPath'); //리스트 이미지경로
-	 		var detailImgPathArr	= $('.detailPath'); //상세정보
+	 		var optionArr 		= $('.optionArr'); //옵션 
+	 		var mainImgPathArr 	= $('.listPath'); //리스트 이미지경로
+	 		var detailImgPathArr= $('.detailPath'); //상세 이미지경로
 	 	
 	 		
 	 		//상품번호 빈값 체크
@@ -295,23 +295,24 @@
 				}		
 				optionListArr.push(optionData);
 			}
-		
+			
+			
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(listImgPathArr.length <= 0){ 
-				alert("리스트 이미지는 1개이상 등록하셔야 합니다.");
+			if(mainImgPathArr.length <= 0){ 
+				alert("메인 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
 
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
 			if(detailImgPathArr.length <= 0){ 
-				alert("상품 상세 이미지는 1개이상 등록하셔야 합니다.");
+				alert("상세 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
 			
- 			//리스트이미지 배열만들기
+ 			//메인이미지 배열만들기
 			var pathListArr = new Array();
-			for(i=0;i<listImgPathArr.length;i++){
-				pathListArr.push(listImgPathArr[i].dataset.pdata);
+			for(i=0;i<mainImgPathArr.length;i++){
+				pathListArr.push(mainImgPathArr[i].dataset.pdata);
 			}
 			
 		 	//상세이미지 배열만들기
@@ -319,7 +320,7 @@
 			for(i=0;i<detailImgPathArr.length;i++){
 				pathDetailArr.push(detailImgPathArr[i].dataset.pdata);
 			}
-		
+
 			//소재 빈값체크
 	 		if(fabric == ""){
 				alert("소재를 작성해주세요."); 		
@@ -342,8 +343,8 @@
 	 		if(descliption == ""){
 				alert("상세설명을 작성해주세요."); 		
 				return false;
-			}
-		
+			}		
+			
 			var goodsDataJson 	= {};
 	
 			goodsDataJson.no 				= no;
@@ -397,7 +398,7 @@
 		    //전송할 데이터 json 타입으로 변동후 전달
 		    xhr.send(JSON.stringify(goodsDataJson));	
 		});
-	 };
+	};	
 	 
 	 $(function() {
 	 	yul.page = new yul.page();

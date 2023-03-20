@@ -274,12 +274,6 @@
                             <span class="menu-label"></span>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="/bgoodsDetail" class="menu-link">
-                            <i class="menu-icon">상품 수정</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
                 </ul>
             </li>
             
@@ -305,12 +299,6 @@
                             <span class="menu-label"></span>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="/beventDetail" class="menu-link">
-                            <i class="menu-icon">이벤트 수정</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
                 </ul>
             </li>
             
@@ -332,12 +320,6 @@
                     <li class="menu-item">
                         <a href="ui-avatars.html" class="menu-link">
                             <i class="menu-icon">쿠폰 등록</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="ui-avatars.html" class="menu-link">
-                            <i class="menu-icon">쿠폰 수정</i>
                             <span class="menu-label"></span>
                         </a>
                     </li>

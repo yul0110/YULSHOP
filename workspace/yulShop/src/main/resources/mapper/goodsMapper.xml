@@ -15,6 +15,11 @@
 	    <result property="imgNm" column="imgNm" />
 	    <result property="path" column="path" />
 	  </collection>
+	  <collection property="option" ofType="com.vo.Option">
+	    <result property="color" column="optColor" />
+	    <result property="sz" column="optSz" />
+	    <result property="inventory" column="optInventory" />
+	  </collection>
 	</resultMap>
 		
 

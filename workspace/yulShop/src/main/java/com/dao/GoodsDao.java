@@ -3,10 +3,17 @@ package com.dao;
 import java.sql.Date;
 import java.util.List;
 
-import lombok.Data;
+import org.springframework.stereotype.Repository;
 
+import com.vo.paging;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Repository
+@RequiredArgsConstructor
 @Data
-public class GoodsDao {
+public class GoodsDao  extends paging{
 	
 		//멤버id
 		private Integer id;
@@ -73,4 +80,11 @@ public class GoodsDao {
 		
 		//상세이미지 경로
 		private List<String> detailImgPathArr;
+		
+		//검색어
+		private String searchNm;
+		
+		//검색타입
+		private String searchType;
+		
 }

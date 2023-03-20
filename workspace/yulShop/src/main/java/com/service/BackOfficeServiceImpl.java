@@ -6,10 +6,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.dao.EventDao;
+import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
 import com.mapper.BackOfficeMapper;
 import com.vo.Event;
+import com.vo.Goods;
 import com.vo.Inquiry;
 import com.vo.Member;
 
@@ -48,6 +50,21 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	@Override
 	public List<Event> selectBoEventList(EventDao eventDao) {
 		return backOfficeMapper.selectBoEventList(eventDao);
+	}
+	
+	//상품
+	@Override
+	public int selectBogoodSAllCount() {
+		return backOfficeMapper.selectBogoodSAllCount();
+	}
+	@Override
+	public List<Goods> selectBoGoodsList(GoodsDao goodsDao) {
+		return backOfficeMapper.selectBoGoodsList(goodsDao);
+	}
+	//상품 디테일
+	@Override
+	public Goods selectGoods(int id) {
+		return backOfficeMapper.selectGoods(id);
 	}
 
 }

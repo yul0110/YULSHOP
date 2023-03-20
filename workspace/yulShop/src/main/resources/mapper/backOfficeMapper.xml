@@ -2,6 +2,28 @@
 
 <mapper namespace="com.mapper.BackOfficeMapper">
 
+	<resultMap id="goodsDetailMap" type="com.vo.Goods">
+	  <id property="id" column="id" />
+	  <result property="no" column="no" />
+	  <result property="nm" column="nm" />
+	  <result property="price" column="price" />
+	  <result property="dprice" column="dprice" />
+	  <result property="fabric" column="fabric" />
+	  <result property="info" column="info" />
+	  <result property="descliption" column="descliption" />
+	  <collection property="img" ofType="com.vo.Img">
+	    <result property="imgNm" column="imgNm" />
+	    <result property="path" column="path" />
+	  </collection>
+	  <collection property="option" ofType="com.vo.Option">
+	    <result property="color" column="optColor" />
+	    <result property="sz" column="optSz" />
+	    <result property="inventory" column="optInventory" />
+	  </collection>
+	</resultMap>
+
+
+	<!-- 페이징 처리를 위해 각 테이블의 데이터 총 갯수를 조회하는 쿼리 -->
 	<select id="selectBoInquiryAllCount"  resultType="int" >
 		SELECT 
 			COUNT(id) 
@@ -22,7 +44,16 @@
 		FROM 
 			event 
 	</select>
+
+	<select id="selectBoGoodsAllCount"  resultType="int" >
+		SELECT 
+			COUNT(id) 
+		FROM 
+			goods 
+	</select>
+
 	
+	<!-- 각 테이블의 데이터 리스트를 조회하는 쿼리 -->
 	<select id="selectBoInquiryList" parameterType="com.dao.InquiryDao" resultType="com.vo.Inquiry" >
 		SELECT
 			id, 
@@ -77,6 +108,98 @@
 		ORDER BY 
 			id DESC
 		LIMIT #{amount} OFFSET #{offset}	
+	</select>
+
+	<select id="selectBoGoodsList" parameterType="com.dao.GoodsDao"  resultMap="goodsDetailMap">
+		 SELECT 
+		 	g.id, 
+		 	g.cateId, 
+		 	g.no, 
+		 	g.nm, 
+		 	g.price, 
+		 	g.dprice, 
+		 	g.wareHousing, 
+		 	g.goodsState, 
+		 	g.info, 
+		 	g.descliption, 
+		 	g.fabric, 
+		 	g.listImg, 
+		 	g.detailImg, 
+		 	g.regDt, 
+		 	g.regId, 
+		 	g.updateDt, 
+		 	g.updateId, 
+		 	g.useYn,
+		 	o.color as optColor,
+		 	o.sz as optSz,
+		 	o.inventory as optInventory,
+			i.nm as imgNm,
+			i.`path`
+		FROM 
+			goods g 
+		JOIN opt o ON
+			g.id = o.goodsId 
+		JOIN imgGroup ig ON
+			g.detailImg = ig.id
+			OR 
+			g.listImg = ig.id
+		JOIN img i ON
+			ig.id = i.imgGroupId
+		WHERE
+			1 = 1
+		 <if test='id =! null'>
+		 	AND g.id = #{id}
+		 </if>	
+		 <if test='searchNm =! null'>
+			<if test='searchType == "c"'>
+				AND g.no = #{searchNm}
+		 	</if>
+		 	<if test='searchType == "n"'>
+				AND g.nm LIKE '%' + #{searchNm} + '%'
+		 	</if>
+		 </if>	
+		ORDER BY 
+			id DESC
+		LIMIT #{amount} OFFSET #{offset}	
+	</select>
+
+	<!-- 상품 수정을 위해 상품, 이미지들, 옵션을 조회하는 쿼리 -->
+	<select id="selectGoods" parameterType="int"  resultMap="goodsDetailMap">
+		SELECT 
+	 	g.id, 
+	 	g.cateId, 
+	 	g.no, 
+	 	g.nm, 
+	 	g.price, 
+	 	g.dprice, 
+	 	g.wareHousing, 
+	 	g.goodsState, 
+	 	g.info, 
+	 	g.descliption, 
+	 	g.fabric, 
+	 	g.listImg, 
+	 	g.detailImg, 
+	 	g.regDt, 
+	 	g.regId, 
+	 	g.updateDt, 
+	 	g.updateId, 
+	 	g.useYn,
+	 	o.color as optColor,
+	 	o.sz as optSz,
+	 	o.inventory as optInventory,
+		i.nm as imgNm,
+		i.`path`
+	FROM 
+		goods g 
+	JOIN opt o ON
+		g.id = o.goodsId 
+	JOIN imgGroup ig ON
+		g.detailImg = ig.id
+		OR 
+		g.listImg = ig.id
+	JOIN img i ON
+		ig.id = i.imgGroupId
+	WHERE g.id = #{value}	
 	</select>
 	
 </mapper>
