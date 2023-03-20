@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.dao.AnswerDao;
+import com.dao.CouponDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -65,15 +66,22 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	//상품 디테일
 	@Override
 	public Goods selectGoods(int id) {
-		return backOfficeMapper.selectGoods(id);
+		return backOfficeMapper.selectBoGoods(id);
 	}
 	@Override
 	public Inquiry selectBoInquiryDetail(InquiryDao inquiryDao) {
 		return backOfficeMapper.selectBoInquiryDetail(inquiryDao);
 	}
 	@Override
-	public int insertAnswer(AnswerDao answerDao) {
+	public int insertBoAnswer(AnswerDao answerDao) {
 		return backOfficeMapper.insertAnswer(answerDao);
+	}
+	@Override
+	public int insertBoCoupon(CouponDao couponDao) {
+		
+		int indexNum = backOfficeMapper.selectBoCouponNumbering();
+		couponDao.setId(indexNum + 1);
+		return backOfficeMapper.insertBoCoupon(couponDao);
 	}
 
 }

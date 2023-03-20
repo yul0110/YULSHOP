@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/bgoodsReg.js"></script>
+<script src="/resources/js/bo/bcouponReg.js"></script>
 
     <div class="wrapper">
         <div class="container-fluid mt-15">
@@ -28,126 +28,44 @@
 	
 					    <div class="row">
 					        <div class="mb-15 col-md-6">
-					            <label for="inputEmail4" class="col-form-label">상품번호</label>
-					            <input type="text" id="no" class="form-control" maxlength="30"required>
-					        </div>
-					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">상품이름</label>
+					            <label for="inputPassword4" class="col-form-label">쿠폰이름</label>
 					            <input type="text" id="nm" class="form-control" maxlength="30" required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputEmail4" class="col-form-label">가격</label>
-					            <input type="text" id="price" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+					            <label for="inputEmail4" class="col-form-label">쿠폰번호</label>
+					            <input type="text" id="codeNum" class="form-control" maxlength="30"required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">할인가격</label>
-					            <input type="text" id="dprice" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+					            <label class="col-form-label">할인타입</label>
+							<select id="couponType" name="" class="form-select" style= "width: 100%; height: 40px;">
+								<option value="p" selected>퍼센트할인 ( % )</option>
+								<option value="c" selected>정액할인 ( \ x,xxx)</option>
+							</select>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">입고일자</label>
-					            <input type="text" id="wareHousing" class="form-control" maxlength="50"  required>
+					            <label for="couponSize" class="col-form-label">사이즈</label>
+					            <input type="text" id="couponSize" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
 					        </div>
-						</div>	
-
-
-						<div class="mb-15 col-md-6" >
-					        <label class="col-form-label">카테고리</label>
-							<select id="categoryCode" name="" class="form-select" style= "width: 100%; height: 40px;">
-								<option value="" selected>타입</option>
-								<c:forEach var="category" items="${categoryList}">
-									<c:if test="${category.cateCodeRef eq null}">
-										<option value="${category.cateCode}">${category.cateNm}</option>
-									</c:if>
-								</c:forEach>
-							</select>
-							
-						</div>
-						<div class="mb-15 col-md-6">
-					        <label for="inputPassword4" class="col-form-label">세부카테고리</label>
-							<select id="categoryChildren" name="" class="form-select">
-							    <option selected>타입</option>
-							    <option value="">One</option>
-							    <option value="">Two</option>
-							    <option value="">Three</option>
-							</select>
-					    </div>	
-						<br>
-						<br>
-
-						<div class="mb-15 col-md-6">
-	                        <div id='optionAppendTo' class="">
-								<b class="text-center" style="font-size:20px; color:black;">&nbsp;&nbsp;&nbsp;&nbsp;옵션</b>
-								<b id='optionAdd' class="text-center" style="font-size:30px; color:black;">+</b>
-							</div>
-							<br>
-							<div id="optionZone" class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center ">
-								<!-- templ zone -->
-								<!-- templ zone -->
-								<!-- templ zone -->
-							</div>
-						</div>
-						<br>
-						
-						<div class="form-file">
-							<input type="file" id="listImg" name="listImg" class="form-file-input">
-							<label class="form-file-label">메인 이미지&nbsp;&nbsp;&nbsp;&nbsp;
-						   		<span class="form-file-text"></span>
-						    	<span class="form-file-button">이미지 찾기</span>
-							</label>
-							<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-							</div> 
+					        <div class="mb-15 col-md-6">
+					            <label for="limitPrice" class="col-form-label">최소금액</label>
+					            <input type="text" id="limitPrice" class="form-control" maxlength="30"required>
+					        </div>
+					        <div class="mb-15 col-md-6">
+					            <label for="maxPrice" class="col-form-label">최대금액</label>
+					            <input type="text" id="maxPrice" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+					        </div>
+					        <div class="mb-15 col-md-6">
+					            <label for="issudCount" class="col-form-label">발급일로 부터 사용기간</label>
+					            <input type="text" id="issuedCount" class="form-control" maxlength="50"  required>
+					        </div>
+					        <div class="mb-15 col-md-6">
+					            <label for="useDate" class="col-form-label">사용기간</label>
+					            <input type="date" id="useDate" class='form-control' name="trip-start" value="2023-01-10">
+					        </div>
 						</div>
 						<br>
 						<br>
-
-						<div class="form-file">
-							<input type="file" id="detailImg" name="detailImg" class="form-file-input" >
-							<label class="form-file-label">상세 이미지&nbsp;&nbsp;&nbsp;&nbsp;
-						   		<span class="form-file-text"></span>
-						    	<span class="form-file-button">이미지 찾기</span>
-							</label>
-							<div id='detailPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3" >
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-								<!-- 사진데이터가 들어올 공간 -->
-							</div>
-						</div>
-						<br>
-						<br>
-						
-						<div class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
-							<select id="fabric" name="fabric" style= "width: 100%; height: 40px;">
-							<option value="" selected>소재선택</option>
-							<option value="cotton">면</option>
-							<option value="wool">울</option>
-							<option value="silk">실크</option>
-							<option value="linen">린넨</option>
-							<option value="polyester">폴리에스터</option>
-							<option value="nylon">나일론</option>
-							<option value="polyacryl">폴리아크릴</option>
-							<option value="raton">레이온</option>
-							</select>
-						</div>
-						<br>
-
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label ">상품정보</label>
-                            <div class="col-sm-10">
-								<textarea id="info" class="form-control info" maxlength="1000" required></textarea>
-                            </div>
-                        </div>
-                        <div class="mb-15 row">
-                            <label class="col-sm-2 col-form-label ">상품상세</label>
-                            <div class="col-sm-10">
-								<textarea id="descliption" class="form-control descliption" maxlength="1000" required></textarea>
-                            </div>
-                        </div>
-                        
-                        
-						<button type="button" id="uploadAjax" class="btn btn-block btn-primary">등록하기</button>
+						<button type="button" id="couponRegAjax" class="btn btn-block btn-primary">등록하기</button>
                     </form>   
                     <!-- End Contact Form -->
                 </div>

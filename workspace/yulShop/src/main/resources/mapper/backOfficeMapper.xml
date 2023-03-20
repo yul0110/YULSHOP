@@ -184,7 +184,7 @@
 	</select>
 
 	<!-- 상품 수정을 위해 상품, 이미지들, 옵션을 조회하는 쿼리 -->
-	<select id="selectGoods" parameterType="int"  resultMap="goodsDetailMap">
+	<select id="selectBoGoods" parameterType="int"  resultMap="goodsDetailMap">
 		SELECT 
 	 	g.id, 
 	 	g.cateId, 
@@ -226,11 +226,23 @@
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	
-	<insert id="insertAnswer" parameterType="com.dao.AnswerDao">
+	<insert id="insertBoAnswer" parameterType="com.dao.AnswerDao">
 		INSERT INTO answer
 			(qid, content, regDt, regId, updateDt, updateId, useYn)
 		VALUES(#{qid}, #{context}, now(), 99999, now(), 99999, 'Y');
 	</insert>
+	
+	
+	<select id="selectBoCouponNumbering" resultType="Integer">
+		SELECT id FROM coupon ORDER BY id DESC LIMIT 1
+	</select>
+	<insert id="insertBoCoupon" parameterType="com.dao.CouponDao">
+		INSERT INTO coupon
+			(id, codeNum, nm, couponType, couponSize, limitPrice, maxPrice, issuedCount, useDate, regDt, regId, updateDt, updateId, useYn)
+		VALUES(#{id}, #{codeNum}, #{nm}, #{couponType}, #{couponSize}, #{limitPrice}, #{maxPrice}, #{issuedCount}, #{useDate}, now(), 99999, now(), 99999, 'Y');
+	</insert>
+	
+	
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	

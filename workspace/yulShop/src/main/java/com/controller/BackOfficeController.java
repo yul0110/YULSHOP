@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.AnswerDao;
+import com.dao.CouponDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -121,13 +122,13 @@ public class BackOfficeController {
 	
 	// BO 쿠폰 등록 ajax
 	@RequestMapping(value = "/couponRegAjax", method = RequestMethod.POST)
-	public ModelAndView couponRegAjax(@RequestBody GoodsDao goodsDataJson ) {
+	public ModelAndView couponRegAjax(@RequestBody CouponDao dataJson ) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 
-		//int result = boGoodsService.insertGoods(goodsDataJson);
+		int result = backOfficeService.insertBoCoupon(dataJson);
 
-		//mv.addObject("result", result);
+		mv.addObject("result", result);
 		return mv;
 	}
 	

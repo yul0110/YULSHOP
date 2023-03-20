@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.dao.AnswerDao;
+import com.dao.CouponDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -22,6 +23,10 @@ public interface BackOfficeMapper {
 	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
 	int insertAnswer(AnswerDao answerDao);
 	
+	//쿠폰
+	int selectBoCouponNumbering();
+	int insertBoCoupon(CouponDao couponDao);
+	
 	//회원리스트
 	int selectBoMemberAllCount();
 	List<Member> selectBoMemberList(MemberDao memberDao);
@@ -35,5 +40,5 @@ public interface BackOfficeMapper {
 	List<Goods>selectBoGoodsList(GoodsDao goodsDao);
 	
 	//상품 디테일
-	Goods selectGoods(int id);
+	Goods selectBoGoods(int id);
 }

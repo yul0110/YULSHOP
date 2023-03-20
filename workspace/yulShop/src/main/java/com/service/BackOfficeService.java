@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.dao.AnswerDao;
+import com.dao.CouponDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -14,19 +15,19 @@ import com.vo.Member;
 
 public interface BackOfficeService {
 
-	//문의 총 리스트 갯수
-	int selectBoInquiryAllCount();
-	//문의 리스트
-	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao);
-	//문의 디테일
-	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao);
-	//문의 답변 등록
-	int insertAnswer(AnswerDao answerDao);
+	//문의
+	int selectBoInquiryAllCount(); 	//문의 총 리스트 갯수
+	List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao); //문의 리스트
+	Inquiry selectBoInquiryDetail(InquiryDao inquiryDao); 	//문의 디테일
+	int insertBoAnswer(AnswerDao answerDao); 	//문의 답변 등록
+	
+	//쿠폰
+	int insertBoCoupon(CouponDao couponDao); //쿠폰등록
 	
 	//회원 총 리스트 갯수
 	int selectBoMemberAllCount();
 	//회원 리스트
-	List<Member>  selectBoMemberList(MemberDao memberDao);
+	List<Member> selectBoMemberList(MemberDao memberDao);
 	
 	//이벤트 총 리스트 갯수
 	int selectBoEventAllCount();
