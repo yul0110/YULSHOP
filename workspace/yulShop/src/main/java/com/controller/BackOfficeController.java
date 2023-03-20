@@ -55,14 +55,93 @@ public class BackOfficeController {
     }
 	
 
-/*------------------------------------- 메인 --------------------------------------*/
+/*------------------------------------- 쿠폰 --------------------------------------*/
 	
 	@RequestMapping(value = "/bcoupon", method = RequestMethod.GET)
-    public String BoMainPage(){
-		return "bo/bmain";
+    public String bcoupon(){
+		return "bo/bcoupon";
     }
 	
+	//BO 쿠폰 리스트 Ajax
+	@RequestMapping(value = "/couponListAjax", method = RequestMethod.POST)
+	public ModelAndView bcouponListAjax(@RequestBody GoodsDao goodsDao) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
 	
+		//게시물의 총 갯수
+		//int allCount = backOfficeService.selectBoInquiryAllCount();
+		
+		//goodsDao.setTotal(allCount);
+		//goodsDao.pagingSetting();
+		//List<Goods> goodsList = backOfficeService.selectBoGoodsList(goodsDao);
+		
+		//mv.addObject("goodsList", goodsList);
+		//mv.addObject("goodsDetail", goodsList.get(0));
+		//mv.addObject("prevPageData", goodsDao.getPrevPage());
+		//mv.addObject("nextPageData", goodsDao.getNextPage());
+		//mv.addObject("pageNumPageData", goodsDao.getPageNum());
+		//mv.addObject("firstPageData", goodsDao.getFirstPage());
+		//mv.addObject("endPageData", goodsDao.getEndPage());
+		return mv;
+	}
+	
+	//BO 쿠폰 등록페이지
+	@RequestMapping(value = "/bcouponReg", method = RequestMethod.GET)
+	public ModelAndView bcouponReg(String cate){
+		
+		ModelAndView mv = new ModelAndView();
+		//---------카테고리-----------
+		//List<Category> categoryList = categoryService.selectAllCategoryList();
+		//List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리-----------
+		
+		//mv.addObject("categoryList", categoryList);
+		//mv.addObject("categoryRefList", categoryRefList);
+		//mv.addObject("currentCate", cate);
+		//mv.setViewName("bo/bgoodsReg");
+		return mv;
+	}
+	
+	//BO 쿠폰 수정페이지
+	@RequestMapping(value = "/bcouponUpdate", method = RequestMethod.GET)
+	public ModelAndView bcouponUpdate(String cate){
+		
+		ModelAndView mv = new ModelAndView();
+		//---------카테고리-----------
+		//List<Category> categoryList = categoryService.selectAllCategoryList();
+		//List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리-----------
+		
+		//mv.addObject("categoryList", categoryList);
+		//mv.addObject("categoryRefList", categoryRefList);
+		//mv.addObject("currentCate", cate);
+		//mv.setViewName("bo/bgoodsReg");
+		return mv;
+	}
+	
+	// BO 쿠폰 등록 ajax
+	@RequestMapping(value = "/couponRegAjax", method = RequestMethod.POST)
+	public ModelAndView couponRegAjax(@RequestBody GoodsDao goodsDataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		//int result = boGoodsService.insertGoods(goodsDataJson);
+
+		//mv.addObject("result", result);
+		return mv;
+	}
+	
+	// BO 쿠폰 수정 ajax
+	@RequestMapping(value = "/couponUpdateAjax", method = RequestMethod.POST)
+	public ModelAndView couponUpdateAjax(@RequestBody GoodsDao goodsDataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		//int result = boGoodsService.insertGoods(goodsDataJson);
+		
+		//mv.addObject("result", result);
+		return mv;
+	}
 	
 /*------------------------------------- 상품 --------------------------------------*/
 	
