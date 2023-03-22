@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dao.AnswerDao;
 import com.dao.CouponDao;
+import com.dao.CouponLogDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -79,9 +80,27 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	@Override
 	public int insertBoCoupon(CouponDao couponDao) {
 		
+		//신규 쿠폰 등록
 		int indexNum = backOfficeMapper.selectBoCouponNumbering();
-		couponDao.setId(indexNum + 1);
-		return backOfficeMapper.insertBoCoupon(couponDao);
+		indexNum = indexNum + 1;
+		couponDao.setId(indexNum);
+		int result = backOfficeMapper.insertBoCoupon(couponDao);
+		
+		//쿠폰생성 로그
+		int indexNumLog = backOfficeMapper.selectBoCouponLogNumbering();
+		CouponLogDao couponLogDao = new CouponLogDao();
+		
+		couponLogDao.setId(indexNumLog + 1);
+		//관리자로그인 세션에서 관리자 아이디를 추출해옴
+		couponLogDao.setCid(indexNum); 
+		couponLogDao.setMid(999999); //관리자 아이디
+		couponLogDao.setReason("쿠폰생성");
+		couponLogDao.setRegId(999999); //관리자 아이디
+		couponLogDao.setUpdateId(999999); //관리자 아이디
+		
+		backOfficeMapper.insertBoCouponLog(couponLogDao);
+		
+		return result;
 	}
 
 }

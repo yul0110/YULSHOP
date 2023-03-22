@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.dao.AnswerDao;
 import com.dao.CouponDao;
+import com.dao.CouponLogDao;
 import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
@@ -26,6 +27,10 @@ public interface BackOfficeMapper {
 	//쿠폰
 	int selectBoCouponNumbering();
 	int insertBoCoupon(CouponDao couponDao);
+	
+	//쿠폰 log
+	int selectBoCouponLogNumbering();
+	int insertBoCouponLog(CouponLogDao couponLogDao);
 	
 	//회원리스트
 	int selectBoMemberAllCount();

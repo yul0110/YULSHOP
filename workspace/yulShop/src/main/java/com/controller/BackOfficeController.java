@@ -288,7 +288,7 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 
-		int result = backOfficeService.insertAnswer(dataJson);
+		int result = backOfficeService.insertBoAnswer(dataJson);
 
 		mv.addObject("result", result);
 		return mv;

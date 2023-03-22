@@ -242,7 +242,14 @@
 		VALUES(#{id}, #{codeNum}, #{nm}, #{couponType}, #{couponSize}, #{limitPrice}, #{maxPrice}, #{issuedCount}, #{useDate}, now(), 99999, now(), 99999, 'Y');
 	</insert>
 	
-	
+	<select id="selectBoCouponLogNumbering" resultType="Integer">
+		SELECT id FROM couponLog ORDER BY id DESC LIMIT 1
+	</select>
+	<insert id="insertBoCouponLog" parameterType="com.dao.CouponDao">
+		INSERT INTO YULSHOP.couponLog
+			(id, cid, mid, reason, regDt, regId, updateDt, updateId)
+		VALUES(#{id}, #{cid}, #{mid}, #{reason}, now(), #{regId}, now(), #{updateId});
+	</insert>
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	
