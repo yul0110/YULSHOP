@@ -31,16 +31,13 @@
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>등록코드</th>
                                         <th>이름</th>
-                                        <th>아이디</th>
-                                        <th>휴대폰 번호</th>
-                                        <th>주소</th>
-                                        <th>상세주소</th>
-                                        <th>등급</th>
+                                        <th>할인방식</th>
                                     </tr>
                    				</thead>
                    				
-                                <tbody id='memberList'>
+                                <tbody id='couponList'>
 					          	<!-- tmple zone -->
 								<!-- tmple zone -->
 								<!-- tmple zone -->
@@ -102,38 +99,23 @@
 	<table class="table"  Style='display:none;'>
 		<thead>
 			<tr>
-			    <th>이름</th>
-			    <th>아이디</th>
-			    <th>휴대폰 번호</th>
-			    <th>주소</th>
-			    <th>상세주소</th>
-			    <th>등급</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr id='memberNode' class="memberDetail">
-			    <td class="memberNm">
-			        이름
+			<tr id='dataNode' class="">
+			    <td class="couponCode">
+			        
 			    </td>
 			
-			    <td class="memberId">
-			        아이디
+			    <td class="couponNm">
+			        
 			    </td>
 			
-			    <td class="memberPno">
-			        휴대폰 번호
-			    </td>
-			
-			    <td class="memberAddr1">
-			        주소
-			    </td>
-			
-			    <td class="memberAddr2">
-			        상세주소
-			    </td>
-			    <td>
-			        <span class="badge bg-warning">G</span>
-			        <span class="badge bg-secondary">S</span>
+			    <td class="couponType">
+			        
 			    </td>
 			</tr>
 	    </tbody>

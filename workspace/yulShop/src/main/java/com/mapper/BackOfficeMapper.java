@@ -10,6 +10,7 @@ import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
+import com.vo.Coupon;
 import com.vo.Event;
 import com.vo.Goods;
 import com.vo.Inquiry;
@@ -26,6 +27,8 @@ public interface BackOfficeMapper {
 	
 	//쿠폰
 	int selectBoCouponNumbering();
+	int selectBoCouponAllCount();
+	List<Coupon> selectBoCouponList(CouponDao couponDao);
 	int insertBoCoupon(CouponDao couponDao);
 	
 	//쿠폰 log

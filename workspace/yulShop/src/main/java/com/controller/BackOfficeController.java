@@ -23,6 +23,7 @@ import com.service.CategoryService;
 import com.service.EventService;
 import com.service.ImgService;
 import com.vo.Category;
+import com.vo.Coupon;
 import com.vo.Event;
 import com.vo.Goods;
 import com.vo.Inquiry;
@@ -65,24 +66,23 @@ public class BackOfficeController {
 	
 	//BO 쿠폰 리스트 Ajax
 	@RequestMapping(value = "/couponListAjax", method = RequestMethod.POST)
-	public ModelAndView bcouponListAjax(@RequestBody GoodsDao goodsDao) {
+	public ModelAndView bcouponListAjax(@RequestBody CouponDao dataJson) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 	
 		//게시물의 총 갯수
-		//int allCount = backOfficeService.selectBoInquiryAllCount();
+		int allCount = backOfficeService.selectBoCouponAllCount();
 		
-		//goodsDao.setTotal(allCount);
-		//goodsDao.pagingSetting();
-		//List<Goods> goodsList = backOfficeService.selectBoGoodsList(goodsDao);
+		dataJson.setTotal(allCount);
+		dataJson.pagingSetting();
+		List<Coupon> couponList = backOfficeService.selectBoCouponList(dataJson);
 		
-		//mv.addObject("goodsList", goodsList);
-		//mv.addObject("goodsDetail", goodsList.get(0));
-		//mv.addObject("prevPageData", goodsDao.getPrevPage());
-		//mv.addObject("nextPageData", goodsDao.getNextPage());
-		//mv.addObject("pageNumPageData", goodsDao.getPageNum());
-		//mv.addObject("firstPageData", goodsDao.getFirstPage());
-		//mv.addObject("endPageData", goodsDao.getEndPage());
+		mv.addObject("couponList", couponList);
+		mv.addObject("prevPageData", dataJson.getPrevPage());
+		mv.addObject("nextPageData", dataJson.getNextPage());
+		mv.addObject("pageNumPageData", dataJson.getPageNum());
+		mv.addObject("firstPageData", dataJson.getFirstPage());
+		mv.addObject("endPageData", dataJson.getEndPage());
 		return mv;
 	}
 	

@@ -26,7 +26,7 @@
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/boMemberListAjax");
+	    xhr.open("post", "/couponListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -46,27 +46,27 @@
 			if(e.currentTarget.status == 200){
 				
 				var d 			= e.currentTarget.response;
-				var itemList	= d.memberList;
+				var itemList	= d.couponList;
 				
 				var pagingNodeCopy = $('#pageNode').clone();
 				pagingNodeCopy.attr('id', '');
 				
 				//init 초기화
-				$('#memberList').html('');
+				$('#couponList').html('');
 				$('#pagingList').html('');
 				
 				
 				//리스트를 뿌려주는 each
 				$.each(itemList, function( i, item ) {
-					var memberNodeCopy = $('#memberNode').clone();
-					memberNodeCopy.attr('id', '');
-					memberNodeCopy.attr('style', '');
-					memberNodeCopy.find('.memberNm').html(item.nm);
-					memberNodeCopy.find('.memberId').html(item.userId);
-					memberNodeCopy.find('.memberPno').html(item.pno);
-					memberNodeCopy.find('.memberAddr1').html(item.addr1);
-					memberNodeCopy.find('.memberAddr2').html(item.addr2);
-					$('#memberList').append(memberNodeCopy);
+					var nodeCopy = $('#dataNode').clone();
+					nodeCopy.attr('id', '');
+					nodeCopy.attr('style', '');
+					nodeCopy.find('.couponCode').html(item.codeNum);
+					nodeCopy.find('.couponNm').html(item.nm);
+					nodeCopy.find('.couponType').html(
+						item.couponType == 'p' ? "퍼센트할인" : "정액할인"
+						);
+					$('#couponList').append(nodeCopy);
 				});
 				//페이지를 뿌려주는 append
 				
@@ -118,8 +118,6 @@
 					
 					$('#pagingList').append(pagingNodeCopy);
 				}
-				
-				location.href = '#memberList';	
 				
 			}else{
 				console.log('서버와통신에 실패 하였습니다. error-code : ' + e.currentTarget.status)

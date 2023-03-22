@@ -8,6 +8,7 @@ import com.dao.EventDao;
 import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
+import com.vo.Coupon;
 import com.vo.Event;
 import com.vo.Goods;
 import com.vo.Inquiry;
@@ -23,6 +24,8 @@ public interface BackOfficeService {
 	
 	//쿠폰
 	int insertBoCoupon(CouponDao couponDao); //쿠폰등록
+	int selectBoCouponAllCount();
+	List<Coupon> selectBoCouponList(CouponDao couponDao);
 	
 	//회원 총 리스트 갯수
 	int selectBoMemberAllCount();

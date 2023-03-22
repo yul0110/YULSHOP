@@ -13,6 +13,7 @@ import com.dao.GoodsDao;
 import com.dao.InquiryDao;
 import com.dao.MemberDao;
 import com.mapper.BackOfficeMapper;
+import com.vo.Coupon;
 import com.vo.Event;
 import com.vo.Goods;
 import com.vo.Inquiry;
@@ -101,6 +102,15 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		backOfficeMapper.insertBoCouponLog(couponLogDao);
 		
 		return result;
+	}
+	@Override
+	public List<Coupon> selectBoCouponList(CouponDao couponDao) {
+		return backOfficeMapper.selectBoCouponList(couponDao);
+	}
+	
+	@Override
+	public int selectBoCouponAllCount() {
+		return backOfficeMapper.selectBoCouponAllCount();
 	}
 
 }

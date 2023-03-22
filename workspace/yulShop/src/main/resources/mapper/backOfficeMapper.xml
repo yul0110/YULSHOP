@@ -51,7 +51,13 @@
 		FROM 
 			goods 
 	</select>
-
+	
+	<select id="selectBoCouponAllCount"  resultType="int" >
+		SELECT 
+			COUNT(id) 
+		FROM 
+			coupon 
+	</select>
 	
 	<!-- 각 테이블의 데이터 리스트를 조회하는 쿼리 -->
 	<select id="selectBoInquiryList" parameterType="com.dao.InquiryDao" resultType="com.vo.Inquiry" >
@@ -89,24 +95,27 @@
 	</select>
 	
 	<!-- 회원 테이블의 데이터 리스트를 조회하는 쿼리 -->	
-	<select id="selectBoMemberList" parameterType="com.dao.MemberDao"  resultType="com.vo.Member">
-		SELECT 
+	<select id="selectBoCouponList" parameterType="com.dao.CouponDao"  resultType="com.vo.Coupon">
+		SELECT
 			id,
-			nm, 
-			userId, 
-			birth, 
-			pno, 
-			addr1, 
-			addr2, 
-			regDt, 
-			regId, 
-			updateDt, 
-			updateId 
-		FROM 
-			member
+			codeNum,
+			nm,
+			couponType,
+			couponSize,
+			limitPrice,
+			maxPrice,
+			issuedCount,
+			useDate,
+			regDt,
+			regId,
+			updateDt,
+			updateId,
+			useYn
+		FROM
+			coupon
 		ORDER BY 
 			id DESC
-		LIMIT #{amount} OFFSET #{offset}	
+		LIMIT #{amount} OFFSET #{offset};
 	</select>
 	
 	<!-- 이벤트 테이블의 데이터 리스트를 조회하는 쿼리 -->	
