@@ -110,8 +110,8 @@
 			        
 			    </td>
 			
-			    <td class="couponNm">
-			        
+			    <td>
+			        <a  class="couponNm" href=''></a>
 			    </td>
 			
 			    <td class="couponType">

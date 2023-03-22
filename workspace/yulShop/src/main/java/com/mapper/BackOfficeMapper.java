@@ -29,6 +29,7 @@ public interface BackOfficeMapper {
 	int selectBoCouponNumbering();
 	int selectBoCouponAllCount();
 	List<Coupon> selectBoCouponList(CouponDao couponDao);
+	Coupon selectBoCoupon(CouponDao couponDao);
 	int insertBoCoupon(CouponDao couponDao);
 	
 	//쿠폰 log

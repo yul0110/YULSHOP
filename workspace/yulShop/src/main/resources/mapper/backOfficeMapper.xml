@@ -118,6 +118,29 @@
 		LIMIT #{amount} OFFSET #{offset};
 	</select>
 	
+	<!-- 회원 테이블의 데이터 리스트를 조회하는 쿼리 -->	
+	<select id="selectBoCoupon" parameterType="com.dao.CouponDao"  resultType="com.vo.Coupon">
+		SELECT
+			id,
+			codeNum,
+			nm,
+			couponType,
+			couponSize,
+			limitPrice,
+			maxPrice,
+			issuedCount,
+			useDate,
+			regDt,
+			regId,
+			updateDt,
+			updateId,
+			useYn
+		FROM
+			coupon
+		WHERE
+			id = #{id}
+	</select>
+	
 	<!-- 이벤트 테이블의 데이터 리스트를 조회하는 쿼리 -->	
 	<select id="selectBoEventList" parameterType="com.dao.EventDao"  resultType="com.vo.Event">
 		SELECT 

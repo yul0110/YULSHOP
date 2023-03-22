@@ -112,5 +112,9 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	public int selectBoCouponAllCount() {
 		return backOfficeMapper.selectBoCouponAllCount();
 	}
+	@Override
+	public Coupon selectBoCoupon(CouponDao couponDao) {
+		return backOfficeMapper.selectBoCoupon(couponDao);
+	}
 
 }

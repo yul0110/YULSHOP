@@ -103,6 +103,22 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	//BO 쿠폰 등록페이지
+	@RequestMapping(value = "/bcouponDetail", method = RequestMethod.GET)
+	public ModelAndView bcouponDetail(int id){
+		
+		ModelAndView mv = new ModelAndView();
+
+		CouponDao couponDao = new CouponDao();
+		couponDao.setId(id);
+		
+		Coupon coupon = backOfficeService.selectBoCoupon(couponDao);
+		
+		mv.addObject("coupon", coupon);
+		mv.setViewName("bo/bcouponDetail");
+		return mv;
+	}
+	
 	//BO 쿠폰 수정페이지
 	@RequestMapping(value = "/bcouponUpdate", method = RequestMethod.GET)
 	public ModelAndView bcouponUpdate(String cate){

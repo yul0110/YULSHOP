@@ -63,6 +63,7 @@
 					nodeCopy.attr('style', '');
 					nodeCopy.find('.couponCode').html(item.codeNum);
 					nodeCopy.find('.couponNm').html(item.nm);
+					nodeCopy.find('.couponNm').attr("href", '/bcouponDetail?id='+item.id);
 					nodeCopy.find('.couponType').html(
 						item.couponType == 'p' ? "퍼센트할인" : "정액할인"
 						);
