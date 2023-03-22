@@ -115,24 +115,8 @@ public class BackOfficeController {
 		Coupon coupon = backOfficeService.selectBoCoupon(couponDao);
 		
 		mv.addObject("coupon", coupon);
+		mv.addObject("nowId", id);
 		mv.setViewName("bo/bcouponDetail");
-		return mv;
-	}
-	
-	//BO 쿠폰 수정페이지
-	@RequestMapping(value = "/bcouponUpdate", method = RequestMethod.GET)
-	public ModelAndView bcouponUpdate(String cate){
-		
-		ModelAndView mv = new ModelAndView();
-		//---------카테고리-----------
-		//List<Category> categoryList = categoryService.selectAllCategoryList();
-		//List<Category> categoryRefList = categoryService.selectCategoryList(cate);
-		//---------카테고리-----------
-		
-		//mv.addObject("categoryList", categoryList);
-		//mv.addObject("categoryRefList", categoryRefList);
-		//mv.addObject("currentCate", cate);
-		//mv.setViewName("bo/bgoodsReg");
 		return mv;
 	}
 	
@@ -150,13 +134,13 @@ public class BackOfficeController {
 	
 	// BO 쿠폰 수정 ajax
 	@RequestMapping(value = "/couponUpdateAjax", method = RequestMethod.POST)
-	public ModelAndView couponUpdateAjax(@RequestBody GoodsDao goodsDataJson ) {
+	public ModelAndView couponUpdateAjax(@RequestBody CouponDao dataJson ) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 		
-		//int result = boGoodsService.insertGoods(goodsDataJson);
+		int result = backOfficeService.updateBoCoupon(dataJson);
 		
-		//mv.addObject("result", result);
+		mv.addObject("result", result);
 		return mv;
 	}
 	

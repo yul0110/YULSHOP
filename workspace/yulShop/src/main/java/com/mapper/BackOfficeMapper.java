@@ -31,6 +31,7 @@ public interface BackOfficeMapper {
 	List<Coupon> selectBoCouponList(CouponDao couponDao);
 	Coupon selectBoCoupon(CouponDao couponDao);
 	int insertBoCoupon(CouponDao couponDao);
+	int updateBoCoupon(CouponDao couponDao);
 	
 	//쿠폰 log
 	int selectBoCouponLogNumbering();

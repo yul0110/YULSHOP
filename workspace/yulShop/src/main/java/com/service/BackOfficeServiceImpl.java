@@ -116,5 +116,31 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	public Coupon selectBoCoupon(CouponDao couponDao) {
 		return backOfficeMapper.selectBoCoupon(couponDao);
 	}
+	@Override
+	public int updateBoCoupon(CouponDao couponDao) {
+		
+		
+		//현재 로그인중인 계정의 id를 넣어줌
+		couponDao.setUpdateId(9999999);
+		
+		
+		int result = backOfficeMapper.updateBoCoupon(couponDao);
+		
+		//쿠폰생성 로그
+		int indexNumLog = backOfficeMapper.selectBoCouponLogNumbering();
+		CouponLogDao couponLogDao = new CouponLogDao();
+		
+		couponLogDao.setId(indexNumLog + 1);
+		//관리자로그인 세션에서 관리자 아이디를 추출해옴
+		couponLogDao.setCid(couponDao.getId()); 
+		couponLogDao.setMid(999999); //관리자 아이디
+		couponLogDao.setReason("쿠폰수정");
+		couponLogDao.setRegId(999999); //관리자 아이디
+		couponLogDao.setUpdateId(999999); //관리자 아이디
+		
+		backOfficeMapper.insertBoCouponLog(couponLogDao);
+		
+		return result;
+	}
 
 }

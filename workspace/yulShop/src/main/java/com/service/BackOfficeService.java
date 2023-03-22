@@ -24,6 +24,7 @@ public interface BackOfficeService {
 	
 	//쿠폰
 	int insertBoCoupon(CouponDao couponDao); //쿠폰등록
+	int updateBoCoupon(CouponDao couponDao);
 	int selectBoCouponAllCount();
 	Coupon selectBoCoupon(CouponDao couponDao);
 	List<Coupon> selectBoCouponList(CouponDao couponDao);

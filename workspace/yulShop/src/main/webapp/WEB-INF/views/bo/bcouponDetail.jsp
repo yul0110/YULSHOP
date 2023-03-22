@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/bcouponReg.js"></script>
+<script src="/resources/js/bo/bcouponDetail.js"></script>
 
     <div class="wrapper">
         <div class="container-fluid mt-15">
@@ -23,6 +23,7 @@
                     <br>
                     <br>
                     <!-- Contact Form -->
+					<input type="hidden" id="nowId" value='${nowId}' class="form-control">
                     <form action="/joinusAjax" id='joinform' name='joinform'
 							method="post" role="form" class="form-horizontal">
 	

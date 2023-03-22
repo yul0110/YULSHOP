@@ -285,6 +285,28 @@
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	
+	<!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update -->
+	
+	<update id="updateBoCoupon" parameterType="com.dao.CouponDao">
+		UPDATE
+			coupon
+		SET
+			codeNum = #{codeNum},
+			nm = #{nm},
+			couponType = #{couponType},
+			couponSize = #{couponSize},
+			limitPrice = #{limitPrice},
+			maxPrice = #{maxPrice},
+			issuedCount = #{issuedCount},
+			useDate = #{useDate},
+			updateDt = now(),
+			updateId = #{updateId}
+		WHERE
+			id = #{id};
+	</update>
+	
+	<!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update -->
+	
 </mapper>
 
 
