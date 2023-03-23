@@ -168,12 +168,19 @@ public class BackOfficeController {
 	
 	//BO 상품 수정
 	@RequestMapping(value = "/bgoodsDetail", method = RequestMethod.GET)
-	public ModelAndView bgoodsDetail(int id) {
+	public ModelAndView bgoodsDetail(int id , String cate) {
 		
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView(); 
+		//---------카테고리-----------
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
+		//---------카테고리-----------
 		
 		Goods goods =  backOfficeService.selectGoods(id);
 		
+		mv.addObject("categoryList", categoryList);
+		mv.addObject("categoryRefList", categoryRefList);
+		mv.addObject("currentCate", cate);
 		mv.addObject("goods",goods);
 		mv.setViewName("bo/bgoodsDetail");
 		return mv;

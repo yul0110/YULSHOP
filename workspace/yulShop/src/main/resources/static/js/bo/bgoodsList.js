@@ -66,6 +66,7 @@
 					goodsNodeCopy.attr('style', '');
 					goodsNodeCopy.find('.goodsNo').html(item.no);
 					goodsNodeCopy.find('.goodsNm').html(item.nm);
+					goodsNodeCopy.find('.goodsNm').attr("href", '/bgoodsDetail?id='+item.id);
 					
 					$.each(item.option, function( ii, inItem ) {
 						invenSum = invenSum + inItem.inventory;

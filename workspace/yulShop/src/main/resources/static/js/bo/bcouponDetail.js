@@ -5,7 +5,7 @@
 	};
 	//init
 	yul.page.prototype.init = function() {
-		this.clickEvent() 	// 클릭 이벤트 bind
+		this.clickEvent() 
 	}	 
 
 	yul.page.prototype.clickEvent = function() {

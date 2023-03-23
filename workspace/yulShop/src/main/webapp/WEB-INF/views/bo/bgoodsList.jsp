@@ -109,15 +109,13 @@
 		<tbody>
 			<tr id='goodsNode'>
 				<td class="goodsNo">
-			        No.
 			    </td>
 			
-			    <td class="goodsNm nmCilck" style="cursor : pointer;">
-			       	상품이름
+			    <td>
+			    	<a  class="goodsNm" href=''></a>
 			    </td>
 
 			    <td class="goodsInventory">
-			         수량
 			    </td>
 			    
 			</tr>

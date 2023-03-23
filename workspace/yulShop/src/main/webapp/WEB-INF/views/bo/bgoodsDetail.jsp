@@ -54,17 +54,24 @@
 						<div class="mb-15 col-md-6" >
 					        <label class="col-form-label">카테고리</label>
 							<select id="categoryCode" name="" class="form-select" style= "width: 100%; height: 40px;">
-								<option value="" selected>타입</option>
+								<option value="${cate.cateFullNm}" selected></option>
+								
+								
+								<c:forEach var="category" items="${categoryList}">
+									<c:if test="${category.cateCodeRef eq null}">
+										<option value="${category.cateCode}">${category.cateNm}</option>
+									</c:if>
+								</c:forEach>
 							</select>
 							
 						</div>
 						<div class="mb-15 col-md-6">
 					        <label class="col-form-label">세부카테고리</label>
 							<select id="categoryChildren" name="" class="form-select">
-							    <option selected>타입</option>
-							    <option value="">One</option>
-							    <option value="">Two</option>
-							    <option value="">Three</option>
+							    <option selected></option>
+							    <option value=""></option>
+							    <option value=""></option>
+							    <option value=""></option>
 							</select>
 					    </div>	
 						<br>

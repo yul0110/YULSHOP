@@ -8,6 +8,7 @@
 	  <result property="nm" column="nm" />
 	  <result property="price" column="price" />
 	  <result property="dprice" column="dprice" />
+	  <result property="wareHousing" column="wareHousing" />
 	  <result property="fabric" column="fabric" />
 	  <result property="info" column="info" />
 	  <result property="descliption" column="descliption" />
@@ -217,7 +218,7 @@
 	<!-- 상품 테이블의 데이터 리스트를 조회하는 쿼리 -->
 	<select id="selectBoGoodsList" parameterType="com.dao.GoodsDao"  resultMap="goodsDetailMap">
 		 SELECT 
-		 	g.id, 
+		 	g.id AS id, 
 		 	g.cateId, 
 		 	g.no, 
 		 	g.nm, 
@@ -271,40 +272,40 @@
 	<!-- 상품 수정을 위해 상품, 이미지들, 옵션을 조회하는 쿼리 -->
 	<select id="selectBoGoods" parameterType="int"  resultMap="goodsDetailMap">
 		SELECT 
-	 	g.id, 
-	 	g.cateId, 
-	 	g.no, 
-	 	g.nm, 
-	 	g.price, 
-	 	g.dprice, 
-	 	g.wareHousing, 
-	 	g.goodsState, 
-	 	g.info, 
-	 	g.descliption, 
-	 	g.fabric, 
-	 	g.listImg, 
-	 	g.detailImg, 
-	 	g.regDt, 
-	 	g.regId, 
-	 	g.updateDt, 
-	 	g.updateId, 
-	 	g.useYn,
-	 	o.color as optColor,
-	 	o.sz as optSz,
-	 	o.inventory as optInventory,
-		i.nm as imgNm,
-		i.`path`
-	FROM 
-		goods g 
-	JOIN opt o ON
-		g.id = o.goodsId 
-	JOIN imgGroup ig ON
-		g.detailImg = ig.id
-		OR 
-		g.listImg = ig.id
-	JOIN img i ON
-		ig.id = i.imgGroupId
-	WHERE g.id = #{value}	
+		 	g.id, 
+		 	g.cateId, 
+		 	g.no, 
+		 	g.nm, 
+		 	g.price, 
+		 	g.dprice, 
+		 	g.wareHousing, 
+		 	g.goodsState, 
+		 	g.info, 
+		 	g.descliption, 
+		 	g.fabric, 
+		 	g.listImg, 
+		 	g.detailImg, 
+		 	g.regDt, 
+		 	g.regId, 
+		 	g.updateDt, 
+		 	g.updateId, 
+		 	g.useYn,			
+		 	o.color as optColor,
+		 	o.sz as optSz,
+		 	o.inventory as optInventory,
+			i.nm as imgNm,
+			i.`path`
+		FROM 
+			goods g 
+		JOIN opt o ON
+			g.id = o.goodsId 
+		JOIN imgGroup ig ON
+			g.detailImg = ig.id
+			OR 
+			g.listImg = ig.id
+		left JOIN img i ON
+			ig.id = i.imgGroupId	
+		WHERE g.id = #{value}
 	</select>
 	
 	<!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select -->
