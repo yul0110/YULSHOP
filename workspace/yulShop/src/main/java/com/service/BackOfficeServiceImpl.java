@@ -26,7 +26,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	@Autowired
 	BackOfficeMapper backOfficeMapper;
 	
-	//문의
+	//문의--------------------------------------------------------------------------
 	@Override
 	public int selectBoInquiryAllCount() {
 		return backOfficeMapper.selectBoInquiryAllCount();
@@ -37,10 +37,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	}
 
 	
-	
-	
-	
-	//회원
+	//회원---------------------------------------------------------------------------
 	@Override
 	public int selectBoMemberAllCount() {
 		return backOfficeMapper.selectBoMemberAllCount();
@@ -62,10 +59,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	}
 	
 	
-	
-	
-	
-	//이벤트
+	//이벤트---------------------------------------------------------------------------
 	@Override
 	public int selectBoEventAllCount() {
 		return backOfficeMapper.selectBoEventAllCount();
@@ -76,9 +70,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	}
 	
 	
-	
-	
-	//상품
+	//상품----------------------------------------------------------------------------
 	@Override
 	public int selectBogoodSAllCount() {
 		return backOfficeMapper.selectBogoodSAllCount();
@@ -127,9 +119,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	}
 	
 	
-	
-	
-	//쿠폰
+	//쿠폰----------------------------------------------------------------------------
 	@Override
 	public List<Coupon> selectBoCouponList(CouponDao couponDao) {
 		return backOfficeMapper.selectBoCouponList(couponDao);

@@ -23,6 +23,8 @@
 	</resultMap>
 
 
+	<!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select -->
+
 	<!-- 페이징 처리를 위해 각 테이블의 데이터 총 갯수를 조회하는 쿼리 -->
 	<select id="selectBoInquiryAllCount"  resultType="int" >
 		SELECT 
@@ -305,7 +307,7 @@
 	WHERE g.id = #{value}	
 	</select>
 	
-	
+	<!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select -->
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	

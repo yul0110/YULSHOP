@@ -64,6 +64,33 @@ public class BackOfficeController {
 		return "bo/bcoupon";
     }
 	
+	//BO 쿠폰 등록페이지
+	@RequestMapping(value = "/bcouponReg", method = RequestMethod.GET)
+	public ModelAndView bcouponReg(String cate){
+		
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("bo/bcouponReg");
+		return mv;
+	}
+	
+	//BO 쿠폰 수정 페이지
+	@RequestMapping(value = "/bcouponDetail", method = RequestMethod.GET)
+	public ModelAndView bcouponDetail(int id){
+		
+		ModelAndView mv = new ModelAndView();
+
+		CouponDao couponDao = new CouponDao();
+		couponDao.setId(id);
+		
+		Coupon coupon = backOfficeService.selectBoCoupon(couponDao);
+		
+		mv.addObject("coupon", coupon);
+		mv.addObject("nowId", id);
+		mv.setViewName("bo/bcouponDetail");
+		return mv;
+	}
+	
 	//BO 쿠폰 리스트 Ajax
 	@RequestMapping(value = "/couponListAjax", method = RequestMethod.POST)
 	public ModelAndView bcouponListAjax(@RequestBody CouponDao dataJson) {
@@ -83,40 +110,6 @@ public class BackOfficeController {
 		mv.addObject("pageNumPageData", dataJson.getPageNum());
 		mv.addObject("firstPageData", dataJson.getFirstPage());
 		mv.addObject("endPageData", dataJson.getEndPage());
-		return mv;
-	}
-	
-	//BO 쿠폰 등록페이지
-	@RequestMapping(value = "/bcouponReg", method = RequestMethod.GET)
-	public ModelAndView bcouponReg(String cate){
-		
-		ModelAndView mv = new ModelAndView();
-		//---------카테고리-----------
-		//List<Category> categoryList = categoryService.selectAllCategoryList();
-		//List<Category> categoryRefList = categoryService.selectCategoryList(cate);
-		//---------카테고리-----------
-		
-		//mv.addObject("categoryList", categoryList);
-		//mv.addObject("categoryRefList", categoryRefList);
-		//mv.addObject("currentCate", cate);
-		mv.setViewName("bo/bcouponReg");
-		return mv;
-	}
-	
-	//BO 쿠폰 수정 페이지
-	@RequestMapping(value = "/bcouponDetail", method = RequestMethod.GET)
-	public ModelAndView bcouponDetail(int id){
-		
-		ModelAndView mv = new ModelAndView();
-
-		CouponDao couponDao = new CouponDao();
-		couponDao.setId(id);
-		
-		Coupon coupon = backOfficeService.selectBoCoupon(couponDao);
-		
-		mv.addObject("coupon", coupon);
-		mv.addObject("nowId", id);
-		mv.setViewName("bo/bcouponDetail");
 		return mv;
 	}
 	
@@ -223,9 +216,7 @@ public class BackOfficeController {
 	}
 	
 	
-/*---------------------------------- 상품 END ----------------------------------*/
-	
-	
+/*---------------------------------- 문의 ----------------------------------*/
 	
 	//BO 문의 페이지
 	@RequestMapping(value = "/binquiry", method = RequestMethod.GET)
@@ -234,6 +225,26 @@ public class BackOfficeController {
 		ModelAndView mv = new ModelAndView();
 
 		mv.setViewName("bo/binquiry");
+		return mv;
+	}
+	
+	
+	//BO 이벤트 수정 페이지
+	@RequestMapping(value = "/binquiryDetail", method = RequestMethod.GET)
+	public ModelAndView binquiryDetail(int id){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		InquiryDao inquiryDao = new InquiryDao();
+		inquiryDao.setId(id);
+		
+		Inquiry inquiry = backOfficeService.selectBoInquiryDetail(inquiryDao);
+		
+		//회원데이터 작업 해야함 ------kingyul
+		
+		mv.addObject("inquiry", inquiry);
+		mv.addObject("qid", id);
+		mv.setViewName("bo/binquiryDetail");
 		return mv;
 	}
 	
@@ -262,25 +273,6 @@ public class BackOfficeController {
 		mv.addObject("endPageData", inquiryDao.getEndPage());
 		return mv;
 	}
-	
-	//BO 이벤트 수정 페이지
-	@RequestMapping(value = "/binquiryDetail", method = RequestMethod.GET)
-	public ModelAndView binquiryDetail(int id){
-		
-		ModelAndView mv = new ModelAndView();
-		
-		InquiryDao inquiryDao = new InquiryDao();
-		inquiryDao.setId(id);
-		
-		Inquiry inquiry = backOfficeService.selectBoInquiryDetail(inquiryDao);
-		
-		//회원데이터 작업 해야함 ------kingyul
-		
-		mv.addObject("inquiry", inquiry);
-		mv.addObject("qid", id);
-		mv.setViewName("bo/binquiryDetail");
-		return mv;
-	}
 
 	//BO 답변등록 Ajax
 	@RequestMapping(value = "/answerRegAjax", method = RequestMethod.POST)
@@ -294,7 +286,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-/*----------------------------------- 문의 END -----------------------------------*/
+/*----------------------------------- 회원 -----------------------------------*/
 	
 	//BO 회원관리 페이지
 	@RequestMapping(value = "/bmember", method = RequestMethod.GET)
@@ -358,7 +350,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-/*---------------------------------- 회원 END ------------------------------------*/	
+/*---------------------------------- 이벤트 ------------------------------------*/	
 	
 	//BO 이벤트 등록 페이지
 	@RequestMapping(value = "/beventReg", method = RequestMethod.GET)
@@ -425,7 +417,5 @@ public class BackOfficeController {
 		mv.addObject("endPageData", eventDao.getEndPage());
 		return mv;
 	}
-
 	
-/*-------------------------------- 이벤트 END -----------------------------------*/	
 }
