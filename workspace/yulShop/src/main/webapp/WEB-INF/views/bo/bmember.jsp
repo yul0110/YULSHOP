@@ -28,8 +28,8 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>이름</th>
                                         <th>아이디</th>
+                                        <th>이름</th>
                                         <th>휴대폰 번호</th>
                                         <th>주소</th>
                                         <th>상세주소</th>
@@ -99,8 +99,8 @@
 	<table class="table"  Style='display:none;'>
 		<thead>
 			<tr>
-			    <th>이름</th>
 			    <th>아이디</th>
+			    <th>이름</th>
 			    <th>휴대폰 번호</th>
 			    <th>주소</th>
 			    <th>상세주소</th>
@@ -109,24 +109,21 @@
 		</thead>
 		<tbody>
 			<tr id='memberNode' class="memberDetail">
-			    <td class="memberNm">
-			        이름
-			    </td>
 			
 			    <td class="memberId">
-			        아이디
+			    </td>
+
+			    <td >
+			        <a  class="memberNm" href=''></a>
 			    </td>
 			
 			    <td class="memberPno">
-			        휴대폰 번호
 			    </td>
 			
 			    <td class="memberAddr1">
-			        주소
 			    </td>
 			
 			    <td class="memberAddr2">
-			        상세주소
 			    </td>
 			    <td>
 			        <span class="badge bg-warning">G</span>

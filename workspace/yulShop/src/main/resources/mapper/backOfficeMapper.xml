@@ -95,6 +95,57 @@
 	</select>
 	
 	<!-- 회원 테이블의 데이터 리스트를 조회하는 쿼리 -->	
+	<select id="selectBoMemberList" parameterType="com.dao.MemberDao"  resultType="com.vo.Member">
+		SELECT
+			id,
+			nm,
+			userId,
+			pw,
+			birth,
+			pno,
+			certified,
+			addr1,
+			addr2,
+			zonecode,
+			`point`,
+			lv,
+			auth,
+			regDt,
+			regId,
+			updateDt,
+			updateId,
+			useYn
+		FROM
+			member
+		ORDER BY 
+			id DESC
+		LIMIT #{amount} OFFSET #{offset};
+	</select>
+
+	<!-- 회원 테이블의 데이터를 조회하는 쿼리 -->	
+	<select id="selectBoMember" parameterType="com.dao.MemberDao"  resultType="com.vo.Member">
+		SELECT
+			id,
+			nm,
+			userId,
+			birth,
+			pno,
+			certified,
+			addr1,
+			addr2,
+			zonecode,
+			regDt,
+			regId,
+			updateDt,
+			updateId,
+			useYn
+		FROM
+			member
+		WHERE
+			id = #{id}
+	</select>
+
+	<!-- 쿠폰 테이블의 데이터 리스트를 조회하는 쿼리 -->	
 	<select id="selectBoCouponList" parameterType="com.dao.CouponDao"  resultType="com.vo.Coupon">
 		SELECT
 			id,
@@ -118,7 +169,7 @@
 		LIMIT #{amount} OFFSET #{offset};
 	</select>
 	
-	<!-- 회원 테이블의 데이터 리스트를 조회하는 쿼리 -->	
+	<!-- 쿠폰 테이블의 데이터를 조회하는 쿼리 -->	
 	<select id="selectBoCoupon" parameterType="com.dao.CouponDao"  resultType="com.vo.Coupon">
 		SELECT
 			id,
@@ -290,7 +341,7 @@
 	<update id="updateBoCoupon" parameterType="com.dao.CouponDao">
 		UPDATE
 			coupon
-		SET
+		SET	
 			codeNum = #{codeNum},
 			nm = #{nm},
 			couponType = #{couponType},
@@ -301,6 +352,20 @@
 			useDate = #{useDate},
 			updateDt = now(),
 			updateId = #{updateId}
+		WHERE
+			id = #{id};
+	</update>
+
+	<update id="updateBoMember" parameterType="com.dao.MemberDao">
+		UPDATE
+			member
+		SET
+			nm = #{nm},
+			birth = #{birth},
+			pno = #{pno},
+			addr1 = #{addr1},
+			addr2 = #{addr2},
+			updateDt = now()
 		WHERE
 			id = #{id};
 	</update>

@@ -39,6 +39,8 @@ public interface BackOfficeMapper {
 	
 	//회원리스트
 	int selectBoMemberAllCount();
+	int updateBoMember(MemberDao memberDao);
+	Member selectBoMember(MemberDao memberDao);
 	List<Member> selectBoMemberList(MemberDao memberDao);
 
 	//이벤트리스트

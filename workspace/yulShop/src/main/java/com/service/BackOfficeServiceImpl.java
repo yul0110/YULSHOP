@@ -36,15 +36,34 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		return backOfficeMapper.selectBoInquiryList(inquiryDao);
 	}
 
+	
+	
+	
+	
 	//회원
 	@Override
 	public int selectBoMemberAllCount() {
 		return backOfficeMapper.selectBoMemberAllCount();
 	}
+	
+	@Override
+	public Member selectBoMember(MemberDao memberDao) {
+		return backOfficeMapper.selectBoMember(memberDao);
+	}
+	
 	@Override
 	public List<Member> selectBoMemberList(MemberDao memberDao) {
 		return backOfficeMapper.selectBoMemberList(memberDao);
 	}
+	
+	@Override
+	public int updateBoMember(MemberDao memberDao) {
+		return backOfficeMapper.updateBoMember(memberDao);
+	}
+	
+	
+	
+	
 	
 	//이벤트
 	@Override
@@ -55,6 +74,9 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	public List<Event> selectBoEventList(EventDao eventDao) {
 		return backOfficeMapper.selectBoEventList(eventDao);
 	}
+	
+	
+	
 	
 	//상품
 	@Override
@@ -103,6 +125,11 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		
 		return result;
 	}
+	
+	
+	
+	
+	//쿠폰
 	@Override
 	public List<Coupon> selectBoCouponList(CouponDao couponDao) {
 		return backOfficeMapper.selectBoCouponList(couponDao);
@@ -142,5 +169,7 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		
 		return result;
 	}
+
+
 
 }

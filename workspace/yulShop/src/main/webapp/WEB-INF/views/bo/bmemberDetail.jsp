@@ -9,7 +9,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
-<script src="/resources/js/bo/bcouponDetail.js"></script>
+<script src="/resources/js/bo/bmemberDetail.js"></script>
 
     <div class="wrapper">
         <div class="container-fluid mt-15">
@@ -19,54 +19,45 @@
             
             <div class="card mb-15">
                 <div class="card-body">
-                    <h4>쿠폰 수정</h4>
+                    <h4>회원정보수정</h4>
                     <br>
                     <br>
                     <!-- Contact Form -->
-					<input type="hidden" id="nowId" value='${nowId}' class="form-control">
+                    <input type="hidden" id="nowId" value='${nowId}' class="form-control">
                     <form action="/joinusAjax" id='joinform' name='joinform'
 							method="post" role="form" class="form-horizontal">
 	
 					    <div class="row">
 					        <div class="mb-15 col-md-6">
-					            <label for="inputPassword4" class="col-form-label">쿠폰이름</label>
-					            <input type="text" id="nm" class="form-control" maxlength="30" value="${coupon.nm}" required>
+					            <label for="inputEmail4" class="col-form-label">아이디</label>
+					            <input type="text" id="userId" class="form-control" value="${member.userId}" maxlength="30" required readonly>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="inputEmail4" class="col-form-label">쿠폰번호</label>
-					            <input type="text" id="codeNum" class="form-control" value="${coupon.codeNum}" maxlength="30"required>
+					            <label for="inputPassword4" class="col-form-label">이름</label>
+					            <input type="text" id="nm" class="form-control" value="${member.nm}" maxlength="30" required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label class="col-form-label">할인타입</label>
-							<select id="couponType" name="" class="form-select" style= "width: 100%; height: 40px;">
-								<option value="p" ${coupon.couponType eq 'p' ? 'selected' : ''}>퍼센트할인 ( % )</option>
-								<option value="c" ${coupon.couponType eq 'c' ? 'selected' : ''}>정액할인 ( \ x,xxx)</option>
-							</select>
+					            <label for="inputEmail4" class="col-form-label">휴대폰 번호</label>
+					            <input type="text" id="pno" class="form-control" value="${member.pno}" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="couponSize" class="col-form-label">사이즈</label>
-					            <input type="text" value="${coupon.couponSize}" id="couponSize" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+					            <label for="inputPassword4" class="col-form-label">생년월일</label>
+					            <input type="text" id="birth" class="form-control" value="${member.birth}" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="limitPrice" class="col-form-label">최소금액</label>
-					            <input type="text" value="${coupon.limitPrice}" id="limitPrice" class="form-control" maxlength="30"required>
+					            <label for="inputPassword4" class="col-form-label">주소</label>
+					            <input type="text" id="addr1" class="form-control" value="${member.addr1}" maxlength="50"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="maxPrice" class="col-form-label">최대금액</label>
-					            <input type="text" value="${coupon.maxPrice}" id="maxPrice" class="form-control" pattern="[0-9]+" maxlength="15" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
+					            <label for="inputPassword4" class="col-form-label">상세주소</label>
+					            <input type="text" id="addr2" class="form-control" value="${member.addr2}" maxlength="50"  required>
 					        </div>
 					        <div class="mb-15 col-md-6">
-					            <label for="issuedCount" class="col-form-label">발급일로 부터 사용기간</label>
-					            <input type="text" value="${coupon.issuedCount}" id="issuedCount" class="form-control" maxlength="50"  required>
+					            <label for="inputPassword4" class="col-form-label">가입일자</label>
+					            <input type="text" id="regDt" class="form-control" value="${member.regDt}" maxlength="50"  required readonly>
 					        </div>
-					        <div class="mb-15 col-md-6">
-					            <label for="useDate" class="col-form-label">사용기간</label>
-					            <input type="date" id="useDate" class='form-control' name="trip-start" value="${coupon.useDate}">
-					        </div>
-						</div>
-						<br>
-						<br>
-						<button type="button" id="couponRegAjax" class="btn btn-block btn-primary">수정하기</button>
+						</div>	
+						<button type="button" id="updateMemberAjax" class="btn btn-block btn-primary">등록하기</button>
                     </form>   
                     <!-- End Contact Form -->
                 </div>
@@ -76,7 +67,6 @@
     </div>
 </div>
 
-	
 	<!-- Page Js Files  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

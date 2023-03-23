@@ -29,23 +29,19 @@ public interface BackOfficeService {
 	Coupon selectBoCoupon(CouponDao couponDao);
 	List<Coupon> selectBoCouponList(CouponDao couponDao);
 	
-	//회원 총 리스트 갯수
-	int selectBoMemberAllCount();
-	//회원 리스트
-	List<Member> selectBoMemberList(MemberDao memberDao);
+	//회원
+	int selectBoMemberAllCount();//회원 총 리스트 갯수
+	Member selectBoMember(MemberDao memberDao);
+	List<Member> selectBoMemberList(MemberDao memberDao);//회원 리스트
+	int updateBoMember(MemberDao memberDao);
 	
-	//이벤트 총 리스트 갯수
-	int selectBoEventAllCount();
-	//이벤트 리스트
-	List<Event> selectBoEventList(EventDao eventDao);
+	//이벤트
+	int selectBoEventAllCount();//이벤트 총 리스트 갯수
+	List<Event> selectBoEventList(EventDao eventDao);//이벤트 리스트
 	
 	//상품 총 리스트 갯수
-	int selectBogoodSAllCount();
-	
-	//상품 리스트
-	List<Goods>selectBoGoodsList(GoodsDao goodsDao);
-	
-	//상품 디테일
-	Goods selectGoods(int id);
+	int selectBogoodSAllCount();//상품 총 리스트 갯수
+	List<Goods>selectBoGoodsList(GoodsDao goodsDao);//상품 리스트
+	Goods selectGoods(int id);//상품 디테일
 
 }

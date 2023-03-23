@@ -103,7 +103,7 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	//BO 쿠폰 등록페이지
+	//BO 쿠폰 수정 페이지
 	@RequestMapping(value = "/bcouponDetail", method = RequestMethod.GET)
 	public ModelAndView bcouponDetail(int id){
 		
@@ -304,10 +304,27 @@ public class BackOfficeController {
 		mv.setViewName("bo/bmember");
 		return mv;
 	}
+
+	//BO 회원관리 페이지
+	@RequestMapping(value = "/bmemberDetail", method = RequestMethod.GET)
+	public ModelAndView bmemberDetail(int id){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		MemberDao memberDao = new MemberDao();
+		memberDao.setId(id);
+		
+		Member member = backOfficeService.selectBoMember(memberDao);
+		
+		mv.addObject("member", member);
+		mv.addObject("nowId", id);
+		mv.setViewName("bo/bmemberDetail");
+		return mv;
+	}
 	
 	//BO 회원 리스트Ajax
-	@RequestMapping(value = "/boMemberListAjax", method = RequestMethod.POST)
-	public ModelAndView boMemberAjax(@RequestBody MemberDao memberDao) {
+	@RequestMapping(value = "/memberListAjax", method = RequestMethod.POST)
+	public ModelAndView memberListAjax(@RequestBody MemberDao memberDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 		
@@ -326,6 +343,18 @@ public class BackOfficeController {
 		mv.addObject("firstPageData", memberDao.getFirstPage());
 		mv.addObject("endPageData", memberDao.getEndPage());
 		 
+		return mv;
+	}
+	
+	// BO 회원정보 수정 ajax
+	@RequestMapping(value = "/updateMemberAjax", method = RequestMethod.POST)
+	public ModelAndView memberUpdateAjax(@RequestBody MemberDao dataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		int result = backOfficeService.updateBoMember(dataJson);
+		
+		mv.addObject("result", result);
 		return mv;
 	}
 	

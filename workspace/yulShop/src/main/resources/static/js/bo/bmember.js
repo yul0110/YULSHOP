@@ -26,7 +26,7 @@
 	    const xhr = new XMLHttpRequest();
 	    
 	    //전송방식과 통신 할 경로 설정
-	    xhr.open("post", "/boMemberListAjax");
+	    xhr.open("post", "/memberListAjax");
 	    
 	    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -66,6 +66,7 @@
 					memberNodeCopy.find('.memberPno').html(item.pno);
 					memberNodeCopy.find('.memberAddr1').html(item.addr1);
 					memberNodeCopy.find('.memberAddr2').html(item.addr2);
+					memberNodeCopy.find('.memberNm').attr("href", '/bmemberDetail?id='+item.id);
 					$('#memberList').append(memberNodeCopy);
 				});
 				//페이지를 뿌려주는 append
@@ -136,6 +137,11 @@
 			
 			$('#pageNum').val($(this).data('number'));
 			yul.page.getList();
+		})
+		
+		$(document).on('click', '.nmCilck', function(){
+			
+			location.href = "/bmemberDetail?id=" + $(this).data('mid'); 
 		})
 	};
  

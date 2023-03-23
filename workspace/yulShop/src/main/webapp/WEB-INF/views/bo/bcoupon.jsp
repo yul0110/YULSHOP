@@ -107,7 +107,6 @@
 		<tbody>
 			<tr id='dataNode' class="">
 			    <td class="couponCode">
-			        
 			    </td>
 			
 			    <td>
@@ -115,7 +114,6 @@
 			    </td>
 			
 			    <td class="couponType">
-			        
 			    </td>
 			</tr>
 	    </tbody>

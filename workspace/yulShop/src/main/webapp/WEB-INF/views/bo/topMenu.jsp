@@ -312,13 +312,13 @@
                 <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
 
                     <li class="menu-item">
-                        <a href="ui-avatars.html" class="menu-link">
+                        <a href="/bcoupon" class="menu-link">
                             <i class="menu-icon">쿠폰 리스트</i>
                             <span class="menu-label"></span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="ui-avatars.html" class="menu-link">
+                        <a href="/bcouponReg" class="menu-link">
                             <i class="menu-icon">쿠폰 등록</i>
                             <span class="menu-label"></span>
                         </a>
