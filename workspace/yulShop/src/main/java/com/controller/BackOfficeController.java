@@ -157,12 +157,12 @@ public class BackOfficeController {
 	}
 	
 	//BO 이벤트 리스트 페이지
-	@RequestMapping(value = "/bgoodsList", method = RequestMethod.GET)
-	public ModelAndView bgoodsList(){
+	@RequestMapping(value = "/bgoods", method = RequestMethod.GET)
+	public ModelAndView bgoods(){
 		
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("bo/bgoodsList");
+		mv.setViewName("bo/bgoods");
 		return mv;
 	}
 	
@@ -369,11 +369,11 @@ public class BackOfficeController {
 	}
 	
 	//BO 이벤트 리스트 페이지
-	@RequestMapping(value = "/beventList", method = RequestMethod.GET)
-	public ModelAndView beventList(){
+	@RequestMapping(value = "/bevent", method = RequestMethod.GET)
+	public ModelAndView bevent(){
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bo/beventList");
+		mv.setViewName("bo/bevent");
 		return mv;
 	}
 

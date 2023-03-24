@@ -308,7 +308,15 @@
 		WHERE g.id = #{value}
 	</select>
 	
+	
+	
+	
+	
+	
 	<!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select --><!-- select -->
+	
+	
+	
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
 	
@@ -338,6 +346,8 @@
 	</insert>
 	
 	<!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert --><!-- insert -->
+	
+	
 	
 	<!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update -->
 	

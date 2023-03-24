@@ -263,7 +263,7 @@
                 <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
 
                     <li class="menu-item">
-                        <a href="/bgoodsList" class="menu-link">
+                        <a href="/bgoods" class="menu-link">
                             <i class="menu-icon">상품 리스트</i>
                             <span class="menu-label"></span>
                         </a>
@@ -288,7 +288,7 @@
                 <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
 
                     <li class="menu-item">
-                        <a href="/beventList" class="menu-link">
+                        <a href="/bevent" class="menu-link">
                             <i class="menu-icon">이벤트 리스트</i>
                             <span class="menu-label"></span>
                         </a>
