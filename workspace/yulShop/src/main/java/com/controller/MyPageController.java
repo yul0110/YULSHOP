@@ -130,5 +130,16 @@ public class MyPageController {
 		return mv;
 	}
 
-	  
+	//마이 위시리스트
+	@RequestMapping(value = "/wish", method = RequestMethod.GET)
+	public ModelAndView wish() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("myPage/wish"); 
+		return mv;
+    }
 }
