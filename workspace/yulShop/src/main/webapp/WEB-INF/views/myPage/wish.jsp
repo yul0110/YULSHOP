@@ -20,6 +20,7 @@
 
 
 	<div class="section">
+	
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -103,10 +104,7 @@
 									</div>
 								</div>
 							</div> <!-- .item -->
-							
-							
 						</div>
-
 
 						<div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
 							<span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
@@ -115,7 +113,14 @@
 
 					</div>
 				</div>
-
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row justify-content-center  text-center mb-5">
+				<div class="col-lg-5">
+					<h2 class="font-weight-bold heading text-primary mb-4">찜리스트가 비었습니다.</h2>
+				</div>
 			</div>
 		</div>
 	</div>
