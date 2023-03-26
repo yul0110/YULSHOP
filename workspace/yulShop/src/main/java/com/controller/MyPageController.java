@@ -142,4 +142,17 @@ public class MyPageController {
 		mv.setViewName("myPage/wish"); 
 		return mv;
     }
+	
+	//마이 쿠폰리스트
+	@RequestMapping(value = "/coupon", method = RequestMethod.GET)
+	public ModelAndView coupon() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("myPage/coupon"); 
+		return mv;
+	}
 }
