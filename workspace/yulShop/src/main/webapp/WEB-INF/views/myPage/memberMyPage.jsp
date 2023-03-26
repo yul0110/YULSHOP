@@ -65,7 +65,9 @@
 							<span class="icon-inbox"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">주문내역</h3>
+							<a href="/order">
+								<h3 class="heading">주문내역</h3>
+							</a>
 						</div>
 					</div>
 					
@@ -74,7 +76,9 @@
 							<span class="icon-ticket"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">쿠폰</h3>
+							<a href="/coupon">
+								<h3 class="heading">쿠폰</h3>
+							</a>
 						</div>
 					</div>
 					
@@ -83,7 +87,9 @@
 							<span class="icon-ruble"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">포인트 내역</h3>
+							<a href="/point">
+								<h3 class="heading">포인트 내역</h3>
+							</a>
 						</div>
 					</div>
 
@@ -92,7 +98,9 @@
 							<span class="icon-person"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">나의 정보 수정</h3>
+							<a href="javascript:void(0);">
+								<h3 class="heading">나의 정보 수정</h3>
+							</a>
 						</div>
 					</div>
 
@@ -101,7 +109,9 @@
 							<span class="icon-star"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">찜리스트</h3>
+							<a href="/wish">
+								<h3 class="heading">찜리스트</h3>
+							</a>
 						</div>
 					</div>
 					<div class="d-flex feature-h">
@@ -109,7 +119,9 @@
 							<span class="icon-comments-o"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">문의내역</h3>
+							<a href="/inquiry">
+								<h3 class="heading">문의내역</h3>
+							</a>
 						</div>
 					</div>
 					<div class="d-flex feature-h">
@@ -117,7 +129,9 @@
 							<span class="icon-subdirectory_arrow_left"></span>
 						</span>
 						<div class="feature-text">
-							<h3 class="heading">탈퇴하기</h3>
+							<a href="javascript:void(0);">
+								<h3 class="heading">탈퇴하기</h3>
+							</a>
 						</div>
 					</div>
 				</div>
