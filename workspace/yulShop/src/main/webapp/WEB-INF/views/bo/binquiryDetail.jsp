@@ -85,18 +85,6 @@
     </div>
 </div>
 
-	<!--   data templ zone   -->
-	
-	<!--   listImg   -->
-	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<!--   listImg END   -->
-	
-	<!--   detailImg   -->
-	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<!--   detailImg END   -->	
-	
-	<!--  zone END    -->
-
 	<!-- Page Js Files  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

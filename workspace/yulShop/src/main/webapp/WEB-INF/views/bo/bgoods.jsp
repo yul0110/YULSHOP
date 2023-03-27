@@ -10,7 +10,7 @@
 <%@ include file="/WEB-INF/views/bo/topMenu.jsp"%>
 
 <!--  page js  -->
-<script src="/resources/js/bo/bgoodsList.js"></script>
+<script src="/resources/js/bo/bgoods.js"></script>
 <!--  page js  -->
 
     <div class="wrapper">

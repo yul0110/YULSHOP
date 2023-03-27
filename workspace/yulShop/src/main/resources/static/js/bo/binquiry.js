@@ -63,7 +63,7 @@
 					inquiryNodeCopy.attr('style', '');
 					inquiryNodeCopy.find('.inquiryCount').html(item.id);
 					inquiryNodeCopy.find('.inquiryTitle').text(item.title);
-					inquiryNodeCopy.find('.inquiryTitle').attr('href', '/bInquiryDetail?id=' + item.id);
+					inquiryNodeCopy.find('.inquiryTitle').attr('href', '/binquiryDetail?id=' + item.id);
 					$('#inquiryList').append(inquiryNodeCopy);
 				});
 				//페이지를 뿌려주는 append

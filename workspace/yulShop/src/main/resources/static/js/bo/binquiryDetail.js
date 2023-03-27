@@ -4,7 +4,6 @@
  */	  
 (function() {
 	
-	var imgNum = 1;
 	var pathData = '';
 	
 	yul.page = function() { 

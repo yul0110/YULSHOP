@@ -48,7 +48,7 @@ public class BackOfficeController {
 /*------------------------------------- 메인 --------------------------------------*/
 	
 	@RequestMapping(value = "/bmain", method = RequestMethod.GET)
-    public String BoMainPage(){
+    public String bmain(){
 		return "bo/bmain";
     }
 
@@ -135,9 +135,21 @@ public class BackOfficeController {
 	
 /*------------------------------------- 상품 --------------------------------------*/
 	
-	//BO 상품등록페이지
+	
+	//BO 상품 리스트 페이지
+	@RequestMapping(value = "/bgoods", method = RequestMethod.GET)
+	public ModelAndView bgoods(){
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("bo/bgoods");
+		return mv;
+	}
+	
+	
+	//BO 상품 등록 페이지
 	@RequestMapping(value = "/bgoodsReg", method = RequestMethod.GET)
-	public ModelAndView BoPage(String cate){
+	public ModelAndView bgoodsReg(String cate){
 		
 		ModelAndView mv = new ModelAndView();
 		//---------카테고리-----------
@@ -152,15 +164,6 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	//BO 이벤트 리스트 페이지
-	@RequestMapping(value = "/bgoods", method = RequestMethod.GET)
-	public ModelAndView bgoods(){
-		
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("bo/bgoods");
-		return mv;
-	}
 	
 	//BO 상품 수정
 	@RequestMapping(value = "/bgoodsDetail", method = RequestMethod.GET)
@@ -182,22 +185,9 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	//상품등록 Ajax
-	@RequestMapping(value = "/goodsRegAjax", method = RequestMethod.POST)
-	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson ) {
-		
-		ModelAndView mv = new ModelAndView("jsonView");
-
-		int result = boGoodsService.insertGoods(goodsDataJson);
-
-		mv.addObject("result", result);
-		return mv;
-	}
-	
-	
 	//BO 상품 리스트 Ajax
 	@RequestMapping(value = "/bgoodsListAjax", method = RequestMethod.POST)
-	public ModelAndView goodsListAjax(@RequestBody GoodsDao goodsDao) {
+	public ModelAndView bgoodsListAjax(@RequestBody GoodsDao goodsDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 	
@@ -219,11 +209,24 @@ public class BackOfficeController {
 	}
 	
 	
+	//상품등록 Ajax
+	@RequestMapping(value = "/goodsRegAjax", method = RequestMethod.POST)
+	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson ) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		int result = boGoodsService.insertGoods(goodsDataJson);
+
+		mv.addObject("result", result);
+		return mv;
+	}
+	
+	
 /*---------------------------------- 문의 ----------------------------------*/
 	
 	//BO 문의 페이지
 	@RequestMapping(value = "/binquiry", method = RequestMethod.GET)
-	public ModelAndView boInquiry(){
+	public ModelAndView binquiry(){
 		
 		ModelAndView mv = new ModelAndView();
 
@@ -232,7 +235,7 @@ public class BackOfficeController {
 	}
 	
 	
-	//BO 이벤트 수정 페이지
+	//BO 문의 수정 페이지
 	@RequestMapping(value = "/binquiryDetail", method = RequestMethod.GET)
 	public ModelAndView binquiryDetail(int id){
 		
@@ -293,7 +296,7 @@ public class BackOfficeController {
 	
 	//BO 회원관리 페이지
 	@RequestMapping(value = "/bmember", method = RequestMethod.GET)
-	public ModelAndView boMember(){
+	public ModelAndView bmember(){
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bo/bmember");
@@ -343,7 +346,7 @@ public class BackOfficeController {
 	
 	// BO 회원정보 수정 ajax
 	@RequestMapping(value = "/updateMemberAjax", method = RequestMethod.POST)
-	public ModelAndView memberUpdateAjax(@RequestBody MemberDao dataJson ) {
+	public ModelAndView updateMemberAjax(@RequestBody MemberDao dataJson ) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 		
@@ -357,7 +360,7 @@ public class BackOfficeController {
 	
 	//BO 이벤트 등록 페이지
 	@RequestMapping(value = "/beventReg", method = RequestMethod.GET)
-	public ModelAndView boEventReg(){
+	public ModelAndView beventReg(){
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bo/beventReg");
