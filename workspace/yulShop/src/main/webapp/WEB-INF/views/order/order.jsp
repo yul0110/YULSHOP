@@ -143,7 +143,7 @@
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
 					<div class="counter-wrap mb-5 mb-lg-0">
 						<span class="number"><span class="countup text-primary">87000</span>원</span>
-						<span class="caption text-black-50">총 가격</span>
+						<span class="caption text-black-50">상품금액</span>
 					</div>
 				</div>
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
@@ -161,7 +161,7 @@
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
 					<div class="counter-wrap mb-5 mb-lg-0">
 						<span class="number"><span class="countup text-primary">1574894</span>원</span>
-						<span class="caption text-black-50">최종 결제금액</span>
+						<span class="caption text-black-50">결제금액</span>
 					</div>
 				</div>
 			</div>
