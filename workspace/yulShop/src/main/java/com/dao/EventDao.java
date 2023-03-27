@@ -46,7 +46,7 @@ public class EventDao extends paging{
 	private String useYn;
 	
 	//메인이미지 경로
-	private List<String> mainImgPathArr;
+	private List<String> listImgPathArr;
 	
 	//상세이미지 경로
 	private List<String> detailImgPathArr;

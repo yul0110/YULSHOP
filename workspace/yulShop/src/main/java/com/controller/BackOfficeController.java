@@ -1,15 +1,12 @@
 package com.controller;
 
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.dao.AnswerDao;
 import com.dao.CouponDao;
 import com.dao.EventDao;
@@ -20,7 +17,6 @@ import com.service.BackOfficeService;
 import com.service.BoEventService;
 import com.service.BoGoodsService;
 import com.service.CategoryService;
-import com.service.EventService;
 import com.service.ImgService;
 import com.vo.Category;
 import com.vo.Coupon;
@@ -55,7 +51,7 @@ public class BackOfficeController {
     public String BoMainPage(){
 		return "bo/bmain";
     }
-	
+
 
 /*------------------------------------- 쿠폰 --------------------------------------*/
 	

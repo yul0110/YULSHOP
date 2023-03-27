@@ -1,8 +1,9 @@
- /**	(function() { })(); 사용하는 이유
+
+011 /**	(function() { })(); 사용하는 이유
  *		IIFE(Immediately-invoked function expression: 즉시 작동하는 함수식)
  *		"이 안에 들어있는 코드를 바로 실행해라" 라는 표현으로 이해하시면 되겠습니다.
  */	  
-(function() {
+$(function() {
 	
 	var imgNum = 1;
 	var pathData = '';
@@ -41,14 +42,15 @@
 				
 				var nodeImgCopy; 
 				
-				nodeImgCopy		= $('#listImgTempl').clone();
+				nodeImgCopy		= $('#imgTemple').clone();
 				
-				nodeImgCopy.attr('id', "listImgData");
-				nodeImgCopy.attr('src', data.path);
-				nodeImgCopy.attr('class', "listPreview");
+				nodeImgCopy.attr('id', "");
+				nodeImgCopy.find('#listPreviewImg').attr('src', data.path);
 				nodeImgCopy.addClass("deletImg");
-				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
-				nodeImgCopy.data('pdata', data.path);
+				nodeImgCopy.find('#listPreviewImg').attr('style', "width: 100px; height: 100px;");
+				nodeImgCopy.find('#listImgPath').attr('class', "listPreview");
+				nodeImgCopy.find('#listImgPath').val(data.path);
+				nodeImgCopy.find('#listImgPath').attr('id', "");
 				
 				$('#listPreviewZone').append(nodeImgCopy);
 			},
@@ -81,19 +83,17 @@
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
 				
-				var nodeDetailCopy; 
+				nodeDetailCopy		= $('#detailImgTemple').clone();
 				
-				nodeDetailCopy	= $('#detailImgTempl').clone();
-				
-				nodeDetailCopy.attr('id', "detailImgData");
-				nodeDetailCopy.attr('src', data.path);
-				nodeDetailCopy.attr('class', "detailPreview");
+				nodeDetailCopy.attr('id', "");
+				nodeDetailCopy.find('#detailPreviewImg').attr('src', data.path);
 				nodeDetailCopy.addClass("deletImg");
-				nodeDetailCopy.attr('style', "width: 100px; height: 100px;");
-				nodeDetailCopy.data('pdata', data.path);
+				nodeDetailCopy.find('#detailPreviewImg').attr('style', "width: 100px; height: 100px;");
+				nodeDetailCopy.find('#detailImgPath').attr('class', "detailPreview");
+				nodeDetailCopy.find('#detailImgPath').val(data.path);
+				nodeDetailCopy.find('#detailImgPath').attr('id', "");
 				
 				$('#detailPreviewZone').append(nodeDetailCopy);
-				
 			},
 			fail: function(error) {
 				alert('업로드 실패');
@@ -118,7 +118,7 @@
         });
         
         //상세이미지
-        $("#detailFile").change(function(){
+        $("#detailImg").change(function(){
 	
 			var detailImgCount = $('.detailPreview').length;
 	
@@ -159,8 +159,8 @@
 	 		var contents 		= $("#contents").val(); //이벤트 내용
 
 	 		//노드 배열
-	 		var mainImgPathArr 	= $('.listPath'); //리스트 이미지경로
-	 		var detailImgPathArr= $('.detailPath'); //상세 이미지경로
+	 		var listImgPathArr 	= $('.listPreview'); //리스트 이미지경로
+	 		var detailImgPathArr= $('.detailPreview'); //상세 이미지경로
 	 	
 	 		
 	 		//이벤트 제목 빈값 체크
@@ -176,7 +176,7 @@
 			}
 		
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(mainImgPathArr.length <= 0){ 
+			if(listImgPathArr.length <= 0){ 
 				alert("메인 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
@@ -185,25 +185,25 @@
 			if(detailImgPathArr.length <= 0){ 
 				alert("상세 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
-			}	
+			}	 
 			
  			//메인이미지 배열만들기
 			var pathListArr = new Array();
-			for(i=0;i<mainImgPathArr.length;i++){
-				pathListArr.push(mainImgPathArr[i].dataset.pdata);
+			for(i=0;i<listImgPathArr.length;i++){
+				pathListArr.push(listImgPathArr[i].value);
 			}
 			
 		 	//상세이미지 배열만들기
 			var pathDetailArr = new Array();
 			for(i=0;i<detailImgPathArr.length;i++){
-				pathDetailArr.push(detailImgPathArr[i].dataset.pdata);
+				pathDetailArr.push(detailImgPathArr[i].value);
 			}
 		
 			var eventDataJson 	= {};
 	
 			eventDataJson.title 			= title;
 			eventDataJson.contents 			= contents;
-			eventDataJson.mainImgPathArr	= pathListArr;
+			eventDataJson.listImgPathArr	= pathListArr;
 			eventDataJson.detailImgPathArr	= pathDetailArr;
 			
 			//에이작스 통신을 위한 객체 생성
@@ -251,4 +251,4 @@
 	 });
 	 
 	 return yul.page;
-})();
+});
