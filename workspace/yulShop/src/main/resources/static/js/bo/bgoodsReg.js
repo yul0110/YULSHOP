@@ -45,14 +45,15 @@
 				
 				var nodeImgCopy; 
 				
-				nodeImgCopy		= $('#listImgTempl').clone();
+				nodeImgCopy		= $('#imgTemple').clone();
 				
-				nodeImgCopy.attr('id', "listImgData");
-				nodeImgCopy.attr('src', data.path);
-				nodeImgCopy.attr('class', "listPreview");
+				nodeImgCopy.attr('id', "");
+				nodeImgCopy.find('#listPreviewImg').attr('src', data.path);
 				nodeImgCopy.addClass("deletImg");
-				nodeImgCopy.attr('style', "width: 100px; height: 100px;");
-				nodeImgCopy.data('pdata', data.path);
+				nodeImgCopy.find('#listPreviewImg').attr('style', "width: 100px; height: 100px;");
+				nodeImgCopy.find('#listImgPath').attr('class', "listPreview");
+				nodeImgCopy.find('#listImgPath').val(data.path);
+				nodeImgCopy.find('#listImgPath').attr('id', "");
 				
 				$('#listPreviewZone').append(nodeImgCopy);
 				
@@ -86,16 +87,15 @@
 			success: function(data){
 				//전송에 성공하면 실행될 코드;
 				
-				var nodeDetailCopy; 
+				nodeDetailCopy		= $('#detailImgTemple').clone();
 				
-				nodeDetailCopy	= $('#detailImgTempl').clone();
-				
-				nodeDetailCopy.attr('id', "detailImgData");
-				nodeDetailCopy.attr('src', data.path);
-				nodeDetailCopy.attr('class', "detailPreview");
+				nodeDetailCopy.attr('id', "");
+				nodeDetailCopy.find('#detailPreviewImg').attr('src', data.path);
 				nodeDetailCopy.addClass("deletImg");
-				nodeDetailCopy.attr('style', "width: 100px; height: 100px;");
-				nodeDetailCopy.data('pdata', data.path);
+				nodeDetailCopy.find('#detailPreviewImg').attr('style', "width: 100px; height: 100px;");
+				nodeDetailCopy.find('#detailImgPath').attr('class', "detailPreview");
+				nodeDetailCopy.find('#detailImgPath').val(data.path);
+				nodeDetailCopy.find('#detailImgPath').attr('id', "");
 				
 				$('#detailPreviewZone').append(nodeDetailCopy);
 				
@@ -218,8 +218,8 @@
 	 		
 	 		//노드 배열
 	 		var optionArr 			= $('.optionArr'); //옵션 
-	 		var listImgPathArr 		= $('.listPath'); //리스트 이미지경로
-	 		var detailImgPathArr	= $('.detailPath'); //상세정보
+	 		var listImgPathArr 	= $('.listPreview'); //리스트 이미지경로
+	 		var detailImgPathArr= $('.detailPreview'); //상세 이미지경로
 	 	
 	 		
 	 		//상품번호 빈값 체크
@@ -308,16 +308,16 @@
 				return false; 		
 			}	
 			
- 			//리스트이미지 배열만들기
+ 			//메인이미지 배열만들기
 			var pathListArr = new Array();
 			for(i=0;i<listImgPathArr.length;i++){
-				pathListArr.push(listImgPathArr[i].dataset.pdata);
+				pathListArr.push(listImgPathArr[i].value);
 			}
 			
 		 	//상세이미지 배열만들기
 			var pathDetailArr = new Array();
 			for(i=0;i<detailImgPathArr.length;i++){
-				pathDetailArr.push(detailImgPathArr[i].dataset.pdata);
+				pathDetailArr.push(detailImgPathArr[i].value);
 			}
 		
 			//소재 빈값체크

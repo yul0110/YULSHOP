@@ -77,32 +77,6 @@
 
 	<!--   data templ zone   -->
 	
-	<!--   listImg   -->
-	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<!--   listImg END   -->
-	
-	<!--   detailImg   -->
-	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<!--   detailImg END   -->	
-	
-	<!--   option   -->
-	<div id="optionTempl" class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center optionCount"  style= "display:none;">
-		<input type="text" id="colorTempl" style= "display:none;" class="form-control px-4 colorNode"  maxlength="15" placeholder="컬러" required>
-		<input type="text" id="sizeTempl" style= "display:none;" class="form-control px-4 sizeNode" maxlength="15" placeholder="사이즈" required>
-		<input type="text" id="invenTempl" style= "display:none;" class="form-control px-4 invenNode" maxlength="15" placeholder="수량" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required>
-	</div>
-	<!--   option END   -->
-	
-	<!--  category   -->
-	<div id='categoryChildData' style='display:none;'>
-		<c:forEach var="category" items="${categoryList}">
-			<c:if test="${category.cateCodeRef ne null}">
-				<input type='hidden' value="${category.cateNm}" data-ref = "${category.cateCodeRef}" data-code = "${category.cateCode}"/>
-			</c:if>
-		</c:forEach>
-	</div>
-	
-	
 	<!--  zone END    -->
 	
 	<!-- Page Js Files  -->

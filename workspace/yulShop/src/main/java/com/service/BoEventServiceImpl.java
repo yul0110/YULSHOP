@@ -46,7 +46,7 @@ public class BoEventServiceImpl implements BoEventService {
 		//리스트 이미지 그룹 id 생성
 		imgGroupMapper.insertImgGroup(listImgGroupId);
 		
-		for(String listImg : eventDao.getMainImgPathArr() ) {
+		for(String listImg : eventDao.getListImgPathArr() ) {
 			ImgDao imgDao = new ImgDao();
 			Integer imgNumbering = imgMapper.selectTableNumbering();
 			if(imgNumbering == null) {

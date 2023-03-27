@@ -89,8 +89,8 @@
 						<br>
 						
 						<div class="form-file">
-							<input type="file" id="listImg" name="listImg" class="form-file-input">
-							<label class="form-file-label">메인 이미지&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="file" id="listImg" class="form-file-input">
+							<label class="form-file-label" for="customFile">메인 이미지&nbsp;&nbsp;&nbsp;&nbsp;
 						   		<span class="form-file-text"></span>
 						    	<span class="form-file-button">이미지 찾기</span>
 							</label>
@@ -101,11 +101,10 @@
 							</div> 
 						</div>
 						<br>
-						<br>
 
 						<div class="form-file">
-							<input type="file" id="detailImg" name="detailImg" class="form-file-input" >
-							<label class="form-file-label">상세 이미지&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="file" id="detailImg" class="form-file-input" >
+							<label class="form-file-label" for="customFile">상세 이미지&nbsp;&nbsp;&nbsp;&nbsp;
 						   		<span class="form-file-text"></span>
 						    	<span class="form-file-button">이미지 찾기</span>
 							</label>
@@ -158,14 +157,21 @@
 </div>
 
 	<!--   data templ zone   -->
-	
 	<!--   listImg   -->
-	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<div id="imgTemple" class="">
+		<img id="listPreviewImg" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+		<input id="listImgPath" type="hidden" class="" value="" />
+	</div>
 	<!--   listImg END   -->
 	
+	
 	<!--   detailImg   -->
-	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<div id="detailImgTemple" class="">
+		<img id="detailPreviewImg" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+		<input id="detailImgPath" type="hidden" class="" value="" />
+	</div>
 	<!--   detailImg END   -->	
+	
 	
 	<!--   option   -->
 	<div id="optionTempl" class="col-12 narrow-w form-search d-flex align-items-stretch mb-3 text-center optionCount"  style= "display:none;">

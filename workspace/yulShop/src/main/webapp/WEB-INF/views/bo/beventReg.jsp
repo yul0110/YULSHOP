@@ -55,7 +55,7 @@
 						<br>
 
 						<div class="form-file">
-							<input type="file" id="detailFile" class="form-file-input" >
+							<input type="file" id="detailImg" class="form-file-input" >
 							<label class="form-file-label" for="customFile">상세 이미지
 						   		<span class="form-file-text"></span>
 						    	<span class="form-file-button">이미지 찾기</span>
@@ -79,22 +79,22 @@
 </div>
 
 	<!--   data templ zone   -->
-	
 	<!--   listImg   -->
-	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<div id="imgTemple" class="">
+		<img id="listPreviewImg" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+		<input id="listImgPath" type="hidden" class="" value="" />
+	</div>
 	<!--   listImg END   -->
 	
-	<!--   detailImg   -->
-	<img id="detailImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
-	<!--   detailImg END   -->	
 	
+	<!--   detailImg   -->
+	<div id="detailImgTemple" class="">
+		<img id="detailPreviewImg" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+		<input id="detailImgPath" type="hidden" class="" value="" />
+	</div>
+	<!--   detailImg END   -->	
 	<!--  zone END    -->
 	
-
-
-
-
-
 
 	<!-- Page Js Files  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

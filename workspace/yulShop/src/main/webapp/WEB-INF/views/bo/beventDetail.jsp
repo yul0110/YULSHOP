@@ -91,7 +91,11 @@
 	<!--   data templ zone   -->
 	
 	<!--   listImg   -->
-	<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	<div>
+		<input type="hidden" id="Img" class="form-file-input">
+		<img id="listImgTempl" src="" class="" style="display:none; width: 100px; height: 100px;"/>
+	</div>
+	
 	<!--   listImg END   -->
 	
 	<!--   detailImg   -->
