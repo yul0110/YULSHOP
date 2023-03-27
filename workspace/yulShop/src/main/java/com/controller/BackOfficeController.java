@@ -382,12 +382,18 @@ public class BackOfficeController {
 		
 		ModelAndView mv = new ModelAndView();
 		
+		EventDao eventDao = new EventDao();
+		eventDao.setId(id);
+		
 		Event event = boEventService.selectEvent(id);
 		
 		mv.addObject("event", event);
+		mv.addObject("nowId", id);
+		mv.addObject("nowUpdateId", id);
 		mv.setViewName("bo/beventDetail");
 		return mv;
 	}
+	
 	
 	//BO 이벤트 등록 Ajax
 	@RequestMapping(value = "/eventRegAjax", method = RequestMethod.POST)
@@ -424,4 +430,18 @@ public class BackOfficeController {
 		return mv;
 	}
 	
+	// BO 회원정보 수정 ajax
+		@RequestMapping(value = "/eventUpdateAjax", method = RequestMethod.POST)
+		public ModelAndView eventUpdateAjax(@RequestBody EventDao dataJson ) {
+			
+			ModelAndView mv = new ModelAndView("jsonView");
+			
+			int result = boEventService.updateBoEvent(dataJson);
+			
+			mv.addObject("result", result);
+			return mv;
+		}
+		
+		
+		
 }

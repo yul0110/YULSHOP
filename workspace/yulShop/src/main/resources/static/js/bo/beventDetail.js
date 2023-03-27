@@ -4,6 +4,7 @@
  */	  
 (function() {
 	
+	var imgNum = 1;
 	var pathData = '';
 	
 	yul.page = function() { 
@@ -154,6 +155,7 @@
 	 		e.preventDefault();
 	 		
 	 		//노드의 value값
+	 		var nowId 			= $("#nowId").val();
 	 		var title	  		= $('#title').val(); //이벤트 제목
 	 		var contents 		= $("#contents").val(); //이벤트 내용
 
@@ -175,7 +177,7 @@
 			}
 		
 			//이미지를 등록하지 않은 경우 무조건 1개 이상	
-			if(mainImgPathArr.length <= 0){ 
+			if(listImgPathArr.length <= 0){ 
 				alert("메인 이미지는 1개이상 등록하셔야 합니다.");
 				return false; 		
 			}	
@@ -198,18 +200,19 @@
 				pathDetailArr.push(detailImgPathArr[i].value);
 			}
 		
-			var eventDataJson 	= {};
+			var dataJson 	= {};
 	
-			eventDataJson.title 			= title;
-			eventDataJson.contents 			= contents;
-			eventDataJson.listImgPathArr	= pathListArr;
-			eventDataJson.detailImgPathArr	= pathDetailArr;
+			dataJson.id 				= nowId;
+			dataJson.title 				= title;
+			dataJson.contents 			= contents;
+			dataJson.listImgPathArr		= pathListArr;
+			dataJson.detailImgPathArr	= pathDetailArr;
 			
 			//에이작스 통신을 위한 객체 생성
 		    const xhr = new XMLHttpRequest();
 		    
 		    //전송방식과 통신 할 경로 설정
-		    xhr.open("post", "/eventRegAjax");
+		    xhr.open("post", "/eventUpdateAjax");
 		    
 		    //전송 할 헤더에 전송 데이터타입, 문자타입 설정
 		    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8;");
@@ -229,11 +232,11 @@
 				if(e.currentTarget.status == 200){
 					//성공콜백 함수
 					if(e.currentTarget.response.result != 0){ 
-						alert("이벤트가 등록 되었습니다.");
+						alert("이벤트가 수정 되었습니다.");
 						//페이지 이동
-						location.href = '/bmain';
+						location.href = '/bevent';
 					}else{
-						alert("이벤트등록에 실패하였습니다 다시 시도해주세요.");
+						alert("이벤트수정에 실패하였습니다 다시 시도해주세요.");
 					}												
 			       	//return callback(e.currentTarget.response);
 				}else{
@@ -241,7 +244,7 @@
 				}				        
 		    };
 		    //전송할 데이터 json 타입으로 변동후 전달
-		    xhr.send(JSON.stringify(eventDataJson));	
+		    xhr.send(JSON.stringify(dataJson));	
 		});
 	};	
 	 

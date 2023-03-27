@@ -68,6 +68,30 @@
 			ig.id = i.imgGroupId
 		WHERE e.id = #{value}
 	</select>
+	
+	<!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update -->
+	
+	<update id="updateBoEvent" parameterType="com.dao.EventDao">
+		UPDATE
+			event
+		SET
+			listImg = #{listImg},
+			detailImg = #{detailImg},
+			title = #{title},
+			contents = #{contents},
+			regDt = now(),
+			regId = #{regId},
+			updateDt = now(),
+			updateId = #{updateId},
+			useYn = #{useYn}
+		WHERE
+			id = #{id};
+	</update>
+	
+	<!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update --><!-- update -->
+	
+	
+	
 </mapper>
 
 

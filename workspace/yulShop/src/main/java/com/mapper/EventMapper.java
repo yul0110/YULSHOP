@@ -15,6 +15,9 @@ public interface EventMapper {
 	//이벤트 등록
 	int insertEvent(EventDao eventDao);
 	
+	//이벤트 수정
+	int updateBoEvent(EventDao eventDao);
+
 	//이벤트 리스트
 	List<Event> selectEventList();
 	
@@ -23,4 +26,5 @@ public interface EventMapper {
 	
 	//이벤트 디테일
 	Event selectEvent(int id);
+
 }

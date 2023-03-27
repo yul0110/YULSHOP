@@ -23,6 +23,7 @@
                     <br>
                     <br>
                     <!-- Contact Form -->
+                    <input type="hidden" id="nowId" value='${nowId}' class="form-control">
                     <form action="/joinusAjax" id='joinform' name='joinform'
 							method="post" role="form" class="form-horizontal">
 	
