@@ -26,4 +26,16 @@ public class OrderController {
 		mv.setViewName( "order/order"); 
 		return mv;
     }
+	
+	@RequestMapping(value = "/orderComple", method = RequestMethod.GET)
+	public ModelAndView orderComple() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName( "order/orderComple"); 
+		return mv;
+	}
 }
