@@ -142,26 +142,26 @@
 			<div class="row section-counter mt-5">
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
 					<div class="counter-wrap mb-5 mb-lg-0">
-						<span class="number"><span class="countup text-primary">87000</span>p</span>
+						<span class="number"><span class="countup text-primary">87000</span>원</span>
 						<span class="caption text-black-50">총 가격</span>
 					</div>
 				</div>
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
 					<div class="counter-wrap mb-5 mb-lg-0">
-						<span class="number"><span class="countup text-primary">1300</span>p</span>
+						<span class="number"><span class="countup text-primary">1300</span>원</span>
 						<span class="caption text-black-50">사용포인트</span>
 					</div>
 				</div>
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
 					<div class="counter-wrap mb-5 mb-lg-0">
-						<span class="number"><span class="countup text-primary">9316</span>p</span>
+						<span class="number"><span class="countup text-primary">9316</span>원</span>
 						<span class="caption text-black-50">할인액</span>
 					</div>
 				</div>
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
 					<div class="counter-wrap mb-5 mb-lg-0">
-						<span class="number"><span class="countup text-primary">1574894</span>p</span>
-						<span class="caption text-black-50">결제금액</span>
+						<span class="number"><span class="countup text-primary">1574894</span>원</span>
+						<span class="caption text-black-50">최종 결제금액</span>
 					</div>
 				</div>
 			</div>
