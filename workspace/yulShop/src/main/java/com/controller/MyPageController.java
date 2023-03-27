@@ -23,7 +23,7 @@ public class MyPageController {
 	CategoryService categoryService;
 	
 	//마이 페이지
-	@RequestMapping(value = "/memberMyPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/myPage", method = RequestMethod.GET)
 	public ModelAndView MyPage() {
 		
 		ModelAndView mv = new ModelAndView();
@@ -31,7 +31,7 @@ public class MyPageController {
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		
 		mv.addObject("categoryList", categoryList);
-		mv.setViewName("myPage/memberMyPage"); 
+		mv.setViewName("myPage/myPage"); 
 		//mv.setViewName("myPage/memberMyPage"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		return mv;
     }
@@ -166,6 +166,19 @@ public class MyPageController {
 		
 		mv.addObject("categoryList", categoryList);
 		mv.setViewName("myPage/point"); 
+		return mv;
+	}
+	
+	//마이 주문내역 상세
+	@RequestMapping(value = "/myOrderDetail", method = RequestMethod.GET)
+	public ModelAndView myOrderDetail() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		List<Category> categoryList = categoryService.selectAllCategoryList();
+		
+		mv.addObject("categoryList", categoryList);
+		mv.setViewName("myPage/myOrderDetail"); 
 		return mv;
 	}
 }
