@@ -63,7 +63,7 @@ public class BoEventServiceImpl implements BoEventService {
 			}
 			imgDao.setId(imgNumbering);
 			imgDao.setImgGroupId(listImgGroupId);
-			imgDao.setNm("evevtList");
+			imgDao.setNm("eventList");
 			imgDao.setPath(listImg);
 			imgMapper.insertImg(imgDao);
 		}
@@ -135,7 +135,7 @@ public class BoEventServiceImpl implements BoEventService {
 			imgNumbering = imgNumbering + 1;
 			imgDao.setId(imgNumbering);
 			imgDao.setImgGroupId(listImgGroupId);
-			imgDao.setNm("evevtList");
+			imgDao.setNm("eventList");
 			imgDao.setPath(listImg);
 			imgMapper.insertImg(imgDao);
 		}
