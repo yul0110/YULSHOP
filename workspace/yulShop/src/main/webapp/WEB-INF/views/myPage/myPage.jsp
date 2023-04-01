@@ -55,65 +55,33 @@
 		<div class="container">
 			<div class="row justify-content-between mb-5">
 				<div class="col-lg-9 mb-5 mb-lg-0 order-lg-4">
-
-					<div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-						<div class="row">
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								주문번호
-							</div>
-							<div class="text-primary col-8 mb-3"  style="font-size: 20px;">
-								상품명
-							</div>
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								상태
-							</div>
-						</div>
-						<div class="row mb-30">
-							<div class="text-primary col-2 mb-3" style="font-size: 20px;">
-								1231231314
-							</div>
-							<div class="text-primary col-8 mb-3"  style="font-size: 20px;">
-								싱그러운 봄이오나봄
-							</div>
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								배송중
-							</div>
-						</div>
-						<div class="row mb-30">
-							<div class="text-primary col-2 mb-3" style="font-size: 20px;">
-								1231231314
-							</div>
-							<div class="text-primary col-8 mb-3"  style="font-size: 20px;">
-								싱그러운 봄이오나봄
-							</div>
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								배송중
-							</div>
-						</div>
-						<div class="row mb-30">
-							<div class="text-primary col-2 mb-3" style="font-size: 20px;">
-								1231231314
-							</div>
-							<div class="text-primary col-8 mb-3"  style="font-size: 20px;">
-								싱그러운 봄이오나봄
-							</div>
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								배송중
-							</div>
-						</div>
-						<div class="row mb-30">
-							<div class="text-primary col-2 mb-3" style="font-size: 20px;">
-								1231231314
-							</div>
-							<div class="text-primary col-8 mb-3"  style="font-size: 20px;">
-								싱그러운 봄이오나봄
-							</div>
-							<div class="text-primary col-2 mb-3"  style="font-size: 20px;">
-								배송중
-							</div>
-						</div>
-					</div>
-				
+					<div class="table-responsive col-lg-12" data-aos="fade-up" data-aos-delay="200">
+					<table class="table text-primary col-2 mb-3" style="font-size: 20px;">
+						<thead>
+						    <tr>
+						        <th>주문번호</th>
+						        <th>상품명</th>
+						        <th>상태</th>
+						    </tr>
+						</thead>
+				    	<tbody>
+							<tr id='inquiryNode'>
+							    <td class="text-primary col-2 mb-3"  style="font-size: 15px;">
+								    주문번호
+								</td>
+								
+								<td class="text-primary col-2 mb-3"  style="font-size: 15px;">
+									상품명
+								</td>
+								
+								<td class="text-primary col-2 mb-3"  style="font-size: 15px;">
+							    	상태
+							    </td>
+							</tr>
+						</tbody>
+                   </table>
+                     </div>
+					
 					<div class="row align-items-center py-5">
 						<div class="col-lg-3">
 						</div>
@@ -192,16 +160,6 @@
 						<div class="feature-text">
 							<a href="/inquiry">
 								<h3 class="heading">문의내역</h3>
-							</a>
-						</div>
-					</div>
-					<div class="d-flex feature-h">
-						<span class="wrap-icon-custem me-3">
-							<span class="icon-subdirectory_arrow_left"></span>
-						</span>
-						<div class="feature-text">
-							<a href="javascript:void(0);">
-								<h3 class="heading">탈퇴하기</h3>
 							</a>
 						</div>
 					</div>

@@ -24,7 +24,7 @@ public class MyPageController {
 	
 	//마이 페이지
 	@RequestMapping(value = "/myPage", method = RequestMethod.GET)
-	public ModelAndView MyPage() {
+	public ModelAndView myPage() {
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -45,7 +45,7 @@ public class MyPageController {
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		mv.addObject("categoryList", categoryList);
 		
-		mv.setViewName("myPage/memberResign"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
+		mv.setViewName("myPage/memberResign");
 		
 		return mv;
     }
