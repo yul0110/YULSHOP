@@ -223,16 +223,21 @@
                     <!-- <i class="menu-icon fas fa-info"></i> -->
                     <!-- <i class="menu-icon fas fa-seedling"></i> -->
                     <i class="menu-icon mdi mdi-code-braces-box"></i>
-                    <span class="menu-label">주문 관리</span>
+                    <span class="menu-label">주문</span>
+                    <span class="menu-badge">
+                        <span class="badge bg-info">1</span>
+                    </span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/bmember" class="menu-link">
                     <!-- <i class="menu-icon fas fa-fill-drip"></i> -->
-
                     <i class="menu-icon mdi mdi-format-size"></i>
                     <!-- <i class="fas fa-heading"></i> -->
-                    <span class="menu-label">회원 관리</span>
+                    <span class="menu-label">회원</span>
+                    <span class="menu-badge">
+                        <span class="badge bg-info">1</span>
+                    </span>
                 </a>
             </li>
             <!-- <li class="menu-item">
@@ -244,86 +249,39 @@
             </li> -->
             <li class="menu-item">
                 <a href="/binquiry" class="menu-link">
-                    <!-- <i class="menu-icon fas fa-magic"></i> -->
                     <i class="menu-icon mdi mdi-view-dashboard"></i>
-                    <span class="menu-label">문의 관리</span>
+                    <span class="menu-label">문의</span>
                     <span class="menu-badge">
                         <span class="badge bg-info">1</span>
                     </span>
                 </a>
             </li>
-            
             <li class="menu-item">
-                <a href="javascript:void(0)" class="menu-link" data-toggle="collapse" data-target="#menu-1fc88e"
-                    aria-expanded="true" aria-controls="menu-1fc88e">
-                    <i class="menu-icon mdi mdi-format-list-text"></i>
-                    <span class="menu-label">상품 관리</span>
-                    <i class="menu-arrow mdi mdi-chevron-right"></i>
+                <a href="/bgoods" class="menu-link">
+                    <i class="menu-icon mdi mdi-view-dashboard"></i>
+                    <span class="menu-label">상품</span>
+                    <span class="menu-badge">
+                        <span class="badge bg-info">1</span>
+                    </span>
                 </a>
-                <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
-
-                    <li class="menu-item">
-                        <a href="/bgoods" class="menu-link">
-                            <i class="menu-icon">상품 리스트</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/bgoodsReg" class="menu-link">
-                            <i class="menu-icon">상품 등록</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            
-            
             <li class="menu-item">
-                <a href="javascript:void(0)" class="menu-link" data-toggle="collapse" data-target="#menu-1fc88e"
-                    aria-expanded="true" aria-controls="menu-1fc88e">
-                    <i class="menu-icon mdi mdi-format-list-text"></i>
-                    <span class="menu-label">이벤트 관리</span>
-                    <i class="menu-arrow mdi mdi-chevron-right"></i>
+                <a href="/bevent" class="menu-link">
+                    <i class="menu-icon mdi mdi-view-dashboard"></i>
+                    <span class="menu-label">이벤트</span>
+                    <span class="menu-badge">
+                        <span class="badge bg-info">1</span>
+                    </span>
                 </a>
-                <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
-
-                    <li class="menu-item">
-                        <a href="/bevent" class="menu-link">
-                            <i class="menu-icon">이벤트 리스트</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/beventReg" class="menu-link">
-                            <i class="menu-icon">이벤트 등록</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            
             <li class="menu-item">
-                <a href="javascript:void(0)" class="menu-link" data-toggle="collapse" data-target="#menu-1fc88e"
-                    aria-expanded="true" aria-controls="menu-1fc88e">
-                    <i class="menu-icon mdi mdi-format-list-text"></i>
-                    <span class="menu-label">쿠폰 관리</span>
-                    <i class="menu-arrow mdi mdi-chevron-right"></i>
+                <a href="/bcoupon" class="menu-link">
+                    <i class="menu-icon mdi mdi-view-dashboard"></i>
+                    <span class="menu-label">쿠폰</span>
+                    <span class="menu-badge">
+                        <span class="badge bg-info">1</span>
+                    </span>
                 </a>
-                <ul class="menu collapse" data-parent="#main-menu" id="menu-1fc88e">
-
-                    <li class="menu-item">
-                        <a href="/bcoupon" class="menu-link">
-                            <i class="menu-icon">쿠폰 리스트</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/bcouponReg" class="menu-link">
-                            <i class="menu-icon">쿠폰 등록</i>
-                            <span class="menu-label"></span>
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
     </div>
