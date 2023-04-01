@@ -232,7 +232,7 @@ $(function() {
 					if(e.currentTarget.response.result != 0){ 
 						alert("이벤트가 등록 되었습니다.");
 						//페이지 이동
-						location.href = '/bmain';
+						location.href = '/bevent';
 					}else{
 						alert("이벤트등록에 실패하였습니다 다시 시도해주세요.");
 					}												

@@ -114,8 +114,6 @@ public class BoEventServiceImpl implements BoEventService {
 	@Override
 	public int updateBoEvent(EventDao eventDao) {
 		
-		eventDao.setUpdateId(9999);
-		
 		//이미지 분리를 위한 이미지그룹 아이디
 		Integer listImgGroupId		= 0;
 		Integer detailImgGroupId	= 0;

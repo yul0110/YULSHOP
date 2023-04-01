@@ -53,8 +53,11 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<c:forEach items="${event.img }" var="i">
 									<c:if test="${i.imgNm eq 'eventList'}">
-										<img id="listImgTempl" src="${i.path }" class="listPreview deletImg" style=" width: 100px; height: 100px;"/>
-									</c:if>								
+										<div id="imgTemple" class="deletImg">
+											<img id="listPreviewImg" src="${i.path }" class="" style="width: 100px; height: 100px;"/>
+											<input id="listImgPath" type="hidden" class="listPreview" value="${i.path }" />
+										</div>							
+									</c:if>	
 								</c:forEach>
 							</div> 
 						</div>
@@ -72,7 +75,10 @@
 								<!-- 사진데이터가 들어올 공간 -->
 								<c:forEach items="${event.img }" var="i">
 									<c:if test="${i.imgNm eq 'eventDetail'}">
-										<img id="detailImgTempl" src="${i.path }" class="detailPreview deletImg" style=" width: 100px; height: 100px;"/>
+										<div id="detailImgTemple" class="deletImg">
+											<img id="detailPreviewImg" src="${i.path }" class="" style=" width: 100px; height: 100px;"/>
+											<input id="detailImgPath" type="hidden" class="detailPreview" value="${i.path }" />
+										</div>
 									</c:if>								
 								</c:forEach>
 							</div>
