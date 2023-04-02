@@ -7,10 +7,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.dao.GoodsDao;
 import com.dao.MemberDao;
+import com.dao.WishDao;
 import com.service.CategoryService;
 import com.service.MyPageService;
 import com.vo.Category;
+import com.vo.Goods;
 import com.vo.Member;
 import com.vo.Wish;
 
@@ -131,6 +135,11 @@ public class MyPageController {
 		return mv;
 	}
 
+	
+	
+	
+	
+	
 	//마이 위시리스트
 	@RequestMapping(value = "/wish", method = RequestMethod.GET)
 	public ModelAndView wish() {
@@ -147,6 +156,24 @@ public class MyPageController {
 		mv.setViewName("myPage/wish"); 
 		return mv;
     }
+	
+	//위시 리스트 Ajax
+	@RequestMapping(value = "/wishListAjax", method = RequestMethod.POST)
+	public ModelAndView wishListAjax(@RequestBody WishDao dataJson) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//마이 쿠폰리스트
 	@RequestMapping(value = "/coupon", method = RequestMethod.GET)

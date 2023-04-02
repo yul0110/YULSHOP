@@ -35,8 +35,8 @@ public class Wish{
 	private String imgPath;
 
 	//상품이름
-	private String gNm;
-	
+	private String nm;
+
 	//img 배열
 	List<Img> img;
 }

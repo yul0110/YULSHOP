@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.Date;
 import java.util.List;
 
+import com.vo.Goods;
 import com.vo.Img;
 
 import lombok.Data;
@@ -36,6 +37,9 @@ public class WishDao {
 		
 		//imgPath
 		private String imgPath;
+		
+		//상품이름
+		private String gNm;
 		
 		//img 배열
 		List<Img> img;

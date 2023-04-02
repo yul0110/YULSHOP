@@ -6,8 +6,6 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %>
 
-<script src="/resources/js/goods/goods.js"></script>
-
 		<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
 		<div class="container">
 			<div class="row justify-content-center align-items-center" style="height: 50vh;">
@@ -26,47 +24,56 @@
 				<div class="col-12">
 					<div class="property-slider-wrap">
 						<div class="property-slider">
-						
-							
-							
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
-							
-							
-							
+							<c:forEach items="${wishList}" var="wish">
+								<c:if test="${not empty'wishList'}">
+								
+								
+									<div class="property-item">
+										<a href="goodsDetail?goodsId=${wish.GId }" class="img">
+											<img src="${wish.imgPath }" alt="Image" class="img-fluid ">
+										</a>
+										${wish.GId }
+										<div class="property-content">
+											<div class="price mb-2">
+												<span>${wish.nm }</span>
+											</div>
+											<div>
+												<a href="javascript:void(0);" class="btn btn-primary py-2 px-3 text-rigth ">삭제하기</a>
+											</div>
+										</div>
+									</div> 
+									
+									
+								</c:if>
+							</c:forEach>
 						</div>
-
-						<div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
-							<span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
-							<span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
-						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<div class="container">
-			<div class="row justify-content-center  text-center mb-5">
-				<div class="col-lg-5">
-					<h2 class="font-weight-bold heading text-primary mb-4">찜리스트가 비었습니다.</h2>
+		<c:forEach items="${wishList}" var="i">
+			<c:if test="${empty'wishList'}">
+				<div class="container">
+					<div class="row justify-content-center  text-center mb-5">
+						<div class="col-lg-5">
+							<h2 class="font-weight-bold heading text-primary mb-4">찜리스트가 비었습니다.</h2>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			</c:if>
+		</c:forEach>	
 	</div>
 
 
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
+
+<!-----------------------------------------  templ  ----------------------------------------->
+
+
+
+<!-----------------------------------------  templ  ----------------------------------------->
 
 
 <!-- js  -->

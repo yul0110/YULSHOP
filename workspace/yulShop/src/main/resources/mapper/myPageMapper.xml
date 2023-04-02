@@ -15,7 +15,7 @@
 			wi.updateDt AS updateDt,
 			wi.updateId AS updateId, 
 			wi.useYn AS useYn,
-			g.nm AS gNm,
+			g.nm AS nm,
 			i.`path`AS imgPath
 		FROM
 			wish wi
