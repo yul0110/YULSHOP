@@ -1,25 +1,23 @@
-package com.vo;
+package com.dao;
 
 import java.sql.Date;
+import java.util.List;
+
+import com.vo.Img;
+
 import lombok.Data;
 
 @Data
-public class Option {
+public class WishDao {
 	
-		//멤버id
+		//id
 		private Integer id;
 
 		//멤버id
+		private Integer mId;
+	
+		//상품id
 		private Integer gId;
-		
-		//상품이름
-		private String color;
-
-		//상품이름
-		private String sz;
-		
-		//상품가격
-		private Integer inventory;
 		
 		//작성날짜
 		private Date regDt;
@@ -32,4 +30,13 @@ public class Option {
 		
 		//수정자
 		private Integer updateId;
+
+		//사용여부
+		private String useYn;
+		
+		//imgPath
+		private String imgPath;
+		
+		//img 배열
+		List<Img> img;
 }

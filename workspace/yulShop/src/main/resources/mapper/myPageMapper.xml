@@ -6,6 +6,28 @@
 	<select id="selectMemberData" resultType="com.vo.Member" parameterType="int">
 		SELECT userId, nm, birth, pno, zonecode, addr1, addr2 FROM member WHERE id = #{value}
 	</select>
+
+	<!-- 찜한 상품 페이지 데이터 보여주기 -->
+	<select id="selectWishGoodsData" resultType="com.vo.Wish" parameterType="int">
+		SELECT 
+			wi.id AS id,
+			wi.regDt AS regDt,
+			wi.updateDt AS updateDt,
+			wi.updateId AS updateId, 
+			wi.useYn AS useYn,
+			g.nm AS gNm,
+			i.`path`AS imgPath
+		FROM
+			wish wi
+		JOIN goods g ON
+			wi.gId = g.id  
+		JOIN imgGroup ig ON	
+			g.listImg = ig.id 
+		JOIN img i ON
+			ig.id = i.imgGroupId
+		WHERE 
+			wi.mId = #{value}
+	</select>
 	
 	<!-- 탈퇴 비밀번호 체크 -->
 	<select id="selectResignCheck" resultType="int" parameterType="com.dao.MemberDao">

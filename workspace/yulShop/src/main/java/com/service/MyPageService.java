@@ -2,12 +2,17 @@ package com.service;
 
 import java.util.List;
 import com.dao.MemberDao;
+import com.vo.Goods;
 import com.vo.Member;
+import com.vo.Wish;
 
 public interface MyPageService {
 	
 	//회원수정 화면에 보여줄 회원 데이터
 	List<Member> selectMemberData(int id);	
+	
+	//찜한 상품 가져오는 쿼리
+	List<Wish> selectWishGoodsData(int mId);
 	
 	//업데이트 
 	int updateMemberPw(MemberDao memberDao);

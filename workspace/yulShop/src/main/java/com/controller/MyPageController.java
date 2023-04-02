@@ -12,6 +12,7 @@ import com.service.CategoryService;
 import com.service.MyPageService;
 import com.vo.Category;
 import com.vo.Member;
+import com.vo.Wish;
 
 @Controller
 public class MyPageController {
@@ -135,9 +136,13 @@ public class MyPageController {
 	public ModelAndView wish() {
 		
 		ModelAndView mv = new ModelAndView();
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
+		int mId = 1;
 		
+		List<Wish> wishList = MyPageService.selectWishGoodsData(mId);
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		
+		mv.addObject("wishList", wishList);
 		mv.addObject("categoryList", categoryList);
 		mv.setViewName("myPage/wish"); 
 		return mv;

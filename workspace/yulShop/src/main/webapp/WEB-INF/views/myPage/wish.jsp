@@ -27,18 +27,7 @@
 					<div class="property-slider-wrap">
 						<div class="property-slider">
 						
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
+							
 							
 							<div class="property-item">
 								<a href="property-single.html" class="img">
@@ -47,63 +36,13 @@
 								<div class="property-content">
 									<div class="price mb-2"><span>상품명</span></div>
 									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
 										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
 									</div>
 								</div>
 							</div> <!-- .item -->
 							
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
 							
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
 							
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
-							
-							<div class="property-item">
-								<a href="property-single.html" class="img">
-									<img src="/resources/images/img_1.jpg" alt="Image" class="img-fluid">
-								</a>
-								<div class="property-content">
-									<div class="price mb-2"><span>상품명</span></div>
-									<div>
-										<span class="city d-block mb-3">찜리스트 빼기</span>
-										<a href="property-single.html" class="btn btn-primary py-2 px-3 text-rigth">삭제하기</a>
-									</div>
-								</div>
-							</div> <!-- .item -->
 						</div>
 
 						<div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
