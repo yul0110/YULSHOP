@@ -135,12 +135,7 @@ public class MyPageController {
 		return mv;
 	}
 
-	
-	
-	
-	
-	
-	//마이 위시리스트
+	//찜한 상품 리스트
 	@RequestMapping(value = "/wish", method = RequestMethod.GET)
 	public ModelAndView wish() {
 		
@@ -157,31 +152,20 @@ public class MyPageController {
 		return mv;
     }
 	
-	//위시 리스트 수정Ajax
+	//찜한 상품 삭제Ajax
 	@RequestMapping(value = "/wishAjax", method = RequestMethod.POST)
 	public ModelAndView wishAjax(@RequestBody WishDao wishDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
-		wishDao.setMemberId(1);
 		int result = MyPageService.updateWishList(wishDao);
-		mv.addObject("result", 1);
-		mv.addObject(result);
+		mv.addObject("result", result);
 		
 		return mv;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//마이 쿠폰리스트
+
+	//쿠폰 리스트
 	@RequestMapping(value = "/coupon", method = RequestMethod.GET)
 	public ModelAndView coupon() {
 		
@@ -194,7 +178,7 @@ public class MyPageController {
 		return mv;
 	}
 	
-	//마이 쿠폰리스트
+	//포인트 리스트
 	@RequestMapping(value = "/point", method = RequestMethod.GET)
 	public ModelAndView point() {
 		
@@ -207,7 +191,7 @@ public class MyPageController {
 		return mv;
 	}
 	
-	//마이 주문내역 상세
+	//주문내역 상세
 	@RequestMapping(value = "/myOrderDetail", method = RequestMethod.GET)
 	public ModelAndView myOrderDetail() {
 		
