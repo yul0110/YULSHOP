@@ -107,8 +107,8 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		
 		couponLogDao.setId(indexNumLog + 1);
 		//관리자로그인 세션에서 관리자 아이디를 추출해옴
-		couponLogDao.setCid(indexNum); 
-		couponLogDao.setMid(999999); //관리자 아이디
+		couponLogDao.setCouponId(indexNum); 
+		couponLogDao.setMemberId(999999); //관리자 아이디
 		couponLogDao.setReason("쿠폰생성");
 		couponLogDao.setRegId(999999); //관리자 아이디
 		couponLogDao.setUpdateId(999999); //관리자 아이디
@@ -149,8 +149,8 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		
 		couponLogDao.setId(indexNumLog + 1);
 		//관리자로그인 세션에서 관리자 아이디를 추출해옴
-		couponLogDao.setCid(couponDao.getId()); 
-		couponLogDao.setMid(999999); //관리자 아이디
+		couponLogDao.setCouponId(couponDao.getId());
+		couponLogDao.setMemberId(99999); //관리자 아이디
 		couponLogDao.setReason("쿠폰수정");
 		couponLogDao.setRegId(999999); //관리자 아이디
 		couponLogDao.setUpdateId(999999); //관리자 아이디

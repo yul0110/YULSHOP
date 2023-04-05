@@ -16,9 +16,7 @@
 		</div>
 	</div>
 
-
 	<div class="section">
-	
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -26,8 +24,6 @@
 						<div class="property-slider">
 							<c:forEach items="${wishList}" var="wish">
 								<c:if test="${not empty'wishList'}">
-								
-								
 									<div class="property-item">
 										<a href="goodsDetail?goodsId=${wish.GId }" class="img">
 											<img src="${wish.imgPath }" alt="Image" class="img-fluid ">
@@ -42,8 +38,6 @@
 											</div>
 										</div>
 									</div> 
-									
-									
 								</c:if>
 							</c:forEach>
 						</div>
@@ -68,13 +62,6 @@
 
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
-
-<!-----------------------------------------  templ  ----------------------------------------->
-
-
-
-<!-----------------------------------------  templ  ----------------------------------------->
-
 
 <!-- js  -->
     <script src="/resources/js/basic/bootstrap.bundle.min.js"></script>

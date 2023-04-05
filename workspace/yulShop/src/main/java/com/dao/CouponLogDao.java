@@ -18,9 +18,9 @@ public class CouponLogDao {
 		//id
 		private Integer id;
 		
-		private Integer cid;
+		private Integer couponId;
 		
-		private Integer mid;
+		private Integer memberId;
 		
 		private String reason;
 		

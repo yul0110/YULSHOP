@@ -6,11 +6,11 @@ import lombok.Data;
 @Data
 public class Option {
 	
-		//멤버id
+		//id
 		private Integer id;
 
-		//멤버id
-		private Integer gId;
+		//상품id
+		private Integer goodsId;
 		
 		//상품이름
 		private String color;

@@ -15,10 +15,10 @@ public class WishDao {
 		private Integer id;
 
 		//멤버id
-		private Integer mId;
+		private Integer memberId;
 	
 		//상품id
-		private Integer gId;
+		private Integer goodsId;
 		
 		//작성날짜
 		private Date regDt;
