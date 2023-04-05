@@ -15,18 +15,19 @@
 			wi.updateDt AS updateDt,
 			wi.updateId AS updateId, 
 			wi.useYn AS useYn,
+			g.id AS goodsId,
 			g.nm AS nm,
 			i.`path`AS imgPath
 		FROM
 			wish wi
 		JOIN goods g ON
-			wi.gId = g.id  
+			wi.goodsId = g.id  
 		JOIN imgGroup ig ON	
 			g.listImg = ig.id 
 		JOIN img i ON
 			ig.id = i.imgGroupId
 		WHERE 
-			wi.mId = #{value}
+			wi.memberId = #{value}
 	</select>
 	
 	<!-- 탈퇴 비밀번호 체크 -->
@@ -46,6 +47,13 @@
 		UPDATE member 
 		SET addr1 = #{addr1}, addr2 = #{addr2} 
 		WHERE id = #{id}
+	</update>
+
+	<!-- 찜한 상품 수정 -->
+	<update id="updateWishList" parameterType="com.dao.WishDao">
+		UPDATE wish
+		SET updateDt=now(), useYn='N'
+		WHERE id = #{id};
 	</update>
 	
 </mapper>

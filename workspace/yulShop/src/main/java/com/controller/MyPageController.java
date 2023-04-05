@@ -146,9 +146,9 @@ public class MyPageController {
 		
 		ModelAndView mv = new ModelAndView();
 		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
-		int mId = 1;
+		int memberId = 1;
 		
-		List<Wish> wishList = MyPageService.selectWishGoodsData(mId);
+		List<Wish> wishList = MyPageService.selectWishGoodsData(memberId);
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		
 		mv.addObject("wishList", wishList);
@@ -157,11 +157,17 @@ public class MyPageController {
 		return mv;
     }
 	
-	//위시 리스트 Ajax
-	@RequestMapping(value = "/wishListAjax", method = RequestMethod.POST)
-	public ModelAndView wishListAjax(@RequestBody WishDao dataJson) {
+	//위시 리스트 수정Ajax
+	@RequestMapping(value = "/wishAjax", method = RequestMethod.POST)
+	public ModelAndView wishAjax(@RequestBody WishDao wishDao) {
 		
 		ModelAndView mv = new ModelAndView("jsonView");
+		
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음
+		wishDao.setMemberId(1);
+		int result = MyPageService.updateWishList(wishDao);
+		mv.addObject("result", 1);
+		mv.addObject(result);
 		
 		return mv;
 	}

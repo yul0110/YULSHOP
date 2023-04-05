@@ -2,7 +2,7 @@ package com.service;
 
 import java.util.List;
 import com.dao.MemberDao;
-import com.vo.Goods;
+import com.dao.WishDao;
 import com.vo.Member;
 import com.vo.Wish;
 
@@ -18,6 +18,8 @@ public interface MyPageService {
 	int updateMemberPw(MemberDao memberDao);
 	
 	int updateMemberAddr(MemberDao memberDao);
+	
+	int updateWishList(WishDao wishDao);
 	
 	//탈퇴 비밀번호 체크
 	int selectResignCheck(MemberDao memberDao);

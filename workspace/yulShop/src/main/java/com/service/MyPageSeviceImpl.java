@@ -4,10 +4,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
 import com.dao.MemberDao;
+import com.dao.WishDao;
 import com.mapper.MyPageMapper;
-import com.vo.Goods;
 import com.vo.Member;
 import com.vo.Wish;
 
@@ -41,6 +40,11 @@ public class MyPageSeviceImpl implements MyPageService {
 	@Override
 	public List<Wish> selectWishGoodsData(int mId) {  //찜한상품 
 		return myPageMapper.selectWishGoodsData(mId);
+	}
+
+	@Override
+	public int updateWishList(WishDao wishDao) {  //찜한 상품 업데이트
+		return myPageMapper.updateWishList(wishDao);
 	}
 	
 	

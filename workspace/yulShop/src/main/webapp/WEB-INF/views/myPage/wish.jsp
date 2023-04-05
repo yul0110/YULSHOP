@@ -6,6 +6,10 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %>
 
+<!-- 해당페이지 js연결 -->
+<script src="/resources/js/myPage/wish.js"></script>
+
+
 		<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
 		<div class="container">
 			<div class="row justify-content-center align-items-center" style="height: 50vh;">
@@ -23,18 +27,19 @@
 					<div class="property-slider-wrap">
 						<div class="property-slider">
 							<c:forEach items="${wishList}" var="wish">
-								<c:if test="${not empty'wishList'}">
-									<div class="property-item">
-										<a href="goodsDetail?goodsId=${wish.GId }" class="img">
+								<c:if test="${not empty'wishList' and wish.useYn eq 'Y'}">
+									<div class="property-item ">
+										<a href="goodsDetail?goodsId=${wish.goodsId }" class="img">
 											<img src="${wish.imgPath }" alt="Image" class="img-fluid ">
 										</a>
-										${wish.GId }
 										<div class="property-content">
 											<div class="price mb-2">
 												<span>${wish.nm }</span>
+												<input type="hidden" id="id" value='${wish.id}' class="form-control">
+												<input type="hidden" id="useYn" value='${wish.useYn}' class="form-control">
 											</div>
 											<div>
-												<a href="javascript:void(0);" class="btn btn-primary py-2 px-3 text-rigth ">삭제하기</a>
+												<button type="button" id="deleteAjax" class="btn btn-primary py-2 px-3 text-rigth deleteAjax">삭제하기</button>
 											</div>
 										</div>
 									</div> 

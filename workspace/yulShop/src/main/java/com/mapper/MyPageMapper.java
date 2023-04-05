@@ -2,9 +2,8 @@ package com.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-
 import com.dao.MemberDao;
-import com.vo.Goods;
+import com.dao.WishDao;
 import com.vo.Member;
 import com.vo.Wish;
 
@@ -21,6 +20,8 @@ public interface MyPageMapper {
 	int updateMemberPw(MemberDao memberDao);
 	
 	int updateMemberAddr(MemberDao memberDao);
+	
+	int updateWishList(WishDao wishDao);
 	
 	//탈퇴 비밀번호 체크
 	int selectResignCheck(MemberDao memberDao);
