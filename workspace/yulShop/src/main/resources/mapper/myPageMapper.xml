@@ -2,9 +2,17 @@
 
 <mapper namespace="com.mapper.MyPageMapper">
 
+<!-- SELECT --><!-- SELECT --><!-- SELECT --><!-- SELECT --><!-- SELECT --><!-- SELECT --><!-- SELECT --><!-- SELECT -->
+
+
 	<!-- 회원수정 페이지 데이터 보여주기 -->
 	<select id="selectMemberData" resultType="com.vo.Member" parameterType="int">
 		SELECT userId, nm, birth, pno, zonecode, addr1, addr2 FROM member WHERE id = #{value}
+	</select>
+
+	<!-- 탈퇴 비밀번호 체크 -->
+	<select id="selectResignCheck" resultType="int" parameterType="com.dao.MemberDao">
+		SELECT COUNT(id) FROM member WHERE id = #{id} AND pw = #{pw}
 	</select>
 
 	<!-- 찜한 상품 페이지 데이터 보여주기 -->
@@ -29,11 +37,35 @@
 		WHERE 
 			wi.memberId = #{value}
 	</select>
-	
-	<!-- 탈퇴 비밀번호 체크 -->
-	<select id="selectResignCheck" resultType="int" parameterType="com.dao.MemberDao">
-		SELECT COUNT(id) FROM member WHERE id = #{id} AND pw = #{pw}
+
+	<!-- 쿠폰 페이지 데이터 보여주기 -->
+	<select id="selectCouponData" resultType="com.vo.MemberCoupon" parameterType="int">
+		SELECT 
+			mc.id AS id,
+			mc.couponId AS couponId,
+			mc.memberId AS memberId,
+			mc.issuedDate AS issuedDate, 
+			mc.useYn AS useYn,
+			mc.regDt AS regDt,
+			mc.regId AS regId,
+			mc.updateDt AS updateDt,
+			mc.updateId AS updateId,
+			mc.useYn AS useYn,
+			cou.id AS couponId,
+			cou.codeNum AS codeNum,
+			cou.nm AS nm
+		FROM
+			memberCoupon mc 
+		JOIN coupon cou ON
+			mc.couponId = cou.id  
+		WHERE 
+			mc.memberId = #{value}
 	</select>
+	
+
+<!-- UPDATE --><!-- UPDATE --><!-- UPDATE --><!-- UPDATE --><!-- UPDATE --><!-- UPDATE --><!-- UPDATE --><!-- UPDATE -->
+	
+	
 	
 	<!-- 회원 비밀번호 수정 -->
 	<update id="updateMemberPw" parameterType="com.dao.MemberDao">

@@ -23,58 +23,30 @@
 	<div class="section bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
-					<div class="box-feature mb-4">
-						<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
-						<h3 class="text-black mb-3 font-weight-bold">쿠폰1</h3>
-						<p><a href="#" class="learn-more">2023-04-05 까지</a></p>
+				<c:if test="${not empty couponList}">
+					<c:forEach items="${couponList}" var="coupon">
+						<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+							<div class="box-feature mb-4">
+								<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
+								<h3 class="text-black mb-3 font-weight-bold">${coupon.nm }</h3>
+								<p><a href="#" class="learn-more">${coupon.issuedDate }</a></p>
+							</div>
+						</div>
+					</c:forEach>
+				</c:if>	
+				<!-- ======= 쿠폰이 없는경우 ======= -->
+				<c:if test="${empty couponList}">	
+					<div class="container">
+						<div class="row justify-content-center  text-center mb-5">
+							<div class="col-lg-5">
+								<h2 class="font-weight-bold heading text-primary mb-4">보유중인 <br>쿠폰이 없습니다.</h2>
+							</div>
+						</div>
 					</div>
-				</div>
-				
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
-					<div class="box-feature mb-4">
-						<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
-						<h3 class="text-black mb-3 font-weight-bold">쿠폰2</h3>
-						<p><a href="#" class="learn-more">2023-04-05 까지</a></p>
-					</div>
-				</div>
-				
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
-					<div class="box-feature mb-4">
-						<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
-						<h3 class="text-black mb-3 font-weight-bold">쿠폰3</h3>
-						<p><a href="#" class="learn-more">2023-04-05 까지</a></p>
-					</div>
-				</div>
-				
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
-					<div class="box-feature mb-4">
-						<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
-						<h3 class="text-black mb-3 font-weight-bold">쿠폰4</h3>
-						<p><a href="#" class="learn-more">2023-04-05 까지</a></p>
-					</div>
-				</div>
-				
-				<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
-					<div class="box-feature mb-4">
-						<span class="icon-ticket mb-4 d-block" style='font-size: 60px'></span>
-						<h3 class="text-black mb-3 font-weight-bold">쿠폰5</h3>
-						<p><a href="#" class="learn-more">2023-04-05 까지</a></p>
-					</div>
-				</div>
-				
+				</c:if>
 			</div>
 		</div>
 
-		<!-- ======= 쿠폰이 없는경우 ======= -->
-			
-		<div class="container">
-			<div class="row justify-content-center  text-center mb-5">
-				<div class="col-lg-5">
-					<h2 class="font-weight-bold heading text-primary mb-4">보유중인 쿠폰이 없습니다.</h2>
-				</div>
-			</div>
-		</div>
 	</div>
 
 <!-- ======= Footer ======= -->

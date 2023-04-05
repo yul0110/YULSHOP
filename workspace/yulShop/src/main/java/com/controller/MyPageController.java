@@ -14,8 +14,10 @@ import com.dao.WishDao;
 import com.service.CategoryService;
 import com.service.MyPageService;
 import com.vo.Category;
+import com.vo.Coupon;
 import com.vo.Goods;
 import com.vo.Member;
+import com.vo.MemberCoupon;
 import com.vo.Wish;
 
 @Controller
@@ -170,14 +172,18 @@ public class MyPageController {
 	public ModelAndView coupon() {
 		
 		ModelAndView mv = new ModelAndView();
+		//더미데이터 로그인 기능이 완성 되지 않아 임시로 회원데이터 넣음		
+		int memberId = 1;
 		
+		List<MemberCoupon> couponList = MyPageService.selectCouponData(memberId);
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		
 		mv.addObject("categoryList", categoryList);
+		mv.addObject("couponList", couponList);
 		mv.setViewName("myPage/coupon"); 
 		return mv;
 	}
-	
+
 	//포인트 리스트
 	@RequestMapping(value = "/point", method = RequestMethod.GET)
 	public ModelAndView point() {

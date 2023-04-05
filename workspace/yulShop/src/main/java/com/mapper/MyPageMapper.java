@@ -4,7 +4,9 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.dao.MemberDao;
 import com.dao.WishDao;
+import com.vo.Coupon;
 import com.vo.Member;
+import com.vo.MemberCoupon;
 import com.vo.Wish;
 
 @Mapper
@@ -15,6 +17,9 @@ public interface MyPageMapper {
 	
 	//찜한 상품 가져오는 쿼리
 	List<Wish> selectWishGoodsData(int mId);
+
+	//회원 쿠폰 가져오는 쿼리
+	List<MemberCoupon> selectCouponData(int mId);
 	
 	//업데이트 
 	int updateMemberPw(MemberDao memberDao);

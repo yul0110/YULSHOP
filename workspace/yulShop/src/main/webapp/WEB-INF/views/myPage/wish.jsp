@@ -26,8 +26,8 @@
 				<div class="col-12">
 					<div class="property-slider-wrap">
 						<div class="property-slider">
-							<c:forEach items="${wishList}" var="wish">
-								<c:if test="${not empty'wishList' and wish.useYn eq 'Y'}">
+							<c:if test="${not empty wishList and wish.useYn eq 'Y'}">
+								<c:forEach items="${wishList}" var="wish">
 									<div class="property-item ">
 										<a href="goodsDetail?goodsId=${wish.goodsId }" class="img">
 											<img src="${wish.imgPath }" alt="Image" class="img-fluid ">
@@ -43,25 +43,23 @@
 											</div>
 										</div>
 									</div> 
-								</c:if>
-							</c:forEach>
+								</c:forEach>
+							</c:if>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<c:forEach items="${wishList}" var="i">
-			<c:if test="${empty'wishList'}">
-				<div class="container">
-					<div class="row justify-content-center  text-center mb-5">
-						<div class="col-lg-5">
-							<h2 class="font-weight-bold heading text-primary mb-4">찜리스트가 비었습니다.</h2>
-						</div>
+	<!-- ======= 쿠폰이 없는경우 ======= -->
+		<c:if test="${empty wishList}">
+			<div class="container">
+				<div class="row justify-content-center  text-center mb-5">
+					<div class="col-lg-5">
+						<h2 class="font-weight-bold heading text-primary mb-4">찜리스트가 비었습니다.</h2>
 					</div>
 				</div>
-			</c:if>
-		</c:forEach>	
+			</div>
+		</c:if>
 	</div>
 
 

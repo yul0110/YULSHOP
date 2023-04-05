@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import com.dao.MemberDao;
 import com.dao.WishDao;
 import com.mapper.MyPageMapper;
+import com.vo.Coupon;
 import com.vo.Member;
+import com.vo.MemberCoupon;
 import com.vo.Wish;
 
 @Service
@@ -45,6 +47,11 @@ public class MyPageSeviceImpl implements MyPageService {
 	@Override
 	public int updateWishList(WishDao wishDao) {  //찜한 상품 업데이트
 		return myPageMapper.updateWishList(wishDao);
+	}
+
+	@Override
+	public List<MemberCoupon> selectCouponData(int mId) {
+		return myPageMapper.selectCouponData(mId);
 	}
 	
 	
