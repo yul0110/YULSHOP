@@ -15,7 +15,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp"%>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height: 1000px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/fullHeader.jpg'); height:950px;">
 		<div class="container">
 			<br>
 			<br> 
@@ -68,10 +68,6 @@
 						<button type="button" class="btn btn-primary" id="memberUpdateAjax" style="width: 10em">수정하기</button>
 						<br> <br> <br>
 					</form>
-					<!-- End Contact Form -->
-					<div class="col-lg-9 text-center">
-						<!-- 버려진애 -->
-					</div>
 				</div>
 			</div>
 		</div>

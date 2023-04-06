@@ -8,9 +8,9 @@
 
 <script src="/resources/js/goods/goods.js"></script>
 	
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 50vh;">
+			<div class="row justify-content-center align-items-center" style="height: 70vh;">
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up">장바구니</h1>
 				</div>
@@ -46,9 +46,7 @@
 						</div>
 					</div> 
 				</div>
-				<!-- item END-->
 			
-				<!-- .item -->
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="property-item mb-30">
 						<a href="property-single.html" class="img">

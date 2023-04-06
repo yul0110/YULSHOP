@@ -10,7 +10,7 @@
 
 <script src="/resources/js/cs/faq.js"></script>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">

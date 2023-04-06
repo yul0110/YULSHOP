@@ -9,7 +9,7 @@
 
 <script src="/resources/js/cart/wishList.js"></script>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources//resources/images/hero_bg_1.jpg');">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 
 		<div class="container">
 			<div class="row justify-content-center align-items-center">

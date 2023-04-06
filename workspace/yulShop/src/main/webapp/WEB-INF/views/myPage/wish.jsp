@@ -9,10 +9,9 @@
 <!-- 해당페이지 js연결 -->
 <script src="/resources/js/myPage/wish.js"></script>
 
-
-		<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+		<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 50vh;">
+			<div class="row justify-content-center align-items-center" style="height: 70vh;">
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up">찜리스트</h1>
 				</div>

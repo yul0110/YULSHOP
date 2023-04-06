@@ -9,7 +9,7 @@
 
 <script src="/resources/js/event/eventDetail.js"></script>
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
@@ -52,9 +52,6 @@
 			</div>
 		</div>
 	</c:forEach>
-	
-	
-	
 	
 <!-- ======= Footer ======= -->
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>

@@ -11,7 +11,7 @@
 
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center mt-5">
@@ -69,6 +69,8 @@
 							<input type="file" name="uploadFile" id="uploadFile" class="form-control px-4 fileButton" >
 							</div>
 							<div id='listPreviewZone' class="narrow-w form-search d-flex align-items-stretch mb-3 text-center" >
+								<!-- 사진데이터가 들어올 공간 -->
+								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->
 								<!-- 사진데이터가 들어올 공간 -->

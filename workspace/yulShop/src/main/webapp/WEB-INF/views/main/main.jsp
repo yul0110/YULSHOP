@@ -11,9 +11,10 @@
 	
 	<div class="hero">
 		<div class="hero-slide">
-			<div class="img overlay" style="background-image: url('/resources/images/yulShop1.webp')"></div>
-			<div class="img overlay" style="background-image: url('/resources/images/yulShop2.webp')"></div>
-			<div class="img overlay" style="background-image: url('/resources/images/yulShop3.webp')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/main1.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/main2.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/main3.jpg')"></div>
+			<div class="img overlay" style="background-image: url('/resources/images/main4.jpg')"></div>
 		</div>
 	
 		<div class="container">

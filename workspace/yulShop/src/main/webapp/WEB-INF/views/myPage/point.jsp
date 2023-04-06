@@ -9,9 +9,9 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 	
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png');height:400px;">
 		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 50vh;">
+			<div class="row justify-content-center align-items-center" style="height: 70vh;">
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up">포인트 내역</h1>
 				</div>
@@ -57,7 +57,7 @@
 				<!-- tmple zone -->
 				<!-- tmple zone -->
 				<!-- tmple zone -->
-				
+				<!-- tmple zone -->
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
 					<br>
 					<br>
@@ -68,9 +68,10 @@
 							<div class="price mb-2"><span style="width:100px;">2023.10.22</span><span style="padding-left: 30px;">경품</span><div style="width:150px; float: right;"><span>+ 6,700</span> p</div></div>
 							<div class="price mb-2"><span style="width:100px;">2023.10.11</span><span style="padding-left: 30px;">사용</span><div style="width:150px; float: right;"><span>+ 90,000</span> p</div></div>
 						</div>
-					</div> <!-- .item -->
+					</div>
 				</div>
-				
+				<!-- tmple zone -->
+				<!-- tmple zone -->
 				<!-- tmple zone -->
 				<!-- tmple zone -->
 			</div>

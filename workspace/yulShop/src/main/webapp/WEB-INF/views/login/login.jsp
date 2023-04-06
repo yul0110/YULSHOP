@@ -12,7 +12,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg'); height:700px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/fullHeader.jpg'); height:700px;">
 		<div class="container">
 			<div class="row2 row justify-content-center align-items-center"> 
 				<div class="col-lg-9 text-center mt-5" >

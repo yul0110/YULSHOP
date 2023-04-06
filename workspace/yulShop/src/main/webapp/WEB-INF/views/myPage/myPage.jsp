@@ -4,15 +4,14 @@
 <!--  header  -->
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
-
 <body>
 
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/yulShop4.jpg');height:370px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/header.png'); height:400px;">
 		<div class="container">
-			<div class="row justify-content-center align-items-center" style="height: 50vh;">
+			<div class="row justify-content-center align-items-center" style="height: 70vh;">
 				<div class="col-lg-9 text-center mt-5">
 					<h1 class="heading" data-aos="fade-up">마이페이지</h1>
 				</div>
@@ -177,12 +176,12 @@
 				<ul class="list-unstyled links">
 					<li><a href="myPage/memberResign">탈퇴하기</a></li>
 				</ul>
-			</div> <!-- /.widget -->
-		</div> <!-- /.row -->
+			</div> 
+		</div> 
    		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed by Yul  
-   			<a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+   			<a href="https://untree.co">Untree.co</a> 
    		</p>
-	</div> <!-- /.site-footer -->
+	</div> 
 	
 	<!-- Preloader -->
 	<div id="overlayer"></div>
