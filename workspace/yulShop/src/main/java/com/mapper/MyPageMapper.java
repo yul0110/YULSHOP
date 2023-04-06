@@ -4,7 +4,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.dao.MemberDao;
 import com.dao.WishDao;
-import com.vo.Coupon;
 import com.vo.Member;
 import com.vo.MemberCoupon;
 import com.vo.Wish;

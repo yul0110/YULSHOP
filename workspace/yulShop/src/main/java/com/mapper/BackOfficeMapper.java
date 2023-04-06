@@ -2,7 +2,6 @@ package com.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-
 import com.dao.AnswerDao;
 import com.dao.CouponDao;
 import com.dao.CouponLogDao;
@@ -37,17 +36,17 @@ public interface BackOfficeMapper {
 	int selectBoCouponLogNumbering();
 	int insertBoCouponLog(CouponLogDao couponLogDao);
 	
-	//회원리스트
+	//회원 
 	int selectBoMemberAllCount();
 	int updateBoMember(MemberDao memberDao);
 	Member selectBoMember(MemberDao memberDao);
 	List<Member> selectBoMemberList(MemberDao memberDao);
 
-	//이벤트리스트
+	//이벤트 
 	int selectBoEventAllCount();
 	List<Event> selectBoEventList(EventDao eventDao);
 
-	//상품 리스트
+	//상품 
 	int selectBogoodSAllCount();
 	List<Goods>selectBoGoodsList(GoodsDao goodsDao);
 	

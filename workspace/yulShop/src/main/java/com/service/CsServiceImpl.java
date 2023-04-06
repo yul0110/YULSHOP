@@ -1,7 +1,6 @@
 package com.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.dao.ImgDao;
@@ -17,13 +16,11 @@ public class CsServiceImpl implements CsService {
 	@Autowired
 	CsMapper csMapper;
 
-
 	@Autowired
 	ImgGroupMapper imgGroupMapper;
 	
 	@Autowired
 	ImgMapper imgMapper;
-
 	
 	@Override
 	public List<Faq> selectFaqList(String type) {
@@ -34,7 +31,7 @@ public class CsServiceImpl implements CsService {
 	public int insertInquiry(InquiryDao inquiryDao) {
 		
 		//이미지 분리를 위한 이미지그룹 아이디
-		Integer listImgGroupId		= 0;
+		Integer listImgGroupId	= 0;
 		
 		//문의등록 완료 플레그
 		int flag = 0;
@@ -87,8 +84,5 @@ public class CsServiceImpl implements CsService {
 		return flag;
 	
 	}
-
-
-	
 
 }

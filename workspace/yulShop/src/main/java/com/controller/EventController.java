@@ -31,11 +31,7 @@ public class EventController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		//---------카테고리---------
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		//---------카테고리---------
-		
-		
 		List<Event> eventList = eventService.selectEventList();
 		
 		mv.addObject("categoryList", categoryList);
@@ -43,20 +39,13 @@ public class EventController {
 		mv.setViewName("event/event");                                         
 		return mv;
     }
-
-	
-	
 	
 	@RequestMapping(value = "/eventDetail", method = RequestMethod.GET)
 	public ModelAndView EventDetailPage(int id) {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		//---------카테고리---------
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		//---------카테고리---------
-		
-		
 		List<Event> eventDetailList = eventService.selectEventDetailList(id);
 		
 		mv.addObject("categoryList", categoryList);
@@ -64,6 +53,5 @@ public class EventController {
 		mv.setViewName("event/eventDetail");                                         
 		return mv;
 	}
-	
 
 }

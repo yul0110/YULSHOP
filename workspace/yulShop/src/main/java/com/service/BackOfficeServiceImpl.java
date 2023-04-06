@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
 import com.dao.AnswerDao;
 import com.dao.CouponDao;
 import com.dao.CouponLogDao;
@@ -35,7 +34,6 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 	public List<Inquiry> selectBoInquiryList(InquiryDao inquiryDao) {
 		return backOfficeMapper.selectBoInquiryList(inquiryDao);
 	}
-
 	
 	//회원---------------------------------------------------------------------------
 	@Override
@@ -159,7 +157,5 @@ public class BackOfficeServiceImpl implements BackOfficeService {
 		
 		return result;
 	}
-
-
 
 }

@@ -12,7 +12,7 @@
 
 	<nav class="site-nav">
 		<div class="container">
-			<div class="menu-bg-wrap" style="background-color:#CB8A90 ">
+			<div class="menu-bg-wrap" style="background-color:#CB8A90">
 				<div class="site-navigation">
 					<a href="/" class="logo m-0 float-start" style=font-size:20px;>YUL</a>
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">

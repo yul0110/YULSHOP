@@ -51,7 +51,6 @@ public class MyPageController {
 		
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		mv.addObject("categoryList", categoryList);
-		
 		mv.setViewName("myPage/memberResign");
 		
 		return mv;
@@ -72,7 +71,6 @@ public class MyPageController {
 		
 		List<Category> categoryList = categoryService.selectAllCategoryList();
 		mv.addObject("categoryList", categoryList);
-		
 		mv.setViewName("myPage/memberUpdate"); //컨트롤러에서 JSP로 데이터를 넘기기 위해 
 		mv.addObject("memberData", memberData);
 		

@@ -34,16 +34,17 @@ public class BackOfficeController {
 	@Autowired
 	BoGoodsService boGoodsService;
 	
+	
 	@Autowired
 	BoEventService boEventService;
 	
+	
 	@Autowired
 	CategoryService categoryService;
+	
 
 	@Autowired
 	BackOfficeService backOfficeService;
-	
-
 	
 /*------------------------------------- 메인 --------------------------------------*/
 	
@@ -51,7 +52,6 @@ public class BackOfficeController {
     public String bmain(){
 		return "bo/bmain";
     }
-
 
 /*------------------------------------- 쿠폰 --------------------------------------*/
 	
@@ -135,7 +135,6 @@ public class BackOfficeController {
 	
 /*------------------------------------- 상품 --------------------------------------*/
 	
-	
 	//BO 상품 리스트 페이지
 	@RequestMapping(value = "/bgoods", method = RequestMethod.GET)
 	public ModelAndView bgoods(){
@@ -145,7 +144,6 @@ public class BackOfficeController {
 		mv.setViewName("bo/bgoods");
 		return mv;
 	}
-	
 	
 	//BO 상품 등록 페이지
 	@RequestMapping(value = "/bgoodsReg", method = RequestMethod.GET)
@@ -163,7 +161,6 @@ public class BackOfficeController {
 		mv.setViewName("bo/bgoodsReg");
 		return mv;
 	}
-	
 	
 	//BO 상품 수정
 	@RequestMapping(value = "/bgoodsDetail", method = RequestMethod.GET)
@@ -208,7 +205,6 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	
 	//상품등록 Ajax
 	@RequestMapping(value = "/goodsRegAjax", method = RequestMethod.POST)
 	public ModelAndView goodsRegAjax(@RequestBody GoodsDao goodsDataJson ) {
@@ -233,7 +229,6 @@ public class BackOfficeController {
 		mv.setViewName("bo/binquiry");
 		return mv;
 	}
-	
 	
 	//BO 문의 수정 페이지
 	@RequestMapping(value = "/binquiryDetail", method = RequestMethod.GET)
@@ -394,7 +389,6 @@ public class BackOfficeController {
 		return mv;
 	}
 	
-	
 	//BO 이벤트 등록 Ajax
 	@RequestMapping(value = "/eventRegAjax", method = RequestMethod.POST)
 	public ModelAndView eventRegAjax(@RequestBody EventDao eventDataJson ) {
@@ -441,7 +435,5 @@ public class BackOfficeController {
 			mv.addObject("result", result);
 			return mv;
 		}
-		
-		
 		
 }

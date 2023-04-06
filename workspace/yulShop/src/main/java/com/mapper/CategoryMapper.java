@@ -4,7 +4,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.vo.Category;
 
-
 @Mapper
 public interface CategoryMapper {
 	

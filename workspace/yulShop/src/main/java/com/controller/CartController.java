@@ -25,14 +25,11 @@ public class CartController {
 		ModelAndView mv = new ModelAndView();
 		
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
 		
 		mv.addObject("categoryList", categoryList);
-		mv.addObject("categoryRefList", categoryRefList);
 		mv.setViewName("cart/cart");                                         
 		return mv;
     }
-	
 
 	@RequestMapping(value = "/wishList", method = RequestMethod.GET)
 	public ModelAndView wishListPage(String cate) {
@@ -40,10 +37,8 @@ public class CartController {
 		ModelAndView mv = new ModelAndView();
 		
 		List<Category> categoryList = categoryService.selectAllCategoryList();
-		List<Category> categoryRefList = categoryService.selectCategoryList(cate);
 		
 		mv.addObject("categoryList", categoryList);
-		mv.addObject("categoryRefList", categoryRefList);
 		mv.setViewName("cart/wishList");                                         
 		return mv;
 	}

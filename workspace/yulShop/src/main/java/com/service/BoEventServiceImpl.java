@@ -3,10 +3,8 @@ package com.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
 import com.dao.EventDao;
 import com.dao.ImgDao;
-import com.dao.OptionDao;
 import com.mapper.EventMapper;
 import com.mapper.ImgGroupMapper;
 import com.mapper.ImgMapper;
@@ -24,7 +22,6 @@ public class BoEventServiceImpl implements BoEventService {
 	
 	@Autowired
 	EventMapper eventMapper;
-
 
 	@Override
 	public Event selectEvent(int id) {
@@ -69,7 +66,6 @@ public class BoEventServiceImpl implements BoEventService {
 		}
 		//리스트이미지 등록 END
 		
-		
 		//이미지그룹 넘버링을 담아줌
 		detailImgGroupId = imgGroupMapper.selectTableNumbering();
 		detailImgGroupId = detailImgGroupId + 1;
@@ -85,7 +81,6 @@ public class BoEventServiceImpl implements BoEventService {
 			imgDao.setPath(detailImg);
 			imgMapper.insertImg(imgDao);
 		}
-		
 		//그룹값을 넣어줌
 		eventDao.setListImg(listImgGroupId);
 		eventDao.setDetailImg(detailImgGroupId);
@@ -104,11 +99,7 @@ public class BoEventServiceImpl implements BoEventService {
 		flag = eventMapper.insertEvent(eventDao);
 			
 		return flag;
-		
 	}
-
-	
-	
 	
 	//이벤트 수정
 	@Override
@@ -175,6 +166,5 @@ public class BoEventServiceImpl implements BoEventService {
 		return flag;
 		
 	}
-	
 
 }

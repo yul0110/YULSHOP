@@ -34,6 +34,7 @@ public class LoginController {
 		mv.setViewName("login/login"); 
 		return mv;
 	}
+	
 	// 아이디 찾기 페이지
 	@RequestMapping(value = "/findId", method = RequestMethod.GET)
 	public ModelAndView findIdPage() {
@@ -46,6 +47,7 @@ public class LoginController {
 		mv.setViewName("login/findId"); 
 		return mv;
 	}
+	
 	// 비밀번호 찾기 페이지
 	@RequestMapping(value = "/findPw", method = RequestMethod.GET)
 	public ModelAndView findPwPage() {
@@ -58,7 +60,6 @@ public class LoginController {
 		mv.setViewName("login/findPw"); 
 		return mv;
 	}
-	
 	
 	//로그인 아이디 체크 Ajax
 	@RequestMapping(value = "/loginAjax", method = RequestMethod.POST)
@@ -119,7 +120,6 @@ public class LoginController {
 		mv.addObject("result", result);
 		return mv;
 	}
-
 	
 	// 비밀번호 찾기 Ajax
 	@RequestMapping(value = "/findPwAjax", method = RequestMethod.POST)

@@ -2,10 +2,7 @@ package com.dao;
 
 import java.sql.Date;
 import java.util.List;
-
-import com.vo.Goods;
 import com.vo.Img;
-
 import lombok.Data;
 
 @Data

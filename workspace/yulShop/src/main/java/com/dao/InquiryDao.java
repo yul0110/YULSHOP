@@ -2,14 +2,8 @@ package com.dao;
 
 import java.sql.Date;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import com.mapper.BackOfficeMapper;
-import com.vo.Inquiry;
 import com.vo.paging;
-
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

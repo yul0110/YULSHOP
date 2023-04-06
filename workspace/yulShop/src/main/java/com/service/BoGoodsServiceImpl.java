@@ -134,7 +134,6 @@ public class BoGoodsServiceImpl implements BoGoodsService {
 			optionMapper.insertOption(optionData);//insert완료
 			
 		}
-			
 		return flag;
 	}
 

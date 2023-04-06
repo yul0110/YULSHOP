@@ -1,7 +1,6 @@
 package com.mapper;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import com.dao.EventDao;
 import com.vo.Event;

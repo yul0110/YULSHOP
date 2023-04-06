@@ -35,7 +35,6 @@ public class JoinController {
 		mv.setViewName("join/join"); 
 		return mv;
     }
-
 	
 	//아이디 중복 체크 Ajax
 	@RequestMapping(value = "/idCheckAjax", method = RequestMethod.POST)
@@ -48,7 +47,6 @@ public class JoinController {
 		return mv;
 	}
 
-	
 	//회원가입 Ajax
 	@RequestMapping(value = "/joinusAjax", method = RequestMethod.POST)
 	public ModelAndView joinusAjax(@RequestBody MemberDao memberDao) {
