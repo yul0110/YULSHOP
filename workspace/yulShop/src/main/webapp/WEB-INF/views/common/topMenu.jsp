@@ -14,9 +14,8 @@
 		<div class="container">
 			<div class="menu-bg-wrap" style="background-color:#CB8A90">
 				<div class="site-navigation">
-					<a href="/" class="logo m-0 float-start" style=font-size:20px;>YUL</a>
+					<a href="/" class="logo m-0 float-start" style=font-size:40px;>YUL</a>
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="index.html" style="font-size: 1.5em;">NEW IN</a></li>
 						<c:forEach var="test" items="${categoryList}">
 							<c:if test="${test.cateCodeRef eq null }">
 								<li class="has-children">
@@ -31,8 +30,8 @@
 								</li>
 							</c:if>
 						</c:forEach>
-						<li><a style="padding: 0px 5px 0px 0px; font-size:25px;" href="/login"><span class="icon-user"></span></a></li>
-						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="/cart"><span style="padding-right:0px" class="icon-cart-plus"></span></a></li>
+						<li><a style="padding: 0px 20px 0px 10px; font-size:25px;" href="/login"><span class="icon-user"></span></a></li>
+						<li><a style="padding: 5px 0px 0px 0px; font-size:25px;" href="/cart"><span style="padding-right:30px" class="icon-cart-plus"></span></a></li>
 					</ul>
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>

@@ -9654,7 +9654,7 @@ textarea {
 
 .menu-bg-wrap {
   background-color: #005555;
-  padding: 20px 30px;
+  padding: 10px 40px;
   position: relative;
   float: left;
   width: 100%;
@@ -9667,11 +9667,11 @@ textarea {
   background-size: cover;
   background-position: cnter center;
   background-repeat: no-repeat;
-  background-color: #00204a; }
+  background-color: #FFFFFF; }
   .hero.overlay {
     position: relative; }
     .hero.overlay:before {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
       content: "";
       position: absolute;
       left: 0;
