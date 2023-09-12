@@ -12,7 +12,7 @@
 <!--  topMenu  -->
 <%@ include file="/WEB-INF/views/common/topMenu.jsp" %> 
 
-	<div class="hero page-inner overlay" style="background-image: url('/resources/images/fullHeader.jpg'); height:700px;">
+	<div class="hero page-inner overlay" style="background-image: url('/resources/images/fullHeader.jpg'); height:900px;">
 		<div class="container">
 			<div class="row2 row justify-content-center align-items-center"> 
 				<div class="col-lg-9 text-center mt-5" >
@@ -34,15 +34,13 @@
 					<button type="button" id="loginCheckAjax" class="btn btn-primary" style="width:10em" >로그인</button>
 					<br>
 					<br>
-					<br>
 					<nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
 						<ol class="breadcrumb text-center justify-content-center">
 							<li class="breadcrumb-item "><a href="/findId">아이디</a></li>
 							<li class="breadcrumb-item "><a href="/findPw">비밀번호를 잊으셨나요?</a></li>
 						</ol>
-						<br>
 						<ol class="breadcrumb text-center justify-content-center">
-							<li class="breadcrumb-item "><a href="/join">♡회원가입♡</a></li>
+							<li class="breadcrumb-item "><a href="/join">회원가입</a></li>
 						</ol>
 					</nav>
 				</div>
