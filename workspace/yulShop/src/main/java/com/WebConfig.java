@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer{
 	
 	// 이미지를 보여주기 위해 해당 경로를 열어줌
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	public void addResourceHandlers(ResourceHandlerRegistry registry) { //-- leeyul 이미지 경로 처리
 		registry.addResourceHandler("/loadImg/**").addResourceLocations("file:///C:/java_dev/2.project/yulShop/workspace/yulShop/workspace/yulShop/src/main/resources/loadImg/");
 		
 	}
